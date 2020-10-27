@@ -1,19 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueBoxScript : MonoBehaviour
 {
-    public GameObject BoxImage;
-    public Text dialogue;
-    public string[] textLines;
-    public int currentLine = 0;
+    public GameObject DialogueBox;
+    public Text text;
+    [SerializeField] public Queue<string> dialogue = new Queue<string>();
 
-    public void Start()
-    {
-        dialogue.text = textLines[0];
-    }
+    public Interact player;
 
     public void Update()
     {
@@ -23,27 +20,54 @@ public class DialogueBoxScript : MonoBehaviour
         }
     }
 
-    public void NextLine()
+    private void NextLine()
     {
-        currentLine++;
-        if (currentLine == textLines.Length)
+        //Debug.Log(dialogue.Peek());
+        if (dialogue.Count > 0)
         {
-            currentLine = 0;
-            HideDialogueBox();
+            text.text = dialogue.Dequeue();
+
         }
         else
         {
-            dialogue.text = textLines[currentLine];
+            HideDialogueBox();
         }
     }
 
-    public void ShowDialogueBox()
+    IEnumerator TypeLine(string line)
     {
-        BoxImage.SetActive(true);
+        text.text = "";
+        foreach (char letter in line.ToCharArray())
+        {
+            text.text += letter;
+            yield return null;
+        }
     }
 
-    public void HideDialogueBox()
+    private void ShowDialogueBox()
     {
-        BoxImage.SetActive(false);
+        DialogueBox.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    private void HideDialogueBox()
+    {
+        DialogueBox.SetActive(false);
+        Time.timeScale = 1f;
+        player.enabled = true;
+    }
+
+    public void StartDialogue(string[] _dialogue)
+    {
+        if (DialogueBox.activeSelf == true)
+            return;
+        dialogue.Clear();
+        foreach(string line in _dialogue)
+        {
+            dialogue.Enqueue(line);
+        }
+
+        ShowDialogueBox();
+        NextLine();
     }
 }
