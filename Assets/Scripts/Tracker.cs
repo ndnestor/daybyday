@@ -8,8 +8,9 @@ public class Tracker : MonoBehaviour
     public int[] objectTracker;
     public int[] objectTimePass;
     public int numOfObjects = 3; // for now
-    public int currTimeUnit;
+    public static int currTimeUnit;
     public int i;
+    public static int currDay;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class Tracker : MonoBehaviour
         objectTracker = new int[] {0, 0, 0};
         objectTimePass = new int[] {8, 4, 1};
         currTimeUnit = 6;
+        currDay = 0;
         i = 0;
     }
 
@@ -56,6 +58,7 @@ public class Tracker : MonoBehaviour
             //currTimeUnit = 0 + (objectTimePass[i] - deductor);
             int overTime = currTimeUnit + objectTimePass[i];
             currTimeUnit = overTime - 23 - 1;
+            currDay = 1;
         } else {
             currTimeUnit += objectTimePass[i];
         }
@@ -65,6 +68,11 @@ public class Tracker : MonoBehaviour
         } else {
                 Debug.Log("Night, Current Time Now: " + currTimeUnit);
         }
+        /*
+        if (currDay == 1 && currTimeUnit >= 6) {
+            Debug.Log("NEW DAY");
+        }
+        */
 
     }
 
