@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene kobayashi 2.unity
     guid: 2ed9c9684272a624da5c33d6ed0f6f44
+  - enabled: 1
+    path: Assets/Scenes/Computer.unity
+    guid: cb7644ed3eb81224aa0260cc971186ea
+  - enabled: 1
+    path: Assets/Scenes/ExampleHW.unity
+    guid: c252f010910c98b4bba4433919adfd49
+  - enabled: 1
+    path: Assets/Scenes/ExampleGame.unity
+    guid: 0393b647ab1b932488f18baab547bedd
   m_configObjects: {}
