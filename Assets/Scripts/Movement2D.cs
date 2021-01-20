@@ -6,6 +6,7 @@ public class Movement2D : MonoBehaviour
 {
     public GameObject playerSprite;
     public Rigidbody2D rb;
+    public float orderLineY;
     public float moveSpeed = 5f;
 
     private Vector2 movement;
@@ -22,7 +23,7 @@ public class Movement2D : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        if(rb.position.y >= -2.2)
+        if(rb.position.y >= orderLineY)
         {
             playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 40;
         }
