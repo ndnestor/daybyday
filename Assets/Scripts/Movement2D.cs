@@ -4,30 +4,33 @@ using UnityEngine;
 
 public class Movement2D : MonoBehaviour
 {
+    public GameObject playerSprite;
     public Rigidbody2D rb;
-    [SerializeField] private float moveSpeed = 5;
+    public float orderLineY;
+    public float moveSpeed = 5f;
 
     private Vector2 movement;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
 
     // Update is called once per frame
     void Update()
     {
-
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        //rb.velocity = movement * moveSpeed;
-        //rb.position += movement * moveSpeed;
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+        if(rb.position.y >= orderLineY)
+        {
+            playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 40;
+        }
+        else
+        {
+            playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 60;
+        }
     }
+
 }

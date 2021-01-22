@@ -42,3 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Room
+    uniqueID: 1771231165
+    locked: 0
+  - name: Shadows&Lights
+    uniqueID: 3371706665
+    locked: 0
+  - name: Object
+    uniqueID: 2902580983
+    locked: 0
