@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractObject : MonoBehaviour
+public class HighlightObject : MonoBehaviour
 {
     public GameObject connectedSprite;
     public Material highlight;
@@ -20,6 +20,7 @@ public class InteractObject : MonoBehaviour
         if (Input.GetKey("e") && triggerable)
         {
             triggerable = false;
+            connectedSprite.GetComponent<SpriteRenderer>().material = defaultMat;
             Debug.Log("Interacted with " + gameObject.name);
         }
     }
