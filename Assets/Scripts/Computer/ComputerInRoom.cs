@@ -43,8 +43,8 @@ public class ComputerInRoom : MonoBehaviour
         triggerable = false;
         connectedSprite.GetComponent<SpriteRenderer>().material = defaultMat;
 
-        mainRoom.active = false;
-        computerScreen.active = true;
+        mainRoom.SetActive(false);
+        computerScreen.SetActive(true);
         Cursor.visible = true;
 
         Cursor.lockState = CursorLockMode.Confined;

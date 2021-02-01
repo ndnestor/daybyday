@@ -17,8 +17,8 @@ public class ComputerInterface : MonoBehaviour
 
     private void QuitComputer()
     {
-        mainRoom.active = true;
-        computerScreen.active = false;
+        mainRoom.SetActive(true);
+        computerScreen.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
