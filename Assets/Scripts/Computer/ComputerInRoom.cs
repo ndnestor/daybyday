@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractObject : MonoBehaviour
+public class ComputerInRoom : MonoBehaviour
 {
+    public GameObject mainRoom;
+    public GameObject computerScreen;
     public GameObject connectedSprite;
     public Material highlight;
 
@@ -17,10 +20,9 @@ public class InteractObject : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey("e") && triggerable)
+        if (Input.GetKey(KeyCode.E) && triggerable)
         {
-            triggerable = false;
-            Debug.Log("Interacted with " + gameObject.name);
+            UseComputer();
         }
     }
 
@@ -35,4 +37,18 @@ public class InteractObject : MonoBehaviour
         triggerable = false;
         connectedSprite.GetComponent<SpriteRenderer>().material = defaultMat;
     }
+
+    private void UseComputer()
+    {
+        triggerable = false;
+        connectedSprite.GetComponent<SpriteRenderer>().material = defaultMat;
+
+        mainRoom.SetActive(false);
+        computerScreen.SetActive(true);
+        Cursor.visible = true;
+
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+
 }
