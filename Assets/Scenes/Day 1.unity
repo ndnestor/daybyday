@@ -2471,6 +2471,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainRoom: {fileID: 1223661793}
   computerScreen: {fileID: 984632356}
+  profilePage: {fileID: 0}
+  inboxPage: {fileID: 1384187370}
+  assignmentPage: {fileID: 124798533}
+  libraryPage: {fileID: 0}
+  blasterPage: {fileID: 0}
+  helpPage: {fileID: 995335396}
+  settingsPage: {fileID: 0}
+  currentPage: {fileID: 995335396}
 --- !u!1 &995335396
 GameObject:
   m_ObjectHideFlags: 0
