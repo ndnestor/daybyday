@@ -58,14 +58,54 @@ public class ComputerInterface : MonoBehaviour
     {
         GameObject newPage = null;
 
-        if(newName.Equals("Assignments Button"))
+     //   if (newName.Equals("Profile Button"))
+     //   {
+     //       hideAllTabs();
+     //       profilePage.SetActive(true);
+     //   }
+        if (newName.Equals("Inbox Button"))
         {
-            assignmentPage.SetActive(true);
-            helpPage.SetActive(false);
-
-            currentPage = assignmentPage;
+            hideAllTabs();
+            inboxPage.SetActive(true);
         }
+        else if (newName.Equals("Assignments Button"))
+        {
+            hideAllTabs();
+            assignmentPage.SetActive(true);
+        }
+     //   else if (newName.Equals("Library Button"))
+     //   {
+     //       hideAllTabs();
+     //       libraryPage.SetActive(true);
+     //   }
+     //   else if (newName.Equals("Blaster Button"))
+     //   {
+     //       hideAllTabs();
+     //       blasterPage.SetActive(true);
+     //   }
+        else if (newName.Equals("Help Button"))
+        {
+            hideAllTabs();
+            helpPage.SetActive(true);
+        }
+     //   else if (newName.Equals("Settings Button"))
+     //   {
+     //       hideAllTabs();
+     //       settingsPage.SetActive(true);
+     //   }
+        currentPage = assignmentPage;
 
         return newPage;
+    }
+
+    private void hideAllTabs()
+    {
+        //profilePage.SetActive(false);
+        inboxPage.SetActive(false);
+        assignmentPage.SetActive(false);
+        //libraryPage.SetActive(false);
+        //blasterPage.SetActive(false); 
+        helpPage.SetActive(false);
+        //settingsPage.SetActive(false);
     }
 }
