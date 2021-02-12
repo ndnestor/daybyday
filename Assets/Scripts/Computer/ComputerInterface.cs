@@ -58,12 +58,12 @@ public class ComputerInterface : MonoBehaviour
     {
         GameObject newPage = null;
 
-     //   if (newName.Equals("Profile Button"))
-     //   {
-     //       hideAllTabs();
-     //       profilePage.SetActive(true);
-     //   }
-        if (newName.Equals("Inbox Button"))
+        if (newName.Equals("Profile Button"))
+        {
+            hideAllTabs();
+            profilePage.SetActive(true);
+        }
+        else if (newName.Equals("Inbox Button"))
         {
             hideAllTabs();
             inboxPage.SetActive(true);
@@ -100,7 +100,7 @@ public class ComputerInterface : MonoBehaviour
 
     private void hideAllTabs()
     {
-        //profilePage.SetActive(false);
+        profilePage.SetActive(false);
         inboxPage.SetActive(false);
         assignmentPage.SetActive(false);
         //libraryPage.SetActive(false);
