@@ -13,6 +13,8 @@ public class ComputerInRoom : MonoBehaviour
     private Material defaultMat;
     private bool triggerable = false;
 
+    Tracking tracker = Tracking.Instance;
+
     private void Start()
     {
         defaultMat = connectedSprite.GetComponent<SpriteRenderer>().material;
@@ -23,6 +25,7 @@ public class ComputerInRoom : MonoBehaviour
         if (Input.GetKey(KeyCode.E) && triggerable)
         {
             UseComputer();
+            tracker.Test();
         }
     }
 

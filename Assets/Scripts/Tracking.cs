@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tracking : MonoBehaviour
+//This class is a Singleton instance
+public class Tracking
 {
-    // Start is called before the first frame update
-    void Start()
+    private static Tracking instance = null;
+    private Tracking() { }
+
+    public static Tracking Instance
     {
-        
+        get
+        {
+            if(instance == null)
+            {
+                instance = new Tracking();
+            }
+            return instance;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Test()
     {
-        
+        Debug.Log("Success");
     }
 }
