@@ -24,8 +24,8 @@ public class ComputerInRoom : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.E) && triggerable)
         {
+            tracker.AddObject(gameObject);
             UseComputer();
-            tracker.Test();
         }
     }
 

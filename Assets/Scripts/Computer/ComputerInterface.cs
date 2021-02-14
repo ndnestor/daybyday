@@ -26,7 +26,6 @@ public class ComputerInterface : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Pressed left click, casting ray.");
             CastRay();
         }
     }
@@ -47,9 +46,6 @@ public class ComputerInterface : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 100);
         if (hit)
         {
-            Debug.DrawLine(ray.origin, hit.point);
-            Debug.Log("Hit object: " + hit.collider.gameObject.name);
-
             currentPage = ChangePage(hit.collider.gameObject.name);
         }
     }

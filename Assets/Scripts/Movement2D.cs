@@ -16,7 +16,7 @@ public class Movement2D : MonoBehaviour
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        movement.y = Input.GetAxisRaw("Vertical") * .52f;
     }
 
     void FixedUpdate()
@@ -32,5 +32,4 @@ public class Movement2D : MonoBehaviour
             playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 60;
         }
     }
-
 }

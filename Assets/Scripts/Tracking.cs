@@ -8,6 +8,8 @@ public class Tracking
     private static Tracking instance = null;
     private Tracking() { }
 
+    public ArrayList objectUsage = new ArrayList();
+
     public static Tracking Instance
     {
         get
@@ -20,8 +22,26 @@ public class Tracking
         }
     }
 
-    public void Test()
+    //Adds an object to an ArrayList in chronological order of use
+    public void AddObject(GameObject obj)
     {
-        Debug.Log("Success");
+        int listLength = objectUsage.Count;
+        objectUsage.Add(obj);
+    }
+
+    //Counts the amount of times an object (param obj) has been used
+    public int CountObjectUses(GameObject obj)
+    {
+        int count = 0;
+
+        foreach(GameObject a in objectUsage)
+        {
+            if(a == obj)
+            {
+                count++;
+            }
+        }
+
+        return count;
     }
 }
