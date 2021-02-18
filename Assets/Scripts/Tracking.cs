@@ -8,6 +8,8 @@ public class Tracking
     private static Tracking instance = null;
     private Tracking() { }
 
+    public readonly int MAX_TIME = 24;
+    public int timeUsed = 0;
     public ArrayList objectUsage = new ArrayList();
 
     public static Tracking Instance
@@ -43,5 +45,16 @@ public class Tracking
         }
 
         return count;
+    }
+
+    /**Adds time units for each object used (Requires a check against MAX_TIME before call)
+     * param additionalTime --> timeValue of the object
+     * returns total time units used in the day
+     */
+    public int AddUsedTime(int additionalTime)
+    {
+        timeUsed += additionalTime;
+
+        return timeUsed;
     }
 }

@@ -230,6 +230,7 @@ MonoBehaviour:
   computerScreen: {fileID: 984632356}
   connectedSprite: {fileID: 652737130}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
+  timeValue: 2
 --- !u!1 &67854295
 GameObject:
   m_ObjectHideFlags: 0

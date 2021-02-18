@@ -9,6 +9,7 @@ public class ComputerInRoom : MonoBehaviour
     public GameObject computerScreen;
     public GameObject connectedSprite;
     public Material highlight;
+    public int timeValue;
 
     private Material defaultMat;
     private bool triggerable = false;
@@ -25,7 +26,15 @@ public class ComputerInRoom : MonoBehaviour
         if (Input.GetKey(KeyCode.E) && triggerable)
         {
             tracker.AddObject(gameObject);
-            UseComputer();
+            if (tracker.timeUsed + timeValue <= tracker.MAX_TIME)
+            {
+                Debug.Log("Time units used: " + tracker.AddUsedTime(timeValue));
+                UseComputer();
+            }
+            else
+            {
+                Debug.Log("Not enough time to use object! Time remaining: " + (24 - tracker.timeUsed));
+            }
         }
     }
 
