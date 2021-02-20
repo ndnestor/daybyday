@@ -1014,8 +1014,9 @@ GameObject:
   - component: {fileID: 185836804}
   - component: {fileID: 185836803}
   - component: {fileID: 185836805}
+  - component: {fileID: 185836806}
   m_Layer: 5
-  m_Name: Image
+  m_Name: InboxScrollRect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1108,6 +1109,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &185836806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185836801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42e2290f70f2c9b40961c5e298e77149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &295891022
 GameObject:
   m_ObjectHideFlags: 0
