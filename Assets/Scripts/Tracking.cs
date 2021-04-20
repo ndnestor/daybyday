@@ -3,14 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //This class is a Singleton instance
-public class Tracking
+public class Tracking : MonoBehaviour
 {
     private static Tracking instance = null;
     private Tracking() { }
 
-    public readonly int MAX_TIME = 24;
+    public readonly int MAX_TIME = 28;
     public int timeUsed = 0;
     public ArrayList objectUsage = new ArrayList();
+
+    /*
+     * Used for window lighting
+     * Max and min brightness should be between 0 and 1 inclusive
+     */
+    private const float MAX_BRIGHTNESS = 1;
+    private const float MIN_BRIGHTNESS = 0;
+    [SerializeField] private SpriteRenderer windowPaneRenderer;
+    [SerializeField] private SpriteRenderer windowLightRenderer;
+    [SerializeField] private SpriteRenderer windowFrameHighlightRenderer;
+    [SerializeField] private Gradient middayGradient;
+    [SerializeField] private Gradient afternoonGradient;
+    [SerializeField] private Gradient opacityGradient;
 
     public static Tracking Instance
     {
@@ -54,7 +67,41 @@ public class Tracking
     public int AddUsedTime(int additionalTime)
     {
         timeUsed += additionalTime;
+        UpdateLighting();
 
         return timeUsed;
     }
+
+    /*
+     * Darkens/brightens window by modifying a shader depending on the time of day
+     * The brightness of the window is interpolated linearly between MIN_BRIGHTNESS and MAX_BRIGHTNESS
+     */
+    private void UpdateLighting()
+    {
+        float dayPercentage = (float)timeUsed / MAX_TIME;
+        float halfDayPercentage;
+        Color lightColor;
+        if(dayPercentage < 0.5) {
+            //Use midday gradient
+            halfDayPercentage = (float)timeUsed / (MAX_TIME / 2);
+            lightColor = middayGradient.Evaluate(halfDayPercentage);
+		} else {
+            //Use afternoon gradient
+            halfDayPercentage = (float)(timeUsed - MAX_TIME / 2) / (MAX_TIME / 2);
+            lightColor = afternoonGradient.Evaluate(halfDayPercentage);
+        }
+        windowFrameHighlightRenderer.color = new Color(lightColor.r, lightColor.g, lightColor.b, opacityGradient.Evaluate(dayPercentage).a);
+        windowLightRenderer.color = new Color(lightColor.r, lightColor.g, lightColor.b, opacityGradient.Evaluate(dayPercentage).a);
+        windowPaneRenderer.color = lightColor;
+    }
+
+    //Used for testing purposes. Should be deleted later
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.RightControl))
+        {
+            Debug.Log("Articifically added 1 unit of time");
+            AddUsedTime(1);
+		}
+	}
 }
