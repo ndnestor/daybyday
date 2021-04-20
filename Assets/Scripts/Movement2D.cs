@@ -11,20 +11,28 @@ public class Movement2D : MonoBehaviour
     public float orderLineY;
     public float moveSpeed = 5f;
 
+    [Range(0, 1)]
+    [SerializeField] private float ySpeedFactor;
     [SerializeField] private double moveToDistThreshold;
     [SerializeField] private Transform bedDestination;
 
     private bool isPlayerControlled = true;
     private Vector2 movement;
 
+    public static Movement2D Instance;
 
-    // Update is called once per frame
-    private void Update()
+	private void Awake()
+    {
+        Instance = this;
+	}
+
+	// Update is called once per frame
+	private void Update()
     {
         if(isPlayerControlled)
         {
             movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical") * .52f;
+            movement.y = Input.GetAxisRaw("Vertical") * ySpeedFactor;
         }
 
         if(Input.GetKeyDown("space"))
@@ -35,9 +43,7 @@ public class Movement2D : MonoBehaviour
         //NOTE: This part is used for testing. Should be removed at some point before release
         if(Input.GetKeyDown(KeyCode.M)) {
             print("Moving");
-            SetPlayerControl(false);
-            IEnumerator moveToCoroutine = MoveTo(bedDestination.position);
-            StartCoroutine(moveToCoroutine);
+            MoveTo(bedDestination.position);
         }
     }
 
@@ -73,11 +79,19 @@ public class Movement2D : MonoBehaviour
         }
     }
 
+    // Used to initialze and run MoveToCoroutine
+    public void MoveTo(Vector2 destination, System.Action callback = null) {
+        IEnumerator moveToCoroutine = MoveToCoroutine(destination, callback);
+        StartCoroutine(moveToCoroutine);
+    }
+
     // Send the character to the specified destination forcefully
     // WARN from Nathan: This doesn't really work with the current implementation of the movement variable
+    // WARN: There's a bug where sometimes the character will just run into the wall to the right forever
     // TODO: Fix
-    private IEnumerator MoveTo(Vector2 destination)
+    private IEnumerator MoveToCoroutine(Vector2 destination, System.Action callback)
     {
+        SetPlayerControl(false);
         bool completedX = false;
         bool completedY = false;
         while(!(completedY && completedX))
@@ -103,11 +117,11 @@ public class Movement2D : MonoBehaviour
             {
                 if(transform.position.y < destination.y)
                 {
-                    movement.y = 1;
+                    movement.y = ySpeedFactor;
                 }
                 else
                 {
-                    movement.y = -1;
+                    movement.y = -ySpeedFactor;
                 }
                 if(Mathf.Abs(transform.position.y - destination.y) < moveToDistThreshold)
                 {
@@ -117,5 +131,8 @@ public class Movement2D : MonoBehaviour
             yield return null;
 		}
         SetPlayerControl(true);
+        if(callback != null) {
+            callback();
+		}
 	}
 }

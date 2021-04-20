@@ -12,18 +12,16 @@ public class Tracking : MonoBehaviour
     public int timeUsed = 0;
     public ArrayList objectUsage = new ArrayList();
 
-    /*
-     * Used for window lighting
-     * Max and min brightness should be between 0 and 1 inclusive
-     */
-    private const float MAX_BRIGHTNESS = 1;
-    private const float MIN_BRIGHTNESS = 0;
+    //Used for window lighting
     [SerializeField] private SpriteRenderer windowPaneRenderer;
     [SerializeField] private SpriteRenderer windowLightRenderer;
     [SerializeField] private SpriteRenderer windowFrameHighlightRenderer;
     [SerializeField] private Gradient middayGradient;
     [SerializeField] private Gradient afternoonGradient;
     [SerializeField] private Gradient opacityGradient;
+
+    //Used for sleeping
+    [SerializeField] private Transform bedDestination;
 
     public static Tracking Instance
     {
@@ -68,24 +66,28 @@ public class Tracking : MonoBehaviour
     {
         timeUsed += additionalTime;
         UpdateLighting();
+        if(timeUsed >= MAX_TIME)
+        {
+            Sleep();
+        }
 
         return timeUsed;
     }
 
-    /*
-     * Darkens/brightens window by modifying a shader depending on the time of day
-     * The brightness of the window is interpolated linearly between MIN_BRIGHTNESS and MAX_BRIGHTNESS
-     */
+    //Tints the window pane, window light, etc. to reflect time of day changes
     private void UpdateLighting()
     {
         float dayPercentage = (float)timeUsed / MAX_TIME;
         float halfDayPercentage;
         Color lightColor;
-        if(dayPercentage < 0.5) {
+        if(dayPercentage < 0.5)
+        {
             //Use midday gradient
             halfDayPercentage = (float)timeUsed / (MAX_TIME / 2);
             lightColor = middayGradient.Evaluate(halfDayPercentage);
-		} else {
+		}
+        else
+        {
             //Use afternoon gradient
             halfDayPercentage = (float)(timeUsed - MAX_TIME / 2) / (MAX_TIME / 2);
             lightColor = afternoonGradient.Evaluate(halfDayPercentage);
@@ -94,6 +96,19 @@ public class Tracking : MonoBehaviour
         windowLightRenderer.color = new Color(lightColor.r, lightColor.g, lightColor.b, opacityGradient.Evaluate(dayPercentage).a);
         windowPaneRenderer.color = lightColor;
     }
+
+    //Moves the character to the bed to move on to the next day
+    private void Sleep() {
+        System.Action callbackAction = () =>
+        {
+            /* Code in these brackets will get called when the character is next to the bed and ready to sleep
+             * Sleep animation should start playing, sleep theme should start playing, etc
+             * Probably should disable to the Movement2D.cs script too
+             */
+            print("Sleeping");
+        };
+        Movement2D.Instance.MoveTo(bedDestination.position, callbackAction);
+	}
 
     //Used for testing purposes. Should be deleted later
     private void Update()
