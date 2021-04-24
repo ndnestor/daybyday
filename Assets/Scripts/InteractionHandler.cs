@@ -16,7 +16,7 @@ public class InteractionHandler : MonoBehaviour
 
 	// All interactable objects should call this method as the start
 	// Returns false if object has already been registered
-	private bool RegisterObject(string objectName, System.Action objectAction)
+	public bool RegisterObject(string objectName, System.Action objectAction)
 	{
 		if(registeredObjects.ContainsKey(objectName))
 		{
@@ -31,7 +31,7 @@ public class InteractionHandler : MonoBehaviour
 	}
 
 	// Calls an interaction object's action give the name of it
-	private bool Interact(string objectName)
+	public bool Interact(string objectName)
 	{
 		System.Action action = (System.Action)registeredObjects[objectName];
 		if(action != null)
