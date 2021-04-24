@@ -91,7 +91,6 @@ public class Movement2D : MonoBehaviour
     // TODO: Fix
     private IEnumerator MoveToCoroutine(Vector2 destination, System.Action callback)
     {   
-        //TODO: Forceable put player to sleep in case of soft lock. This can be accomplished using a timer
         SetPlayerControl(false);
         bool completedX = false;
         bool completedY = false;
@@ -111,6 +110,7 @@ public class Movement2D : MonoBehaviour
                 if(Mathf.Abs(transform.position.x - destination.x) < moveToDistThreshold)
                 {
                     completedX = true;
+                    movement = Vector2.zero;
 			    }
 			}
 
