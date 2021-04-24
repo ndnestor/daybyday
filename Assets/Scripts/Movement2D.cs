@@ -90,7 +90,8 @@ public class Movement2D : MonoBehaviour
     // WARN: There's a bug where sometimes the character will just run into the wall to the right forever
     // TODO: Fix
     private IEnumerator MoveToCoroutine(Vector2 destination, System.Action callback)
-    {
+    {   
+        //TODO: Forceable put player to sleep in case of soft lock. This can be accomplished using a timer
         SetPlayerControl(false);
         bool completedX = false;
         bool completedY = false;
@@ -103,7 +104,7 @@ public class Movement2D : MonoBehaviour
                     // TODO: Instead of using Vector2.right, interpolate over time to get smooth motion
                     movement = Vector2.right;
                 }
-                else
+                else if(transform.position.x > destination.x)
                 {
                     movement = Vector2.left;
                 }
@@ -119,7 +120,7 @@ public class Movement2D : MonoBehaviour
                 {
                     movement.y = ySpeedFactor;
                 }
-                else
+                else if(transform.position.y > destination.y)
                 {
                     movement.y = -ySpeedFactor;
                 }

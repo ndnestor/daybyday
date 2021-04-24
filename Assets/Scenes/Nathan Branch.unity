@@ -3460,7 +3460,7 @@ MonoBehaviour:
   orderLineY: -2.2
   moveSpeed: 5
   ySpeedFactor: 0.52
-  moveToDistThreshold: 0.1
+  moveToDistThreshold: 0.05
   bedDestination: {fileID: 1930726013}
 --- !u!4 &1904924968
 Transform:
