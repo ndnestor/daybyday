@@ -1,0 +1,29 @@
+{
+    "name": "com.thunkmonkey.fluidmidi",
+    "version": "1.0.0",
+    "displayName": "Fluid MIDI",
+    "description": "Play MIDI files in Unity",
+    "keywords": [
+        "midi",
+        "player",
+        "synth",
+        "audio",
+        "fluid",
+        "synth"
+    ],
+    "author": {
+        "name": "Thunk Monkey",
+        "email": "support@thunkmonkey.com",
+        "url": "https://www.thunkmonkey.com"
+    },
+    "type": "library",
+    "samples": [
+        {
+
+            "displayName": "Demo",
+            "description": "Play a MIDI file.",
+            "path": "Samples~/Demo"
+
+        }
+    ]
+}
