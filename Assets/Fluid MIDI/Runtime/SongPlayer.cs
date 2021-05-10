@@ -61,12 +61,13 @@ namespace FluidMidi
         float unloadDelay = -1;
 
         [SerializeField]
-        Synthesizer synthesizer;
-        [SerializeField]
-        StreamingAsset song = new StreamingAsset();
+        public Synthesizer synthesizer;
+        //[SerializeField]
+        //public StreamingAsset song = new StreamingAsset();
+        public string songPath;
         [SerializeField]
         [Tooltip("Start playing after the song is loaded for the first time.")]
-        bool playOnStart = true;
+        public bool playOnStart = true;
         [SerializeField]
         [Tooltip("Automatically unload the song when it is stopped.")]
         [ToggleIntFoldout(name = "Delay", tooltip = "Seconds to wait for notes to finish playing.")]
@@ -80,7 +81,7 @@ namespace FluidMidi
         ToggleInt endTicks = new ToggleInt(false, 0);
         [SerializeField]
         [Range(0, 10)]
-        float gain = 0.2f;
+        public float gain = 0.2f;
 
         /// <summary>
         /// Start playing the song from the beginning.
@@ -227,12 +228,13 @@ namespace FluidMidi
             synthPtr = Api.Synth.Create(Settings.Ptr);
             Api.Synth.SetGain(synthPtr, gain);
             playerPtr = Api.Player.Create(synthPtr);
-            string songPath = song.GetFullPath();
+            //string songPath = song.GetFullPath();
             if (songPath.Length > 0)
             {
                 if (File.Exists(songPath))
                 {
-                    Api.Player.Add(playerPtr, song.GetFullPath());
+                    //Api.Player.Add(playerPtr, song.GetFullPath());
+                    Api.Player.Add(playerPtr, songPath);
                 }
                 else
                 {
@@ -337,11 +339,11 @@ namespace FluidMidi
             {
                 endTicks.Value = 0;
             }
-            string songPath = song.GetFullPath();
+            //string songPath = song.GetFullPath();
             if (songPath.Length > 0 && Api.Misc.IsMidiFile(songPath) == 0)
             {
                 Logger.LogError("Not a MIDI file: " + songPath);
-                song.SetFullPath(string.Empty);
+                //song.SetFullPath(string.Empty);
             }
             if (synthPtr != IntPtr.Zero)
             {
