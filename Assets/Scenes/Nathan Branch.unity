@@ -3237,7 +3237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1581243648}
   - component: {fileID: 1581243651}
-  - component: {fileID: 1581243650}
+  - component: {fileID: 1581243649}
   - component: {fileID: 1581243652}
   m_Layer: 0
   m_Name: Piano Interaction
@@ -3261,7 +3261,7 @@ Transform:
   m_Father: {fileID: 2002995895}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1581243650
+--- !u!114 &1581243649
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3274,7 +3274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundFont:
-    path: Sound Fonts/GeneralUser GS v1.471.sf2
+    path: Sound Fonts/Grand Piano.sf2
 --- !u!114 &1581243651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3287,9 +3287,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc6740eb30161c4daf1c6a2ae8d4211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gain: 0.4
-  startingOctave: 5
+  gain: 1
+  startingOctave: 4
   endingOctave: 6
+  synthesizers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1581243649}
 --- !u!82 &1581243652
 AudioSource:
   m_ObjectHideFlags: 0
