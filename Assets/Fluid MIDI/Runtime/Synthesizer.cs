@@ -11,7 +11,7 @@ namespace FluidMidi
     public class Synthesizer : MonoBehaviour
     {
         [SerializeField]
-        StreamingAsset soundFont = new StreamingAsset();
+        public StreamingAsset soundFont = new StreamingAsset();
 
         struct LoadSoundFontJob : IJob
         {
@@ -89,7 +89,7 @@ namespace FluidMidi
             }
         }
 
-        void OnEnable()
+        public void OnEnable()
         {
             AddReference();
         }
