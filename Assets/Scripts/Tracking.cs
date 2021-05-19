@@ -83,13 +83,13 @@ public class Tracking : MonoBehaviour
         if(dayPercentage < 0.5)
         {
             //Use midday gradient
-            halfDayPercentage = (float)timeUsed / (MAX_TIME / 2);
+            halfDayPercentage = timeUsed / ((float)MAX_TIME / 2);
             lightColor = middayGradient.Evaluate(halfDayPercentage);
 		}
         else
         {
             //Use afternoon gradient
-            halfDayPercentage = (float)(timeUsed - MAX_TIME / 2) / (MAX_TIME / 2);
+            halfDayPercentage = (timeUsed - MAX_TIME / 2) / ((float)MAX_TIME / 2);
             lightColor = afternoonGradient.Evaluate(halfDayPercentage);
         }
         windowFrameHighlightRenderer.color = new Color(lightColor.r, lightColor.g, lightColor.b, opacityGradient.Evaluate(dayPercentage).a);
@@ -99,16 +99,16 @@ public class Tracking : MonoBehaviour
 
     //Moves the character to the bed to move on to the next day
     private void Sleep() {
-        System.Action callbackAction = () =>
-        {
+        void CallbackAction() {
             /* Code in these brackets will get called when the character is next to the bed and ready to sleep
              * Sleep animation should start playing, sleep theme should start playing, etc
              * Probably should disable to the Movement2D.cs script too
              */
             print("Sleeping");
-        };
-        Movement2D.Instance.MoveTo(bedDestination.position, callbackAction);
-	}
+        }
+
+        Movement2D.Instance.MoveTo(bedDestination.position, CallbackAction);
+    }
 
     //Used for testing purposes. Should be deleted later
     private void Update()
