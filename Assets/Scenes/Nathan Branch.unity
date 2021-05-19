@@ -3245,7 +3245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1581243648
 Transform:
   m_ObjectHideFlags: 0
@@ -3290,14 +3290,6 @@ MonoBehaviour:
   gain: 1
   startingOctave: 4
   endingOctave: 6
-  synthesizers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 1581243649}
 --- !u!82 &1581243652
 AudioSource:
   m_ObjectHideFlags: 0
