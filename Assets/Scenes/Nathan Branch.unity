@@ -841,7 +841,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &231473489
 MonoBehaviour:
@@ -855,12 +855,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5150aeb73c5f92a4092a4e2167a3d8a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neglectedPianoSprite: {fileID: 0}
-  neglectedYogaMatSprite: {fileID: 0}
-  neglectedComputerSprite: {fileID: 0}
-  neglectedBookshelfSprite: {fileID: 0}
-  neglectedWindowSprite: {fileID: 0}
-  neglectedWindowLightSprite: {fileID: 0}
+  neglectedPianoSprite: {fileID: 21300000, guid: 61ae4143a4fafeb48a9cbbee093e4031, type: 3}
+  neglectedYogaMatSprite: {fileID: 21300000, guid: 5525a46b051941f48b490c17e52c0e35, type: 3}
+  neglectedComputerSprite: {fileID: 21300000, guid: fac8abf1d743e2a4496ae2040bf19637, type: 3}
+  neglectedBookshelfSprite: {fileID: 21300000, guid: 695941c27236b584eaa64573ffee780c, type: 3}
+  neglectedWindowSprite: {fileID: 21300000, guid: 4816f4585a1b47244834de9aa2bf21de, type: 3}
+  neglectedWindowLightSprite: {fileID: 21300000, guid: 3c535781fc34dba4aad698ee03fe6085, type: 3}
+  normalPianoSprite: {fileID: 21300000, guid: 3dbc3f3fcc7eb70439154b5b2f1891e7, type: 3}
+  normalYogaMatSprite: {fileID: 21300000, guid: 6c1bb2b8cc22b1747943f6eb8a647791, type: 3}
+  normalComputerSprite: {fileID: 21300000, guid: 2c85881320d368143b1d49c868609f9b, type: 3}
+  normalBookshelfSprite: {fileID: 21300000, guid: 398426f2a11257943942b34c13e3bf05, type: 3}
+  normalWindowSprite: {fileID: 21300000, guid: c35908c9f590e374ca42d16a8e44c217, type: 3}
+  normalWindowLightSprite: {fileID: 21300000, guid: b54f37d5c371b7343a7d0eaea28fdb01, type: 3}
+  pianoRenderer: {fileID: 2130602364}
+  yogaMatRenderer: {fileID: 732870695}
+  computerRenderer: {fileID: 652737131}
+  bookshelfRenderer: {fileID: 144138928}
+  windowRenderer: {fileID: 870970937}
+  windowLightRenderer: {fileID: 511001135}
 --- !u!1 &295891022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3813,7 +3825,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2002995892
 GameObject:

@@ -13,6 +13,21 @@ public class InteractionHandler : MonoBehaviour
 	[SerializeField] private Sprite neglectedBookshelfSprite;
 	[SerializeField] private Sprite neglectedWindowSprite;
 	[SerializeField] private Sprite neglectedWindowLightSprite;
+	
+	[SerializeField] private Sprite normalPianoSprite;
+	[SerializeField] private Sprite normalYogaMatSprite;
+	[SerializeField] private Sprite normalComputerSprite;
+	[SerializeField] private Sprite normalBookshelfSprite;
+	[SerializeField] private Sprite normalWindowSprite;
+	[SerializeField] private Sprite normalWindowLightSprite;
+	
+	[SerializeField] private SpriteRenderer pianoRenderer;
+	[SerializeField] private SpriteRenderer yogaMatRenderer;
+	[SerializeField] private SpriteRenderer computerRenderer;
+	[SerializeField] private SpriteRenderer bookshelfRenderer;
+	[SerializeField] private SpriteRenderer windowRenderer;
+	[SerializeField] private SpriteRenderer windowLightRenderer;
+	
 	private Hashtable objectNeglection = new Hashtable(); // Key: string | Value: bool
 
 	[HideInInspector] public static InteractionHandler Instance;
@@ -60,9 +75,52 @@ public class InteractionHandler : MonoBehaviour
 		{
 			if((bool)objectNeglection[objectName])
 			{
-				switch(objectName) {
+				switch(objectName)
+				{
 					case "Piano":
-						// TODO: Finish this
+						pianoRenderer.sprite = neglectedPianoSprite;
+						break;
+					case "Yoga Mate":
+						yogaMatRenderer.sprite = neglectedYogaMatSprite;
+						break;
+					case "Computer":
+						computerRenderer.sprite = neglectedComputerSprite;
+						break;
+					case "Bookshelf":
+						bookshelfRenderer.sprite = neglectedBookshelfSprite;
+						break;
+					case "Window":
+						windowRenderer.sprite = neglectedWindowSprite;
+						windowLightRenderer.sprite = neglectedWindowLightSprite;
+						break;
+					default:
+						Debug.LogError("Invalid object name provided");
+						break;
+				}
+			}
+			else
+			{
+				switch(objectName)
+				{
+					case "Piano":
+						pianoRenderer.sprite = normalPianoSprite;
+						break;
+					case "Yoga Mate":
+						yogaMatRenderer.sprite = normalYogaMatSprite;
+						break;
+					case "Computer":
+						computerRenderer.sprite = normalComputerSprite;
+						break;
+					case "Bookshelf":
+						bookshelfRenderer.sprite = normalBookshelfSprite;
+						break;
+					case "Window":
+						windowRenderer.sprite = normalWindowSprite;
+						windowLightRenderer.sprite = normalWindowLightSprite;
+						break;
+					default:
+						Debug.LogError("Invalid object name provided");
+						break;
 				}
 			}
 		}
