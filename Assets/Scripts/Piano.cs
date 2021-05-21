@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FluidMidi;
+//using FluidMidi;
 using System.IO;
 
-public class Piano : MonoBehaviour
+public class Piano : MonoBehaviour //NOTE: THIS SCRIPT IS DEPRECATED
 {
 
-    [SerializeField] private float gain;
+    /*[SerializeField] private float gain;
     [SerializeField] private int startingOctave;
     [SerializeField] private int endingOctave;
 
@@ -62,5 +62,5 @@ public class Piano : MonoBehaviour
 			}
         }
 
-    }
+    }*/
 }
