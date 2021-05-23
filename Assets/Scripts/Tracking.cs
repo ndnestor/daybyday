@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 //This class is a Singleton instance
 public class Tracking : MonoBehaviour
 {
-    private static Tracking instance = null;
+    public static Tracking Instance { get; private set; }
     private Tracking() { }
 
     public readonly int MAX_TIME = 28;
@@ -22,17 +23,10 @@ public class Tracking : MonoBehaviour
 
     //Used for sleeping
     [SerializeField] private Transform bedDestination;
-
-    public static Tracking Instance
+    
+    private void Start()
     {
-        get
-        {
-            if(instance == null)
-            {
-                instance = new Tracking();
-            }
-            return instance;
-        }
+        Instance = this;
     }
 
     //Adds an object to an ArrayList in chronological order of use
