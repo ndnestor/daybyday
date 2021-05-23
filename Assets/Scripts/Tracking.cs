@@ -7,7 +7,6 @@ using UnityEngine;
 public class Tracking : MonoBehaviour
 {
     public static Tracking Instance { get; private set; }
-    private Tracking() { }
 
     public readonly int MAX_TIME = 28;
     public int timeUsed = 0;
@@ -92,8 +91,10 @@ public class Tracking : MonoBehaviour
     }
 
     //Moves the character to the bed to move on to the next day
-    private void Sleep() {
-        void CallbackAction() {
+    private void Sleep()
+    {
+        void CallbackAction()
+        {
             /* Code in these brackets will get called when the character is next to the bed and ready to sleep
              * Sleep animation should start playing, sleep theme should start playing, etc
              * Probably should disable to the Movement2D.cs script too
@@ -109,7 +110,7 @@ public class Tracking : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.RightControl))
         {
-            Debug.Log("Articifically added 1 unit of time");
+            Debug.Log("Artificially added 1 unit of time");
             AddUsedTime(1);
 		}
 	}
