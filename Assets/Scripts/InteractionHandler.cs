@@ -27,7 +27,7 @@ public class InteractionHandler : MonoBehaviour
 	[SerializeField] private SpriteRenderer bookshelfRenderer;
 	[SerializeField] private SpriteRenderer windowRenderer;
 	[SerializeField] private SpriteRenderer windowLightRenderer;
-	
+
 	private Hashtable objectNeglection = new Hashtable(); // Key: string | Value: bool
 
 	[HideInInspector] public static InteractionHandler Instance;
