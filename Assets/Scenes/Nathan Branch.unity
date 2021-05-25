@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 144138929}
   - component: {fileID: 144138928}
   m_Layer: 0
-  m_Name: Empty Bookcase
+  m_Name: Bookcase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -682,7 +682,7 @@ SpriteRenderer:
   m_SortingLayerID: -1392386313
   m_SortingLayer: 3
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 398426f2a11257943942b34c13e3bf05, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a81021cb38abe1f468d2ecbebf36f815, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -864,13 +864,13 @@ MonoBehaviour:
   normalPianoSprite: {fileID: 21300000, guid: 3dbc3f3fcc7eb70439154b5b2f1891e7, type: 3}
   normalYogaMatSprite: {fileID: 21300000, guid: 6c1bb2b8cc22b1747943f6eb8a647791, type: 3}
   normalComputerSprite: {fileID: 21300000, guid: 2c85881320d368143b1d49c868609f9b, type: 3}
-  normalBookshelfSprite: {fileID: 21300000, guid: f9a950bad4859864390885ef53a963a8, type: 3}
+  normalBookshelfSprite: {fileID: 21300000, guid: a81021cb38abe1f468d2ecbebf36f815, type: 3}
   normalWindowSprite: {fileID: 21300000, guid: c35908c9f590e374ca42d16a8e44c217, type: 3}
   normalWindowLightSprite: {fileID: 21300000, guid: b54f37d5c371b7343a7d0eaea28fdb01, type: 3}
   pianoRenderer: {fileID: 2130602364}
   yogaMatRenderer: {fileID: 732870695}
   computerRenderer: {fileID: 652737131}
-  bookshelfRenderer: {fileID: 601693421}
+  bookshelfRenderer: {fileID: 0}
   windowRenderer: {fileID: 870970937}
   windowLightRenderer: {fileID: 1210882081}
 --- !u!1 &295891022
@@ -1314,88 +1314,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 954206955}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &601693420
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 601693422}
-  - component: {fileID: 601693421}
-  m_Layer: 0
-  m_Name: Bookcase Contents
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &601693421
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 601693420}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1392386313
-  m_SortingLayer: 3
-  m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: f9a950bad4859864390885ef53a963a8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.8125, y: 1.375}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &601693422
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 601693420}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.284277, y: 0.7722999, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1449526118}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &606547392
 GameObject:
@@ -3087,7 +3005,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1449526118}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1449526116
 GameObject:
@@ -3144,7 +3062,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 144138929}
-  - {fileID: 601693422}
   - {fileID: 1281111985}
   m_Father: {fileID: 0}
   m_RootOrder: 5
