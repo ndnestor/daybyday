@@ -40,7 +40,7 @@ public class ProfileScreen : MonoBehaviour {
         
         // Set its location
         int dayNum = Tracking.Instance.dayNum;
-        float xPos = (barPadding + barWidth + 0.5f) * (dayNum - 1);
+        float xPos = (barPadding + barWidth) * (dayNum - 1);
         float yPos = barHeights[dayNum - 1] + 0.5f * barHeight;
         newBarChartSection.transform.localPosition = new Vector3(xPos, yPos, 0);
         
