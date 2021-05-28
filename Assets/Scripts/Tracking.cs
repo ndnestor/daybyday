@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,8 +7,9 @@ public class Tracking : MonoBehaviour
 {
     public static Tracking Instance { get; private set; }
 
-    [HideInInspector] public int dayNum { get; private set; }
-    public readonly int MAX_TIME = 28;
+    [HideInInspector] public int DayNum { get; private set; }
+    public const int MAX_DAYS = 10;
+    public const int MAX_TIME = 28;
     public int timeUsed = 0;
     public ArrayList objectUsage = new ArrayList();
 
@@ -27,7 +27,7 @@ public class Tracking : MonoBehaviour
     private void Start()
     {
         Instance = this;
-        dayNum = 1;
+        DayNum = 1;
     }
 
     //Adds an object to an ArrayList in chronological order of use
@@ -118,7 +118,7 @@ public class Tracking : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.N))
         {
             Debug.Log("Artificially moved to the next day");
-            dayNum++;
+            DayNum++;
         }
     }
 }
