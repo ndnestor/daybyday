@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee8ebb36e06c44428745e702023ee5b, type: 3}
+  m_Name: AgentRegistry
+  m_EditorClassIdentifier: 
+  initPairList:
+  - id: player
+    value: {fileID: 11400000, guid: c93289b7e51c68f43888488908f83132, type: 2}
+  - id: player
+    value: {fileID: 11400000, guid: c93289b7e51c68f43888488908f83132, type: 2}
+  agentPairs:
+  - id: player
+    value: {fileID: 11400000, guid: c93289b7e51c68f43888488908f83132, type: 2}
+  ErrorTexture: {fileID: 21300000, guid: 0f400ad80e0b8a84ea47f03788d48241, type: 3}
