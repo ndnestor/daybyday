@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Computer;
 using UnityEngine;
 
 //This class is a Singleton instance
@@ -102,6 +103,7 @@ public class Tracking : MonoBehaviour
              * Probably should disable to the Movement2D.cs script too
              */
             print("Sleeping");
+            ProfileScreen.Instance.ResetTodaysActivityTimes();
         }
 
         Movement2D.Instance.MoveTo(bedDestination.position, CallbackAction);
@@ -119,6 +121,7 @@ public class Tracking : MonoBehaviour
         {
             Debug.Log("Artificially moved to the next day");
             DayNum++;
+            ProfileScreen.Instance.ResetTodaysActivityTimes();
         }
     }
 }
