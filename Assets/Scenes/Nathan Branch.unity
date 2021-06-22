@@ -228,6 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedSprite: {fileID: 652737130}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
+  triggerable: 0
 --- !u!1 &90694644
 GameObject:
   m_ObjectHideFlags: 0
@@ -2049,6 +2050,7 @@ GameObject:
   - component: {fileID: 893671293}
   - component: {fileID: 893671292}
   - component: {fileID: 893671296}
+  - component: {fileID: 893671295}
   m_Layer: 0
   m_Name: Bonsai Object
   m_TagString: Untagged
@@ -2125,6 +2127,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &893671295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893671291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49899abae61db874d878bdb195d4fc19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterCan: {fileID: 2453544803732008215, guid: 96865aa80663ae04ba25379d80a643c1, type: 3}
+  treeObject: {fileID: 893671291}
+  wateringObj: {fileID: 3786216633509068024, guid: 5169a8a51d7775648b676a8fc5bd16b3, type: 3}
+  interacting: 0
+  level: 0
+  interactionHandler: {fileID: 231473489}
+  highlightObject: {fileID: 893671296}
 --- !u!114 &893671296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2139,6 +2160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedSprite: {fileID: 1345093767}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
+  triggerable: 0
 --- !u!1 &911217087
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,6 +2319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedSprite: {fileID: 0}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
+  triggerable: 0
 --- !u!1 &1066270141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,6 +2435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedSprite: {fileID: 687365177}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
+  triggerable: 0
 --- !u!60 &1108512515
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2679,6 +2703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedSprite: {fileID: 407798833}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
+  triggerable: 0
 --- !u!1 &1210882079
 GameObject:
   m_ObjectHideFlags: 0
@@ -3004,6 +3029,7 @@ MonoBehaviour:
   w3l1_Apr: {fileID: 21300000, guid: 2611822ea18373641b2af5f5e6205683, type: 3}
   w3l1_May: {fileID: 21300000, guid: 198aded4907119a40aab8b3fbdf4f925, type: 3}
   w3l2_May: {fileID: 21300000, guid: 7e7638517ccae2b449c17f22a1b84e7e, type: 3}
+  bonsaiObject: {fileID: 893671291}
 --- !u!212 &1345093770
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3223,6 +3249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedSprite: {fileID: 732870694}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
+  triggerable: 0
 --- !u!1 &1581243647
 GameObject:
   m_ObjectHideFlags: 0
@@ -3895,6 +3922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedSprite: {fileID: 2130602363}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
+  triggerable: 0
 --- !u!1 &2006849133
 GameObject:
   m_ObjectHideFlags: 0

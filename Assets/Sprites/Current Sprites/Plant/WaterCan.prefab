@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 300464824879478746}
   - component: {fileID: 6148613256831354758}
+  - component: {fileID: 2501678952526411237}
   m_Layer: 0
   m_Name: WaterCan
   m_TagString: Untagged
@@ -82,3 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2501678952526411237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453544803732008215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7883a1492cc9148868887d5b751b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 1.5

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3786216633509068027}
   - component: {fileID: 3786216633509068026}
   - component: {fileID: 3786216633509068025}
+  - component: {fileID: 7713630079598184933}
   m_Layer: 0
   m_Name: wateringObj
   m_TagString: Untagged
@@ -102,3 +103,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7713630079598184933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3786216633509068024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7883a1492cc9148868887d5b751b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 1.5

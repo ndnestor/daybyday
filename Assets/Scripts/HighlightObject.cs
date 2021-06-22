@@ -8,7 +8,7 @@ public class HighlightObject : MonoBehaviour
     public Material highlight;
 
     private Material defaultMat;
-    private bool triggerable = false;
+    public bool triggerable = false;
 
     private void Start()
     {
