@@ -5,9 +5,8 @@ using UnityEngine;
 public class treeColor : MonoBehaviour
 {
     public SpriteRenderer treeSprite;
-    public int week;
-    public int level;
-    public int month;
+    public int week, level, month;
+    public Tracking dayTracker;
 
     // Sprites relevant to Week 1 Level 1
     public Sprite w1l1;
@@ -26,8 +25,14 @@ public class treeColor : MonoBehaviour
     // Sprites reused across Week 3 Level 1-3
     public Sprite w3l1_Apr, w3l1_May, w3l2_May;
 
+    public GameObject bonsaiObject;
+
     // Start is called before the first frame update
-    
+    void Start() {
+        WaterPlant waterPlant = bonsaiObject.GetComponent<WaterPlant>();
+        level = waterPlant.level;
+    }
+
     void Update()
     {
         if (week == 1) {
