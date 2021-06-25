@@ -402,8 +402,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 123052650}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 893671294}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -830,6 +830,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 4
   bedDestination: {fileID: 1930726013}
+  treeWater: {fileID: 893671295}
 --- !u!4 &231473488
 Transform:
   m_ObjectHideFlags: 0
@@ -842,7 +843,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &231473489
 MonoBehaviour:
@@ -1232,7 +1233,7 @@ Transform:
   - {fileID: 1774659956}
   - {fileID: 745217882}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &511001134
 GameObject:
@@ -1462,7 +1463,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &652737130
 GameObject:
@@ -2051,6 +2052,7 @@ GameObject:
   - component: {fileID: 893671292}
   - component: {fileID: 893671296}
   - component: {fileID: 893671295}
+  - component: {fileID: 893671297}
   m_Layer: 0
   m_Name: Bonsai Object
   m_TagString: Untagged
@@ -2124,6 +2126,7 @@ Transform:
   - {fileID: 1345093768}
   - {fileID: 1743024388}
   - {fileID: 675135382}
+  - {fileID: 118290024}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2142,8 +2145,8 @@ MonoBehaviour:
   waterCan: {fileID: 2453544803732008215, guid: 96865aa80663ae04ba25379d80a643c1, type: 3}
   treeObject: {fileID: 893671291}
   wateringObj: {fileID: 3786216633509068024, guid: 5169a8a51d7775648b676a8fc5bd16b3, type: 3}
-  interacting: 0
-  level: 0
+  level: 3
+  day: 3
   interactionHandler: {fileID: 231473489}
   highlightObject: {fileID: 893671296}
 --- !u!114 &893671296
@@ -2161,6 +2164,54 @@ MonoBehaviour:
   connectedSprite: {fileID: 1345093767}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
   triggerable: 0
+--- !u!114 &893671297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893671291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1fdcc7d2b81e9e41a9b7e125719088b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeSprite: {fileID: 1345093770}
+  week: 0
+  level: 0
+  month: 1
+  w1l1: {fileID: 21300000, guid: 0b18667ef4fa2c24e842d72c0f8ba92e, type: 3}
+  w2l1: {fileID: 21300000, guid: 90b03f64f03fb7640890186671b04e0d, type: 3}
+  w2l2_JanFebNovDec: {fileID: 21300000, guid: 33b35f930fee87f4c80e5adeb68fbb56, type: 3}
+  w2l2_Mar: {fileID: 21300000, guid: 6f880f0ab04079947ac31020d8cd58cc, type: 3}
+  w2l2_Apr: {fileID: 21300000, guid: c19265bd86bde71448b49bb4cf107787, type: 3}
+  w2l2_May: {fileID: 21300000, guid: 99fa1b9714ca915448a212af8cc9495a, type: 3}
+  w2l2_Jun: {fileID: 21300000, guid: 848e73fa691f599449403c3861cef73e, type: 3}
+  w2l2_Jul: {fileID: 21300000, guid: 13e2877657607bf43847ca18351e0c52, type: 3}
+  w2l2_Aug: {fileID: 21300000, guid: f86f36588e76a654c846c8081372a7c8, type: 3}
+  w2l2_Sep: {fileID: 21300000, guid: 4ebd74b488f0bd24fb4751a9c71e9da3, type: 3}
+  w2l2_Oct: {fileID: 21300000, guid: 214a10e518887d2479bdf5fa5d594bf6, type: 3}
+  w3l1_JanFebMarOctNovDec: {fileID: 21300000, guid: 0e2e277299df55640a8eefc58c0f7e7d, type: 3}
+  w3l1_JunJulAug: {fileID: 21300000, guid: bd7c7496595633d45a69f8275c67aa4a, type: 3}
+  w3l1_Sep: {fileID: 21300000, guid: c522e2325b160934d8324c4f5ce0a811, type: 3}
+  w3l2_JanFebNovDec: {fileID: 21300000, guid: a01935c746441c04490cb50d3baf1d03, type: 3}
+  w3l2_JunJulyAug: {fileID: 21300000, guid: 348f274208bb888478be3be978e63adf, type: 3}
+  w3l2_Sep: {fileID: 21300000, guid: 770e80a61904f5b45b472ff6c611d43e, type: 3}
+  w3l2_Oct: {fileID: 21300000, guid: e56fec7b3459abb468da8c52632530a7, type: 3}
+  w3l3_JanFebNov: {fileID: 21300000, guid: deea828f36d602943b35fe58f87c0f76, type: 3}
+  w3l3_Mar: {fileID: 21300000, guid: 88751f96aa148f848a4e059b08dcfde5, type: 3}
+  w3l3_May: {fileID: 21300000, guid: 8b1863a0f2ba3fc4dae2743102504473, type: 3}
+  w3l3_Jun: {fileID: 21300000, guid: 95a3569eccfce9c42b5ac8ec2daa09ad, type: 3}
+  w3l3_Jul: {fileID: 21300000, guid: 197f2a32e424b1a4aac2728bc7f557e3, type: 3}
+  w3l3_Aug: {fileID: 21300000, guid: fd12d57c837fde14798d0bb0727ac12c, type: 3}
+  w3l3_Sep: {fileID: 21300000, guid: 8fe7029addab14b4ea569aa04c03b264, type: 3}
+  w3l3_Oct: {fileID: 21300000, guid: d5d562079210ea4429ff47419ac89391, type: 3}
+  w3l3_Dec: {fileID: 21300000, guid: 946eaba942a0dd843b237789eed53224, type: 3}
+  w3l1_Apr: {fileID: 21300000, guid: 2611822ea18373641b2af5f5e6205683, type: 3}
+  w3l1_May: {fileID: 21300000, guid: 198aded4907119a40aab8b3fbdf4f925, type: 3}
+  w3l2_May: {fileID: 21300000, guid: 7e7638517ccae2b449c17f22a1b84e7e, type: 3}
+  bonsaiObject: {fileID: 893671291}
+  waterPlant: {fileID: 893671295}
 --- !u!1 &911217087
 GameObject:
   m_ObjectHideFlags: 0
@@ -2960,7 +3011,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1345093768}
   - component: {fileID: 1345093770}
-  - component: {fileID: 1345093769}
   m_Layer: 0
   m_Name: Bonsai
   m_TagString: Untagged
@@ -2982,54 +3032,6 @@ Transform:
   m_Father: {fileID: 893671294}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1345093769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345093767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1fdcc7d2b81e9e41a9b7e125719088b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  treeSprite: {fileID: 1345093770}
-  week: 3
-  level: 3
-  month: 1
-  dayTracker: {fileID: 231473487}
-  w1l1: {fileID: 21300000, guid: 0b18667ef4fa2c24e842d72c0f8ba92e, type: 3}
-  w2l1: {fileID: 21300000, guid: 90b03f64f03fb7640890186671b04e0d, type: 3}
-  w2l2_JanFebNovDec: {fileID: 21300000, guid: 33b35f930fee87f4c80e5adeb68fbb56, type: 3}
-  w2l2_Mar: {fileID: 21300000, guid: 6f880f0ab04079947ac31020d8cd58cc, type: 3}
-  w2l2_Apr: {fileID: 21300000, guid: c19265bd86bde71448b49bb4cf107787, type: 3}
-  w2l2_May: {fileID: 21300000, guid: 99fa1b9714ca915448a212af8cc9495a, type: 3}
-  w2l2_Jun: {fileID: 21300000, guid: 848e73fa691f599449403c3861cef73e, type: 3}
-  w2l2_Jul: {fileID: 21300000, guid: 13e2877657607bf43847ca18351e0c52, type: 3}
-  w2l2_Aug: {fileID: 21300000, guid: f86f36588e76a654c846c8081372a7c8, type: 3}
-  w2l2_Sep: {fileID: 21300000, guid: 4ebd74b488f0bd24fb4751a9c71e9da3, type: 3}
-  w2l2_Oct: {fileID: 21300000, guid: 214a10e518887d2479bdf5fa5d594bf6, type: 3}
-  w3l1_JanFebMarOctNovDec: {fileID: 21300000, guid: 0e2e277299df55640a8eefc58c0f7e7d, type: 3}
-  w3l1_JunJulAug: {fileID: 21300000, guid: bd7c7496595633d45a69f8275c67aa4a, type: 3}
-  w3l1_Sep: {fileID: 21300000, guid: c522e2325b160934d8324c4f5ce0a811, type: 3}
-  w3l2_JanFebNovDec: {fileID: 21300000, guid: a01935c746441c04490cb50d3baf1d03, type: 3}
-  w3l2_JunJulyAug: {fileID: 21300000, guid: 348f274208bb888478be3be978e63adf, type: 3}
-  w3l2_Sep: {fileID: 21300000, guid: 770e80a61904f5b45b472ff6c611d43e, type: 3}
-  w3l2_Oct: {fileID: 21300000, guid: e56fec7b3459abb468da8c52632530a7, type: 3}
-  w3l3_JanFebNov: {fileID: 21300000, guid: deea828f36d602943b35fe58f87c0f76, type: 3}
-  w3l3_Mar: {fileID: 21300000, guid: 88751f96aa148f848a4e059b08dcfde5, type: 3}
-  w3l3_May: {fileID: 21300000, guid: 8b1863a0f2ba3fc4dae2743102504473, type: 3}
-  w3l3_Jun: {fileID: 21300000, guid: 95a3569eccfce9c42b5ac8ec2daa09ad, type: 3}
-  w3l3_Jul: {fileID: 21300000, guid: 197f2a32e424b1a4aac2728bc7f557e3, type: 3}
-  w3l3_Aug: {fileID: 21300000, guid: fd12d57c837fde14798d0bb0727ac12c, type: 3}
-  w3l3_Sep: {fileID: 21300000, guid: 8fe7029addab14b4ea569aa04c03b264, type: 3}
-  w3l3_Oct: {fileID: 21300000, guid: d5d562079210ea4429ff47419ac89391, type: 3}
-  w3l3_Dec: {fileID: 21300000, guid: 946eaba942a0dd843b237789eed53224, type: 3}
-  w3l1_Apr: {fileID: 21300000, guid: 2611822ea18373641b2af5f5e6205683, type: 3}
-  w3l1_May: {fileID: 21300000, guid: 198aded4907119a40aab8b3fbdf4f925, type: 3}
-  w3l2_May: {fileID: 21300000, guid: 7e7638517ccae2b449c17f22a1b84e7e, type: 3}
-  bonsaiObject: {fileID: 893671291}
 --- !u!212 &1345093770
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3812,7 +3814,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2002995892
 GameObject:

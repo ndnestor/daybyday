@@ -24,6 +24,9 @@ public class Tracking : MonoBehaviour
 
     //Used for sleeping
     [SerializeField] private Transform bedDestination;
+
+    // WaterPlant component for tree to call for update level/day every day
+    public WaterPlant treeWater;
     
     private void Start()
     {
@@ -104,6 +107,7 @@ public class Tracking : MonoBehaviour
              */
             print("Sleeping");
             ProfileScreen.Instance.ResetTodaysActivityTimes();
+            treeWater.dayUpdate();
         }
 
         Movement2D.Instance.MoveTo(bedDestination.position, CallbackAction);

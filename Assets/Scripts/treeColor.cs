@@ -6,7 +6,7 @@ public class treeColor : MonoBehaviour
 {
     public SpriteRenderer treeSprite;
     public int week, level, month;
-    public Tracking dayTracker;
+    //public Tracking dayTracker;
 
     // Sprites relevant to Week 1 Level 1
     public Sprite w1l1;
@@ -26,15 +26,18 @@ public class treeColor : MonoBehaviour
     public Sprite w3l1_Apr, w3l1_May, w3l2_May;
 
     public GameObject bonsaiObject;
+    public WaterPlant waterPlant;
+    
 
     // Start is called before the first frame update
     void Start() {
-        WaterPlant waterPlant = bonsaiObject.GetComponent<WaterPlant>();
-        level = waterPlant.level;
+        //WaterPlant waterPlant = bonsaiObject.GetComponent<WaterPlant>();
     }
 
     void Update()
     {
+        level = waterPlant.level;
+        week = waterPlant.day;
         if (week == 1) {
             treeSprite.sprite = w1l1;
         }
@@ -83,6 +86,9 @@ public class treeColor : MonoBehaviour
                 else if (month == 6 || month == 7 || month == 8) {
                     treeSprite.sprite = w3l1_JunJulAug;
                 }
+                else if (month == 9) {
+                    treeSprite.sprite = w3l1_Sep;
+                }
                 else {
                     treeSprite.sprite = w3l1_JanFebMarOctNovDec;
                 }
@@ -91,22 +97,22 @@ public class treeColor : MonoBehaviour
                 if (month == 3) {
                     treeSprite.sprite = w3l1_Apr;
                 }
-                if (month == 4) {
+                else if (month == 4) {
                     treeSprite.sprite = w3l1_May;
                 }
-                if (month == 5) {
+                else if (month == 5) {
                     treeSprite.sprite = w3l2_May;
                 }
-                if (month == 6 || month == 7 || month == 8) {
+                else if (month == 6 || month == 7 || month == 8) {
                     treeSprite.sprite = w3l2_JunJulyAug;
                 }
-                if (month == 9) {
+                else if (month == 9) {
                     treeSprite.sprite = w3l2_Sep;
                 }
-                if (month == 10) {
+                else if (month == 10) {
                     treeSprite.sprite = w3l2_Oct;
                 }
-                else {
+                else if (month == 1 || month == 2 || month == 11 || month == 12) {
                     treeSprite.sprite = w3l2_JanFebNovDec;
                 }
             }
@@ -114,31 +120,31 @@ public class treeColor : MonoBehaviour
                 if (month == 1 || month == 2 || month == 11) {
                     treeSprite.sprite = w3l3_JanFebNov;
                 }
-                if (month == 3) {
+                else if (month == 3) {
                     treeSprite.sprite = w3l3_Mar;
                 }
-                if (month == 4) {
+                else if (month == 4) {
                     treeSprite.sprite = w3l2_May;
                 }
-                if (month == 5) {
+                else if (month == 5) {
                     treeSprite.sprite = w3l3_May;
                 }
-                if (month == 6) {
+                else if (month == 6) {
                     treeSprite.sprite = w3l3_Jun;
                 }
-                if (month == 7) {
+                else if (month == 7) {
                     treeSprite.sprite = w3l3_Jul;
                 }
-                if (month == 8) {
+                else if (month == 8) {
                     treeSprite.sprite = w3l3_Aug;
                 }
-                if (month == 9) {
+                else if (month == 9) {
                     treeSprite.sprite = w3l3_Sep;
                 }
-                if (month == 10) {
+                else if (month == 10) {
                     treeSprite.sprite = w3l3_Oct;
                 }
-                if (month == 12) {
+                else if (month == 12) {
                     treeSprite.sprite = w3l3_Dec;
                 }
             }

@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedSprite: {fileID: 2069353707}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
+  triggerable: 0
 --- !u!61 &44562059
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -241,8 +242,9 @@ MonoBehaviour:
   waterCan: {fileID: 2453544803732008215, guid: 96865aa80663ae04ba25379d80a643c1, type: 3}
   treeObject: {fileID: 44562057}
   wateringObj: {fileID: 3786216633509068024, guid: 5169a8a51d7775648b676a8fc5bd16b3, type: 3}
-  interacting: 0
   level: 0
+  interactionHandler: {fileID: 0}
+  highlightObject: {fileID: 0}
 --- !u!1 &121619464
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,6 +872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedSprite: {fileID: 1152652870}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
+  triggerable: 0
 --- !u!60 &1312740540
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1129,8 +1132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treeSprite: {fileID: 2069353708}
   week: 3
-  level: 3
-  month: 3
+  level: 1
+  month: 5
   dayTracker: {fileID: 0}
   w1l1: {fileID: 21300000, guid: 0b18667ef4fa2c24e842d72c0f8ba92e, type: 3}
   w2l1: {fileID: 21300000, guid: 90b03f64f03fb7640890186671b04e0d, type: 3}
