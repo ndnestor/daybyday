@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4839a94a-a343-4a8a-8fbd-bae94e9015cf" name="Default Changelist" comment="Versioned unversioned files">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+    <list default="true" id="4839a94a-a343-4a8a-8fbd-bae94e9015cf" name="Default Changelist" comment="Resolved merge conflicts">
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaterPlant.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/despawnObject.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +20,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scenes/Nathan Branch.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scripts/Tracking.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scenes/Computer/ComputerInRoom.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scenes/Nathan Branch.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.1.0/Unity.Mathematics/random.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueActivator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scenes/Computer/ComputerInRoom.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scripts/Tracking.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AgendasBox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Registry/AgentRegistry.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -44,6 +52,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="Inspections-C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
