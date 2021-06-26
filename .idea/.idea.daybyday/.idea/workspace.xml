@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4839a94a-a343-4a8a-8fbd-bae94e9015cf" name="Default Changelist" comment="Added Agenda deliver animations">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/riderModule.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Nathan Branch.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Nathan Branch.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Universal RP_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Universal RP_Renderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+    <list default="true" id="4839a94a-a343-4a8a-8fbd-bae94e9015cf" name="Default Changelist" comment="Resolved merge conflicts">
+      <change beforePath="$PROJECT_DIR$/Assets/Piano Interaction.mixer.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Piano Interaction.mixer.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Current Sprites/Computer/Computer Screen/Assignment.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Current Sprites/Computer/Computer Screen/Assignment.jpeg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,10 +27,22 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.1.0/Unity.Mathematics/random.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Universal RP_Renderer.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Prefabs.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scenes/Nathan Branch.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Dialogue Graphs/Dialogue Graph.asset.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Animations/Agenda Animation Controller.controller.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AgendasBox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueActivator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Dialogue Graphs/Dialogue Graph.asset.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scripts/Tracking.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/ProjectSettings/URPProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Prefabs.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.1.0/Unity.Mathematics/random.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scripts/Tracking.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Registry/AgentRegistry.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scripts/Tracking.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -50,8 +52,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/TestScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Agenda's Box.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AgendasBox.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Movement2D.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1tBbLpgrLpjVDM6axJiZkaVwSDQ" />
@@ -107,7 +109,7 @@
       <workItem from="1622245379507" duration="2201000" />
       <workItem from="1622249984784" duration="2552000" />
       <workItem from="1624576639936" duration="3010000" />
-      <workItem from="1624720544605" duration="2989000" />
+      <workItem from="1624720544605" duration="4022000" />
     </task>
     <task id="LOCAL-00001" summary="Added a test dialogue graph">
       <created>1624723453454</created>
@@ -130,7 +132,56 @@
       <option name="project" value="LOCAL" />
       <updated>1624723546406</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added Agenda deliver animations">
+      <created>1624723606693</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1624723606693</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added Agenda deliver animations">
+      <created>1624723619418</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1624723619418</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Auto-generated files were auto-deleted">
+      <created>1624723642839</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1624723642839</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Auto-generated changes">
+      <created>1624723684601</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1624723684601</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Updated to Unity 2020.3.12f1 LTS">
+      <created>1624723710614</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1624723710614</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Set up agenda in scene">
+      <created>1624723729145</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1624723729146</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added trigger for Agenda deliver animation on day two">
+      <created>1624723753459</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1624723753459</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +207,12 @@
     <MESSAGE value="Added a test dialogue graph" />
     <MESSAGE value="Added Agenda deliver PNG sequence and spritesheet" />
     <MESSAGE value="Added Agenda deliver animations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Agenda deliver animations" />
+    <MESSAGE value="Auto-generated files were auto-deleted" />
+    <MESSAGE value="Auto-generated changes" />
+    <MESSAGE value="Updated to Unity 2020.3.12f1 LTS" />
+    <MESSAGE value="Set up agenda in scene" />
+    <MESSAGE value="Added trigger for Agenda deliver animation on day two" />
+    <MESSAGE value="Resolved merge conflicts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolved merge conflicts" />
   </component>
 </project>
