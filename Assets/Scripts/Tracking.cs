@@ -25,6 +25,9 @@ public class Tracking : MonoBehaviour
     //Used for sleeping
     [SerializeField] private Transform bedDestination;
     
+    //Used for Agenda's day two introduction
+    [SerializeField] private GameObject agendasBox;
+    
     private void Start()
     {
         Instance = this;
@@ -100,10 +103,17 @@ public class Tracking : MonoBehaviour
         {
             /* Code in these brackets will get called when the character is next to the bed and ready to sleep
              * Sleep animation should start playing, sleep theme should start playing, etc
-             * Probably should disable to the Movement2D.cs script too
-             */
+             * Probably should disable the Movement2D.cs script too */
+            
             print("Sleeping");
-            ProfileScreen.Instance.ResetTodaysActivityTimes();
+            //TODO: Uncomment when computer and room scenes get integrated
+            //ProfileScreen.Instance.ResetTodaysActivityTimes();
+            DayNum++;
+            
+            agendasBox.SetActive(true);
+            Movement2D.Instance.MoveTo(agendasBox.transform.position, () => {
+                //TODO: Start dialogue
+            });
         }
 
         Movement2D.Instance.MoveTo(bedDestination.position, CallbackAction);
@@ -121,7 +131,8 @@ public class Tracking : MonoBehaviour
         {
             Debug.Log("Artificially moved to the next day");
             DayNum++;
-            ProfileScreen.Instance.ResetTodaysActivityTimes();
+            //TODO: Uncomment when computer and room scenes get integrated
+            //ProfileScreen.Instance.ResetTodaysActivityTimes();
         }
     }
 }
