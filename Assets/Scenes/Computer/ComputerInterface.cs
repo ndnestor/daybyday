@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ComputerInterface : MonoBehaviour
 {
@@ -74,11 +75,12 @@ public class ComputerInterface : MonoBehaviour
      //       hideAllTabs();
      //       libraryPage.SetActive(true);
      //   }
-     //   else if (newName.Equals("Blaster Button"))
-     //   {
+        else if (newName.Equals("Blaster Button"))
+        {
      //       hideAllTabs();
      //       blasterPage.SetActive(true);
-     //   }
+              SceneManager.LoadScene(3);
+        }
         else if (newName.Equals("Help Button"))
         {
             hideAllTabs();
