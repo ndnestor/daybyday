@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4839a94a-a343-4a8a-8fbd-bae94e9015cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Dialogue Graphs/Agenda Deliver Dialogue.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Dialogue Graphs/Agenda Deliver Dialogue.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Dialogue Graphs/Agent Registry.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Dialogue Graphs/Agent Registry.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Dialogue Graphs/Value Registry.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Dialogue Graphs/Value Registry.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogue Graphs/Dialogue Graph.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dialogue Graphs/Dialogue Graph.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Dialogue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Dialogue.prefab" afterDir="false" />
+    <list default="true" id="4839a94a-a343-4a8a-8fbd-bae94e9015cf" name="Default Changelist" comment="Implemented day 2 dialogue">
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Nathan Branch.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Nathan Branch.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,9 +20,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scripts/Tracking.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.1.0/Unity.Mathematics/random.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueActivator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Prefabs/Dialogue.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AgendasBox.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Registry/AgentRegistry.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -101,6 +98,7 @@
       <workItem from="1624752121149" duration="1070000" />
       <workItem from="1625183910161" duration="578000" />
       <workItem from="1625186584137" duration="1887000" />
+      <workItem from="1625355840442" duration="451000" />
     </task>
     <task id="LOCAL-00001" summary="Versioned unversioned files">
       <created>1623714043846</created>
@@ -137,7 +135,42 @@
       <option name="project" value="LOCAL" />
       <updated>1624725636740</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added dialogue dependencies">
+      <created>1625356112874</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1625356112874</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Renamed Dialogue Graph to Agenda Deliver Dialogue">
+      <created>1625356159542</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1625356159542</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Auto-generated changes">
+      <created>1625356175430</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1625356175430</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Completed Dialogue prefab for Agenda's Day 2 dialogue">
+      <created>1625356246826</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1625356246826</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Implemented day 2 dialogue">
+      <created>1625356269047</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1625356269047</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,8 +195,12 @@
     <MESSAGE value="Versioned unversioned files" />
     <MESSAGE value="Deleted merge artifacts" />
     <MESSAGE value="Removed FluidSynth from audio mixer" />
-    <MESSAGE value="Auto-generated changes" />
     <MESSAGE value="Versioned files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Versioned files" />
+    <MESSAGE value="Added dialogue dependencies" />
+    <MESSAGE value="Renamed Dialogue Graph to Agenda Deliver Dialogue" />
+    <MESSAGE value="Auto-generated changes" />
+    <MESSAGE value="Completed Dialogue prefab for Agenda's Day 2 dialogue" />
+    <MESSAGE value="Implemented day 2 dialogue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented day 2 dialogue" />
   </component>
 </project>
