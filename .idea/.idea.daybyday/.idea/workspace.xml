@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4839a94a-a343-4a8a-8fbd-bae94e9015cf" name="Default Changelist" comment="Resolved merge conflicts">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaterPlant.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/despawnObject.cs.meta" beforeDir="false" />
+    <list default="true" id="4839a94a-a343-4a8a-8fbd-bae94e9015cf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Dialogue Graphs/Agenda Deliver Dialogue.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Dialogue Graphs/Agenda Deliver Dialogue.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Dialogue Graphs/Agent Registry.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Dialogue Graphs/Agent Registry.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Dialogue Graphs/Value Registry.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Dialogue Graphs/Value Registry.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dialogue Graphs/Dialogue Graph.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dialogue Graphs/Dialogue Graph.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Dialogue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Dialogue.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Nathan Branch.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Nathan Branch.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,20 +25,14 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="nathan" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scenes/Nathan Branch.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scripts/Tracking.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scenes/Computer/ComputerInRoom.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scenes/Nathan Branch.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.1.0/Unity.Mathematics/random.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueActivator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scenes/Computer/ComputerInRoom.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scripts/Tracking.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AgendasBox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Registry/AgentRegistry.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -37,6 +42,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueActivator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TestScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Instances/MainInstances.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1tBbLpgrLpjVDM6axJiZkaVwSDQ" />
@@ -84,13 +91,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="23b1d6bf-a7ca-4d11-b182-29865d9588c3" name="Default Changelist" comment="" />
+      <changelist id="4839a94a-a343-4a8a-8fbd-bae94e9015cf" name="Default Changelist" comment="" />
       <created>1622245377686</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1622245377686</updated>
       <workItem from="1622245379507" duration="2201000" />
       <workItem from="1622249984784" duration="2552000" />
+      <workItem from="1624752121149" duration="1070000" />
+      <workItem from="1625183910161" duration="578000" />
+      <workItem from="1625186584137" duration="1887000" />
     </task>
     <task id="LOCAL-00001" summary="Versioned unversioned files">
       <created>1623714043846</created>
@@ -99,7 +109,35 @@
       <option name="project" value="LOCAL" />
       <updated>1623714043846</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Deleted merge artifacts">
+      <created>1624725600632</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1624725600632</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Removed FluidSynth from audio mixer">
+      <created>1624725613851</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1624725613851</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Auto-generated changes">
+      <created>1624725621131</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1624725621131</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Versioned files">
+      <created>1624725636740</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1624725636740</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +160,10 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Versioned unversioned files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Versioned unversioned files" />
+    <MESSAGE value="Deleted merge artifacts" />
+    <MESSAGE value="Removed FluidSynth from audio mixer" />
+    <MESSAGE value="Auto-generated changes" />
+    <MESSAGE value="Versioned files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Versioned files" />
   </component>
 </project>
