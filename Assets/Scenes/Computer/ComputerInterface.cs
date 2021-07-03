@@ -18,6 +18,9 @@ public class ComputerInterface : MonoBehaviour
 
     public GameObject currentPage;
 
+    // Canvas objects for Assignents page
+    public GameObject assmtButton1, assmtButton2, userTypeBox, notesButton;
+
     void Update()
     {
         if (Input.GetKey(KeyCode.Escape))
@@ -69,6 +72,10 @@ public class ComputerInterface : MonoBehaviour
         {
             hideAllTabs();
             assignmentPage.SetActive(true);
+            assmtButton1.SetActive(true);
+            assmtButton2.SetActive(true);
+            userTypeBox.SetActive(true);
+            notesButton.SetActive(true);
         }
      //   else if (newName.Equals("Library Button"))
      //   {
@@ -101,6 +108,10 @@ public class ComputerInterface : MonoBehaviour
         profilePage.SetActive(false);
         inboxPage.SetActive(false);
         assignmentPage.SetActive(false);
+            assmtButton1.SetActive(false);
+            assmtButton2.SetActive(false);
+            userTypeBox.SetActive(false);
+            notesButton.SetActive(false);
         //libraryPage.SetActive(false);
         //blasterPage.SetActive(false); 
         helpPage.SetActive(false);
