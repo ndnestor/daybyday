@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Computer;
+using Game;
+using Game.Dialogue;
 using UnityEngine;
 
 //This class is a Singleton instance
@@ -30,6 +32,8 @@ public class Tracking : MonoBehaviour
     
     //Used for Agenda's day two introduction
     [SerializeField] private GameObject agendasBox;
+    [SerializeField] private DialogueGraph agendaDeliverDialogue;
+    [SerializeField] private GameObject blackOverlay;
     
     private void Start()
     {
@@ -116,12 +120,21 @@ public class Tracking : MonoBehaviour
             DayNum++;
             
             agendasBox.SetActive(true);
-            Movement2D.Instance.MoveTo(agendasBox.transform.position, () => {
-                //TODO: Start dialogue
+            Movement2D.Instance.MoveTo(agendasBox.transform.position + Vector3.left, () => {
+                MainInstances.Get<DialogueSystem>().Present(agendaDeliverDialogue);
             });
         }
 
         Movement2D.Instance.MoveTo(bedDestination.position, CallbackAction);
+    }
+
+    private IEnumerator FadeToBlack(int fadeSpeed) {
+        SpriteRenderer spriteRenderer = blackOverlay.GetComponent<SpriteRenderer>();
+        while(spriteRenderer.color.a < 1) {
+            Color currColor = spriteRenderer.color;
+            spriteRenderer.color = new Color(currColor.r, currColor.g, currColor.b, currColor.a + fadeSpeed);
+            yield return null;
+        }
     }
 
     //Used for testing purposes. Should be deleted later
