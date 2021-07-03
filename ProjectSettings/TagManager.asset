@@ -69,3 +69,6 @@ TagManager:
   - name: Blaster Player
     uniqueID: 3631201423
     locked: 0
+  - name: Overlay
+    uniqueID: 2723111511
+    locked: 0
