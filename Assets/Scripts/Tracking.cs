@@ -118,11 +118,14 @@ public class Tracking : MonoBehaviour
             //TODO: Uncomment when computer and room scenes get integrated
             //ProfileScreen.Instance.ResetTodaysActivityTimes();
             DayNum++;
-            
-            agendasBox.SetActive(true);
-            Movement2D.Instance.MoveTo(agendasBox.transform.position + Vector3.left, () => {
-                MainInstances.Get<DialogueSystem>().Present(agendaDeliverDialogue);
-            });
+
+            // Special day 2 events
+            if(DayNum == 2)
+            {
+                agendasBox.SetActive(true);
+                Movement2D.Instance.MoveTo(agendasBox.transform.position + Vector3.left,
+                    () => { MainInstances.Get<DialogueSystem>().Present(agendaDeliverDialogue); });
+            }
         }
 
         Movement2D.Instance.MoveTo(bedDestination.position, CallbackAction);
