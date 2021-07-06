@@ -21,7 +21,7 @@ public class ComputerInterface : MonoBehaviour
     // Canvas objects for Assignents page
     public GameObject assmtButton1, assmtButton2, userTypeBox, notesButton;
     // Canvas objects for Inbox apge
-    public GameObject inboxNames, inboxButtons;
+    public GameObject inboxAssets;
 
     void Update()
     {
@@ -69,8 +69,7 @@ public class ComputerInterface : MonoBehaviour
         {
             hideAllTabs();
             inboxPage.SetActive(true);
-            inboxNames.SetActive(true);
-            inboxButtons.SetActive(true);
+            inboxAssets.SetActive(true);
         }
         else if (newName.Equals("Assignments Button"))
         {
@@ -111,8 +110,7 @@ public class ComputerInterface : MonoBehaviour
     {
         profilePage.SetActive(false);
         inboxPage.SetActive(false);
-            inboxNames.SetActive(false);
-            inboxButtons.SetActive(false);
+            inboxAssets.SetActive(false);
         assignmentPage.SetActive(false);
             assmtButton1.SetActive(false);
             assmtButton2.SetActive(false);
