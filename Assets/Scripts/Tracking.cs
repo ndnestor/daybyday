@@ -123,15 +123,18 @@ public class Tracking : MonoBehaviour
             if(DayNum == 2)
             {
                 agendasBox.SetActive(true);
-                Movement2D.Instance.MoveTo(agendasBox.transform.position + Vector3.left,
-                    () => { MainInstances.Get<DialogueSystem>().Present(agendaDeliverDialogue); });
+                Movement2D.Instance.MoveTo(agendasBox.transform.position + Vector3.left, () =>
+                {
+                    MainInstances.Get<DialogueSystem>().Present(agendaDeliverDialogue);
+                });
             }
         }
 
         Movement2D.Instance.MoveTo(bedDestination.position, CallbackAction);
     }
 
-    private IEnumerator FadeToBlack(int fadeSpeed) {
+    private IEnumerator FadeToBlack(int fadeSpeed)
+    {
         SpriteRenderer spriteRenderer = blackOverlay.GetComponent<SpriteRenderer>();
         while(spriteRenderer.color.a < 1) {
             Color currColor = spriteRenderer.color;
