@@ -4545,6 +4545,7 @@ GameObject:
   - component: {fileID: 1160337317}
   - component: {fileID: 1160337319}
   - component: {fileID: 1160337318}
+  - component: {fileID: 1160337320}
   m_Layer: 5
   m_Name: RecentMessage
   m_TagString: Untagged
@@ -4676,6 +4677,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160337316}
   m_CullTransparentMesh: 0
+--- !u!114 &1160337320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160337316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ae079aeb853a648bdbfc12d750da09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: {fileID: 1160337318}
+  response1: {fileID: 2132092497}
+  response2: {fileID: 1943033075}
+  dayShown: 0
+  personShown: 0
+  status: 
 --- !u!1 &1161191273
 GameObject:
   m_ObjectHideFlags: 0
