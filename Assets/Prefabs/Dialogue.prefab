@@ -1230,10 +1230,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad8550836fd9614abb0922b9fbaa109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Typer: {fileID: 0}
+  Typer: {fileID: 5324327386927490931}
   CurrentGraph: {fileID: 11400000, guid: f82f64d33eb64dc48a4a0ef17719778e, type: 2}
-  CanvasObject: {fileID: 0}
-  ChoiceButtons: {fileID: 0}
+  CanvasObject: {fileID: 5689726647276696872}
+  ChoiceButtons: {fileID: 83117342362878161}
   currentTransition: {fileID: 5751234397892313320}
   CurrentNodeActive: {fileID: 0}
 --- !u!114 &5751234397892313320
