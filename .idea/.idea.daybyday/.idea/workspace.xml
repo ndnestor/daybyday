@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+
     <list default="true" id="4839a94a-a343-4a8a-8fbd-bae94e9015cf" name="Default Changelist" comment="Fixed bug where neglected sprites were not being updated.&#10;Added bonsai tree placeholders">
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Nathan Branch.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Nathan Branch.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ProductivityAid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ProductivityAid.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" afterDir="false" />
+
     </list>
     <list id="cd597de6-c223-46a3-9433-4bb79c251444" name="Revert &quot;Moves deprecated scenes to their own folder&quot;" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +23,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
+
     <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scripts/InteractionHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scenes/Nathan Branch.unity" root0="SKIP_HIGHLIGHTING" />
@@ -35,11 +46,11 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.1.0/Unity.Mathematics/random.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AgendasBox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Registry/AgentRegistry.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Registry/StringCompareNode.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Instances/Injector/InstancesInjector.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueActivator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TestScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Instances/MainInstances.cs" />
