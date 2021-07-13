@@ -21,6 +21,7 @@ namespace Game.Dialogue.Nodes {
 		public const string COLOR_MATH = "#B55CA7";
 		public const string COLOR_CONDITIONS = "#5086B5";
 		public const string COLOR_MISC = "#B5873E";
+		public const string COLOR_MISC_2 = "#3878c2";
 
 		public virtual void MoveNext() {
 			MoveNext("exit");

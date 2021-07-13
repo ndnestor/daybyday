@@ -21,6 +21,8 @@ namespace Game.Dialogue {
 		[HideInInspector]
 		public ValueRegistry valueRegistry;
 		[HideInInspector]
+		public StringRegistry stringRegistry;
+		[HideInInspector]
 		public AgentRegistry agentRegistry;
 
 		public void Continue() {
@@ -31,6 +33,7 @@ namespace Game.Dialogue {
 				//We are done
 				valueRegistry = null;
 				agentRegistry = null;
+				stringRegistry = null;
 				//Dereference
 				return;
 			}
@@ -51,6 +54,7 @@ namespace Game.Dialogue {
 
 			valueRegistry = MainInstances.Get<ValueRegistry>();
 			agentRegistry = MainInstances.Get<AgentRegistry>();
+			stringRegistry = MainInstances.Get<StringRegistry>();
 
 			currentSystem = system;
 			current = entry;

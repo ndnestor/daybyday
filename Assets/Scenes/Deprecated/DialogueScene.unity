@@ -278,7 +278,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1345503484}
   - component: {fileID: 1345503483}
-  - component: {fileID: 1345503485}
   m_Layer: 0
   m_Name: TestDialogue
   m_TagString: Untagged
@@ -298,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0135895b9e26344bae76dbc8c5bccb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dialogue: {fileID: 11400000, guid: c6117840b1f530740a62a485aec329bd, type: 2}
+  Dialogue: {fileID: 11400000, guid: 62703e1b88bac9f4dad65d29aabd5cae, type: 2}
 --- !u!4 &1345503484
 Transform:
   m_ObjectHideFlags: 0
@@ -313,18 +312,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1345503485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345503482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f79c0d6ebb6ead54a84b7d60e2b749b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1546965228
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,8 @@ using XNode;
 using XNodeEditor;
 
 namespace Game.Dialogue.Nodes {
-    [CustomNodeEditor(typeof(ChoiceNode))]
-	public class ChoiceEditor : NodeEditor {
-    }
+	[CustomNodeEditor(typeof(ChoiceNode))]
+	public class ChoiceEditor : NodeEditor
+	{
+	}
 }

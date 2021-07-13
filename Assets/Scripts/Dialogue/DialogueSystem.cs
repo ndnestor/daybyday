@@ -8,6 +8,8 @@ using TMPro;
 using Game.Dialogue.Nodes;
 using Game.Dialogue.Nodes.Inline;
 using System.Diagnostics;
+using Game.Dialogue.Nodes.Registry;
+using Game.Registry;
 using Debug = UnityEngine.Debug;
 
 namespace Game.Dialogue {
@@ -109,7 +111,19 @@ namespace Game.Dialogue {
                     case DialogueNode d:
                         isNodeWorking = true;
                         currentRate = 0;
-                        StartCoroutine(DialogueBox(d));
+                        DialogueBox(d);
+                        break;
+                    
+                    case DisplayValueNode v:
+                        isNodeWorking = true;
+                        currentRate = 0;
+                        DialogueBox(v);
+                        break;
+                    
+                    case DisplayStringNode s:
+                        isNodeWorking = true;
+                        currentRate = 0;
+                        DialogueBox(s);
                         break;
 
                     case ChoiceNode c:
@@ -173,10 +187,27 @@ namespace Game.Dialogue {
 
 
         private bool isSkipping = false;
-        
-        private IEnumerator DialogueBox(DialogueNode node) {
-            Debug.Log("Playing dialogue " + node.Dialogue);
-            Typer.Play(node.Dialogue, node.ErasePrevious);
+
+        private void DialogueBox(DisplayValueNode node)
+        {
+            StartCoroutine(DialogueBox(MainInstances.Get<ValueRegistry>().Get(node.RegistryValueName).ToString(), node.ErasePrevious, node.WaitForInput));
+        }
+        private void DialogueBox(DisplayStringNode node)
+        {
+            StartCoroutine(DialogueBox(MainInstances.Get<StringRegistry>().Get(node.RegistryValueName).ToString(), node.ErasePrevious, node.WaitForInput));
+        }
+
+        private void DialogueBox(DialogueNode node) {
+            StartCoroutine(DialogueBox(node.Dialogue, node.ErasePrevious, node.WaitForInput));
+        }
+
+
+        private IEnumerator DialogueBox(string text, bool erasePrevious, bool waitForInput)
+        {
+            
+            Debug.Log("Playing dialogue " + text);
+            
+            Typer.Play(text, erasePrevious);
 
             Typer.SetIndicator(true);
             while (!Typer.IsFinished()) {
@@ -190,7 +221,7 @@ namespace Game.Dialogue {
 
             //Skips a frame to make sure Input is refreshed
             yield return null;
-            if (node.WaitForInput) {
+            if (waitForInput) {
                 Typer.SetIndicator(false);
                 isSkipping = false;
                 //Wait for player to continue
