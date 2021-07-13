@@ -118,6 +118,9 @@ public class Tracking : MonoBehaviour
             //TODO: Uncomment when computer and room scenes get integrated
             //ProfileScreen.Instance.ResetTodaysActivityTimes();
             DayNum++;
+            
+            InteractionHandler.Instance.UpdateNeglectedSprites();
+            ProductivityAid.Instance.UpdateLevel();
 
             // Special day 2 events
             if(DayNum == 2)
