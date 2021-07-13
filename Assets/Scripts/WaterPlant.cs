@@ -15,7 +15,7 @@ public class WaterPlant : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        interactionHandler.RegisterObject("Bonsai Object", waterBonsai);
+        interactionHandler.RegisterObject("Bonsai Tree", waterBonsai);
     }
 
     void waterBonsai() {
@@ -52,7 +52,7 @@ public class WaterPlant : MonoBehaviour
     {
         // Uses same conditions as highlight to call Interact(), runs waterBonsai()
         if (Input.GetKey("e") && highlightObject.triggerable) {
-            interactionHandler.Interact("Bonsai Object");
+            interactionHandler.Interact("Bonsai Tree");
         }
     }
 }

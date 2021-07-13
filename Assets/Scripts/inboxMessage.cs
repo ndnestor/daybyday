@@ -8,7 +8,8 @@ public class inboxMessage : MonoBehaviour
     public TextMeshProUGUI message;
     public TextMeshProUGUI response1, response2;
     public int dayShown, personShown;
-    public string status;
+    public int intMom, intGrandma, intProf, intBuddy, intBrie, intMatt;
+    public int status;
 
     /*
     For simplicity:
@@ -31,29 +32,48 @@ public class inboxMessage : MonoBehaviour
     Status changes based on responses, implemented in-game and updated
     through updateStatus() method
     Status is: "isolated", "allResponse", or "noResponse"
+
+    "int" refers to interactiveness, determined on per-character basis for how
+    often player has responded to their messages
+    0 = isolated
+    1 = no response
+    2 = all response
+    "Status" stores # 0-2 based on which character, outside of newMessage()
     */
 
     void changeDay(int newDay) {
         dayShown = newDay;
-        newMessage(dayShown, personShown, status);
-        newResponse (dayShown, personShown);
+        showMessage(dayShown, personShown, status);
     }
     void changePerson(int newPerson) {
         personShown = newPerson;
-        newMessage(dayShown, personShown, status);
-        newResponse (dayShown, personShown);
+        if (personShown == 1) {
+            status = intMom;
+        } else if (personShown == 2) {
+            status = intGrandma;
+        } else if (personShown == 3) {
+            status = intProf;
+        } else if (personShown == 4) {
+            status = intBuddy;
+        } else if (personShown == 5) {
+            status = intBrie;
+        } else if (personShown == 6) {
+            status = intMatt;
+        }
+        showMessage(dayShown, personShown, status);
     }
-    void updateStatus(string newStatus) {
-        status = newStatus;
+    void showMessage(int dayShown, int personShown, int interactiveness) {
+        newMessage(dayShown, personShown, interactiveness);
+        newResponse (dayShown, personShown);
     }
 
     //START IS HERE FOR TESTING ONLY - remove later
     void Start() {
         // For testing purposes, fiddle with the values below
-        newMessage(1, 1, "isolated");
+        newMessage(1, 1, 0);
     }
 
-    void newMessage(int day, int person, string status) {
+    void newMessage(int day, int person, int status) {
         if (person == 1) {
             message.text = "hello";
             if (day == 2) {
@@ -69,13 +89,13 @@ public class inboxMessage : MonoBehaviour
                 message.text = "Sweetheart, are you staying healthy? I had such a sweet tooth last month that by the end of it I felt like I could never have a treat again! I got myself a yoga mat and started working out. I feel a lot better. I meditate a few minutes every day, I do lots of stretching, and I go for long walks. You should try it sometime! Maybe it will help you relax after a hard day’s work. If you’d like, we could even meditate together! Let me know if you would like that, okay? Love, Mom.";
             }
             if (day == 10) {
-                if (status == "allResponse") {
+                if (status == 0) {
                     message.text = "Honey, I am so glad you’ve kept in touch. I know these past few months have been hard on you, it was hard on us, too. I really miss you. Let me know if I can come visit you. I promise to bring you a treat! Love, Mom.";
                 }
-                if (status == "noResponse") {
+                if (status == 1) {
                     message.text = "Honey, Are you okay? I haven’t heard from you lately. I guess Agenda is helping you stay very productive. Let me know if you need anything, okay? I miss you. Love, Mom";
                 }
-                if (status == "isolated") {
+                if (status == 2) {
                     message.text = "Please let me know that you are okay. I love you so much. Stay safe. Love, Mom";
                 }
             }
