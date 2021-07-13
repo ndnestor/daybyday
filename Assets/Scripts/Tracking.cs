@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Computer;
+using Game;
+using Game.Dialogue;
 using UnityEngine;
 
 //This class is a Singleton instance
 public class Tracking : MonoBehaviour
 {
-    private static Tracking instance = null;
-    private Tracking() { }
+    public static Tracking Instance { get; private set; }
 
-    public readonly int MAX_TIME = 28;
+    [HideInInspector] public int DayNum { get; private set; }
+    public const int MAX_DAYS = 10;
+    public const int MAX_TIME = 28;
     public int timeUsed = 0;
     public ArrayList objectUsage = new ArrayList();
 
@@ -23,16 +27,18 @@ public class Tracking : MonoBehaviour
     //Used for sleeping
     [SerializeField] private Transform bedDestination;
 
-    public static Tracking Instance
+    // WaterPlant component for tree to call for update level/day every day
+    public WaterPlant treeWater;
+    
+    //Used for Agenda's day two introduction
+    [SerializeField] private GameObject agendasBox;
+    [SerializeField] private DialogueGraph agendaDeliverDialogue;
+    [SerializeField] private GameObject blackOverlay;
+    
+    private void Start()
     {
-        get
-        {
-            if(instance == null)
-            {
-                instance = new Tracking();
-            }
-            return instance;
-        }
+        Instance = this;
+        DayNum = 1;
     }
 
     //Adds an object to an ArrayList in chronological order of use
@@ -98,16 +104,46 @@ public class Tracking : MonoBehaviour
     }
 
     //Moves the character to the bed to move on to the next day
-    private void Sleep() {
-        void CallbackAction() {
+    private void Sleep()
+    {
+        void CallbackAction()
+        {
             /* Code in these brackets will get called when the character is next to the bed and ready to sleep
              * Sleep animation should start playing, sleep theme should start playing, etc
-             * Probably should disable to the Movement2D.cs script too
-             */
+             * Probably should disable the Movement2D.cs script too */
+            
             print("Sleeping");
+            treeWater.dayUpdate();
+            
+            //TODO: Uncomment when computer and room scenes get integrated
+            //ProfileScreen.Instance.ResetTodaysActivityTimes();
+            DayNum++;
+            
+            InteractionHandler.Instance.UpdateNeglectedSprites();
+            ProductivityAid.Instance.UpdateLevel();
+
+            // Special day 2 events
+            if(DayNum == 2)
+            {
+                agendasBox.SetActive(true);
+                Movement2D.Instance.MoveTo(agendasBox.transform.position + Vector3.left, () =>
+                {
+                    MainInstances.Get<DialogueSystem>().Present(agendaDeliverDialogue);
+                });
+            }
         }
 
         Movement2D.Instance.MoveTo(bedDestination.position, CallbackAction);
+    }
+
+    private IEnumerator FadeToBlack(int fadeSpeed)
+    {
+        SpriteRenderer spriteRenderer = blackOverlay.GetComponent<SpriteRenderer>();
+        while(spriteRenderer.color.a < 1) {
+            Color currColor = spriteRenderer.color;
+            spriteRenderer.color = new Color(currColor.r, currColor.g, currColor.b, currColor.a + fadeSpeed);
+            yield return null;
+        }
     }
 
     //Used for testing purposes. Should be deleted later
@@ -115,8 +151,15 @@ public class Tracking : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.RightControl))
         {
-            Debug.Log("Articifically added 1 unit of time");
+            Debug.Log("Artificially added 1 unit of time");
             AddUsedTime(1);
 		}
-	}
+        if(Input.GetKeyDown(KeyCode.N))
+        {
+            Debug.Log("Artificially moved to the next day");
+            DayNum++;
+            //TODO: Uncomment when computer and room scenes get integrated
+            //ProfileScreen.Instance.ResetTodaysActivityTimes();
+        }
+    }
 }

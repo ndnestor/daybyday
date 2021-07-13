@@ -27,7 +27,7 @@ public class InteractionHandler : MonoBehaviour
 	[SerializeField] private SpriteRenderer bookshelfRenderer;
 	[SerializeField] private SpriteRenderer windowRenderer;
 	[SerializeField] private SpriteRenderer windowLightRenderer;
-	
+
 	private Hashtable objectNeglection = new Hashtable(); // Key: string | Value: bool
 
 	[HideInInspector] public static InteractionHandler Instance;
@@ -46,12 +46,10 @@ public class InteractionHandler : MonoBehaviour
 			Debug.LogWarning("Object " + objectName + " was already registered");
 			return false;
 		}
-		else
-		{
-			registeredObjects.Add(objectName, objectAction);
-			objectNeglection.Add(objectAction, true);
-			return true;
-		}
+		Debug.Log("Registering object '" + objectName + "'");
+		registeredObjects.Add(objectName, objectAction);
+		objectNeglection.Add(objectName, true);
+		return true;
 	}
 
 	// Calls an interaction object's action given the name of it
@@ -80,7 +78,7 @@ public class InteractionHandler : MonoBehaviour
 					case "Piano":
 						pianoRenderer.sprite = neglectedPianoSprite;
 						break;
-					case "Yoga Mate":
+					case "Yoga Mat":
 						yogaMatRenderer.sprite = neglectedYogaMatSprite;
 						break;
 					case "Computer":
@@ -93,8 +91,11 @@ public class InteractionHandler : MonoBehaviour
 						windowRenderer.sprite = neglectedWindowSprite;
 						windowLightRenderer.sprite = neglectedWindowLightSprite;
 						break;
+					case "Bonsai Tree":
+						// TODO: Add neglected bonsai tree?
+						break;
 					default:
-						Debug.LogError("Invalid object name provided");
+						Debug.LogError($"Invalid object name provided: {objectName}");
 						break;
 				}
 			}
@@ -118,8 +119,11 @@ public class InteractionHandler : MonoBehaviour
 						windowRenderer.sprite = normalWindowSprite;
 						windowLightRenderer.sprite = normalWindowLightSprite;
 						break;
+					case "Bonsai Tree":
+						// TODO: Add normal bonsai tree?
+						break;
 					default:
-						Debug.LogError("Invalid object name provided");
+						Debug.LogError($"Invalid object name provided: {objectName}");
 						break;
 				}
 			}

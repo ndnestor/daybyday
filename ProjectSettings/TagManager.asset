@@ -5,6 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - Swift
+  - Bullet
+  - enemBullet
+  - notesBW
+  - Bulwark
+  - Enemy
+  - Spread
+  - PlatformHealth
+  - Platform
+  - Star
+  - Rapid
+  - HealthBar
   layers:
   - Default
   - TransparentFX
@@ -50,4 +62,19 @@ TagManager:
     locked: 0
   - name: Object
     uniqueID: 2902580983
+    locked: 0
+  - name: Blaster BG
+    uniqueID: 3648773613
+    locked: 0
+  - name: Blaster Player
+    uniqueID: 3631201423
+    locked: 0
+  - name: Overlay
+    uniqueID: 2723111511
+    locked: 0
+  - name: Overlay
+    uniqueID: 2723111511
+    locked: 0
+  - name: UI
+    uniqueID: 1327745133
     locked: 0

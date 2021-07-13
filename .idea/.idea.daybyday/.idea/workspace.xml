@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23b1d6bf-a7ca-4d11-b182-29865d9588c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/riderModule.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/ChoiceEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/ChoiceEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/DialogueGraphEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/DialogueGraphEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/DialogueSystemEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/DialogueSystemEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/editorasmDialogue.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/editorasmDialogue.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainSystems.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MainSystems.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Dialogue/Test Player Dialogue.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Dialogue/Test Player Dialogue.asset" afterDir="false" />
+
+    <list default="true" id="4839a94a-a343-4a8a-8fbd-bae94e9015cf" name="Default Changelist" comment="Fixed bug where neglected sprites were not being updated.&#10;Added bonsai tree placeholders">
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Nathan Branch.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Nathan Branch.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test/DialogueScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test/DialogueScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/DialogueGraph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/DialogueGraph.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/DialogueNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/DialogueNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ProductivityAid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ProductivityAid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" afterDir="false" />
+
     </list>
+    <list id="cd597de6-c223-46a3-9433-4bb79c251444" name="Revert &quot;Moves deprecated scenes to their own folder&quot;" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -37,9 +32,19 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Registry/StringRegistry.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Registry/Objects/StringRegistryObject.cs" root0="FORCE_HIGHLIGHTING" />
+
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scripts/InteractionHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scenes/Nathan Branch.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scripts/Tracking.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueActivator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Dialogue Graphs/Agenda Deliver Dialogue.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Dialogue Graphs/Agenda Deliver Dialogue.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ProductivityAid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Dialogue Graphs/Agenda Deliver Dialogue.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.1.0/Unity.Mathematics/random.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AgendasBox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Registry/AgentRegistry.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Registry/StringCompareNode.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -48,30 +53,31 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Instances/Injector/InstancesInjector.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueActivator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TestScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Misc/EventNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Misc/DisplayValueNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Registry/StringRegistry.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Registry/Objects/StringRegistryObject.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/DialogueNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/DialogueGraph.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueSystem.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Registry/DisplayStringNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Registry/DisplayValueNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Registry/StringCompareNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Registry/StringTesterNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Registry/StringSetterNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Instances/MainInstances.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ProductivityAid.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/InteractionHandler.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1tBbLpgrLpjVDM6axJiZkaVwSDQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Inspections-C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -100,15 +106,177 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="23b1d6bf-a7ca-4d11-b182-29865d9588c3" name="Default Changelist" comment="" />
+      <changelist id="4839a94a-a343-4a8a-8fbd-bae94e9015cf" name="Default Changelist" comment="" />
       <created>1622245377686</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1622245377686</updated>
       <workItem from="1622245379507" duration="2201000" />
       <workItem from="1622249984784" duration="2552000" />
-      <workItem from="1626151308268" duration="3006000" />
+      <workItem from="1624752121149" duration="1070000" />
+      <workItem from="1625183910161" duration="578000" />
+      <workItem from="1625186584137" duration="1887000" />
+      <workItem from="1625355840442" duration="451000" />
+      <workItem from="1625785770591" duration="6547000" />
+      <workItem from="1625960200124" duration="2871000" />
+      <workItem from="1626133344051" duration="1267000" />
+      <workItem from="1626144084304" duration="1231000" />
     </task>
+    <task id="LOCAL-00001" summary="Versioned unversioned files">
+      <created>1623714043846</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623714043846</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Deleted merge artifacts">
+      <created>1624725600632</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1624725600632</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Removed FluidSynth from audio mixer">
+      <created>1624725613851</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1624725613851</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Auto-generated changes">
+      <created>1624725621131</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1624725621131</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Versioned files">
+      <created>1624725636740</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1624725636740</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added dialogue dependencies">
+      <created>1625356112874</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1625356112874</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Renamed Dialogue Graph to Agenda Deliver Dialogue">
+      <created>1625356159542</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1625356159542</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Auto-generated changes">
+      <created>1625356175430</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1625356175430</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Completed Dialogue prefab for Agenda's Day 2 dialogue">
+      <created>1625356246826</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1625356246826</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Implemented day 2 dialogue">
+      <created>1625356269047</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1625356269047</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Made Agenda arrive on day 2 only">
+      <created>1625358442720</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1625358442720</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Created deprecated scripts folder">
+      <created>1625786540556</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1625786540556</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Moved to deprecated scripts folder">
+      <created>1625786557817</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1625786557817</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Auto-generated Rider changes">
+      <created>1625786576190</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1625786576190</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Renamed Test folder to &quot;Deprecated&quot;">
+      <created>1625787505987</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1625787505987</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Moves deprecated scenes to their own folder">
+      <created>1625787521026</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1625787521026</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Reverted EditorUserSettings.asset in commit&#10;&#10;This reverts commit 040e1df4">
+      <created>1625787653863</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1625787653863</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Moved deprecated scenes to their own folder">
+      <created>1625787814858</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1625787814858</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Unified curly brace style">
+      <created>1625788189432</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1625788189432</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Added ProductivityAid.cs">
+      <created>1625788214832</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1625788214832</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Auto-generated chagnes">
+      <created>1626145207773</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1626145207773</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fixed bug where neglected sprites were not being updated.&#10;Added bonsai tree placeholders">
+      <created>1626145323053</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1626145323053</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,5 +298,27 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Versioned unversioned files" />
+    <MESSAGE value="Deleted merge artifacts" />
+    <MESSAGE value="Removed FluidSynth from audio mixer" />
+    <MESSAGE value="Versioned files" />
+    <MESSAGE value="Added dialogue dependencies" />
+    <MESSAGE value="Renamed Dialogue Graph to Agenda Deliver Dialogue" />
+    <MESSAGE value="Auto-generated changes" />
+    <MESSAGE value="Completed Dialogue prefab for Agenda's Day 2 dialogue" />
+    <MESSAGE value="Implemented day 2 dialogue" />
+    <MESSAGE value="Made Agenda arrive on day 2 only" />
+    <MESSAGE value="Created deprecated scripts folder" />
+    <MESSAGE value="Moved to deprecated scripts folder" />
+    <MESSAGE value="Auto-generated Rider changes" />
+    <MESSAGE value="Renamed Test folder to &quot;Deprecated&quot;" />
+    <MESSAGE value="Moves deprecated scenes to their own folder" />
+    <MESSAGE value="Reverted EditorUserSettings.asset in commit&#10;&#10;This reverts commit 040e1df4" />
+    <MESSAGE value="Moved deprecated scenes to their own folder" />
+    <MESSAGE value="Unified curly brace style" />
+    <MESSAGE value="Added ProductivityAid.cs" />
+    <MESSAGE value="Auto-generated changes" />
+    <MESSAGE value="Fixed bug where neglected sprites were not being updated.&#10;Added bonsai tree placeholders" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug where neglected sprites were not being updated.&#10;Added bonsai tree placeholders" />
   </component>
 </project>
