@@ -2,9 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23b1d6bf-a7ca-4d11-b182-29865d9588c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/ChoiceEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/ChoiceEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/DialogueGraphEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/DialogueGraphEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/DialogueSystemEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/DialogueSystemEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/editorasmDialogue.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/Scripts/Dialogue/editorasmDialogue.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainSystems.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MainSystems.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Dialogue/Test Player Dialogue.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Dialogue/Test Player Dialogue.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Nathan Branch.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Nathan Branch.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test/DialogueScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test/DialogueScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/DialogueGraph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/DialogueGraph.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/DialogueNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/DialogueNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,16 +28,38 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Registry/StringRegistry.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Registry/Objects/StringRegistryObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueActivator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Registry/AgentRegistry.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Registry/StringCompareNode.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Instances/Injector/InstancesInjector.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueActivator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TestScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Misc/EventNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Misc/DisplayValueNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Registry/StringRegistry.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Registry/Objects/StringRegistryObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/DialogueNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/DialogueGraph.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Registry/DisplayStringNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Registry/DisplayValueNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Registry/StringCompareNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Registry/StringTesterNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Registry/StringSetterNode.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1tBbLpgrLpjVDM6axJiZkaVwSDQ" />
@@ -44,6 +80,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -53,6 +90,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -69,6 +107,7 @@
       <updated>1622245377686</updated>
       <workItem from="1622245379507" duration="2201000" />
       <workItem from="1622249984784" duration="2552000" />
+      <workItem from="1626151308268" duration="3006000" />
     </task>
     <servers />
   </component>

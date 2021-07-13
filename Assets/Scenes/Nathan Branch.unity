@@ -3318,9 +3318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc6740eb30161c4daf1c6a2ae8d4211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gain: 1
-  startingOctave: 4
-  endingOctave: 6
 --- !u!82 &1581243652
 AudioSource:
   m_ObjectHideFlags: 0

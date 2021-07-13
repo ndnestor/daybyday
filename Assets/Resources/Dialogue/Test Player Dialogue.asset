@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7238639275367026577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a33bd1e8fa7a6645baa7fe3b02ab941, type: 3}
+  m_Name: Display String
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 904, y: 424}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: -7238639275367026577}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -7238639275367026577}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  RegistryValueName: tiger
+  WaitForInput: 1
+  ErasePrevious: 1
+--- !u!114 &-6600948754961729987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54556d97c582e474f80b82d11f24c52c, type: 3}
+  m_Name: Comment
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1304, y: 264}
+  ports:
+    keys: []
+    values: []
+  Comment: These are for string values instead of normal integer values
 --- !u!114 &-6297212459406541106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,6 +103,140 @@ MonoBehaviour:
       _dynamic: 0
   AgentName: player
   Emotion: 0
+--- !u!114 &-5758002011922473521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2fe650c8b877644f90d76ff1d4bbaee, type: 3}
+  m_Name: String Tester
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1272, y: 584}
+  ports:
+    keys:
+    - enter
+    - exitTrue
+    - exitFalse
+    values:
+    - _fieldName: enter
+      _node: {fileID: -5758002011922473521}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exitTrue
+      _node: {fileID: -5758002011922473521}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exitFalse
+      _node: {fileID: -5758002011922473521}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  RegistryName: tiger
+  String: 
+--- !u!114 &-5033404766608342216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d49942bd56d34d4295f83d21118ca5b, type: 3}
+  m_Name: Display Value
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 936, y: -24}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: -5033404766608342216}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exit
+        node: {fileID: 4544392586952883247}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -5033404766608342216}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: 5945111533181981537}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  RegistryValueName: tiger
+  WaitForInput: 0
+  ErasePrevious: 0
+--- !u!114 &-1416618326969727568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3ad1e33e90a0e438ff8163a9323ee3, type: 3}
+  m_Name: String Setter
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 904, y: 584}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: -1416618326969727568}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -1416618326969727568}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  RegistryName: tiger
+  RegistryValue: Wow
 --- !u!114 &-921450787336191273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,12 +301,69 @@ MonoBehaviour:
   - {fileID: -921450787336191273}
   - {fileID: 4544392586952883247}
   - {fileID: 5945111533181981537}
+  - {fileID: -5033404766608342216}
+  - {fileID: 5641496493952456353}
+  - {fileID: -7238639275367026577}
+  - {fileID: -6600948754961729987}
+  - {fileID: 3588331218981831644}
+  - {fileID: -1416618326969727568}
+  - {fileID: -5758002011922473521}
   current: {fileID: 0}
   entry: {fileID: 4536365094769025509}
   currentSystem: {fileID: 0}
   CurrentChoiceIndex: 0
   valueRegistry: {fileID: 0}
+  stringRegistry: {fileID: 0}
   agentRegistry: {fileID: 0}
+--- !u!114 &3588331218981831644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7573b8f1e508a439cfe57d034e8c8d, type: 3}
+  m_Name: String Compare
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1176, y: 424}
+  ports:
+    keys:
+    - enter
+    - exitTrue
+    - exitFalse
+    values:
+    - _fieldName: enter
+      _node: {fileID: 3588331218981831644}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exitTrue
+      _node: {fileID: 3588331218981831644}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exitFalse
+      _node: {fileID: 3588331218981831644}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  RegistryName: tiger
+  OtherRegistry: 
 --- !u!114 &4536365094769025509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,13 +431,56 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: enter
-        node: {fileID: 5945111533181981537}
+        node: {fileID: -5033404766608342216}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
   PauseTime: 0.5
+--- !u!114 &5641496493952456353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6da95686df02c042bafb38eafbdba30, type: 3}
+  m_Name: Setter
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1656, y: 8}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: 5641496493952456353}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exit
+        node: {fileID: 5945111533181981537}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 5641496493952456353}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  argumentId: tiger
+  type: 1
+  value: 1
 --- !u!114 &5945111533181981537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +494,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 936, y: -24}
+  position: {x: 1208, y: -24}
   ports:
     keys:
     - enter
@@ -214,7 +506,7 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: exit
-        node: {fileID: 4544392586952883247}
+        node: {fileID: -5033404766608342216}
         reroutePoints: []
       _direction: 0
       _connectionType: 1
@@ -224,11 +516,14 @@ MonoBehaviour:
       _node: {fileID: 5945111533181981537}
       _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: enter
+        node: {fileID: 5641496493952456353}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Dialogue: Player
+  Dialogue: ' Player'
   WaitForInput: 1
   ErasePrevious: 0

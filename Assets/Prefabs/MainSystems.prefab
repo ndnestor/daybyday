@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6141032051960581740}
   - component: {fileID: 7748485111298853072}
   - component: {fileID: 5861774364443624851}
+  - component: {fileID: 8636528659545700155}
   m_Layer: 0
   m_Name: Registries
   m_TagString: Untagged
@@ -59,6 +60,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   registryObject: {fileID: 11400000, guid: 18baea9c503b26449b84e48e7faf142f, type: 2}
+--- !u!114 &8636528659545700155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3580412119196953047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02814834eb20b034b951aba6966e53ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  registryObject: {fileID: 11400000, guid: 49165822920731841962ceed67665079, type: 2}
+  CleanListOnStart: 0
 --- !u!1 &8104909444863674400
 GameObject:
   m_ObjectHideFlags: 0
