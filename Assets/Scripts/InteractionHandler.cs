@@ -73,6 +73,12 @@ public class InteractionHandler : MonoBehaviour
 		{
 			if((bool)objectNeglection[objectName])
 			{
+				// Ignore bonsai tree when checking if objects are neglected
+				// since the bonsai tree works uniquely
+				if(objectName == "Bonsai Tree")
+				{
+					continue;
+				}
 				switch(objectName)
 				{
 					case "Piano":
@@ -90,9 +96,6 @@ public class InteractionHandler : MonoBehaviour
 					case "Window":
 						windowRenderer.sprite = neglectedWindowSprite;
 						windowLightRenderer.sprite = neglectedWindowLightSprite;
-						break;
-					case "Bonsai Tree":
-						// TODO: Add neglected bonsai tree?
 						break;
 					default:
 						Debug.LogError($"Invalid object name provided: {objectName}");
@@ -118,9 +121,6 @@ public class InteractionHandler : MonoBehaviour
 					case "Window":
 						windowRenderer.sprite = normalWindowSprite;
 						windowLightRenderer.sprite = normalWindowLightSprite;
-						break;
-					case "Bonsai Tree":
-						// TODO: Add normal bonsai tree?
 						break;
 					default:
 						Debug.LogError($"Invalid object name provided: {objectName}");
