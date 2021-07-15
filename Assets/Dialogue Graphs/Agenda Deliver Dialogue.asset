@@ -98,6 +98,7 @@ MonoBehaviour:
   currentSystem: {fileID: 0}
   CurrentChoiceIndex: 0
   valueRegistry: {fileID: 0}
+  stringRegistry: {fileID: 0}
   agentRegistry: {fileID: 0}
 --- !u!114 &6766147441669923165
 MonoBehaviour:
@@ -142,5 +143,5 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  AgentName: Quinn
+  AgentName: Agenda
   Emotion: 0
