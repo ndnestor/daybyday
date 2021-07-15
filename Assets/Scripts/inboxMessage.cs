@@ -104,7 +104,24 @@ public class inboxMessage : MonoBehaviour
     void newResponse (int day, int person) {
         if (person == 1) {
             if (day == 2) {
-                
+                response1.text = "Hi mom! Thanks for the Agenda! It's been helping out a lot.";
+                response2.text = "Hey mom. Thanks for the Agenda. Very busy- talk soon!";
+            }
+            if (day == 4) {
+                response1.text = "MOM DAY 4 RESPONSE 1 FILLER TEXT";
+                response2.text = "MOM DAY 4 RESPONSE 2 FILLER TEXT";
+            }
+            if (day == 7) {
+                response1.text = "MOM DAY 7 RESPONSE 1 FILLER TEXT";
+                response2.text = "MOM DAY 7 RESPONSE 2 FILLER TEXT";
+            }
+            if (day == 9) {
+                response1.text = "MOM DAY 9 RESPONSE 1 FILLER TEXT";
+                response2.text = "MOM DAY 9 RESPONSE 2 FILLER TEXT";
+            }
+            if (day == 10) {
+                response1.text = "MOM DAY 10 RESPONSE 1 FILLER TEXT";
+                response2.text = "MOM DAY 10 RESPONSE 2 FILLER TEXT";
             }
         }
     }
