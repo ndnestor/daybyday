@@ -7,6 +7,6 @@ public class startMenu : MonoBehaviour
 {
     public void openMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Scene_startMenu");
     }
 }

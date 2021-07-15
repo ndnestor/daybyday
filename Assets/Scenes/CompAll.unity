@@ -4692,9 +4692,15 @@ MonoBehaviour:
   message: {fileID: 1160337318}
   response1: {fileID: 2132092497}
   response2: {fileID: 1943033075}
-  dayShown: 0
-  personShown: 0
-  status: 
+  dayShown: 2
+  personShown: 1
+  intMom: 0
+  intGrandma: 0
+  intProf: 0
+  intBuddy: 0
+  intBrie: 0
+  intMatt: 0
+  status: 0
 --- !u!1 &1161191273
 GameObject:
   m_ObjectHideFlags: 0

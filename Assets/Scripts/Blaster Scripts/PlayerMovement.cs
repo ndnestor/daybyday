@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 Destroy(gameObject);
                 Debug.Log("Dead");
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene("Scene_endGame");
             }
             Destroy(col.gameObject);
         }

@@ -70,12 +70,13 @@ public class inboxMessage : MonoBehaviour
     //START IS HERE FOR TESTING ONLY - remove later
     void Start() {
         // For testing purposes, fiddle with the values below
-        newMessage(1, 1, 0);
+        newMessage(2, 1, 0);
     }
 
     void newMessage(int day, int person, int status) {
         if (person == 1) {
-            //message.text = "hello"; // This was for testing purposes, remove later
+            Debug.Log("Mom"); // This was for testing purposes, remove later
+            Debug.Log("Day is " + day);
             if (day == 2) {
                 message.text = "Sweetheart, Is Agenda helping you stay on track with your goals? I’ve heard so much about how it helped other students, and I thought it would be a good present for you, now that you are doing school from home. I’ve felt myself slipping lately - work isn’t what it used to be for me. I am finding my way through. In fact, I’ve taken up knitting. Would you like me to make you a scarf? I promise I can make it super fluffy and warm - just the way you like it. Love, Mom.";
             }
@@ -99,6 +100,7 @@ public class inboxMessage : MonoBehaviour
                     message.text = "Please let me know that you are okay. I love you so much. Stay safe. Love, Mom";
                 }
             }
+            newResponse(day, person);
         }
         if (person == 2) {
             if (day == 4) {

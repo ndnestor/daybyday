@@ -41,7 +41,7 @@ public class PlatformHealth : MonoBehaviour
             {
                 Destroy(gameObject);
                 Debug.Log("Dead");
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene("Scene_endGame");
             }
         }
         if (col.gameObject.tag == "Whale")
@@ -52,7 +52,7 @@ public class PlatformHealth : MonoBehaviour
             {
                 Destroy(gameObject);
                 Debug.Log("Dead");
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene("Scene_endGame");
             }
         }
     }

@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Blaster Scenes/Scene_startMenu.unity
     guid: 39fdf290696d42b4a9f4db9e55ce1450
+  - enabled: 1
+    path: Assets/Scenes/Blaster Scenes/Scene_Game.unity
+    guid: 854464b4a9a2cc04c9dbe17d08ff7f38
+  - enabled: 1
+    path: Assets/Scenes/Blaster Scenes/Scene_endGame.unity
+    guid: a132eee8aeb015a4f964385f25b5e020
   m_configObjects: {}
