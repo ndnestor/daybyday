@@ -168,4 +168,4 @@ MonoBehaviour:
   rigidEnemy: {fileID: 7079459111009898010}
   enemBullet: {fileID: 4290589325382026084, guid: 22e9cab5aa7ee634b81f2bda2df2708a, type: 3}
   shootIncr: 0.5
-  despawnTime: 0
+  despawnTime: 15

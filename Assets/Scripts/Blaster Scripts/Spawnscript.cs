@@ -8,15 +8,15 @@ using UnityEngine;
      public GameObject enem_Hole;
      public GameObject enem_Ship;
      private float spawnTimer;
-     public float spawnIncr;
+     private float spawnIncr;
      private float spawnTimer_Whale;
-     public float spawnIncr_Whale;
+     private float spawnIncr_Whale;
      private float spawnTimer_Hole;
      private float spawnIncr_Hole;
      private float spawnTimer_Ship;
      private float spawnIncr_Ship;
 
-     public float xHole;
+     private float xHole;
 
     void Awake() {
         spawnIncr = UnityEngine.Random.Range(0.5f, 5.0f);
@@ -29,7 +29,7 @@ using UnityEngine;
         spawnTimer_Hole = Time.time + spawnIncr_Hole;
 
         spawnIncr_Ship = UnityEngine.Random.Range(55.0f, 120.0f);
-        spawnIncr_Ship = Time.time + spawnIncr_Ship;
+        spawnTimer_Ship = Time.time + spawnIncr_Ship;
     }
 
      public void Update() {
@@ -43,7 +43,7 @@ using UnityEngine;
          }
          if (spawnTimer_Whale < Time.time) {
              float randY = UnityEngine.Random.Range(-0.2f, 3.2f);
-             //Debug.Log(string.Format("{0:N2}", randX));
+             //Debug.Log(string.Format("{0:N2}", randY));
              GameObject tmp_Whale = Instantiate(enem_Whale, new Vector3(-9.0f, -2.0f, 0.0f), 
              Quaternion.identity);
              tmp_Whale.transform.position = new Vector3(tmp_Whale.transform.position.x, randY, 0.0f);
@@ -52,7 +52,7 @@ using UnityEngine;
          } 
          if (spawnTimer_Ship < Time.time) {
              float randY_ship = UnityEngine.Random.Range(-0.2f, 3.2f);
-             //Debug.Log(string.Format("{0:N2}", randX));
+             //Debug.Log(string.Format("{0:N2}", randY_ship));
              GameObject tmp_Ship = Instantiate(enem_Ship, new Vector3(9.0f, -2.0f, 0.0f), 
              Quaternion.identity);
              tmp_Ship.transform.position = new Vector3(tmp_Ship.transform.position.x, randY_ship, 0.0f);

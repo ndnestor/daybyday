@@ -14,6 +14,7 @@ public class spreadBull_R : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("R bullet created");
         rb.velocity = transform.up * bulletSpeed + transform.right*bulletHorz;
         despawnTimer = Time.time + despawnTime;
     }
