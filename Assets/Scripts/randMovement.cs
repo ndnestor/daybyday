@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class randMovement : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class randMovement : MonoBehaviour
     private float transX, transY;
     private float bounceTimer, bounceIncr;
     private bool playerInBounds;
+    public GameObject circleCenter, playerDot;
+    public float distance;
+    public TextMeshProUGUI inOutText;
     void Start()
     {
         bounceIncr = 1.5f;
@@ -37,9 +41,28 @@ public class randMovement : MonoBehaviour
     void FixedUpdate(){
          //rb.velocity = transform.up * speed - transform.right*speed;
          Vector3 pos = transform.position;
+         distance = Vector3.Distance (circleCenter.transform.position, playerDot.transform.position);
          if (Time.time > bounceTimer) {
              changeDirection();
          }
+          if (distance <= 1.22) {
+             playerInBounds = true;
+             Debug.Log("Player in bounds is TRUE");
+         } else {
+             playerInBounds = false;
+             Debug.Log("Player in bounds is FALSE");
+         }
+         notifChange();
+    }
+
+    public void notifChange() {
+        if (playerInBounds == true) {
+            inOutText.text = "IN";
+            inOutText.color = new Color (0.149f,0.325f,0.2235f, 1);
+        } else {
+            inOutText.text = "OUT";
+            inOutText.color = new Color (0.616f,0.004f,0.004f, 1);
+        }
     }
 
     
@@ -66,12 +89,13 @@ public class randMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Player") {
-            if (playerInBounds == true) {
+            /** if (playerInBounds == true) {
                 playerInBounds = false;
             } else {
                 playerInBounds = true;
-            }
+            } */
+            Physics2D.IgnoreCollision(playerDot.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
-        Debug.Log("Player in bounds is: " + playerInBounds);
     }
+
 }
