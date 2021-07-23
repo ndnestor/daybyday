@@ -30,8 +30,8 @@ namespace NotePad{
             //Debug.Log(openNote);
             Button btn = notesButton.GetComponent<Button>();
             btn.onClick.AddListener(openNew);
-            tmpColor = Instantiate(notesCol, new Vector3(10.5f, 2.1f, 0.0f), Quaternion.identity);
-            tmpBW = Instantiate(notesBW, new Vector3(10.5f, 2.1f, 0.0f), Quaternion.identity);
+            tmpColor = Instantiate(notesCol, new Vector3(3.73f, -0.38f, 0.0f), Quaternion.identity);
+            tmpBW = Instantiate(notesBW, new Vector3(3.73f, -0.38f, 0.0f), Quaternion.identity);
             tmpColor.SetActive(false);
             tmpBW.SetActive(false);
         }

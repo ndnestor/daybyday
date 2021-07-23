@@ -13,7 +13,9 @@ public class randMovement : MonoBehaviour
     private bool playerInBounds;
     public GameObject circleCenter, playerDot;
     public float distance;
-    public TextMeshProUGUI inOutText;
+    public TextMeshProUGUI inOutText, scoreTimerText;
+    private float scoreTime;
+    private int outTime;
     void Start()
     {
         bounceIncr = 1.5f;
@@ -36,6 +38,8 @@ public class randMovement : MonoBehaviour
              }
          }
          bounceTimer = Time.time + bounceIncr;
+         scoreTime = Time.time;
+         outTime = 10;
     }
 
     void FixedUpdate(){
@@ -53,16 +57,22 @@ public class randMovement : MonoBehaviour
              Debug.Log("Player in bounds is FALSE");
          }
          notifChange();
+         scoreTime = Time.time;
+         if (scoreTime%1 == 0) {
+            scoreTimerText.text = scoreTime.ToString();
+         }
     }
 
     public void notifChange() {
         if (playerInBounds == true) {
-            inOutText.text = "IN";
             inOutText.color = new Color (0.149f,0.325f,0.2235f, 1);
         } else {
-            inOutText.text = "OUT";
+            if (Time.time % 1 == 0) {
+                outTime -= 1;
+            }
             inOutText.color = new Color (0.616f,0.004f,0.004f, 1);
         }
+        inOutText.text = outTime.ToString();
     }
 
     
@@ -89,11 +99,6 @@ public class randMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Player") {
-            /** if (playerInBounds == true) {
-                playerInBounds = false;
-            } else {
-                playerInBounds = true;
-            } */
             Physics2D.IgnoreCollision(playerDot.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
     }
