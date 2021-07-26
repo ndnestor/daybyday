@@ -11,24 +11,27 @@ public class spaceBarController : MonoBehaviour
 
     void Start() {
         fallSpeed = 1.0f;
-        jumpSpeed = 1.2f;
+        jumpSpeed = 1.5f;
         jumpIncr = 0.5f;
         playerBar.velocity = -transform.up * fallSpeed;
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) {
+        if(Input.GetKey(KeyCode.Space)) {
             barJump();
             print("Space bar pressed");
-        }
-        if (jumpTimer > Time.time) {
-            playerBar.velocity = transform.up * jumpSpeed;
         } else {
             playerBar.velocity = -transform.up * fallSpeed;
         }
+        /** if (jumpTimer > Time.time) {
+            playerBar.velocity = transform.up * jumpSpeed;
+        } else {
+            playerBar.velocity = -transform.up * fallSpeed;
+        } */
     }
     void barJump() {
-        jumpTimer = Time.time + jumpIncr;
+        //jumpTimer = Time.time + jumpIncr;
+        playerBar.velocity = transform.up * jumpSpeed;
     }
     void OnCollisionEnter2D(Collision2D col)
     {
