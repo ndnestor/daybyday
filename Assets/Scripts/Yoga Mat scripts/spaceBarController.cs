@@ -18,7 +18,7 @@ public class spaceBarController : MonoBehaviour
     void Update()
     {
         if(Input.GetKey(KeyCode.Space)) {
-            barJump();
+            barJump(jumpSpeed);
             print("Space bar pressed");
         } else {
             playerBar.velocity = -transform.up * fallSpeed;
@@ -28,10 +28,16 @@ public class spaceBarController : MonoBehaviour
         } else {
             playerBar.velocity = -transform.up * fallSpeed;
         } */
+        if(Input.GetKey(KeyCode.W)) {
+            barJump(jumpSpeed*2);
+        }
+        if(Input.GetKey(KeyCode.S)) {
+            barJump(jumpSpeed*(-2));
+        }
     }
-    void barJump() {
+    void barJump(float speed) {
         //jumpTimer = Time.time + jumpIncr;
-        playerBar.velocity = transform.up * jumpSpeed;
+        playerBar.velocity = transform.up * speed;
     }
     void OnCollisionEnter2D(Collision2D col)
     {
