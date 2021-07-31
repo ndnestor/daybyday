@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class randMovement : MonoBehaviour
 {
@@ -16,8 +17,11 @@ public class randMovement : MonoBehaviour
     public TextMeshProUGUI inOutText, scoreTimerText;
     private float scoreTime;
     private int outTime;
+    globalScore globalScoreKeeper;
+    public float scoreTimeInt;
     void Start()
     {
+        globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
         bounceIncr = 1.5f;
         playerInBounds = true;
         rb = GetComponent<Rigidbody2D> ();
@@ -40,6 +44,8 @@ public class randMovement : MonoBehaviour
          bounceTimer = Time.time + bounceIncr;
          scoreTime = Time.time;
          outTime = 10;
+        scoreTime = 0;
+        scoreTimeInt = 0;
     }
 
     void FixedUpdate(){
@@ -60,6 +66,10 @@ public class randMovement : MonoBehaviour
          scoreTime = Time.time;
          if (scoreTime%1 == 0) {
             scoreTimerText.text = scoreTime.ToString();
+            scoreTimeInt = scoreTime;
+         }
+         if (outTime == 0) {
+             gameOver();
          }
     }
 
@@ -101,6 +111,11 @@ public class randMovement : MonoBehaviour
         if (col.gameObject.tag == "Player") {
             Physics2D.IgnoreCollision(playerDot.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
+    }
+
+    void gameOver() {
+        globalScoreKeeper.updateYogaScore(scoreTimeInt, 1);
+        SceneManager.LoadScene("Yoga_gameOver");
     }
 
 }

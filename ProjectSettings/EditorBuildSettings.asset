@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Yoga Mat Scenes/Yoga_ex2.unity
     guid: c324ae3c3193881439a53bb78fcbd2b3
+  - enabled: 1
+    path: Assets/Scenes/Yoga Mat Scenes/Yoga_gameOver.unity
+    guid: 9b71e6f9056753f408484f066ca72035
   m_configObjects: {}
