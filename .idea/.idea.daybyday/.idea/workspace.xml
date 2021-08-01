@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-
-    <list default="true" id="4839a94a-a343-4a8a-8fbd-bae94e9015cf" name="Default Changelist" comment="Fixed bug where neglected sprites were not being updated.&#10;Added bonsai tree placeholders">
+    <list default="true" id="4839a94a-a343-4a8a-8fbd-bae94e9015cf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.daybyday/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Nathan Branch.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Nathan Branch.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ProductivityAid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ProductivityAid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AgendasBox.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AgendasBox.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deprecated/Piano.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Deprecated/Piano.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractionHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractionHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ProductivityAid.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ProductivityAid.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracking.cs.meta" beforeDir="false" />
     </list>
     <list id="cd597de6-c223-46a3-9433-4bb79c251444" name="Revert &quot;Moves deprecated scenes to their own folder&quot;" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="NuGetForUnity" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,21 +40,12 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-
-    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scripts/InteractionHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scenes/Nathan Branch.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Scripts/Tracking.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueActivator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Dialogue Graphs/Agenda Deliver Dialogue.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Dialogue Graphs/Agenda Deliver Dialogue.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ProductivityAid.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/OneDrive - Rutgers University/Unity Projects/daybyday/Assets/Dialogue Graphs/Agenda Deliver Dialogue.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.1.0/Unity.Mathematics/random.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AgendasBox.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Registry/AgentRegistry.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@10.5.0/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mario/Pipe.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueGraph/Nodes/Registry/StringCompareNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.1.0/Unity.Mathematics/random.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueActivator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Registry/AgentRegistry.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -55,8 +54,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/TestScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Instances/MainInstances.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tracking.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ProductivityAid.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/InteractionHandler.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ProductivityAid.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Static/ProductivityAid.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Deprecated/OldPiano.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Mario/Pipe.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Piano.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1tBbLpgrLpjVDM6axJiZkaVwSDQ" />
@@ -121,6 +124,11 @@
       <workItem from="1625960200124" duration="2871000" />
       <workItem from="1626133344051" duration="1267000" />
       <workItem from="1626144084304" duration="1231000" />
+      <workItem from="1626208927158" duration="8444000" />
+      <workItem from="1626391877998" duration="3094000" />
+      <workItem from="1626738682831" duration="3142000" />
+      <workItem from="1627344379989" duration="1337000" />
+      <workItem from="1627771589971" duration="1733000" />
     </task>
     <task id="LOCAL-00001" summary="Versioned unversioned files">
       <created>1623714043846</created>
@@ -276,7 +284,77 @@
       <option name="project" value="LOCAL" />
       <updated>1626145323053</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Added bonsai tree exception to InteractionHandler.cs">
+      <created>1626209941370</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1626209941370</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Changed agent name from Quinn to Agenda">
+      <created>1626219489475</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1626219489475</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Moved from Dialogue Graph folder to Dialogue Registries folder">
+      <created>1626219605068</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1626219605068</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Added string registry component to dialogue prefab">
+      <created>1626219802466</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1626219802466</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Added String Registry.asset">
+      <created>1626219823486</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1626219823486</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Added Dialogue Registries folder">
+      <created>1626219840505</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1626219840505</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Reordered game objects in Nathan Branch scene">
+      <created>1626219931674</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1626219931674</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Created Productivity Aid dialogue graph">
+      <created>1626219977940</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1626219977940</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Implemented dialogue graph in Productivity Aid prompt method.&#10;Fixed curly brace formatting">
+      <created>1626220208766</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1626220208766</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Fixed canvas components being dereferenced from dialogue prefab">
+      <created>1626220526108</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1626220526108</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,12 +376,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Versioned unversioned files" />
-    <MESSAGE value="Deleted merge artifacts" />
-    <MESSAGE value="Removed FluidSynth from audio mixer" />
-    <MESSAGE value="Versioned files" />
-    <MESSAGE value="Added dialogue dependencies" />
-    <MESSAGE value="Renamed Dialogue Graph to Agenda Deliver Dialogue" />
     <MESSAGE value="Auto-generated changes" />
     <MESSAGE value="Completed Dialogue prefab for Agenda's Day 2 dialogue" />
     <MESSAGE value="Implemented day 2 dialogue" />
@@ -319,6 +391,16 @@
     <MESSAGE value="Added ProductivityAid.cs" />
     <MESSAGE value="Auto-generated changes" />
     <MESSAGE value="Fixed bug where neglected sprites were not being updated.&#10;Added bonsai tree placeholders" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug where neglected sprites were not being updated.&#10;Added bonsai tree placeholders" />
+    <MESSAGE value="Added bonsai tree exception to InteractionHandler.cs" />
+    <MESSAGE value="Changed agent name from Quinn to Agenda" />
+    <MESSAGE value="Moved from Dialogue Graph folder to Dialogue Registries folder" />
+    <MESSAGE value="Added string registry component to dialogue prefab" />
+    <MESSAGE value="Added String Registry.asset" />
+    <MESSAGE value="Added Dialogue Registries folder" />
+    <MESSAGE value="Reordered game objects in Nathan Branch scene" />
+    <MESSAGE value="Created Productivity Aid dialogue graph" />
+    <MESSAGE value="Implemented dialogue graph in Productivity Aid prompt method.&#10;Fixed curly brace formatting" />
+    <MESSAGE value="Fixed canvas components being dereferenced from dialogue prefab" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed canvas components being dereferenced from dialogue prefab" />
   </component>
 </project>

@@ -4,7 +4,7 @@ using UnityEngine;
 //using FluidMidi;
 using System.IO;
 
-public class Piano : MonoBehaviour //NOTE: THIS SCRIPT IS DEPRECATED
+public class OldPiano : MonoBehaviour //NOTE: THIS SCRIPT IS DEPRECATED
 {
 
     /*[SerializeField] private float gain;

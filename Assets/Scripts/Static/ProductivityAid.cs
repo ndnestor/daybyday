@@ -19,7 +19,7 @@ public class ProductivityAid : MonoBehaviour
     private StringRegistry stringRegistry;
     private DialogueSystem dialogueSystem;
     private int numGoalsToComplete = 0;
-    private int level = 0;
+    private int level = 2;
 
     private void Start()
     {
@@ -36,6 +36,14 @@ public class ProductivityAid : MonoBehaviour
             level++;
         }
     }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Semicolon))
+        {
+            Prompt("Playing Blaster", 2, 3, 4, 5);
+        }
+    }
     
     //Shows relevant information about an interaction before starting it
     public void Prompt(string activityName, int activityTime, int proValue, int socValue, int casValue) {
@@ -44,7 +52,7 @@ public class ProductivityAid : MonoBehaviour
         string message = "";
         if(level >= 1)
         {
-            message += $"The {activityName} will take {activityTime} hours to complete";
+            message += $"{activityName} will take {activityTime / 2} hours to complete";
         }
         if(level >= 2)
         {
@@ -52,7 +60,7 @@ public class ProductivityAid : MonoBehaviour
         }
         if(level == 3)
         {
-            if(socValue > 0 || casValue > 0 && numGoalsToComplete > 0)
+            if(proValue < 0 && numGoalsToComplete > 0)
             {
                 message += "\nYou cannot do social or casual activities until you have completed all of Agenda's goals";
             } else {
