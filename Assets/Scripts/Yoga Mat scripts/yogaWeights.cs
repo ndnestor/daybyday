@@ -15,6 +15,8 @@ public class yogaWeights : MonoBehaviour
     float distance, outTime;
     public float scoreTime, scoreTimeInt;
     bool inBounds;
+    float timeAtStart, gameTime;
+    int lastIntTime, nextIntTime;
     SpriteRenderer playerSprite;
 
     globalScore globalScoreKeeper;
@@ -26,7 +28,6 @@ public class yogaWeights : MonoBehaviour
     void Start() {
         globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
         moveIncr = 1.5f;
-        startWait = Time.time + 3.0f;
         speed = 0;
         inBounds = true;
         playerSprite = player.GetComponent<SpriteRenderer>();
@@ -35,33 +36,39 @@ public class yogaWeights : MonoBehaviour
         inOutText.text = " ";
         scoreTime = 0;
         scoreTimeInt = 0;
+        timeAtStart = Time.time;
+        gameTime = Time.time - timeAtStart;
+        startWait = timeAtStart + 3.0f;
+        lastIntTime = 0;
     }
     void FixedUpdate() {
+        gameTime = Time.time - timeAtStart;
+        lastIntTime = Mathf.FloorToInt(gameTime);
         // Start timer countdown
-        if (Time.time >= 4.0) {
+        if (gameTime >= 4.0) {
             startTimer.text = " ";
-        } else if (Time.time >= 3.0) {
+        } else if (gameTime >= 3.0) {
             startTimer.text = "START";
-        } else if (Time.time >= 2.0) {
+        } else if (gameTime >= 2.0) {
             startTimer.text = "Starting in 1";
-        } else if (Time.time >= 1.0) {
+        } else if (gameTime >= 1.0) {
             startTimer.text = "Starting in 2";
-        } else if (Time.time >= 0.0) {
+        } else if (gameTime >= 0.0) {
             startTimer.text = "Starting in 3";
         }
 
-        if (Time.time <= 5.0) {
+        if (gameTime <= 5.0) {
             inOutText.text = " ";
         }
 
-        if (startWait < Time.time) {
+        if (startWait < gameTime) {
             speed = 1;
         } else {
             rb.transform.position = new Vector3(-7.492371f, 0.0f, 0.0f);
         }
-        if(moveTimer < Time.time) {
+        if(moveTimer < gameTime) {
             switchDirec();
-            moveTimer = Time.time + moveIncr;
+            moveTimer = gameTime + moveIncr;
         }
 
         distance = Vector3.Distance(rangeDetector.transform.position, player.transform.position);
@@ -77,10 +84,11 @@ public class yogaWeights : MonoBehaviour
         if (outTime == 0) {
             gameOver();
         }
-        scoreTime = Time.time;
-        if (scoreTime%1 == 0) {
-            scoreTimerText.text = scoreTime.ToString();
-            scoreTimeInt = scoreTime;
+        scoreTime = gameTime;
+        //Debug.Log("Score time " + scoreTime);
+        if (Mathf.FloorToInt(scoreTime) >= lastIntTime) {
+            scoreTimeInt = Mathf.FloorToInt(scoreTime);
+            scoreTimerText.text = scoreTimeInt.ToString();
          }
     }
 
@@ -98,7 +106,7 @@ public class yogaWeights : MonoBehaviour
          } else {
              rb.velocity = transform.up * speed;
          }
-         moveTimer = Time.time + moveIncr;
+         moveTimer = gameTime + moveIncr;
     }
 
     void notifChange() {
@@ -107,12 +115,13 @@ public class yogaWeights : MonoBehaviour
             inOutText.color = new Color (0.149f,0.325f,0.2235f, 1);
         } else {
             playerSprite.color = new Color (0.723f,0.992f,0.867f, 1);
-            if (Time.time % 1 == 0 && Time.time > 5.0f) {
+            if (gameTime >= lastIntTime && gameTime > 5.0f && gameTime >= nextIntTime) {
                 outTime -= 1;
+                nextIntTime = lastIntTime + 1;
             }
             inOutText.color = new Color (0.616f,0.004f,0.004f, 1);
         }
-        if (Time.time > 5.0f) {
+        if (gameTime > 5.0f) {
             inOutText.text = outTime.ToString();
         }
     }
