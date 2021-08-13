@@ -19,8 +19,12 @@ public class randMovement : MonoBehaviour
     private int outTime;
     globalScore globalScoreKeeper;
     public float scoreTimeInt;
+    float timeAtStart, gameTime;
+    int lastIntTime, nextIntTime;
     void Start()
     {
+        timeAtStart = Time.time;
+        lastIntTime = 0;
         globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
         bounceIncr = 1.5f;
         playerInBounds = true;
@@ -41,18 +45,20 @@ public class randMovement : MonoBehaviour
                  rb.velocity = transform.up * speed + transform.right*speed;
              }
          }
-         bounceTimer = Time.time + bounceIncr;
-         scoreTime = Time.time;
+         bounceTimer = timeAtStart + bounceIncr;
+         scoreTime = timeAtStart;
          outTime = 10;
         scoreTime = 0;
         scoreTimeInt = 0;
     }
 
     void FixedUpdate(){
+         gameTime = Time.time - timeAtStart;
+         lastIntTime = Mathf.FloorToInt(gameTime);
          //rb.velocity = transform.up * speed - transform.right*speed;
          Vector3 pos = transform.position;
          distance = Vector3.Distance (circleCenter.transform.position, playerDot.transform.position);
-         if (Time.time > bounceTimer) {
+         if (gameTime > bounceTimer) {
              changeDirection();
          }
           if (distance <= 1.22) {
@@ -63,10 +69,10 @@ public class randMovement : MonoBehaviour
              Debug.Log("Player in bounds is FALSE");
          }
          notifChange();
-         scoreTime = Time.time;
-         if (scoreTime%1 == 0) {
-            scoreTimerText.text = scoreTime.ToString();
-            scoreTimeInt = scoreTime;
+         scoreTime = gameTime;
+         if (Mathf.FloorToInt(scoreTime) >= lastIntTime) {
+             scoreTimeInt = Mathf.FloorToInt(scoreTime);
+             scoreTimerText.text = scoreTimeInt.ToString();
          }
          if (outTime == 0) {
              gameOver();
@@ -77,8 +83,9 @@ public class randMovement : MonoBehaviour
         if (playerInBounds == true) {
             inOutText.color = new Color (0.149f,0.325f,0.2235f, 1);
         } else {
-            if (Time.time % 1 == 0) {
+            if (gameTime >= lastIntTime && gameTime >= nextIntTime) {
                 outTime -= 1;
+                nextIntTime = lastIntTime + 1;
             }
             inOutText.color = new Color (0.616f,0.004f,0.004f, 1);
         }
@@ -103,7 +110,7 @@ public class randMovement : MonoBehaviour
                  rb.velocity = transform.up * speed + transform.right*speed;
              }
          }
-         bounceTimer = Time.time + bounceIncr;
+         bounceTimer = gameTime + bounceIncr;
     }
 
     void OnCollisionEnter2D(Collision2D col)
