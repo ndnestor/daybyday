@@ -28,6 +28,14 @@ public class Window : MonoBehaviour {
 		dialogueSystem = MainInstances.Get<DialogueSystem>();
 	}
 
+	private void Update()
+	{
+		if(Input.GetKeyDown(KeyCode.Alpha3))
+		{
+			Interact();
+		}
+	}
+
 	private void Interact()
 	{
 		int messageIndex = 0;
