@@ -721,7 +721,6 @@ GameObject:
   - component: {fileID: 231473487}
   - component: {fileID: 231473489}
   - component: {fileID: 231473490}
-  - component: {fileID: 231473491}
   m_Layer: 0
   m_Name: Static
   m_TagString: Untagged
@@ -895,18 +894,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueGraph: {fileID: 11400000, guid: b60db0cb056929e4daeaf64d455dcf60, type: 2}
   levelIncrementDays: 
---- !u!114 &231473491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231473486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de63fc07745d9b0458d4ffcd04cf2ed4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &295891022
 GameObject:
   m_ObjectHideFlags: 0
