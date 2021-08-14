@@ -1,11 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game;
+using Game.Dialogue;
 using UnityEngine;
 
 public class Window : MonoBehaviour {
 
-	[SerializeField] private string[] messages;
+	[SerializeField] private DialogueGraph[] dialogueGraphs;
+	[SerializeField] private int timeConsumption;
+
+	private DialogueSystem dialogueSystem;
 
 	private const int springStart = 1;
 	private const int springEnd = 3;
@@ -17,36 +22,45 @@ public class Window : MonoBehaviour {
 	private const int winterEnd = 12; // TODO: Ask if this is the end date
 	private const int nightHour = 10; // Inclusive
 
-	private void Start() {
+	private void Start()
+	{
 		InteractionHandler.Instance.RegisterObject("Window", Interact);
+		dialogueSystem = MainInstances.Get<DialogueSystem>();
 	}
 
-	private void Interact() {
+	private void Interact()
+	{
 		int messageIndex = 0;
 		int currDay = Tracking.Instance.DayNum;
 
-		if(Between(currDay, springStart, springEnd)) {
+		if(Between(currDay, springStart, springEnd))
+		{
 			messageIndex = 0;
-		} else if(Between(currDay, summerStart, summerEnd)) {
+		} else if(Between(currDay, summerStart, summerEnd))
+		{
 			messageIndex = 2;
-		} else if(Between(currDay, fallStart, fallEnd)) {
+		} else if(Between(currDay, fallStart, fallEnd))
+		{
 			messageIndex = 4;
-		} else if(Between(currDay, winsterStart, winterEnd)) {
+		} else if(Between(currDay, winsterStart, winterEnd))
+		{
 			messageIndex = 6;
-		} else {
-			// TODO: Throw error
+		} else
+		{
+			throw new NotImplementedException("The current day is outside the bounds of the window's supported days");
 		}
 
-		if(Tracking.Instance.timeUsed >= nightHour) {
+		if(Tracking.Instance.timeUsed >= nightHour)
+		{
 			messageIndex++;
 		}
 
-		string message = messages[messageIndex];
-		// TODO: Show message dialogue
-		// TODO: Consume time unites
+		dialogueSystem.Present(dialogueGraphs[messageIndex]);
+		Tracking.Instance.AddUsedTime(timeConsumption);
 	}
 
-	private bool Between(int value, int lowerBound, int upperBound) {
+	private static bool Between(int value, int lowerBound, int upperBound)
+	{
 		return lowerBound <= value && value <= upperBound;
 	}
 
