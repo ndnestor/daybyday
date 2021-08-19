@@ -18,4 +18,8 @@ public class scoreScript : MonoBehaviour
     {
         score.text = "Score: " + scoreValue;
     }
+
+    public int returnScore() {
+        return scoreValue;
+    }
 }

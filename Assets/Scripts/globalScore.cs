@@ -8,8 +8,9 @@ public class globalScore : MonoBehaviour
     // help from https://www.sitepoint.com/saving-data-between-scenes-in-unity/
 
     public static globalScore Instance;
-    public float weightHighScore, balanceHighScore; //yoga exercises
+    public float weightHighScore, balanceHighScore; // yoga exercises
     public float weightRecentScore, balanceRecentScore; //yoga exercises
+    public int blasterRecentScore, blasterHighScore; // Blaster minigame
     public int activity;
 
     void Awake ()
@@ -59,4 +60,10 @@ public class globalScore : MonoBehaviour
         return weightRecentScore;
     }
 
+    public void updateBlasterScore(int recent) {
+        blasterRecentScore = recent;
+        if (recent >= blasterHighScore) {
+            blasterHighScore = recent;
+        }
+    }
 }

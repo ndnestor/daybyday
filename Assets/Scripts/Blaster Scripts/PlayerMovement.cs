@@ -49,6 +49,10 @@ public class PlayerMovement : MonoBehaviour
     private float unSwift;
     public float swiftTimer;
     private bool isSwift;
+    globalScore globalScoreKeeper;
+    public Text scoreText;
+    scoreScript scoreScript;
+    int score;
 
     void Start()
     {
@@ -56,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D> ();
         //rocketHealth = 100;
         isSwift = false;
+        globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
     }
 
     void FixedUpdate()
@@ -79,6 +84,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void playerDie() {
+        Destroy(gameObject);
+        Debug.Log("Dead");
+        scoreScript = scoreText.GetComponent<scoreScript>();
+        score = scoreScript.returnScore();
+        globalScoreKeeper.updateBlasterScore(score);
+        SceneManager.LoadScene("Scene_endGame");
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Enemy")
@@ -87,9 +101,7 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log(rocketHealth);
             if (rocketHealth <= 0)
             {
-                Destroy(gameObject);
-                Debug.Log("Dead");
-                SceneManager.LoadScene("Scene_endGame");
+                playerDie();
             }
             Destroy(col.gameObject);
         }
