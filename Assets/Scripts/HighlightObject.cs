@@ -15,11 +15,14 @@ public class HighlightObject : MonoBehaviour
         defaultMat = connectedSprite.GetComponent<SpriteRenderer>().material;
     }
 
+    public void setTriggerFalse() {
+        triggerable = false;
+    }
+
     private void Update()
     {
         if (Input.GetKey("e") && triggerable)
         {
-            triggerable = false;
             connectedSprite.GetComponent<SpriteRenderer>().material = defaultMat;
             Debug.Log("Interacted with " + gameObject.name);
         }

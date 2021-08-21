@@ -20,7 +20,7 @@ public class openComputer : MonoBehaviour
         }
     }
     void openComp() {
-        //SceneManager.LoadScene("Scene_startMenu");
-        Debug.Log("Computer interaction: open Computer");
+        highlightObject.setTriggerFalse();
+        SceneManager.LoadScene("Scene_startMenu");
     }
 }
