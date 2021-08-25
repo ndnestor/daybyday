@@ -248,43 +248,51 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3359555896664881070, guid: 584ff69f6134277478be7db3942e4dcd, type: 3}
       propertyPath: contents
-      value: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-        semper molestie magna sed lobortis. Curabitur vitae velit dui. Duis fermentum
-        mi in velit bibendum ullamcorper. Ut nec leo finibus, hendrerit tellus in,
-        auctor elit. Sed varius neque quis ipsum commodo lobortis. Curabitur vel
-        enim sed magna cursus condimentum. Integer lorem erat, fringilla eu sapien
-        a, mollis lacinia urna.  Morbi ultrices venenatis nisl ac condimentum. Integer
-        bibendum tincidunt mauris, vitae accumsan lacus ullamcorper at. Sed at ullamcorper
-        ipsum. Sed sagittis urna nulla, eu rutrum justo cursus eu. Pellentesque habitant
-        morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc
-        vitae nisi fringilla, bibendum ante sit amet, tincidunt ligula. Nunc augue
-        mauris, euismod sit amet facilisis vitae, placerat ac sem. Donec eget leo
-        vulputate, venenatis augue nec, ultricies leo. Suspendisse euismod neque
-        ut est iaculis vulputate. Pellentesque vel dolor ut leo venenatis accumsan
-        vel non est. Duis accumsan nibh vel dui vestibulum dignissim. Morbi ullamcorper
-        est nisl, nec mattis nunc ornare ac. Phasellus sodales ac lacus vel sollicitudin. 
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-        ac turpis egestas. Duis posuere tempor quam volutpat ultricies. Aliquam nec
-        nisl at purus cursus rutrum in porta lectus. Duis condimentum massa vitae
-        dolor pellentesque pretium quis vel nulla. Suspendisse cursus lorem ut arcu
-        semper eleifend. Nulla facilisis aliquet feugiat. Ut non vestibulum libero.
-        Morbi sit amet tempus lorem, vel ornare est. Curabitur tempus hendrerit nisl,
-        quis aliquet massa.  Nulla facilisi. Morbi ac ultrices nisl, sed accumsan
-        libero. Donec enim nisl, elementum sed scelerisque in, consequat non erat.
-        Aliquam porta blandit ligula id placerat. Aliquam at sapien et odio pellentesque
-        fermentum. Mauris ante nibh, consectetur vitae accumsan in, iaculis vel odio.
-        Phasellus nec hendrerit felis. Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Sed ut elementum lacus. Maecenas quam sapien, consectetur nec arcu
-        a, commodo tempor felis. Sed maximus ac leo non egestas.  Cras congue ex
-        vel lorem vulputate placerat. Nulla luctus aliquet tellus vitae pulvinar.
-        In sed egestas urna. Vestibulum ante ipsum primis in faucibus orci luctus
-        et ultrices posuere cubilia curae; Quisque vestibulum felis sed augue finibus
-        iaculis. Pellentesque risus tortor, pretium sit amet ligula ut, posuere tincidunt
-        elit. Quisque tincidunt neque a quam fringilla, a pulvinar massa elementum.
-        Ut pellentesque justo non venenatis sagittis. Proin ut semper nisi, non porttitor
-        nisi. Nam vehicula pretium fringilla. Aenean rhoncus massa purus, a molestie
-        sapien interdum eget. Vivamus tincidunt pulvinar neque id tristique. Maecenas
-        tortor eros, pharetra id mi in, facilisis vehicula neque. '
+      value: "We obtain information about you through the means discussed below when
+        we provide the Twitch Services. Please note that we need certain types of
+        information so that we can provide the Twitch Services to you. If you do
+        not provide us with such information, or ask us to delete it, you may no
+        longer be able to access or use the Twitch Services.      User-provided Information:
+        You may provide a variety of information about yourself to us, such as your
+        name, voice and image (in any content you upload), Twitch username, email
+        address, postal mailing address, telephone number, credit card number, and
+        billing information when you register for Twitch Services; upload, purchase,
+        view, or download certain content or products from the Twitch Services; enter
+        contests or sweepstakes; or otherwise use the features and functionality
+        of the Twitch Services.     Automatically Collected Information: When you
+        access the Twitch Services or open one of our emails, we automatically record
+        and store certain information about your system by using cookies and other
+        types of technologies. Cookies are small text files containing a string of
+        alphanumeric characters that are sent to your browser. For information about
+        what cookies are, how they work, how Twitch uses them, and how to remove
+        them, please see our Cookie Policy . Examples of such information we automatically
+        collect include Internet Protocol address (\u201CIP Address\u201D), a unique
+        user ID, device and browser types and identifiers, referring and exit page
+        addresses, software and system type, and information about your usage of
+        Twitch Services. Examples of how Twitch uses automatically collected information
+        include to: (a) automatically update the Twitch application on your system;
+        (b) remember your information so that you will not have to re-enter it during
+        your visit or the next time you access the Twitch Services; (c) provide customized
+        advertisements, content, and information; (d) monitor the effectiveness of
+        marketing campaigns; (e) monitor and store aggregate site usage metrics such
+        as total number of visitors and pages accessed; and (f) track your entries,
+        submissions, and status in any promotions or other activities.     Information
+        from Other Sources: We may obtain additional information from third parties
+        and sources other than the Twitch Services. For example, we may obtain additional
+        information from advertisers, games or services you use, or social media
+        networks (such as Facebook) for which you have approved our access. When
+        you access the Twitch Services through social media networks or when you
+        connect the Twitch Services to social media networks, you are authorizing
+        Twitch to collect, store, and use such additional information and content
+        in accordance with this Privacy Notice. We may also obtain information from
+        third-party services (such as Riot or Steam) regarding your use of such services,
+        including about your use of the content you choose to broadcast through the
+        Twitch Services. We use this information to supplement the information we
+        collect about you in order to provide more relevant, safer experiences for
+        you with the Twitch Services and improve the Twitch Services, analytics,
+        and advertising. If we combine or associate information from other sources
+        with information that we collect through the Twitch Services, we will treat
+        the combined information in accordance with this Privacy Notice. "
       objectReference: {fileID: 0}
     - target: {fileID: 3569049256092314921, guid: 584ff69f6134277478be7db3942e4dcd, type: 3}
       propertyPath: m_Name
@@ -297,6 +305,10 @@ PrefabInstance:
     - target: {fileID: 3671609084392457415, guid: 584ff69f6134277478be7db3942e4dcd, type: 3}
       propertyPath: m_SizeDelta.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570022216071981917, guid: 584ff69f6134277478be7db3942e4dcd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6156492808721044247, guid: 584ff69f6134277478be7db3942e4dcd, type: 3}
       propertyPath: m_Camera
@@ -317,6 +329,14 @@ PrefabInstance:
     - target: {fileID: 6346494365919057973, guid: 584ff69f6134277478be7db3942e4dcd, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378561147122629055, guid: 584ff69f6134277478be7db3942e4dcd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378561147122629055, guid: 584ff69f6134277478be7db3942e4dcd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 7446058612734168726, guid: 584ff69f6134277478be7db3942e4dcd, type: 3}
       propertyPath: m_TargetGraphic

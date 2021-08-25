@@ -14,71 +14,158 @@ public class Book : MonoBehaviour
 	[SerializeField] private GameObject openBookSprite;
 	[SerializeField] private TMP_Text leftPageText;
 	[SerializeField] private TMP_Text rightPageText;
-
 	[SerializeField] private int maxLinesPerPage;
+
+	private readonly List<string> pageContents = new List<string>();
+	private int pageNumber = 0;
 
 	public void OpenBook()
 	{
 		Debug.Log($"Opening book {title} by {author}");
 		openBookSprite.SetActive(true);
-		string remainingText = FillTextbox(leftPageText, 100, contents);
-		FillTextbox(rightPageText, 100, remainingText);
+		// Show close book sprite
+		SavePageContents();
+		SetPage(1);
 	}
 
-	private void Update() {
-		if(Input.GetKeyDown(KeyCode.B)) {
-			OpenBook();
+	private void SavePageContents()
+	{
+		string remainingText = contents;
+
+		while(remainingText.Length != 0)
+		{
+			
+			// Increment page number
+			pageNumber++;
+			
+			// Save left page contents
+			remainingText = FillTextBox(leftPageText, 100, remainingText);
+			pageContents.Add(leftPageText.text);
+
+			// Increment page number
+			pageNumber++;
+			
+			// Save right page contents
+			remainingText = FillTextBox(rightPageText, 100, remainingText);
+			pageContents.Add(rightPageText.text);
+
 		}
 	}
 
-	private string FillTextbox(TMP_Text textbox, int charsPerIteration, string text) {
-		string remainingText = text;
-		
-		const int loopLimit = 2000;
-		int i = 0;
+	private void NextPage()
+	{
 
-		while(remainingText.Length != 0) {
+		// Increment the page number
+		pageNumber++;
+
+		// Return if the visible pages do not change
+		if(pageNumber % 2 == 0 || pageContents[pageNumber] == null)
+		{
+			return;
+		}
+
+		// Set the text boxes appropriately
+		Debug.Log("Going to next page");
+		leftPageText.text = pageContents[pageNumber - 1];
+		rightPageText.text = pageContents[pageNumber];
+	}
+
+	private void PrevPage()
+	{
+
+		// Decrement the page
+		pageNumber--;
+		
+		// Return if visible pages do not change
+		if(pageNumber % 2 == 1 || pageNumber < 2 || pageContents[pageNumber] == null)
+		{
+			return;
+		}
+		
+		// Set the text boxes appropriately
+		Debug.Log("Going to previous page");
+		leftPageText.text = pageContents[pageNumber - 2];
+		rightPageText.text = pageContents[pageNumber - 1];
+	}
+
+	private void SetPage(int newPageNumber)
+	{
+		while(newPageNumber != pageNumber)
+		{
+			if(newPageNumber < pageNumber)
+			{
+				PrevPage();
+			} else
+			{
+				NextPage();
+			}
+		}
+	}
+
+	private void Update()
+	{
+		if(Input.GetKeyDown(KeyCode.B))
+		{
+			OpenBook();
+		} else if(Input.GetKeyDown(KeyCode.N))
+		{
+			PrevPage();
+		} else if(Input.GetKeyDown(KeyCode.M))
+		{
+			NextPage();
+		}
+	}
+
+	private string FillTextBox(TMP_Text textBox, int charsPerIteration, string text)
+	{
+		string remainingText = text;
+		int charsAdded = 0;
+
+		textBox.text = "";
+
+		while(remainingText.Length != 0)
+		{
 			
-			// Add text to the textbox
+			// Add text to the textBox
 			string textToAdd;
-			if(charsPerIteration > remainingText.Length) {
+			if(charsPerIteration > remainingText.Length)
+			{
 				textToAdd = remainingText;
-			} else {
+			} else
+			{
 				textToAdd = remainingText.Substring(0, charsPerIteration);
 			}
-			textbox.text += textToAdd;
-
+			textBox.text += textToAdd;
+			charsAdded += textToAdd.Length;
+			
 			// Shave off text as needed
-			textbox.ForceMeshUpdate();
-			Debug.Log(textbox.textInfo.lineCount);
+			textBox.ForceMeshUpdate();
 
 			bool overshot = false;
-			if(textbox.textInfo.lineCount > maxLinesPerPage) {
+			if(textBox.textInfo.lineCount > maxLinesPerPage)
+			{
 				overshot = true;
 				
-				while(textbox.textInfo.lineCount > maxLinesPerPage) {
-
+				while(textBox.textInfo.lineCount > maxLinesPerPage)
+				{
+					
 					// Remove the last character
-					textbox.text = textbox.text.Substring(0, textbox.text.LastIndexOf(' '));
-					textbox.ForceMeshUpdate();
-
-					i++;
-					if(i > loopLimit) {
-						Debug.LogError("Reached loop limit");
-						return remainingText;
-					}
+					int delimiterIndex = textBox.text.LastIndexOf(' ');
+					charsAdded -= textBox.text.Length - delimiterIndex;
+					textBox.text = textBox.text.Substring(0, delimiterIndex);
+					textBox.ForceMeshUpdate();
+					
 				}
+				
+				// Remove extra white space from the start
+				charsAdded++;
+
 			}
 
-			if(overshot) {
-				return remainingText;
-			}
-
-			remainingText = text.Substring(textbox.text.Length);
-
-			i++;
-			if(i > loopLimit) {
-				Debug.LogError("Reached loop limit");
+			remainingText = text.Substring(charsAdded);
+			
+			if(overshot)
+			{
 				return remainingText;
 			}
 		}
