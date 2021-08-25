@@ -697,6 +697,7 @@ MonoBehaviour:
   bulwark: {fileID: 1823605318616059584, guid: 0b1179d95393c474e91bfe08de886d62, type: 3}
   speedEffectTimer: 0
   swiftTimer: 3
+  scoreText: {fileID: 1115141117}
 --- !u!114 &461056735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,6 +1011,7 @@ MonoBehaviour:
   healthBar: {fileID: 1390685037}
   audioOuch: {fileID: 592491609}
   bar: {fileID: 2133866114}
+  scoreText: {fileID: 1115141117}
 --- !u!61 &592491606
 BoxCollider2D:
   m_ObjectHideFlags: 0

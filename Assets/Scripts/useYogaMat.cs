@@ -13,6 +13,7 @@ public class useYogaMat : MonoBehaviour
     }
 
     void openYogaMat() {
+        highlightObject.setTriggerFalse();
         SceneManager.LoadScene("Yoga_menu");
     }
     

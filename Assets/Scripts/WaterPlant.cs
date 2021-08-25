@@ -23,6 +23,7 @@ public class WaterPlant : MonoBehaviour
         GameObject showCan = Instantiate(waterCan, new Vector3(0.93f, -1.58f, 0.0f), Quaternion.identity);
         GameObject showWater = Instantiate(wateringObj, new Vector3(-0.05f, -1.50f, 0.0f), Quaternion.identity);
         wasWatered = true;
+        highlightObject.setTriggerFalse();
     }
 
     int returnLevel() {
