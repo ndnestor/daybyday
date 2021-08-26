@@ -8,6 +8,7 @@ public class inboxMessage : MonoBehaviour
     public TextMeshProUGUI message;
     public TextMeshProUGUI response1, response2;
     public int dayShown, personShown;
+    public int brieDay;
     public int intMom, intGrandma, intProf, intBuddy, intBrie, intMatt;
     public int status;
 
@@ -26,8 +27,15 @@ public class inboxMessage : MonoBehaviour
     dayShown and personShown variables store last shown
     changeDay() and changePerson() if day or person changes, respectively
 
-    Day changes daily, should be implemeneted in Tracking script
+    Day changes daily, should be implemeneted in Tracking script*
     Person changes when message is selected, implemented through Inbox buttons
+
+    *Some chars use independent day vars (eg. brie uses brieDay) b/c depends on how many
+    days you've been talking to them, no necessarily which day it is in-game
+    These indepedent variables will simply increment in the changeDay() method
+    Those characters are as follows:
+    - Brie
+    - [add as nec]
 
     Status changes based on responses, implemented in-game and updated
     through updateStatus() method
@@ -39,10 +47,14 @@ public class inboxMessage : MonoBehaviour
     1 = no response
     2 = all response
     "Status" stores # 0-2 based on which character, outside of newMessage()
+
+    Note to self: implement a script attached to reply buttons to affect statuses of
+    convos, such as intBrie for Brie...
     */
 
     void changeDay(int newDay) {
         dayShown = newDay;
+        brieDay++;
         showMessage(dayShown, personShown, status);
     }
     void changePerson(int newPerson) {
@@ -56,7 +68,7 @@ public class inboxMessage : MonoBehaviour
         } else if (personShown == 4) {
             status = intBuddy;
         } else if (personShown == 5) {
-            status = intBrie;
+            // status = intBrie; looks like Brie's conditions are applied independently
         } else if (personShown == 6) {
             status = intMatt;
         }
@@ -125,17 +137,9 @@ public class inboxMessage : MonoBehaviour
             }
         }
         if (person == 5) {
-            if (day == 2) {
-
-            }
-            if (day == 3) {
-
-            }
-            if (day == 6) {
-
-            }
-            if (day == 8) {
-
+            // Using brieDay, not day — see above
+            if (brieDay == 1) {
+                message.text = "Hiya! nice to meet yu! myname is brie and i’m suuuuper into gaming. you are too rih, i saww on the class assgnm that yu put Blaster as the game ure plyn rn? thats so cool i play it too! lmk if you ever wanna play tgthr sumtim!";
             }
         }
         if (person == 6) {
