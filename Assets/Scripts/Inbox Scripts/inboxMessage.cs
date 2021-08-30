@@ -14,6 +14,7 @@ public class inboxMessage : MonoBehaviour
     public bool brieTalk = false; // only incr brieDay if convo started w/ Brie, start false set true
     public int intMom, intGrandma, intProf, intBuddy, intBrie, intMatt;
     public int status;
+    public int playerResponse;
 
     /*
     For simplicity:
@@ -116,6 +117,11 @@ public class inboxMessage : MonoBehaviour
     void Start() {
         // For testing purposes, fiddle with the values below
         newMessage(2, 1, 0);
+    }
+
+    // The following method is for response button use
+    public void responseSent(int buttonNum) {
+        playerResponse = buttonNum;
     }
 
     void newMessage(int day, int person, int status) {

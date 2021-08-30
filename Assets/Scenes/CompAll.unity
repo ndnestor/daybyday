@@ -1476,6 +1476,7 @@ GameObject:
   - component: {fileID: 459317164}
   - component: {fileID: 459317163}
   - component: {fileID: 459317162}
+  - component: {fileID: 459317165}
   m_Layer: 5
   m_Name: sendButton1
   m_TagString: Untagged
@@ -1545,7 +1546,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 459317163}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 459317165}
+        m_TargetAssemblyTypeName: responseB1_effect, Assembly-CSharp
+        m_MethodName: onSend
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &459317163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1584,6 +1597,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 459317160}
   m_CullTransparentMesh: 1
+--- !u!114 &459317165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459317160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32bc285a6956b485ab7d88c626de489f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageLoader: {fileID: 1160337320}
+  responseB1: 1
 --- !u!1 &473524478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1883,6 +1910,7 @@ GameObject:
   - component: {fileID: 519332019}
   - component: {fileID: 519332018}
   - component: {fileID: 519332017}
+  - component: {fileID: 519332020}
   m_Layer: 5
   m_Name: sendButton2
   m_TagString: Untagged
@@ -1952,7 +1980,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 519332018}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 519332020}
+        m_TargetAssemblyTypeName: responseB2_effect, Assembly-CSharp
+        m_MethodName: onSend
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &519332018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1991,6 +2031,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519332015}
   m_CullTransparentMesh: 1
+--- !u!114 &519332020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519332015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bfdd1afc91dc479c9ee0e3068eeaa5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageLoader: {fileID: 1160337320}
+  responseB2: 2
 --- !u!1 &527578451
 GameObject:
   m_ObjectHideFlags: 0
@@ -5063,9 +5117,20 @@ MonoBehaviour:
   response1: {fileID: 1943033075}
   response2: {fileID: 1943033075}
   response3: {fileID: 566899872}
+  msgMom: 
+  msgGrandma: 
+  msgProf: 
+  msgBuddy: 
+  msgBrie: 
+  msgMatt: 
+  replyBox1: {fileID: 0}
+  replyBox2: {fileID: 0}
+  replyBox3: {fileID: 0}
   dayShown: 2
   personShown: 1
+  buddyDay: 0
   brieDay: 0
+  brieTalk: 0
   intMom: 0
   intGrandma: 0
   intProf: 0
@@ -5073,6 +5138,7 @@ MonoBehaviour:
   intBrie: 0
   intMatt: 0
   status: 0
+  playerResponse: 0
 --- !u!1 &1161191273
 GameObject:
   m_ObjectHideFlags: 0
@@ -5710,7 +5776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380427893}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 456, y: -55.5, z: -9173.073}
+  m_LocalPosition: {x: 456, y: -55.5, z: 0}
   m_LocalScale: {x: 27.5, y: 27.5, z: 21.035995}
   m_Children:
   - {fileID: 1131865917}
@@ -6485,6 +6551,7 @@ GameObject:
   - component: {fileID: 1514089582}
   - component: {fileID: 1514089581}
   - component: {fileID: 1514089580}
+  - component: {fileID: 1514089583}
   m_Layer: 5
   m_Name: sendButton3
   m_TagString: Untagged
@@ -6554,7 +6621,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1514089581}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1514089583}
+        m_TargetAssemblyTypeName: responseB3_effect, Assembly-CSharp
+        m_MethodName: onSend
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1514089581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6593,6 +6672,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514089578}
   m_CullTransparentMesh: 1
+--- !u!114 &1514089583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514089578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e65291430bb74ef5b586e7757ec8d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageLoader: {fileID: 1160337320}
+  responseB3: 3
 --- !u!1 &1556215056
 GameObject:
   m_ObjectHideFlags: 0
