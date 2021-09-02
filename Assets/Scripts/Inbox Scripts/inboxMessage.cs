@@ -7,7 +7,7 @@ public class inboxMessage : MonoBehaviour
 {
     public TextMeshProUGUI message;
     public TextMeshProUGUI response1, response2, response3;
-    public string msgMom, msgGrandma, msgProf, msgBuddy, msgBrie, msgMatt;
+    public string msgMom, msgGrandma, msgProf, msgBuddy, msgBrie, msgMatt; //might not be nec
     public GameObject replyBox1, replyBox2, replyBox3;
     public int dayShown, personShown;
     public int buddyDay, brieDay;
@@ -70,6 +70,10 @@ public class inboxMessage : MonoBehaviour
     Note to self: see that intNpc days are initialized to 1, add methods for
     changing to be linked to buttons later (global script)
 
+    Note to self: replace (NAME) with character name where nec (I think it is relevant
+    to Grandma's messages, possibly other characters as well)
+    Actually just grandma as of now but be aware
+
     See extended to-dos and notes in Discord
     */
 
@@ -81,6 +85,7 @@ public class inboxMessage : MonoBehaviour
         showMessage(dayShown, personShown, status);
     }
     void changePerson(int newPerson) {
+        // This script should be used by active chat buttons (left)
         personShown = newPerson;
         if (personShown == 1) {
             status = intMom;
@@ -116,11 +121,13 @@ public class inboxMessage : MonoBehaviour
     //START IS HERE FOR TESTING ONLY - remove later
     void Start() {
         // For testing purposes, fiddle with the values below
-        newMessage(2, 1, 0);
+        newMessage(4, 2, 0);
     }
 
-    // The following method is for response button use
+    // The method responseSent(int) is for response button use
     public void responseSent(int buttonNum) {
+        // This method used by responseB1-B3_effect scripts to indicate
+        // which button was pressed
         playerResponse = buttonNum;
     }
 
@@ -128,19 +135,19 @@ public class inboxMessage : MonoBehaviour
         if (person == 1) {
             Debug.Log("Mom"); // This was for testing purposes, remove later
             Debug.Log("Day is " + day);
-            if (day == 2) {
+            if (day == 1) {
                 message.text = "Sweetheart, Is Agenda helping you stay on track with your goals? I’ve heard so much about how it helped other students, and I thought it would be a good present for you, now that you are doing school from home. I’ve felt myself slipping lately - work isn’t what it used to be for me. I am finding my way through. In fact, I’ve taken up knitting. Would you like me to make you a scarf? I promise I can make it super fluffy and warm - just the way you like it. Love, Mom.";
             }
-            if (day == 4) {
-                message.text = "Sweetheart, remember the pair of bonsai plants we bought together? Mine finally bloomed! It’s so pretty and lush, I’m quite proud of how well I’ve taken care of it. I plan on decorating it for the winter holidays. How about yours? Have you watered it yet? I hope you are doing well and staying on top of your studies. I miss you. Love, Mom";
+            if (day == 2) {
+                message.text = "Sweetheart, remember the pair of bonsai plants we bought together? Mine finally bloomed! It’s so pretty and lush, I’m quite proud of how well I’ve taken care of it. I plan on decorating it for the winter holidays. How about yours? Have you watered it yet? I hope you are doing well and staying on top of your studies. I miss you. Love, Mom.";
             }
-            if (day == 7) {
+            if (day == 3) {
                 message.text = "Sweetheart, have you had any sweets lately? I’ve had such a craving for cake the past few weeks. Remember when I mentioned I wanted to get into baking? Well, I started baking banana bread. It’s healthy and super yummy, and I’m quite good at it! The trick is to use whole wheat flour and substitute white sugar for honey. Then you can make a delicious and mostly-healthy treat for just after supper. I would love to chat sometime soon. Maybe I can even bring you a loaf. Wouldn’t that be swell! Love, Mom.";
             }
-            if (day == 9) {
+            if (day == 4) {
                 message.text = "Sweetheart, are you staying healthy? I had such a sweet tooth last month that by the end of it I felt like I could never have a treat again! I got myself a yoga mat and started working out. I feel a lot better. I meditate a few minutes every day, I do lots of stretching, and I go for long walks. You should try it sometime! Maybe it will help you relax after a hard day’s work. If you’d like, we could even meditate together! Let me know if you would like that, okay? Love, Mom.";
             }
-            if (day == 10) {
+            if (day == 5) {
                 if (status == 0) {
                     message.text = "Honey, I am so glad you’ve kept in touch. I know these past few months have been hard on you, it was hard on us, too. I really miss you. Let me know if I can come visit you. I promise to bring you a treat! Love, Mom.";
                 }
@@ -154,14 +161,24 @@ public class inboxMessage : MonoBehaviour
             newResponse(day, person);
         }
         if (person == 2) {
-            if (day == 4) {
-
+            if (day == 3) {
+                message.text = "Dear (NAME), \nSurprise! It is Gramma! It has been so long since we last talked. How are you doing? How is school or are you working now? I miss you so much i wish we could talk more. Your mother said you reply to emails now. I asked my neighbor;s son to teach me how to use it. Let me know if it worked because i cannot really tell. I hope you read this soon. I want you to know that I love you and miss you and I am so proud of you. Your mother tells me you are doing well, even if you are alone. Send me an email if you ever have trouble or want advice. I would love to help! \nWith many hugs and kisses, \nGramma Betsy.";
+            }
+            if (day == 5) {
+                if (intGrandma == 3) { // Organized response to Day 3
+                    message.text = "Dear (NAME), \nIt was so nice to hear from you! I am happy the email thing worked. And I am happy that you are doing well! I hope it is sunny where you are. The weather here has not treated me well. My knees hurt, but Rufus is good at reminding me to use my cane. Do you remember Rufus? We adopted the old pug a few years ago. That dog keeps me on my toes! Whenever he wants to walk he hauls my cane and his leash to the door and sits there until I stop what I am doing and we go walk. He is so stubborn, but he is irresistibly cute. How about you? I hope you are finding time to stay connected to the things you like. After all, what is the point of life, if not to enjoy it with those you love? \nWith many hugs and kisses, \nGramma Betsy.";
+                }
+                if (intGrandma == 2) { // Disorganized response Day 3
+                    message.text = "Dear (NAME), \nIt was so nice to hear from you! I am happy the email thing worked. I hope you are doing better now. Whatever is troubling you, I know you can find a way. You are a wonderful person. You can always make this situation work for you. Do you remember Rufus? He misses you. He is a bit upset at me. We did not get to go out for a walk last night because of the storm. I wanted to walk him earlier, but my knees are not what they used to be. I tried taking a short nap but slept all the way until dinnertime! When I woke up, he was already at the door, with my cane and his leash, waiting for me. Since it was storming, I tried to do the best I could. We went for a walk around the house, three times! It was not the same as going outside, but it was better than not walking at all. I have faith in you. I know you will be alright. \nWith many hugs and kisses, \nGramma Betsy.";
+                }
             }
             if (day == 6) {
-
+                if (intGrandma == 4 || status == 0) { // if no response Day 3 or ISOLATED state
+                    message.text = "Dear (NAME), \nDid my email go through? The neighbor's kid says it did. Can you see this? I miss you lots. Your mother says you have not called her recently either. I hope you know we all love you. It is okay to take time for yourself, but try to keep in touch, even if you can only talk once in a little while. Miss you, love bug. \nWith many hugs and kisses, \nGramma Betsy.";
+                }
             }
-            if (day == 10) {
-
+            if (day == 8) {
+                message.text = "Dear (NAME), \nHow are you doing, sweetheart? I can tell the season will soon be over, I can see it in how the leaves are changing on the trees in my backyard. You used to play there when you were little. You liked climbing them, and though you never got far, you looked like you were having fun. Are your classes ending soon? Rufus and I miss you so much. Maybe, once your classes are over, you can come visit! I wonder if you can climb the trees now, perhaps even reach the very top. \nWith many hugs and kisses, \nGramma Betsy";
             }
         }
         if (person == 4) {
