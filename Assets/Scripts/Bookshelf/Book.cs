@@ -55,11 +55,16 @@ public class Book : MonoBehaviour
 	private void NextPage()
 	{
 
+		if(pageNumber + 1 > pageContents.Count)
+		{
+			return;
+		}
+
 		// Increment the page number
 		pageNumber++;
 
 		// Return if the visible pages do not change
-		if(pageNumber % 2 == 0 || pageContents[pageNumber] == null)
+		if(pageNumber % 2 == 0)
 		{
 			return;
 		}
@@ -73,11 +78,16 @@ public class Book : MonoBehaviour
 	private void PrevPage()
 	{
 
+		if(pageNumber < 2)
+		{
+			return;
+		}
+
 		// Decrement the page
 		pageNumber--;
 		
 		// Return if visible pages do not change
-		if(pageNumber % 2 == 1 || pageNumber < 2 || pageContents[pageNumber] == null)
+		if(pageNumber % 2 == 1)
 		{
 			return;
 		}
