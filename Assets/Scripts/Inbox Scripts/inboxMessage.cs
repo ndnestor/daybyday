@@ -50,7 +50,7 @@ public class inboxMessage : MonoBehaviour
     0 = isolated
     1 = no response
     2 = all response
-    "Status" stores # 0-2 based on which character, outside of newMessage()
+    "Status" stores # 0-2, outside of newMessage()
 
     Note on response boxes:
     Messages have 0-3 built-in responses. Based on how many, response boxes will hide themselves
@@ -65,7 +65,8 @@ public class inboxMessage : MonoBehaviour
     convos, such as intBrie for Brie... also add hide text box mechanic later
 
     Note to self: Buddy's dialogue is unfinished; certain replies still need to be
-    added and written as necessary.
+    added and written as necessary. Check some other characters do not yet have
+    replies written
 
     Note to self: see that intNpc days are initialized to 1, add methods for
     changing to be linked to buttons later (global script)
@@ -129,6 +130,15 @@ public class inboxMessage : MonoBehaviour
         // This method used by responseB1-B3_effect scripts to indicate
         // which button was pressed
         playerResponse = buttonNum;
+        updateTracking(buttonNum, person);
+    }
+
+    public void updateTracking(int response, int person) {
+        // Method not finished, just setting up — should actually be pretty long
+        // This method updates status depending on character and response given by player
+        // ^ Updates INDIVIDUAL statuses (eg. intBrie)
+        // Also uses public inboxMessage vars like brieDay as necessary
+        // Called by responseSent() (from same class) every time player responds
     }
 
     void newMessage(int day, int person, int status) {
@@ -182,7 +192,7 @@ public class inboxMessage : MonoBehaviour
             }
         }
         if (person == 4) {
-            if (buddyDay == 1 && intBrie == 1) {
+            if (buddyDay == 1 && intBuddy == 1) {
                 msgBuddy = "Hey, I saw that you submitted a post about trying out piano for the assignment. I thought that was cool. I play piano, too. Let me know if you ever want to talk music";
             }
             if (buddyDay == 2 && intBuddy == 2) {
