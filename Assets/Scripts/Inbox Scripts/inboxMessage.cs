@@ -130,16 +130,16 @@ public class inboxMessage : MonoBehaviour
         // This method used by responseB1-B3_effect scripts to indicate
         // which button was pressed
         playerResponse = buttonNum;
-        updateTracking(buttonNum, person);
+        //updateTracking(buttonNum, person);
     }
 
-    public void updateTracking(int response, int person) {
+    //public void updateTracking(int response, int person) {
         // Method not finished, just setting up — should actually be pretty long
         // This method updates status depending on character and response given by player
         // ^ Updates INDIVIDUAL statuses (eg. intBrie)
         // Also uses public inboxMessage vars like brieDay as necessary
         // Called by responseSent() (from same class) every time player responds
-    }
+    //}
 
     void newMessage(int day, int person, int status) {
         if (person == 1) {
