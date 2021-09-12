@@ -7,11 +7,13 @@ public class inboxMessage : MonoBehaviour
 {
     public TextMeshProUGUI message;
     public TextMeshProUGUI response1, response2, response3;
-    public string msgMom, msgGrandma, msgProf, msgBuddy, msgBrie, msgMatt; //might not be nec
+    // separate strings to track most recent message from NPC
+    public string msgMom, msgGrandma, msgProf, msgBuddy, msgBrie, msgMatt;
     public GameObject replyBox1, replyBox2, replyBox3;
+    //public GameObject sendArrow1, sendArrow2, sendArrow3;
     public int dayShown, personShown;
     public int buddyDay, brieDay;
-    public bool brieTalk = false; // only incr brieDay if convo started w/ Brie, start false set true
+    public bool brieTalk, buddyTalk; // Should default false
     public int intMom, intGrandma, intProf, intBuddy, intBrie, intMatt;
     public int status;
     public int playerResponse;
@@ -34,28 +36,38 @@ public class inboxMessage : MonoBehaviour
     Day changes daily, should be implemeneted in Tracking script*
     Person changes when message is selected, implemented through Inbox buttons
 
-    *Some chars use independent day vars (eg. brie uses brieDay) b/c depends on how many
+    *Some chars use independent day vars b/c depends on how many
     days you've been talking to them, no necessarily which day it is in-game
     These indepedent variables will simply increment in the changeDay() method
     Those characters are as follows:
     - Brie
-    - [add as nec]
+    - Buddy
+    These characters use ints "buddyDay" and "brieDay" to track how many days since started
+    talking to these characters
+    They also use booleans "buddyTalk" and "brieTalk" which start as FALSE and are set to
+    TRUE when respective prereqs are satisfied to start conversation. (At this point, begins
+    dialogue w/ these NPC's and increments day-counting variables)
 
     Status changes based on responses, implemented in-game and updated
     through updateStatus() method
-    Status is: "isolated", "allResponse", or "noResponse"
+
 
     "int" refers to interactiveness, determined on per-character basis for how
     often player has responded to their messages
-    0 = isolated
-    1 = no response
-    2 = all response
-    "Status" stores # 0-2, outside of newMessage()
+    1 = isolated - no response
+    2 = wallflower (filial) — responds to family messages
+    3 = wallflower (friend) - responds to friendly messages
+    4 = wallflower (networking) - ignore for now (?)
+    5 = butterfly - responds to both family and friendly messages
+    "Status" stores # 1-5, outside of newMessage()
+    NOTE:
+    Counts based on past 3 days' behaviour (>=3 past days)
+    (eg. status = 2 means responds to family only - for the past 3 days)
 
     Note on response boxes:
     Messages have 0-3 built-in responses. Based on how many, response boxes will hide themselves
     Box 1 top, box 2 middle, box 3 bottom
-    eg. 1 possible response shows only box 3; 2 responses shows boxes 2-3
+    (eg. 1 possible response shows only box 3; 2 responses shows boxes 2-3)
 
     #################################################################
     #### EDITOR NOTES FOR PROGRESS/TO-DOS, WILL BE REMOVED LATER ####
@@ -79,10 +91,15 @@ public class inboxMessage : MonoBehaviour
     */
 
     void changeDay(int newDay) {
+        // Script should be called every time inbox selected
+        // newDay should be carried globally from Tracking script in main scene
         dayShown = newDay;
-        /** if (brieTalk == true) {
+        if (buddyTalk == true) {
+            buddyDay++;
+        }
+        if (brieTalk == true) {
             brieDay++;
-        } */
+        }
         showMessage(dayShown, personShown, status);
     }
     void changePerson(int newPerson) {
