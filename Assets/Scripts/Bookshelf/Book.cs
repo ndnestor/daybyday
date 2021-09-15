@@ -11,6 +11,7 @@ public class Book : MonoBehaviour
 	[SerializeField] private string author;
 	[SerializeField] private string contents;
 
+	[SerializeField] private GameObject closeBookSprite;
 	[SerializeField] private GameObject openBookSprite;
 	[SerializeField] private TMP_Text leftPageText;
 	[SerializeField] private TMP_Text rightPageText;
@@ -23,9 +24,16 @@ public class Book : MonoBehaviour
 	{
 		Debug.Log($"Opening book {title} by {author}");
 		openBookSprite.SetActive(true);
-		// Show close book sprite
+		closeBookSprite.SetActive(false);
 		SavePageContents();
 		SetPage(1);
+	}
+
+	public void CloseBook()
+	{
+		Debug.Log("Closing book");
+		openBookSprite.SetActive(false);
+		closeBookSprite.SetActive(true);
 	}
 
 	private void SavePageContents()
