@@ -18,7 +18,7 @@ public class Bookshelf : MonoBehaviour
 		bookshelfSelectionScreen.SetActive(true);
 	}
 
-	private void Ext()
+	private void Exit()
 	{
 		bookshelfSelectionScreen.SetActive(false);
 	}
