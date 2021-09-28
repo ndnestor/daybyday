@@ -11,10 +11,10 @@ public class ComputerInterface : MonoBehaviour
     public GameObject profilePage;
     public GameObject inboxPage;
     public GameObject assignmentPage;
-    public GameObject libraryPage;
-    public GameObject blasterPage;
+    //public GameObject libraryPage;
+    //public GameObject blasterPage;
     public GameObject helpPage;
-    public GameObject settingsPage;
+    //public GameObject settingsPage;
 
     public GameObject currentPage;
 
@@ -64,6 +64,7 @@ public class ComputerInterface : MonoBehaviour
         {
             hideAllTabs();
             profilePage.SetActive(true);
+            Debug.Log("Setting profile page");
         }
         else if (newName.Equals("Inbox Button"))
         {
@@ -80,15 +81,8 @@ public class ComputerInterface : MonoBehaviour
             userTypeBox.SetActive(true);
             notesButton.SetActive(true);
         }
-     //   else if (newName.Equals("Library Button"))
-     //   {
-     //       hideAllTabs();
-     //       libraryPage.SetActive(true);
-     //   }
         else if (newName.Equals("Blaster Button"))
         {
-     //       hideAllTabs();
-     //       blasterPage.SetActive(true);
               SceneManager.LoadScene(3);
         }
         else if (newName.Equals("Help Button"))
@@ -96,11 +90,6 @@ public class ComputerInterface : MonoBehaviour
             hideAllTabs();
             helpPage.SetActive(true);
         }
-     //   else if (newName.Equals("Settings Button"))
-     //   {
-     //       hideAllTabs();
-     //       settingsPage.SetActive(true);
-     //   }
         currentPage = assignmentPage;
 
         return newPage;
@@ -115,7 +104,7 @@ public class ComputerInterface : MonoBehaviour
             assmtButton1.SetActive(false);
             assmtButton2.SetActive(false);
             userTypeBox.SetActive(false);
-            notesButton.SetActive(false);
+            //notesButton.SetActive(false);
         //libraryPage.SetActive(false);
         //blasterPage.SetActive(false); 
         helpPage.SetActive(false);
