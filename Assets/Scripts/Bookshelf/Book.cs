@@ -60,7 +60,7 @@ public class Book : MonoBehaviour
 		}
 	}
 
-	private void NextPage()
+	public void NextPage()
 	{
 
 		if(pageNumber + 1 > pageContents.Count)
@@ -83,7 +83,7 @@ public class Book : MonoBehaviour
 		rightPageText.text = pageContents[pageNumber];
 	}
 
-	private void PrevPage()
+	public void PrevPage()
 	{
 
 		if(pageNumber < 2)
