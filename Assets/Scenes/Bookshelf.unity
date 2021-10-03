@@ -554,6 +554,38 @@ PrefabInstance:
         a bit more work done? Fun and self-care is great, but your responsibilities
         are also important! END "
       objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: generatePageContents
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[0]
+      value: test 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[1]
+      value: test 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[2]
+      value: test 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[3]
+      value: test 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[4]
+      value: test 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4824485550916506438, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: m_Camera
       value: 
