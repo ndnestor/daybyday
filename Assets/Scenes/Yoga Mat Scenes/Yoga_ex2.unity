@@ -285,10 +285,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press SPACE to lift dumbell. Press W for quick lift, and S for quick drop.
+  m_text: 'Press SPACE to lift dumbell.
 
-    You
-    may spend 10 seconds outside of the range until GAME OVER.'
+    You may spend 10 seconds outside of
+    the range until GAME OVER.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e4c4c6675eb1384092ffb6ef8a465ef, type: 2}
   m_sharedMaterial: {fileID: 8509130111601760991, guid: 1e4c4c6675eb1384092ffb6ef8a465ef, type: 2}
@@ -787,6 +787,7 @@ MonoBehaviour:
   player: {fileID: 896452904}
   scoreTime: 0
   scoreTimeInt: 0
+  halfRange: 1
 --- !u!61 &421098616
 BoxCollider2D:
   m_ObjectHideFlags: 0

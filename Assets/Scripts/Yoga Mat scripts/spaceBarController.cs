@@ -7,19 +7,20 @@ public class spaceBarController : MonoBehaviour
     float fallSpeed, jumpSpeed;
     public Rigidbody2D playerBar;
     public GameObject inRangeBox;
-    float jumpTimer, jumpIncr;
+    float jumpTimer;
+    //float jumpIncr;
 
     void Start() {
         fallSpeed = 1.0f;
         jumpSpeed = 1.5f;
-        jumpIncr = 0.5f;
+        //jumpIncr = 0.5f;
         playerBar.velocity = -transform.up * fallSpeed;
     }
     void Update()
     {
         if(Input.GetKey(KeyCode.Space)) {
             barJump(jumpSpeed);
-            print("Space bar pressed");
+            //Debug.Log("Space bar pressed");
         } else {
             playerBar.velocity = -transform.up * fallSpeed;
         }
@@ -28,12 +29,18 @@ public class spaceBarController : MonoBehaviour
         } else {
             playerBar.velocity = -transform.up * fallSpeed;
         } */
+
+        /**
+        This here included a function to quickly rise or fall
+        But as per writer suggestions, leaving this feature out to
+        keep the game simpler
+
         if(Input.GetKey(KeyCode.W)) {
             barJump(jumpSpeed*2);
         }
         if(Input.GetKey(KeyCode.S)) {
             barJump(jumpSpeed*(-2));
-        }
+        } */
     }
     void barJump(float speed) {
         //jumpTimer = Time.time + jumpIncr;

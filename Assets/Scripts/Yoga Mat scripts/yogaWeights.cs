@@ -23,7 +23,7 @@ public class yogaWeights : MonoBehaviour
 
     //Note that range detection and scale will both change over days
     // Right now halfRange manually set to 5; change as nec via code
-    float halfRange;
+    public float halfRange;
 
     void Start() {
         globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
@@ -31,7 +31,7 @@ public class yogaWeights : MonoBehaviour
         speed = 0;
         inBounds = true;
         playerSprite = player.GetComponent<SpriteRenderer>();
-        halfRange = 1f;
+        halfRange = 1.0f;
         outTime = 10;
         inOutText.text = " ";
         scoreTime = 0;
@@ -43,6 +43,7 @@ public class yogaWeights : MonoBehaviour
     }
     void FixedUpdate() {
         gameTime = Time.time - timeAtStart;
+        //Debug.Log("gameTime is " + gameTime);
         lastIntTime = Mathf.FloorToInt(gameTime);
         // Start timer countdown
         if (gameTime >= 4.0) {
@@ -62,16 +63,20 @@ public class yogaWeights : MonoBehaviour
         }
 
         if (startWait < gameTime) {
+            Debug.Log("Set speed 1");
             speed = 1;
         } else {
             rb.transform.position = new Vector3(-7.492371f, 0.0f, 0.0f);
         }
-        if(moveTimer < gameTime) {
+        if(gameTime < moveTimer) {
             switchDirec();
+            //Debug.Log("MoveTimer is " + moveTimer + ", gameTime is " + gameTime);
             moveTimer = gameTime + moveIncr;
         }
 
+        Debug.DrawRay(rangeDetector.transform.position, player.transform.position, Color.red);
         distance = Vector3.Distance(rangeDetector.transform.position, player.transform.position);
+        //Debug.Log("Distance is " + distance + ", halfRange is " + halfRange);
         if (distance <= halfRange) {
             inBounds = true;
             Debug.Log("Player in bounds");
@@ -100,6 +105,7 @@ public class yogaWeights : MonoBehaviour
     }
 
     void switchDirec() {
+        //Debug.Log("Switching directions");
         transY = UnityEngine.Random.Range(0, 10);
          if (transY < 5) {
              rb.velocity = -transform.up * speed;
@@ -110,6 +116,7 @@ public class yogaWeights : MonoBehaviour
     }
 
     void notifChange() {
+        Debug.Log("GAMETIME " + gameTime);
         if (inBounds == true) {
             playerSprite.color = new Color (0.149f,0.325f,0.2235f, 1);
             inOutText.color = new Color (0.149f,0.325f,0.2235f, 1);
@@ -123,6 +130,7 @@ public class yogaWeights : MonoBehaviour
         }
         if (gameTime > 5.0f) {
             inOutText.text = outTime.ToString();
+            Debug.Log("Printing out time");
         }
     }
     
