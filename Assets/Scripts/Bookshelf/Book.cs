@@ -16,17 +16,29 @@ public class Book : MonoBehaviour
 	[SerializeField] private TMP_Text leftPageText;
 	[SerializeField] private TMP_Text rightPageText;
 	[SerializeField] private int maxLinesPerPage;
-
-	private readonly List<string> pageContents = new List<string>();
+	[SerializeField] private List<string> pageContents;
+	[SerializeField] private bool generatePageContents;
+	
 	private int pageNumber = 0;
 
 	public void OpenBook()
 	{
 		Debug.Log($"Opening book {title} by {author}");
+		
 		openBookSprite.SetActive(true);
 		closeBookSprite.SetActive(false);
-		SavePageContents();
-		SetPage(1);
+		
+		if(generatePageContents)
+		{
+			Debug.Log("Generating pages");
+			pageContents = new List<string>();
+			
+			SavePageContents();
+			SetPage(1);
+		} else
+		{
+			NextPage();
+		}
 	}
 
 	public void CloseBook()
@@ -60,7 +72,7 @@ public class Book : MonoBehaviour
 		}
 	}
 
-	private void NextPage()
+	public void NextPage()
 	{
 
 		if(pageNumber + 1 > pageContents.Count)
@@ -83,7 +95,7 @@ public class Book : MonoBehaviour
 		rightPageText.text = pageContents[pageNumber];
 	}
 
-	private void PrevPage()
+	public void PrevPage()
 	{
 
 		if(pageNumber < 2)
