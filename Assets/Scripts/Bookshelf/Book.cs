@@ -18,8 +18,14 @@ public class Book : MonoBehaviour
 	[SerializeField] private int maxLinesPerPage;
 	[SerializeField] private List<string> pageContents;
 	[SerializeField] private bool generatePageContents;
+
+	private const string newLineToken = "\\n";
 	
 	private int pageNumber = 0;
+
+	private void Start() {
+		FormatPageContents();
+	}
 
 	public void OpenBook()
 	{
@@ -145,7 +151,15 @@ public class Book : MonoBehaviour
 			NextPage();
 		}
 	}
-
+	
+	private void FormatPageContents()
+	{
+		// Add new line characters
+		for(int i = 0; i < pageContents.Count; i++) {
+			pageContents[i] = pageContents[i].Replace(newLineToken, "\n");
+		}
+	}
+	
 	private string FillTextBox(TMP_Text textBox, int charsPerIteration, string text)
 	{
 		string remainingText = text;
