@@ -26,7 +26,6 @@ public class yogaWeights : MonoBehaviour
     public float halfRange;
 
     void Start() {
-        globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
         moveIncr = 1.5f;
         speed = 0;
         inBounds = true;
@@ -38,8 +37,10 @@ public class yogaWeights : MonoBehaviour
         scoreTimeInt = 0;
         timeAtStart = Time.time;
         gameTime = Time.time - timeAtStart;
-        startWait = timeAtStart + 3.0f;
+        Debug.Log("timeAtStart " + timeAtStart + " Time.time " + Time.time);
+        startWait = gameTime + 3.0f;
         lastIntTime = 0;
+        globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
     }
     void FixedUpdate() {
         gameTime = Time.time - timeAtStart;
@@ -68,7 +69,7 @@ public class yogaWeights : MonoBehaviour
         } else {
             rb.transform.position = new Vector3(-7.492371f, 0.0f, 0.0f);
         }
-        if(gameTime < moveTimer) {
+        if(moveTimer < gameTime) {
             switchDirec();
             //Debug.Log("MoveTimer is " + moveTimer + ", gameTime is " + gameTime);
             moveTimer = gameTime + moveIncr;
@@ -116,7 +117,6 @@ public class yogaWeights : MonoBehaviour
     }
 
     void notifChange() {
-        Debug.Log("GAMETIME " + gameTime);
         if (inBounds == true) {
             playerSprite.color = new Color (0.149f,0.325f,0.2235f, 1);
             inOutText.color = new Color (0.149f,0.325f,0.2235f, 1);
