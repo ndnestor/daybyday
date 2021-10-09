@@ -15,6 +15,10 @@ public class Book : MonoBehaviour
 	[SerializeField] private GameObject openBookSprite;
 	[SerializeField] private TMP_Text leftPageText;
 	[SerializeField] private TMP_Text rightPageText;
+	[SerializeField] private TMP_InputField pageNumberInput;
+	[SerializeField] private TMP_Text authorText;
+	[SerializeField] private TMP_Text bookTitleText;
+	
 	[SerializeField] private int maxLinesPerPage;
 	[SerializeField] private List<string> pageContents;
 	[SerializeField] private bool generatePageContents;
@@ -24,6 +28,8 @@ public class Book : MonoBehaviour
 	private int pageNumber = 0;
 
 	private void Start() {
+		authorText.text = author;
+		bookTitleText.text = title;
 		FormatPageContents();
 	}
 
@@ -87,7 +93,7 @@ public class Book : MonoBehaviour
 		}
 
 		// Increment the page number
-		pageNumber++;
+		pageNumberInput.text = (++pageNumber).ToString();
 
 		// Return if the visible pages do not change
 		if(pageNumber % 2 == 0)
@@ -110,7 +116,7 @@ public class Book : MonoBehaviour
 		}
 
 		// Decrement the page
-		pageNumber--;
+		pageNumberInput.text = (--pageNumber).ToString();
 		
 		// Return if visible pages do not change
 		if(pageNumber % 2 == 1)
@@ -126,6 +132,14 @@ public class Book : MonoBehaviour
 
 	private void SetPage(int newPageNumber)
 	{
+		
+		// Check if page number is valid
+		if(newPageNumber < 1 || newPageNumber > pageContents.Count)
+		{
+			pageNumberInput.text = pageNumber.ToString();
+			return;
+		}
+		
 		while(newPageNumber != pageNumber)
 		{
 			if(newPageNumber < pageNumber)
@@ -136,6 +150,12 @@ public class Book : MonoBehaviour
 				NextPage();
 			}
 		}
+
+	}
+
+	public void SetPage()
+	{
+		SetPage(int.Parse(pageNumberInput.text));
 	}
 
 	private void Update()
