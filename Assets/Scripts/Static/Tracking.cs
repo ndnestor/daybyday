@@ -10,9 +10,9 @@ public class Tracking : MonoBehaviour
 {
     public static Tracking Instance { get; private set; }
 
-    [HideInInspector] public int DayNum { get; private set; }
+    public int DayNum { get; private set; }
     public const int MAX_DAYS = 10;
-    public const int MAX_TIME = 28;
+    public const int MAX_TIME = 14;
     public int timeUsed = 0;
     public ArrayList objectUsage = new ArrayList();
 
