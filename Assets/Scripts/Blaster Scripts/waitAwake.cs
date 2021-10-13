@@ -9,12 +9,14 @@ public class waitAwake : MonoBehaviour
     AudioSource endMusicSource;
     bool finalVol; // initialized to false
     void Start() {
+        //Debug.Log("Endgame start time " + Time.time);
         endMusicSource = endMusicObj.GetComponent<AudioSource>();
         endMusicSource.enabled = false;
         //endMusicSource.volume = 0.1f;
     }
     void FixedUpdate(){
-        if(Time.timeSinceLevelLoad >= audioWait) {
+        if(Time.timeSinceLevelLoad >= audioWait && !endMusicSource.enabled) {
+            //Debug.Log("Music start time " + Time.time);
             endMusicSource.enabled = true;
         }
     }

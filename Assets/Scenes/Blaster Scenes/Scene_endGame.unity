@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endMusicObj: {fileID: 207747629}
-  audioWait: 0
+  audioWait: 2
 --- !u!1 &208114384
 GameObject:
   m_ObjectHideFlags: 0
