@@ -52,7 +52,6 @@ public class enemyScript_Ship : MonoBehaviour
         }
         if (col.gameObject.tag == "Whale")
         {
-            Destroy(col.gameObject);
             rigidEnemy.velocity = -transform.right * enemySpeed;
         }
         if (col.gameObject.tag == "PlatformHealth")
