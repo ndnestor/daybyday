@@ -35,9 +35,9 @@ using UnityEngine;
     void Awake() {
         healIncr = UnityEngine.Random.Range(1, 10);
         //healIncr = UnityEngine.Random.Range(18, 23);
-        bulwarkIncr = UnityEngine.Random.Range(25, 30);
-        swiftIncr = UnityEngine.Random.Range(13, 18);
-        rapidIncr = UnityEngine.Random.Range(10, 15);
+        bulwarkIncr = UnityEngine.Random.Range(45, 60);
+        swiftIncr = UnityEngine.Random.Range(25, 30);
+        rapidIncr = UnityEngine.Random.Range(25, 30);
         spreadIncr = UnityEngine.Random.Range(15, 20);
         healTimer = Time.time + healIncr;
         bulwarkTimer = Time.time + bulwarkIncr;

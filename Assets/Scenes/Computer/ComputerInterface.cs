@@ -19,9 +19,10 @@ public class ComputerInterface : MonoBehaviour
     public GameObject currentPage;
 
     // Canvas objects for Assignents page
-    public GameObject assmtButton1, assmtButton2, userTypeBox, notesButton;
+    //public GameObject assmtButton1, assmtButton2, userTypeBox, notesButton;
     // Canvas objects for Inbox apge
     public GameObject inboxAssets;
+    public GameObject assignmentAssets;
 
     void Update()
     {
@@ -76,10 +77,11 @@ public class ComputerInterface : MonoBehaviour
         {
             hideAllTabs();
             assignmentPage.SetActive(true);
-            assmtButton1.SetActive(true);
-            assmtButton2.SetActive(true);
-            userTypeBox.SetActive(true);
-            notesButton.SetActive(true);
+            //assmtButton1.SetActive(true);
+            //assmtButton2.SetActive(true);
+            //userTypeBox.SetActive(true);
+            //notesButton.SetActive(true);
+            assignmentAssets.SetActive(true);
         }
         else if (newName.Equals("Blaster Button"))
         {
@@ -101,10 +103,11 @@ public class ComputerInterface : MonoBehaviour
         inboxPage.SetActive(false);
             inboxAssets.SetActive(false);
         assignmentPage.SetActive(false);
-            assmtButton1.SetActive(false);
-            assmtButton2.SetActive(false);
-            userTypeBox.SetActive(false);
+            //assmtButton1.SetActive(false);
+            //assmtButton2.SetActive(false);
+            //userTypeBox.SetActive(false);
             //notesButton.SetActive(false);
+            assignmentAssets.SetActive(false);
         //libraryPage.SetActive(false);
         //blasterPage.SetActive(false); 
         helpPage.SetActive(false);

@@ -20,6 +20,8 @@ public class Weapon : MonoBehaviour
     private float rapidTimer;
     public float unRapid;
 
+    public AudioSource bulletNoise;
+
     // Update is called once per frame
     void Update()
     {
@@ -68,10 +70,10 @@ public class Weapon : MonoBehaviour
     
     void Shoot ()
     {
-        // Shooting logic goes here
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Debug.Log("Shoot");
         shootTime = Time.time + reloadTime;
+        bulletNoise.Play();
     }
     void SpreadShoot()
     {
@@ -80,5 +82,6 @@ public class Weapon : MonoBehaviour
         Instantiate(spreadBulletPrefab_L, firePoint_L.position, firePoint.rotation);
         Debug.Log("Spread shoot");
         shootTime = Time.time + reloadTime;
+        bulletNoise.Play();
     }
 }
