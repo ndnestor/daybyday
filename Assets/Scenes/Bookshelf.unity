@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &737879502
 AudioListener:
   m_ObjectHideFlags: 0
@@ -149,7 +149,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737879501}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &737879503
 Camera:
   m_ObjectHideFlags: 0
@@ -250,9 +250,17 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 737879503}
+    - target: {fileID: 2304976148019424520, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2739185799738404216, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: m_Name
       value: Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: author
+      value: Hiba
       objectReference: {fileID: 0}
     - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: contents
