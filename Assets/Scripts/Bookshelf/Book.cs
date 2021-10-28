@@ -16,6 +16,7 @@ public class Book : MonoBehaviour
 	[SerializeField] private TMP_Text leftPageText;
 	[SerializeField] private TMP_Text rightPageText;
 	[SerializeField] private TMP_InputField pageNumberInput;
+	[SerializeField] private TMP_Text rightPageNumber;
 	[SerializeField] private TMP_Text authorText;
 	[SerializeField] private TMP_Text bookTitleText;
 	
@@ -93,13 +94,15 @@ public class Book : MonoBehaviour
 		}
 
 		// Increment the page number
-		pageNumberInput.text = (++pageNumber).ToString();
+		pageNumber++;
 
 		// Return if the visible pages do not change
 		if(pageNumber % 2 == 0)
 		{
 			return;
 		}
+		
+		UpdatePageNumbers(pageNumber);
 
 		// Set the text boxes appropriately
 		Debug.Log("Going to next page");
@@ -116,13 +119,15 @@ public class Book : MonoBehaviour
 		}
 
 		// Decrement the page
-		pageNumberInput.text = (--pageNumber).ToString();
+		pageNumber--;
 		
 		// Return if visible pages do not change
 		if(pageNumber % 2 == 1)
 		{
 			return;
 		}
+		
+		UpdatePageNumbers(pageNumber - 1);
 		
 		// Set the text boxes appropriately
 		Debug.Log("Going to previous page");
@@ -136,10 +141,9 @@ public class Book : MonoBehaviour
 		// Check if page number is valid
 		if(newPageNumber < 1 || newPageNumber > pageContents.Count)
 		{
-			pageNumberInput.text = pageNumber.ToString();
 			return;
 		}
-		
+
 		while(newPageNumber != pageNumber)
 		{
 			if(newPageNumber < pageNumber)
@@ -156,6 +160,13 @@ public class Book : MonoBehaviour
 	public void SetPage()
 	{
 		SetPage(int.Parse(pageNumberInput.text));
+	}
+
+	private void UpdatePageNumbers(int leftPageNumber) {
+		
+		// Update page numbers
+		pageNumberInput.text = leftPageNumber.ToString();
+		rightPageNumber.text = (leftPageNumber + 1).ToString();
 	}
 
 	private void Update()
