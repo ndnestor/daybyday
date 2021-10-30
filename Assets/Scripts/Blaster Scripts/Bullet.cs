@@ -30,14 +30,14 @@ public class Bullet : MonoBehaviour
             Destroy(col.gameObject);
             Destroy(gameObject);
             scoreScript.scoreValue += 1;
-            Debug.Log("Hit");
+            //Debug.Log("Hit");
         }
         if (col.gameObject.tag == "Ship" || col.gameObject.tag == "Whale")
         {
             Destroy(col.gameObject);
             Destroy(gameObject);
             scoreScript.scoreValue += 1;
-            Debug.Log("Hit");
+            //Debug.Log("Hit");
         }
     }
 }

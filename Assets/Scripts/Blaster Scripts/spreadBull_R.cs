@@ -14,7 +14,7 @@ public class spreadBull_R : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("R bullet created");
+        //Debug.Log("R bullet created");
         rb.velocity = transform.up * bulletSpeed + transform.right*bulletHorz;
         despawnTimer = Time.time + despawnTime;
     }
@@ -31,7 +31,7 @@ public class spreadBull_R : MonoBehaviour
             Destroy(col.gameObject);
             Destroy(gameObject);
             scoreScript.scoreValue += 1;
-            Debug.Log("Hit");
+            //Debug.Log("Hit");
         }
     }
 }

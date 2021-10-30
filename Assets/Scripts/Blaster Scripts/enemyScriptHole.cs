@@ -6,26 +6,17 @@ public class enemyScriptHole : MonoBehaviour
 {
 
     public Rigidbody2D rigidEnemy;
-    private float despawnTimer;
-    public float despawnLength;
-    public bool yesHoleLeft = false;
-    public bool yesHoleRight = false;
+    bool holeOnLeft, holeOnRight;
+    PlayerMovement rocketMovement;
 
     private Spawnscript spawner;
 
-    // Start is called before the first frame update
-    public void Start()
-    {
-        despawnTimer = Time.time + despawnLength;
-        //Debug.Log(spawner.xHole);
+    public void blackHoleActive(bool left, bool right) {
+        holeOnLeft = left;
+        holeOnRight = right;
     }
 
     void Update() {
-        if (Time.time > despawnTimer) {
-            Destroy(gameObject);
-            yesHoleLeft = false;
-            yesHoleRight = false;
-        }
     }
 
     void OnCollisionEnter2D(Collision2D col)

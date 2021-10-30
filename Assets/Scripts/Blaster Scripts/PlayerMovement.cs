@@ -68,10 +68,6 @@ public class PlayerMovement : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(moveHorizontal, 0);
         rb2d.AddForce(movement * speed);
-        /**if (speedEffectTimer < Time.time)
-        {
-            speed = 50;
-        }**/
     }
 
     void Update()
@@ -139,6 +135,10 @@ public class PlayerMovement : MonoBehaviour
             Destroy(col.gameObject);
             Instantiate(bulwark);
         }
+    }
+
+    public bool blackHolePresent(bool blackHole) {
+        return blackHole;
     }
 
 }
