@@ -28,6 +28,22 @@ public class drop_healScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (col.gameObject.tag == "enemBullet")
+        {
+            Destroy(gameObject);
+        }
+        if (col.gameObject.tag == "Whale")
+        {
+            Destroy(gameObject);
+        }
+        if (col.gameObject.tag == "BlackHole")
+        {
+            Destroy(gameObject);
+        }
+        if (col.gameObject.tag == "Ship")
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
