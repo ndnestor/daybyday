@@ -33,12 +33,12 @@ using UnityEngine;
      **/
 
     void Awake() {
-        healIncr = UnityEngine.Random.Range(1, 10);
+        healIncr = UnityEngine.Random.Range(20, 30);
         //healIncr = UnityEngine.Random.Range(18, 23);
-        bulwarkIncr = UnityEngine.Random.Range(45, 60);
-        swiftIncr = UnityEngine.Random.Range(25, 30);
-        rapidIncr = UnityEngine.Random.Range(25, 30);
-        spreadIncr = UnityEngine.Random.Range(15, 20);
+        bulwarkIncr = UnityEngine.Random.Range(60, 90);
+        swiftIncr = UnityEngine.Random.Range(40, 60);
+        rapidIncr = UnityEngine.Random.Range(40, 60);
+        spreadIncr = UnityEngine.Random.Range(40, 60);
         healTimer = Time.time + healIncr;
         bulwarkTimer = Time.time + bulwarkIncr;
         swiftTimer = Time.time + swiftIncr;
@@ -53,7 +53,7 @@ using UnityEngine;
              GameObject tmpHeal = Instantiate(heal, new Vector3(0.0f, 7.0f, 0.0f), Quaternion.identity);
              tmpHeal.transform.position = new Vector3(randX, tmpHeal.transform.position.y, 0.0f);
              // ALTER FREQUENCY HERE
-             healIncr = UnityEngine.Random.Range(1, 10);
+             healIncr = UnityEngine.Random.Range(20, 30);
              //healIncr = UnityEngine.Random.Range(18, 23);
              healTimer = Time.time + healIncr;
          }
@@ -63,7 +63,7 @@ using UnityEngine;
              GameObject tmpBulwark = Instantiate(bulwark, new Vector3(0.0f, 7.0f, 0.0f), Quaternion.identity);
              tmpBulwark.transform.position = new Vector3(randX, tmpBulwark.transform.position.y, 0.0f);
              // ALTER FREQUENCY HERE
-             bulwarkIncr = UnityEngine.Random.Range(25, 30);
+             bulwarkIncr = UnityEngine.Random.Range(60, 90);
              bulwarkTimer = Time.time + bulwarkIncr;
          }
          if (swiftTimer < Time.time) {
@@ -72,7 +72,7 @@ using UnityEngine;
              GameObject tmpSwift = Instantiate(swift, new Vector3(0.0f, 7.0f, 0.0f), Quaternion.identity);
              tmpSwift.transform.position = new Vector3(randX, tmpSwift.transform.position.y, 0.0f);
              // ALTER FREQUENCY HERE
-             swiftIncr = UnityEngine.Random.Range(13, 18);
+             swiftIncr = UnityEngine.Random.Range(40, 60);
              swiftTimer = Time.time + swiftIncr;
          }
          if (rapidTimer < Time.time) {
@@ -81,7 +81,7 @@ using UnityEngine;
              GameObject tmpRapid = Instantiate(rapid, new Vector3(0.0f, 7.0f, 0.0f), Quaternion.identity);
              tmpRapid.transform.position = new Vector3(randX, tmpRapid.transform.position.y, 0.0f);
              // ALTER FREQUENCY HERE
-             rapidIncr = UnityEngine.Random.Range(10, 15);
+             rapidIncr = UnityEngine.Random.Range(40, 60);
              rapidTimer = Time.time + rapidIncr;
          }
          if (spreadTimer < Time.time) {
@@ -90,7 +90,7 @@ using UnityEngine;
              GameObject tmpSpread = Instantiate(spread, new Vector3(0.0f, 7.0f, 0.0f), Quaternion.identity);
              tmpSpread.transform.position = new Vector3(randX, tmpSpread.transform.position.y, 0.0f);
              // ALTER FREQUENCY HERE
-             spreadIncr = UnityEngine.Random.Range(15, 20);
+             spreadIncr = UnityEngine.Random.Range(40, 60);
              spreadTimer = Time.time + spreadIncr;
          }
      }
