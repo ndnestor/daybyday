@@ -85,7 +85,7 @@ public class ComputerInterface : MonoBehaviour
         }
         else if (newName.Equals("Blaster Button"))
         {
-              SceneManager.LoadScene(3);
+              SceneManager.LoadScene("Scene_startMenu");
         }
         else if (newName.Equals("Help Button"))
         {

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,7 +31,6 @@ using UnityEngine;
         outside of this scene).
         Short of using GameObject.Find or GameObject.FindWithTag, not sure how else to work around
         So instead of referencing black hole prefab, will just modify an object in scene
-
         "Spawn" AND "despawn" will both be controlled here rather than in obj. script
         */
         holeDespawnLength = 5.0f;
