@@ -35,7 +35,8 @@ public class PlayerMovement : MonoBehaviour
     }
     **/
 
-    public float speed;
+    float speed, blackHoleDrag;
+    int blackHoleDirection;
     private Rigidbody2D rb2d;
     public int rocketHealth;
     private int maxHealth;
@@ -56,7 +57,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        speed = 50.0f;
         maxHealth = rocketHealth;
+        blackHoleDrag = 0.0f;
         rb2d = GetComponent<Rigidbody2D> ();
         //rocketHealth = 100;
         isSwift = false;
@@ -68,6 +71,14 @@ public class PlayerMovement : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(moveHorizontal, 0);
         rb2d.AddForce(movement * speed);
+        /**if(blackHoleDirection == 1) {
+            rb2d.AddForce(movement * (speed-blackHoleDrag));
+        } else if (blackHoleDirection == 2) {
+            rb2d.AddForce(movement * (speed+blackHoleDrag));
+        } else {
+            rb2d.AddForce(movement * speed);
+        }*/
+        rb2d.AddForce(new Vector2(blackHoleDrag, 0.0f));
     }
 
     void Update()
@@ -77,6 +88,13 @@ public class PlayerMovement : MonoBehaviour
                 speed = speed/2;
                 isSwift = false;
             }
+        }
+        if (blackHoleDirection == 1) {
+            blackHoleDrag = -20.0f;
+        } else if (blackHoleDirection == 2) {
+            blackHoleDrag = 20.0f;
+        } else if (blackHoleDirection == 0) {
+            blackHoleDrag = 0.0f;
         }
     }
 
@@ -137,8 +155,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public bool blackHolePresent(bool blackHole) {
-        return blackHole;
+    public void blackHolePresent(bool blackHole, int holeDirec) {
+        blackHoleDirection = holeDirec;
+    }
+    public void noBlackHole() {
+        blackHoleDrag = 0.0f;
     }
 
 }

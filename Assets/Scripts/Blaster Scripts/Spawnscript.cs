@@ -11,6 +11,7 @@ using UnityEngine;
      bool nextHoleSpawnSet, nextHoleDespawnSet;
      private float spawnTimer_Ship, spawnIncr_Ship;
      enemyScriptHole holeScript;
+     public PlayerMovement rocketMovement;
 
     void Awake() {
         Debug.Log("Start time " + Time.time);
@@ -33,9 +34,8 @@ using UnityEngine;
 
         "Spawn" AND "despawn" will both be controlled here rather than in obj. script
         */
-        holeDespawnLength = 10.0f;
-        //spawnIncr_Hole = UnityEngine.Random.Range(45.0f, 240.0f);
-        spawnIncr_Hole = UnityEngine.Random.Range(15.0f, 20.0f);
+        holeDespawnLength = 5.0f;
+        spawnIncr_Hole = UnityEngine.Random.Range(45.0f, 240.0f);
         spawnTimer_Hole = Time.time + spawnIncr_Hole;
         randomizerX = UnityEngine.Random.Range(0.0f, 1.0f);
         Debug.Log("Initial hole spawn time " + spawnTimer_Hole);
@@ -94,15 +94,13 @@ using UnityEngine;
              enem_Hole.transform.position = new Vector3(xHole, -2.72f, 0.0f);
          }
          if (Time.time > holeDespawnTimer) {
-             holeScript.blackHoleActive(false, false);
              nextHoleDespawnSet = false;
-             if (!nextHoleSpawnSet && Time.time > 22.0f) {
-                 Debug.Log("Resetting hole spawn");
-                 //spawnIncr_Hole = UnityEngine.Random.Range(45.0f, 240.0f);
-                 spawnIncr_Hole = UnityEngine.Random.Range(15.0f, 20.0f);
+             holeScript.blackHoleActive(false, false);
+             rocketMovement.noBlackHole();
+             if (!nextHoleSpawnSet && Time.time > 16.0f) {
+                 spawnIncr_Hole = UnityEngine.Random.Range(45.0f, 240.0f);
                  randomizerX = UnityEngine.Random.Range(0.0f, 1.0f);
                  spawnTimer_Hole = Time.time + spawnIncr_Hole;
-                 Debug.Log("Next hole spawn time " + spawnTimer_Hole);
                  nextHoleSpawnSet = true;
              }
              enem_Hole.SetActive(false);

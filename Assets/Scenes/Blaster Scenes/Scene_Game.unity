@@ -696,7 +696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a224986cb420e449f57ca34faa9efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
   rocketHealth: 100
   enemyDamage: 20
   starRestore: 10
@@ -1463,6 +1462,7 @@ MonoBehaviour:
   enem_Whale: {fileID: 7052051961086811553, guid: e6ad0f2d8c6ae4c4d854f69fcd8b06f4, type: 3}
   enem_Hole: {fileID: 108785744}
   enem_Ship: {fileID: 7079459111009898020, guid: bbecd0699c1d8bf4d82517670e06506b, type: 3}
+  rocketMovement: {fileID: 461056734}
 --- !u!4 &831097536
 Transform:
   m_ObjectHideFlags: 0
@@ -2310,6 +2310,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -741347961256800241, guid: 1e3a55b34dcbf9542af3a032cb19e1a1, type: 3}
+      propertyPath: rocketMovement
+      value: 
+      objectReference: {fileID: 461056734}
     - target: {fileID: 4735015187101377437, guid: 1e3a55b34dcbf9542af3a032cb19e1a1, type: 3}
       propertyPath: m_RootOrder
       value: 11
