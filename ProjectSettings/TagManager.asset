@@ -17,6 +17,9 @@ TagManager:
   - Star
   - Rapid
   - HealthBar
+  - Whale
+  - Ship
+  - BlackHole
   layers:
   - Default
   - TransparentFX

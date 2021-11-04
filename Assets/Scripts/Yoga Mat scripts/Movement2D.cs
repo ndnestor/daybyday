@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Movement2D : MonoBehaviour
 {
     public GameObject playerSprite;
+    SpriteRenderer playerSpriteRenderer;
     public Rigidbody2D rb;
     public float orderLineY;
     public float moveSpeed = 5f;
@@ -24,6 +25,7 @@ public class Movement2D : MonoBehaviour
 	private void Awake()
     {
         Instance = this;
+        playerSpriteRenderer = playerSprite.GetComponent<SpriteRenderer>();
 	}
 
 	// Update is called once per frame
@@ -33,6 +35,17 @@ public class Movement2D : MonoBehaviour
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical") * ySpeedFactor;
+            
+            // NOTE from Bridge: Following if statements control direction character faces
+            // Also added line to get SpriteRenderer component in Awake
+            // Should affect only sprite renderer
+            if(movement.x <0 && !playerSpriteRenderer.flipX) {
+                playerSpriteRenderer.flipX = true;
+            }
+            if(movement.x >0 && playerSpriteRenderer.flipX) {
+                playerSpriteRenderer.flipX = false;
+            }
+
         }
 
         if(Input.GetKeyDown("space"))
