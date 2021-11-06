@@ -10,7 +10,7 @@ public class globalScore : MonoBehaviour
     public static globalScore Instance;
     public float weightHighScore, balanceHighScore; // yoga exercises
     public float weightRecentScore, balanceRecentScore; //yoga exercises
-    public int blasterRecentScore, blasterHighScore; // Blaster minigame
+    public int blasterRecentScore, blasterHighScore, blasterLevel; // Blaster minigame
     public int activity;
 
     void Awake ()
@@ -24,6 +24,7 @@ public class globalScore : MonoBehaviour
         {
             Destroy (gameObject);
         }
+        blasterLevel = 1;
       }
     
     public void updateYogaScore(float recent, int activityNum) {
@@ -64,6 +65,11 @@ public class globalScore : MonoBehaviour
         blasterRecentScore = recent;
         if (recent >= blasterHighScore) {
             blasterHighScore = recent;
+        }
+        if (blasterHighScore >= 50) {
+            blasterLevel = 3;
+        } else if (blasterHighScore >= 30) {
+            blasterLevel = 2;
         }
     }
 }

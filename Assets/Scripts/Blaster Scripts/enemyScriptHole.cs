@@ -6,25 +6,28 @@ public class enemyScriptHole : MonoBehaviour
 {
 
     public Rigidbody2D rigidEnemy;
-    private float despawnTimer;
-    public float despawnLength;
-    public bool yesHoleLeft = false;
-    public bool yesHoleRight = false;
+    bool holeOnLeft, holeOnRight;
+    public PlayerMovement rocketMovement;
 
     private Spawnscript spawner;
 
-    // Start is called before the first frame update
-    public void Start()
-    {
-        despawnTimer = Time.time + despawnLength;
-        //Debug.Log(spawner.xHole);
+    public void blackHoleActive(bool left, bool right) {
+        holeOnLeft = left;
+        holeOnRight = right;
+        //Debug.Log("Black hole left " + left + " black hole right " + right);
     }
 
-    void Update() {
-        if (Time.time > despawnTimer) {
-            Destroy(gameObject);
-            yesHoleLeft = false;
-            yesHoleRight = false;
+    public void Update() {
+        // blackHolePresent method from PlayerMovement class
+        // takes bool for whether a hole is present (T/F)
+        // takes int for side (1 = left, 2 = right)
+        // If none present, (false, 0)
+        if (holeOnLeft) {
+            rocketMovement.blackHolePresent(true, 1);
+        } else if (holeOnRight) {
+            rocketMovement.blackHolePresent(true, 2);
+        } else if (!holeOnRight && !holeOnLeft) {
+            rocketMovement.blackHolePresent(false, 0);
         }
     }
 

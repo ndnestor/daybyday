@@ -40,6 +40,33 @@ public class enemyScriptWhale : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+
+        if (col.gameObject.tag == ("Star"))
+        {
+            Destroy(col.gameObject);
+            rigidEnemy.velocity = transform.right * enemySpeed;
+        }
+        if (col.gameObject.tag == ("Rapid"))
+        {
+            Destroy(col.gameObject);
+            rigidEnemy.velocity = transform.right * enemySpeed;
+        }
+        if (col.gameObject.tag == ("Spread"))
+        {
+            Destroy(col.gameObject);
+            rigidEnemy.velocity = transform.right * enemySpeed;
+        }
+        if (col.gameObject.tag == ("Bulwark"))
+        {
+            Destroy(col.gameObject);
+            rigidEnemy.velocity = transform.right * enemySpeed;
+        }
+        if (col.gameObject.tag == ("Swift"))
+        {
+            Destroy(col.gameObject);
+            rigidEnemy.velocity = transform.right * enemySpeed;
+        }
     }
 
 }

@@ -35,6 +35,33 @@ public class EnemyScript : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("Hit ship");
         }
+
+        // Destroys pickups and continues vel on collision
+        if (col.gameObject.tag == ("Star"))
+        {
+            Destroy(col.gameObject);
+            rigidEnemy.velocity = -transform.up * enemySpeed;
+        }
+        if (col.gameObject.tag == ("Rapid"))
+        {
+            Destroy(col.gameObject);
+            rigidEnemy.velocity = -transform.up * enemySpeed;
+        }
+        if (col.gameObject.tag == ("Spread"))
+        {
+            Destroy(col.gameObject);
+            rigidEnemy.velocity = -transform.up * enemySpeed;
+        }
+        if (col.gameObject.tag == ("Bulwark"))
+        {
+            Destroy(col.gameObject);
+            rigidEnemy.velocity = -transform.up * enemySpeed;
+        }
+        if (col.gameObject.tag == ("Swift"))
+        {
+            Destroy(col.gameObject);
+            rigidEnemy.velocity = -transform.up * enemySpeed;
+        }
     }
 
 }

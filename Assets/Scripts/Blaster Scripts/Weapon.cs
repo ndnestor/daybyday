@@ -63,15 +63,15 @@ public class Weapon : MonoBehaviour
             Destroy(col.gameObject);
             reloadTime = reloadTime / 3;
             rapidTimer = Time.time + unRapid;
-            Debug.Log("Time is " + Time.time);
-            Debug.Log("Rapid timer is " + rapidTimer);
+            //Debug.Log("Time is " + Time.time);
+            //Debug.Log("Rapid timer is " + rapidTimer);
         }
     }
     
     void Shoot ()
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Debug.Log("Shoot");
+        // Debug.Log("Shoot");
         shootTime = Time.time + reloadTime;
         bulletNoise.Play();
     }
