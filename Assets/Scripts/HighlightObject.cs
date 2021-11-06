@@ -21,10 +21,13 @@ public class HighlightObject : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey("e") && triggerable)
+        if (Input.GetKeyDown("e") && triggerable)
         {
             connectedSprite.GetComponent<SpriteRenderer>().material = defaultMat;
-            Debug.Log("Interacted with " + gameObject.name);
+            if(InteractionHandler.Instance.Interact(gameObject.name))
+            {
+                Debug.Log("Interacted with " + gameObject.name);
+            }
         }
     }
 
