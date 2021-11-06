@@ -863,7 +863,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &231473489
 MonoBehaviour:
@@ -1547,7 +1547,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &652737130
 GameObject:
@@ -2587,7 +2587,6 @@ GameObject:
   - component: {fileID: 954206955}
   - component: {fileID: 954206954}
   - component: {fileID: 954206956}
-  - component: {fileID: 954206957}
   m_Layer: 0
   m_Name: Window Object
   m_TagString: Untagged
@@ -2651,21 +2650,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c7b6437bea8504bb6fb8ba1d0449db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedSprite: {fileID: 0}
+  connectedSprite: {fileID: 870970935}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
   triggerable: 0
---- !u!114 &954206957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954206953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f5179201d79523458c158028a1c1210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1066270141
 GameObject:
   m_ObjectHideFlags: 0
@@ -3388,8 +3375,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1449526118}
   - component: {fileID: 1449526117}
+  - component: {fileID: 1449526121}
+  - component: {fileID: 1449526120}
+  - component: {fileID: 1449526119}
   m_Layer: 0
-  m_Name: Bookcase Object
+  m_Name: Bookshelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3408,7 +3398,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 6.2508764, y: -0.34798074}
+  m_Offset: {x: 6.25, y: -0.35}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3419,7 +3409,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.261145, y: 0.2531773}
+  m_Size: {x: 2.25, y: 0.25}
   m_EdgeRadius: 0
 --- !u!4 &1449526118
 Transform:
@@ -3437,6 +3427,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1449526119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449526116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8082def63271edf45a8088f84468b58c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Bookshelf
+--- !u!114 &1449526120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449526116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c7b6437bea8504bb6fb8ba1d0449db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectedSprite: {fileID: 144138927}
+  highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
+  triggerable: 0
+--- !u!61 &1449526121
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449526116}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 6.25, y: -0.6}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.375, y: 2.3125}
+    newSize: {x: 2.375, y: 2.3125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.25}
+  m_EdgeRadius: 0
 --- !u!1 &1495997024
 GameObject:
   m_ObjectHideFlags: 0
@@ -3703,50 +3747,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1627975234
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1627975236}
-  - component: {fileID: 1627975235}
-  m_Layer: 0
-  m_Name: Bookshelf
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1627975235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627975234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8082def63271edf45a8088f84468b58c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Bookshelf
---- !u!4 &1627975236
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627975234}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1726029316
 PrefabInstance:
   m_ObjectHideFlags: 0
