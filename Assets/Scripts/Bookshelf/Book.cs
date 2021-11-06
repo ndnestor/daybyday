@@ -21,6 +21,7 @@ public class Book : MonoBehaviour
 	[SerializeField] private TMP_Text bookTitleText;
 	
 	[SerializeField] private int maxLinesPerPage;
+	[TextArea(25,30)]
 	[SerializeField] private List<string> pageContents;
 	[SerializeField] private bool generatePageContents;
 

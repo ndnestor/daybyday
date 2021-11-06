@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Bookshelf : MonoBehaviour {
+public class Bookshelf : MonoBehaviour
+{
 
 	[SerializeField] private string sceneName;
 
@@ -14,9 +15,11 @@ public class Bookshelf : MonoBehaviour {
 
 	private void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.Alpha8)) {
+		if(Input.GetKeyDown(KeyCode.Alpha8))
+		{
 			Interact();
-		} else if(Input.GetKeyDown(KeyCode.Alpha9)) {
+		} else if(Input.GetKeyDown(KeyCode.Alpha9))
+		{
 			Exit();
 		}
 	}
@@ -24,7 +27,7 @@ public class Bookshelf : MonoBehaviour {
 	// Show the bookshelf selection screen
 	private void Interact()
 	{
-		SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+		SceneManager.LoadSceneAsync(sceneName);
 	}
 
 	// Hide the bookshelf selection screen

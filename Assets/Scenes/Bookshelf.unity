@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &737879502
 AudioListener:
   m_ObjectHideFlags: 0
@@ -239,6 +239,72 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1 &1426278157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1426278160}
+  - component: {fileID: 1426278159}
+  - component: {fileID: 1426278158}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1426278158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426278157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1426278159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426278157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1426278160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426278157}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1694555893498504746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -272,7 +338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: pageContents.Array.size
-      value: 6
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: pageContents.Array.data[0]
@@ -289,29 +355,428 @@ PrefabInstance:
         presentation today with your team\u2026 and you never finished your portion
         of the presentation now that you think of it. You could probably take a day
         off\u2026 probably\u2026 even though you\u2019d be ditching your team. They\u2019d
-        be fine, right? "
+        be fine, right?"
       objectReference: {fileID: 0}
     - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: pageContents.Array.data[1]
-      value: "Do you:\\nA. Go to work! You don\u2019t want to let your team down
-        (go to 2)\\nB. Your team can handle themselves. They should be fine\u2026probably
-        (go to 3)"
+      value: "Do you:\nA. Go to work! You don\u2019t want to let your team down (go
+        to 3)\nB. Your team can handle themselves. They should be fine\u2026probably
+        (go to 4)"
       objectReference: {fileID: 0}
     - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: pageContents.Array.data[2]
-      value: test 3
+      value: "Alright! You get up, shower, brush your teeth and hair. Then you choose
+        a nice outfit . Heading over to the kitchen, your stomach starts to grumble.
+        You haven\u2019t eaten anything yet, so some quick cereal sounds great. You
+        take the cereal, put in the milk and\u2026 you make a complete mess. You
+        somehow got distracted in all of your thoughts about work and the presentation
+        and managed to make the milk spill everywhere. All over your clothes, the
+        counter....Now you need to change and get ready all over again, and clean
+        up your mess. It shouldn\u2019t take too long, but honestly this kind of
+        feels like a sign that you shouldn\u2019t go to work. Or maybe you\u2019re
+        making that up because you\u2019re just worried about how the presentation
+        will go\u2026\n\nDo you:\r\nA. Just forget it. Honestly, it\u2019s too much
+        work and you really wanna go back to bed anyways (go to 4)\r\nB. Get changed
+        and get going (go to 5)\r"
       objectReference: {fileID: 0}
     - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: pageContents.Array.data[3]
-      value: test 4
+      value: "You\u2019re too tired to do all of this work. You tiredly shuffle back
+        into your room and gracefully plop into your bed until sleep overtakes you.
+        Ah\u2026 peace at last. You wake up after a long sleep. A well deserved sleep.
+        Immediately, you check your phone. It has completely blown up with all the
+        notifications from your team. They probably rocked the project without you.\r\n\nDo
+        you:\r\nA. Check up on your messages and see what your team wants (go to
+        6)\r\nB. There\u2019s really no need to stress or check your phone. Go watch
+        TV (go to 7) \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: pageContents.Array.data[4]
-      value: test 5
+      value: "As you walk into your office, you recall that your boss asked you to
+        do a presentation on the importance of having toilet paper in the workplace.
+        Realizing that you didn\u2019t finish your part of the presentation, you
+        scramble for 30 minutes to finish your part of the 50 slide powerpoint presentation.
+        Your boss then calls you into the meeting room along with all the other employees
+        at Company Incorporated and you stand up to make your case about why toilet
+        paper should be 2 ply rather than 1 ply. You also talk about how toilet paper
+        is taken for granted, and how we should cherish our toilet paper before usage.
+        Everybody stands up and claps cheerfully  for you, and you hear a \u201CWoop-Woop!\u201D
+        from your best friend Don Keigh in the background. Your team then gets up
+        and finishes the rest of their parts in the presentation. All of a sudden,
+        your boss, Mr. Jim Nasium, pulls you to the side and talks to you about a
+        voluntary work initiative that you can choose to accept or reject; the way
+        he describes it makes it seem lengthy, though you know it would reflect positively
+        on your workplace reputation.\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: pageContents.Array.data[5]
-      value: 
+      value: "You also know that there\u2019s a promotion coming up at work\u2026
+        maybe this could help?\r\n\nDo you:\nA. Accept the initiative (go to 13)\r\nB.
+        Pass on the work opportunity (go to 14)\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[6]
+      value: "You unlock your phone. Wow, you have 10 missed calls and 26 messages
+        from your team. Like you knew before, today was a really important day at
+        work, and you were supposed to present the project. Unfortunately, you decided
+        to go to sleep and not show up to work. Your coworkers all wrote you messages
+        and called you because they needed your help today for presenting. You actually
+        had some really important files, and since you didn\u2019t show up, they
+        couldn\u2019t do the proper presentation. \r\n\nDo you:\r\nA. Message your
+        coworkers with an apology and say you were out sick urgently (go to 9)\r\nB.
+        Ignore them, you can handle this whole situation later (go to 8)\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[7]
+      value: "You ignore all of the negativity from your coworkers and work. Who
+        needs all of their problems when you could be watching TV? You click through
+        the channels, and watch episode after episode of your absolute favorite show,
+        Spongebob Squarepants! You suddenly get a call\u2026 oh geez. It\u2019s your
+        boss. He\u2019s calling you, and no doubt he\u2019s calling to ask where
+        you were today. You never called in sick, you never let him or your coworkers
+        know you weren\u2019t doing that really important presentation today\u2026
+        he must not be so happy with you.\r\n\nDo you:\nA. Say you\u2019re sick (go
+        to 10)\r\nB. Ignore the call (go to 11)\r\nC. Tell your boss the truth (go
+        to 12)\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[8]
+      value: "You urgently tell your coworkers that you\u2019re really sorry for
+        missing the presentation and that you\u2019ll make it up to them. Unfortunately,
+        they\u2019re not so easy on you, and it\u2019s clear that they\u2019re not
+        happy whatsoever with the fact that you completely ditched them without any
+        excuse. They almost lost their jobs because they were unprepared without
+        your portion of the materials. And although they all covered for you after
+        you responded to them, they stopped really talking to you and being so friendly
+        after a while. Which was fine with you. Work is just work (go to 14).\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[9]
+      value: "You tell him you\u2019re super sick, and that\u2019s why you had to
+        miss this super important day. Mr. Jim Nasium changes to a tone of sympathy.
+        He questions how you\u2019re feeling and says you can have a few days off
+        until you feel better, since you\u2019re super sick of course. You can tell
+        there\u2019s some reluctance in his voice\u2026 almost as if he doesn\u2019t
+        truly believe you. However, for whatever reason, he decides to let it go.
+        At the end of the phone call, he wishes you well and says that if you need
+        anything, you can let him know. Right before you hang up, as if it was a
+        passing thought, he says that he\u2019ll need a doctor\u2019s note to confirm
+        everything once you come back.\r\nDarn\u2026 you thought you were home free.
+        How are you going to figure out how to get a doctor\u2019s note to get you
+        out of this situation? At least you tried.\n\n(END)\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[10]
+      value: "Honestly, who even needs work anymore. Your coworkers, your boss, your
+        actual work\u2026 it\u2019s all so tedious and kinda annoying. It\u2019s
+        best to just ignore all of this negativity in your life and forget about
+        them. So, you do exactly that. You ignore work day after day. And the calls/texts
+        from your boss and coworkers become fewer and fewer until they finally stop.
+        You get a letter at your door a few weeks later, saying \u201Ctermination
+        effective immediately\u201D.\n\n\rWell, you\u2019ve been fired. That isn\u2019t
+        the greatest, but hey, what did you expect if you just decided to stop doing
+        anything work related? At least now you can relax at home with no one to
+        nag you\u2026 and no one to pay you\u2026 which means\u2026 How are you going
+        to pay your bills? Can you afford your apartment with 0 dollars coming into
+        your pocket? How are you going to pay for electricity, cable, food, water,
+        etc? And even if you want a new job, will you be able to get one without
+        a favorable recommendation from your employer? You basically burned that
+        bridge. Oh well\u2026\n\n(END)\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[11]
+      value: "You tell your boss you really just wanted to stay home today, and as
+        a result, he basically laughs in your face. He says that is definitely not
+        a good justification for what you\u2019ve done, especially since this is
+        the one day he said you needed to show up for the super important presentation\u2026
+        but the only reason he isn\u2019t firing you for simply ignoring work is
+        because you\u2019ve been dedicated up until now. But from here on out, no
+        more skipping important work days just because you feel like it (go to 14)."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[12]
+      value: "You arrive home, set up your laptop, and take out your calculator.
+        You begin to work on the special project for your boss and you blast through
+        dozens and dozens of pages of financial statements, your fingers increasingly
+        wearing out because of the ticking of the calculator. You decide to make
+        yourself a cup of coffee. All of a sudden, your friend Luther calls you.
+        You decide it wouldn\u2019t hurt to take a break and put him on speaker while
+        making yourself a cup of coffee. He says that the local movie theater is
+        airing the new Star Wars movie. He has two extra tickets, one for you and
+        another friend. The movie is long, and you do have the voluntary project
+        due by the end of the month.\r\n\nDo you:\r\nA. Pass on the offer (go to
+        15)\r\nB. Go to the movies (go to 16)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[13]
+      value: "Honestly, your job was never an important part of your life. Work was
+        always the bare minimum. You never intended to live a wealthy dream. You
+        would make money, buy good food to eat, pay your bills, and repeat the same
+        process. Consequently, 3 weeks later, your boss brings everyone into the
+        meeting room. He announces that someone was going to be promoted, and he
+        was going to announce it in just a moment! You had low expectations. Maybe
+        your boss would consider you for your consistent hours? Instead the promotion
+        went to your annoying co-worker Frederick. Oh well...\n\n(END)\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[14]
+      value: "You pass on your friend's offer. You do love Star Wars, but honestly,
+        you\u2019d rather get some more work done. So you continue tapping away,
+        stopping only for the occasional stretch break. Maybe a few snacks here and
+        there to give you energy to continue. Eventually, you check the clock. It\u2019s
+        already 10pm! You\u2019d been working for almost 4 hours straight after you
+        came home from work. Honestly, you\u2019re getting a little tired but you
+        can definitely stay up if you want to do some more work.\r\n\nDo you:\r\nA.
+        Stay up and work (go to 17)\r\nB. Take a break and sleep (go to 18)\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[15]
+      value: "You watch the movie, and it's action-packed with twists and turns!
+        You enjoy yourself, and once the movie is over, you say good night to your
+        friends Matt and Damon only to get 6 hours of sleep when you get back home.
+        The next morning seems normal. Your eyes are considerably dry from your lack
+        of sleep, but otherwise, you complete your same routine; spill cereal milk
+        all over your clothes, go to work, and come home. This time you feel different;
+        you feel tired, though you don\u2019t want to procrastinate the work your
+        boss gave you. \r\n\nDo you:\r\nA.Start working (go to 19)\r\nB.Take a nap
+        (go to 20)\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[16]
+      value: "You stay up and work. It\u2019s better to be productive for you than
+        not to do anything at all\u2026 You brew yourself a nice cup of coffee and
+        get back to work! Typing away, plugging numbers into your calculator\u2026
+        you\u2019ve never felt better. *BEEP**BEEP**BEEP**BEEP**BEEP**---You wake
+        up with a jolt. Your face is imprinted with your desk and there\u2019s a
+        disgusting pile of drool where you must have passed out on your desk. You\u2019re
+        honestly not very refreshed, but you did get a bit of sleep\u2026 even though
+        it wasn\u2019t really your decision. So, you do the usual. You get ready
+        for work, head to work. You do whatever tasks you're assigned and come back
+        home. And at home...you have your beautiful laptop just waiting for you as
+        usual. \r\n\nDo you:\r\nA.Get back to work(go to 21)\r\nB.Go on a walk (go
+        to 22)\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[17]
+      value: "You take a break, watch some tv, and get ready for bed. You were pretty
+        productive today, even though you missed out a bit on the movie. Oh well,
+        there\u2019s always other days to watch a movie, you think as you drift off
+        into sleep. *BEEP**BEEP**BEEP**BEEP**BEEP**---You wake up with a jolt! It\u2019s
+        time for work. You\u2019re feeling super energized, and you get ready and
+        leave a house. You have a super productive day today, and once you get home,
+        you see your laptop. \r\n\nDo you:\r\nA.Get to work (go to 23)\r\nB. Do something
+        fun (go to 24)\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[18]
+      value: "You blast through pages of financial statements and calculations. When
+        you reexamine the document, you realize you've still barely put a dent in
+        the documents. Suddenly, you get another call from Luther. They\u2019re volunteering
+        at the local animal shelter!\n\nDo you:\r\nA.Volunteer at the shelter with
+        Luther (go to 25)\r\nB. Miss out on the opportunity and continue working
+        (go to 26)\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[19]
+      value: "You quickly drift away into a state of nothingness on your sofa. When
+        you awake, you look outside the window, the sun is on the horizon, and the
+        sky is light pink. It looks beautiful. Your running shoes are already ready
+        for you by the door, though you should also be considering working on the
+        financial statement calculations.\r\n\nDo you:\r\nA.Take a walk (go to 27)\r\nB.
+        Work (go to 28)\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[20]
+      value: "Ah yes\u2026 work! We love to see it. Being productive. There is no
+        better feeling than plugging away and getting stuff done for you. You type
+        and calculate as usual, and time simply feels to slip away. One minute it\u2019s
+        5pm\u2026 the next it\u2019s already 8pm!\n\nDo you\r\nA.Go out for a jog
+        (go to 29)\r\nB. Continue working (go to 30)\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[21]
+      value: "It looks so nice out today and you could really use a good walk! The
+        trees and flowers look beautiful today. You also spot a bunch of your neighbors
+        out, and chat with a few. It\u2019s nice to go out and get a change of scenery
+        sometimes. After a bit, you feel your legs getting tired, and it starts to
+        get a bit dark. It\u2019s time to go back home. Once you\u2019re home,\n\nDo
+        you:\r\nA.Get to work (go to 31)\r\nB.Relax and watch some TV (go to 32)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[22]
+      value: "It\u2019s work time of course. So as usual, you take a seat, set down
+        a few snacks, and begin to do your calculations and write that report. While
+        you\u2019re working, the hours slip away\u2026\n\nDo you\r\nA. Stop working
+        (go to 33)\r\nB. Continue working (go to 34)\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[23]
+      value: "You decide to do something fun! You call up your friends to see what
+        they\u2019re doing tonight. It seems like they have nothing in mind, but
+        then Matt suggests you guys set up a nice firepit to make smores and tell
+        stories around. So you go and do just that. Although, you didn\u2019t really
+        get the gist of how to cook the marshmallows. They were either way too cooked
+        or way too\u2026 uncooked. Regardless, you had a good time and honestly,
+        you\u2019re kind of tired now. \r\n\nDo you\r\nA. Work (go to 35)\nB. Get
+        some rest (go to 36)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[24]
+      value: "You absolutely love to see pets! Who needs work anyways. You go to
+        volunteer with Matt and come back home feeling so happy and rejuvenated.
+        By the time you get home, it\u2019s so very late, and you know you won\u2019t
+        be able to stay up whatsoever because you\u2019re exhausted from chasing
+        animals around (go to 39)\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[25]
+      value: "Although you do love animals, you know that you need to get some work
+        done to make up for yesterday. There will always be time for both work and
+        play, you just need to make room in your schedule to fit both (go to 35).\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[26]
+      value: "You decide to take a break from everything and go on a walk. You feel
+        like you really needed this walk to relax. The trees and flowers look beautiful
+        today. You also spot a bunch of your neighbors out, and chat with a few.
+        It\u2019s nice to go out and get a change of scenery sometimes. After a bit,
+        you feel your legs getting tired, and it starts to get a bit dark. It\u2019s
+        time to go back home. Once you\u2019re home, you get ready for bed and go
+        to sleep (go to 39).\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[27]
+      value: "You get a bit of work, and it gets a bit late. Since you have work
+        tomorrow, you decide to go to sleep so you won\u2019t be so tired tomorrow
+        (go to 38).\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[28]
+      value: "It looks so nice out today and you could really use a good jog! The
+        trees and flowers look beautiful today. You also spot a bunch of your neighbors
+        out, and chat with a few. It\u2019s nice to go out and get a change of scenery
+        sometimes. After a bit, you feel your legs getting tired, and it starts to
+        get a bit dark. It\u2019s time to go back home. Once you\u2019re home, you
+        get ready for bed and go to sleep (go to 39)."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[29]
+      value: "Ah\u2026 you\u2019re doing it. You\u2019re working! The numbers on
+        the screen shine, and you feel so accomplished and productive. You keep on
+        working until you pass out like the day before (go to 40)."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[30]
+      value: "You get a bit of work, and it gets a bit late. Since you have work
+        tomorrow, you decide to go to sleep so you won\u2019t be so tired tomorrow
+        (go to 39)."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[31]
+      value: You sit down, get some snacks, and get ready to watch your favorite
+        shows. You click though episode after episode until you feel like you should
+        sleep, and you head to bed (go to 38).
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[32]
+      value: "You decide to take a break! You do whatever energizes you\u2026 anything
+        other than work. Whether it\u2019s cooking something cool, or taking a walk\u2026
+        even facetiming some of your friends, you make sure to care for yourself
+        (go to 37)."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[33]
+      value: You get a bit of work, and it gets a bit late. Still, you stay up extra
+        and get some more work done (go to 39).
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[34]
+      value: "You decide to take a break/some rest! You do whatever energizes you\u2026
+        anything other than work. Whether it\u2019s cooking something cool, or taking
+        a walk\u2026 even facetiming some of your friends, you make sure to care
+        for yourself. Once that happens, you get a good night of sleep (go to 37)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[35]
+      value: "After a few weeks of following these working habits, the day where
+        your boss calls an office meeting is here! He says he wants to announce who
+        will be getting the promotion this month\u2026 you\u2019re so excited! You
+        all huddle together in the meeting room\u2026 everyone is on edge, just waiting
+        for the words that\u2019ll come out of his mouth and\u2026 It\u2019s you!
+        You got the promotion. You simply cannot believe it. Well, you can believe
+        it actually. You\u2019ve been working efficiently on the extra project your
+        boss gave you, and it really did pay off. Not only this, but you didn\u2019t
+        have to sacrifice much of your self care and social life while doing so.
+        Nice job maintaining this work/life balance!\n\n(END\r)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[36]
+      value: "After a few weeks of following these working habits, the day where
+        your boss calls an office meeting is here! He says he wants to announce who
+        will be getting the promotion this month\u2026 you\u2019re so excited! You
+        all huddle together in the meeting room\u2026 everyone is on edge, just waiting
+        for the words that\u2019ll come out of his mouth and\u2026 it isn\u2019t
+        you. It\u2019s Frederick. Although you\u2019re happy for him, you can\u2019t
+        help but feeling a bit disappointed. You\u2019ve\u2026 kinda worked hard?
+        After this, your boss walks up to you and asks about how the project is going.
+        He was expecting it to be done by a few weeks ago. You smile and tell him
+        to not worry. It\u2019ll be done within the week. That wasn\u2019t the response
+        that he wanted, but he said once you finish it, he\u2019ll give you another
+        opportunity to try for a promotion or a raise. While you did work\u2026 sort
+        of\u2026 on this project, you didn\u2019t really split your time between
+        work and your life very equally. Maybe next time, you can try putting a slight
+        bit more of emphasis on work, especially if you know that a promotion is
+        coming up!\n\n(END)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[37]
+      value: "After a few weeks of following these working habits, the day where
+        your boss calls an office meeting is here! He says he wants to announce who
+        will be getting the promotion this month\u2026 you\u2019re so excited! You
+        all huddle together in the meeting room\u2026 everyone is on edge, just waiting
+        for the words that\u2019ll come out of his mouth and\u2026 It\u2019s you!
+        You got the promotion. You simply cannot believe it. Well, you can believe
+        it actually. You\u2019ve been working so\u2026 so hard lately. And you have
+        also gotten to have a bit of fun here and then. However, you do feel so tired.
+        It seems like while trying to balance your work and life, you might have
+        missed out on a lot of quality sleep or even simple self-care! These things
+        are super important, so try getting those in next time!\n\n(END\r)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[38]
+      value: "You work. You love to work. Your friends call you, ask about you, but
+        honestly you just ignore their calls. And honestly\u2026 They stop talking
+        to you anyways. You realize that over time, you don\u2019t really hear the
+        ring of your phone or see any text notifications. Work is your only purpose
+        and the only thing worth doing. You go to work. You come back home to work.
+        It\u2019s who you are. One day, you\u2019re at the office and the boss calls
+        an office meeting. Of course, you think it\u2019s work related and you go
+        into the office. He talks about offering a promotion to one lucky, hardworking
+        employee. And\u2026 it\u2019s you. He chooses you. You\u2019re happy about
+        it of course. Is happy the right term for this? Your boss smiles at you and
+        you look at him, say thank you, and go back to work. Although you\u2019re
+        grateful and proud of all you\u2019ve done\u2026 It seems like something
+        is \u2026 missing? You don\u2019t know what it is. But maybe you miss the
+        daily rings and texts from your friends. Maybe you miss doing things other
+        than work. But it\u2019s fine. Now you can focus on getting another promotion
+        and climbing the ladder. It\u2019ll be alright\u2026 right?\n\n(END)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[39]
+      value: "Your boss comes into your office and says he wants to announce who
+        will be getting the promotion this month\u2026 you\u2019re so excited! You
+        all huddle together in the meeting room\u2026 everyone is on edge, just waiting
+        for the words that\u2019ll come out of his mouth and\u2026 it isn\u2019t
+        you. It\u2019s Frederick. Although you\u2019re happy for him, you can\u2019t
+        help but feel a bit disappointed. You\u2019ve\u2026well actually, now that
+        you think of it, you haven\u2019t really worked hard at all. Weren\u2019t
+        you supposed to start that project your boss gave you? Yikes\u2026 you see
+        your boss approach you with a stern look. He asks you about the project,
+        he expected it a while ago! You think back to that stack of papers. You haven\u2019t
+        even made a dent. You claim that your dog ate it. To that he says that he
+        knows you don\u2019t have a dog. Oops. Maybe next time you can try getting
+        a bit more work done? Fun and self-care is great, but your responsibilities
+        are also important!\n\n(END)"
       objectReference: {fileID: 0}
     - target: {fileID: 4824485550916506438, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: m_Camera
