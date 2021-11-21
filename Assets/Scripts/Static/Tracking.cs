@@ -37,6 +37,7 @@ public class Tracking : MonoBehaviour
     
     private void Start()
     {
+        DontDestroyOnLoad(this);
         Instance = this;
         DayNum = 1;
     }
