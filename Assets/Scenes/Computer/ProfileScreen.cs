@@ -24,7 +24,7 @@ namespace Computer {
         [SerializeField] private GameObject sameOrderBars;
 
         private float[] barHeights;
-        private const int BAR_SPRITE_SORTING_ORDER = 1;
+        private const int BAR_SPRITE_SORTING_ORDER = 11;
         private bool isChronological;
 
         private readonly Hashtable todaysActivityTimes = new Hashtable();
