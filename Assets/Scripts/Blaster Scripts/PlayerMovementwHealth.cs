@@ -42,7 +42,6 @@ public class PlayerMovementwHealth : MonoBehaviour
     public int starRestore;
 
     public int healthBarHealth;
-    public HealthBar healthBar1;
 
 
     void Start()
@@ -51,7 +50,6 @@ public class PlayerMovementwHealth : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D> ();
         //rocketHealth = 100;
         healthBarHealth = maxHealth;
-        //healthBar1.SetMaxHealth(maxHealth);
     }
 
     void FixedUpdate()
@@ -67,7 +65,6 @@ public class PlayerMovementwHealth : MonoBehaviour
         {
             rocketHealth = rocketHealth - enemyDamage;
             healthBarHealth = healthBarHealth - enemyDamage;
-            //healthBar1.SetHealth(healthBarHealth);
             Debug.Log(rocketHealth);
             if (rocketHealth <= 0)
             {
@@ -82,7 +79,6 @@ public class PlayerMovementwHealth : MonoBehaviour
             {
                 rocketHealth = rocketHealth + starRestore;
                 healthBarHealth = healthBarHealth + starRestore;
-                //healthBar1.SetHealth(healthBarHealth);
                 Debug.Log(rocketHealth);
             }
             Destroy(col.gameObject);

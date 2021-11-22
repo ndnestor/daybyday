@@ -7,9 +7,17 @@ using UnityEngine.SceneManagement;
 public class fakeHealthBar : MonoBehaviour
 {
     public Rigidbody2D bar;
-    public float maxHealth;
+    float maxHealth = 100; // Manually change max health here
     private float scaleChange;
     public float xSize;
+    //public Slider sliderPlatform;
+
+    public void SetMaxHealth(int health)
+    {
+        //sliderPlatform.maxValue = health;
+        //sliderPlatform.value = health;
+        maxHealth = health;
+    }
 
     public void healthBarSet()
     {

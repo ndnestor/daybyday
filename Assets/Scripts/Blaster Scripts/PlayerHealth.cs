@@ -8,14 +8,14 @@ public class PlayerHealth : MonoBehaviour
     
     public int maxHealth = 100;
     public int currentHealth;
-    public HealthBar healthBar;
+    //public HealthBar healthBar;
     public AudioSource audioOof;
     public fakeHealthBar bar;
 
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        bar.SetMaxHealth(maxHealth);
         audioOof = GetComponent<AudioSource>();
     }
 

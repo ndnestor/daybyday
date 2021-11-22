@@ -10,7 +10,8 @@ public class PlatformHealth : MonoBehaviour
     
     public int maxHealth;
     public int currentHealth;
-    public HealthBar_Platform healthBar;
+    //public HealthBar_Platform healthBar;
+    public fakeHealthBar healthBar;
     public AudioSource audioOuch;
     public fakeHealthBar_Plat bar;
     globalScore globalScoreKeeper;
@@ -26,8 +27,6 @@ public class PlatformHealth : MonoBehaviour
         audioOuch = GetComponent<AudioSource>();
         globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
     }
-
-    // Update is called once per frame
     
     /* void Update()
     {

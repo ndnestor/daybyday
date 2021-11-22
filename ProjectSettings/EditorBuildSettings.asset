@@ -33,6 +33,6 @@ EditorBuildSettings:
     path: Assets/Scenes/CompAll.unity
     guid: 2920cb2477fbaec4a936817916301f14
   - enabled: 1
-    path: Assets/Scenes/Bookshelf.unity
+    path: Assets/Scenes/Deprecated/Bookshelf.unity
     guid: 61e6c6ea252f3c844b47b60a5265cef5
   m_configObjects: {}
