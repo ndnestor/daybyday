@@ -54,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
     public Text scoreText;
     scoreScript scoreScript;
     int score;
+    public inventoryView inventory;
 
     void Start()
     {
@@ -142,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (col.gameObject.tag == "Swift")
         {
+            inventory.addToInventory("Swift");
             speed = speed*2;
             Destroy(col.gameObject);
             //speedEffectTimer = Time.time + speedEffectDuration;
@@ -150,8 +152,15 @@ public class PlayerMovement : MonoBehaviour
         }
         if (col.gameObject.tag == "Bulwark")
         {
+            inventory.addToInventory("Bulwark");
             Destroy(col.gameObject);
             Instantiate(bulwark);
+        }
+        if (col.gameObject.tag == "Rapid") {
+            inventory.addToInventory("Rapid");
+        }
+        if (col.gameObject.tag == "Spread") {
+            inventory.addToInventory("Spread");
         }
     }
 

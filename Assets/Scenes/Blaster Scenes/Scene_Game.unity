@@ -452,6 +452,7 @@ MonoBehaviour:
   speedEffectTimer: 0
   swiftTimer: 3
   scoreText: {fileID: 1115141117}
+  inventory: {fileID: 1687120175}
 --- !u!114 &461056735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1972,6 +1973,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9ac4e61057d485eb215be12aad9bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slot1: {fileID: 2057102514}
+  slot2: {fileID: 1129365176}
+  slot3: {fileID: 1039373279}
+  slot4: {fileID: 479665477}
+  name1: {fileID: 1711970741}
+  name2: {fileID: 1054224482}
+  name3: {fileID: 2134242381}
+  name4: {fileID: 1062255390}
+  despawnSpread: 0
+  despawnRapid: 0
+  despawnSwift: 0
+  despawnBulwark: 0
+  heal: {fileID: 21300000, guid: f7a594d63365f4e2c9a62d8cfce81699, type: 3}
+  spread: {fileID: 21300000, guid: 3120fe252fb974a14a3886284d92088b, type: 3}
+  rapid: {fileID: 21300000, guid: 29a2c4401b242495ead510a6a89fb3af, type: 3}
+  swift: {fileID: 21300000, guid: 18ad6835b9fd14ba891236106642220f, type: 3}
+  bulwark: {fileID: 21300000, guid: 4731bc1c0cafe453eb393940ab93a9bd, type: 3}
 --- !u!1 &1696822350
 GameObject:
   m_ObjectHideFlags: 0
