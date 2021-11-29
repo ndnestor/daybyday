@@ -38,33 +38,36 @@ public class PlayerMovement : MonoBehaviour
     float speed, blackHoleDrag;
     int blackHoleDirection;
     private Rigidbody2D rb2d;
-    public int rocketHealth;
-    private int maxHealth;
-    public int enemyDamage;
-    public int starRestore;
+    [SerializeField] private int rocketHealth;
+    private int maxHealth, enemyDamage;
+    [SerializeField] private int starRestore;
     public GameObject bulwark;
 
     public float speedEffectTimer;
     private float speedEffectDuration;
 
     private float unSwift;
-    public float swiftTimer;
+    [SerializeField] private float swiftTimer;
     private bool isSwift;
-    globalScore globalScoreKeeper;
     public Text scoreText;
     scoreScript scoreScript;
     int score;
     public inventoryView inventory;
+    globalScore scorekeeper;
 
     void Start()
     {
+        scorekeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
+        if (scorekeeper.returnBlasterLevel() == 1 || scorekeeper.returnBlasterLevel() == 2) {
+            enemyDamage = 20;
+        } else if (scorekeeper.returnBlasterLevel() == 3) {
+            enemyDamage = 40;
+        }
         speed = 50.0f;
         maxHealth = rocketHealth;
         blackHoleDrag = 0.0f;
         rb2d = GetComponent<Rigidbody2D> ();
-        //rocketHealth = 100;
         isSwift = false;
-        globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
     }
 
     void FixedUpdate()
@@ -72,13 +75,6 @@ public class PlayerMovement : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(moveHorizontal, 0);
         rb2d.AddForce(movement * speed);
-        /**if(blackHoleDirection == 1) {
-            rb2d.AddForce(movement * (speed-blackHoleDrag));
-        } else if (blackHoleDirection == 2) {
-            rb2d.AddForce(movement * (speed+blackHoleDrag));
-        } else {
-            rb2d.AddForce(movement * speed);
-        }*/
         rb2d.AddForce(new Vector2(blackHoleDrag, 0.0f));
     }
 
@@ -104,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Dead");
         scoreScript = scoreText.GetComponent<scoreScript>();
         score = scoreScript.returnScore();
-        globalScoreKeeper.updateBlasterScore(score);
+        scorekeeper.updateBlasterScore(score);
         SceneManager.LoadScene("Scene_endGame");
     }
 

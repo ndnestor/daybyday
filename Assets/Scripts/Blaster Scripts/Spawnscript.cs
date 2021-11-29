@@ -12,13 +12,23 @@ using UnityEngine;
      private float spawnTimer_Ship, spawnIncr_Ship;
      enemyScriptHole holeScript;
      public PlayerMovement rocketMovement;
+     globalScore scorekeeper;
 
     void Awake() {
-        Debug.Log("Start time " + Time.time);
-        spawnIncr = UnityEngine.Random.Range(0.5f, 5.0f);
-        spawnTimer = Time.time + spawnIncr;
+        scorekeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
+        if (scorekeeper.returnBlasterLevel() == 1) {
+            spawnIncr = UnityEngine.Random.Range(0.5f, 5.0f);
+            spawnIncr_Whale = UnityEngine.Random.Range(30.0f, 60.0f);
+            spawnIncr_Hole = UnityEngine.Random.Range(45.0f, 240.0f);
+        } else {
+            spawnIncr = UnityEngine.Random.Range(0.5f, 3.0f);
+            spawnIncr_Whale = UnityEngine.Random.Range(20.0f, 45.0f);
+            spawnIncr_Hole = UnityEngine.Random.Range(30.0f, 180.0f);
+        }
 
-        spawnIncr_Whale = UnityEngine.Random.Range(30.0f, 40.0f);
+        //Debug.Log("Start time " + Time.time);
+        
+        spawnTimer = Time.time + spawnIncr;
         spawnTimer_Whale = Time.time + spawnIncr_Whale;
 
         /** Rather than spawning a new black hole every time, Spawnscript refers
@@ -34,7 +44,6 @@ using UnityEngine;
         "Spawn" AND "despawn" will both be controlled here rather than in obj. script
         */
         holeDespawnLength = 5.0f;
-        spawnIncr_Hole = UnityEngine.Random.Range(45.0f, 240.0f);
         spawnTimer_Hole = Time.time + spawnIncr_Hole;
         randomizerX = UnityEngine.Random.Range(0.0f, 1.0f);
         Debug.Log("Initial hole spawn time " + spawnTimer_Hole);

@@ -72,4 +72,7 @@ public class globalScore : MonoBehaviour
             blasterLevel = 2;
         }
     }
+    public int returnBlasterLevel() {
+        return blasterLevel;
+    }
 }

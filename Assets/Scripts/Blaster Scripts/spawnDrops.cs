@@ -22,6 +22,8 @@ using UnityEngine;
      public GameObject spread;
      private float spreadTimer;
      private float spreadIncr;
+     globalScore scorekeeper;
+     public int gameLevel;
 
      // SPAWN HIERARCHY (Common --> Rare)
      /**
@@ -32,13 +34,35 @@ using UnityEngine;
      5. Shield
      **/
 
+    void Start() {
+        scorekeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
+    }
+
     void Awake() {
-        healIncr = UnityEngine.Random.Range(20, 30);
-        //healIncr = UnityEngine.Random.Range(18, 23);
-        bulwarkIncr = UnityEngine.Random.Range(60, 90);
-        swiftIncr = UnityEngine.Random.Range(40, 60);
-        rapidIncr = UnityEngine.Random.Range(40, 60);
-        spreadIncr = UnityEngine.Random.Range(40, 60);
+        gameLevel = scorekeeper.returnBlasterLevel();
+        switch(gameLevel) {
+            case 1:
+                healIncr = UnityEngine.Random.Range(20, 30);
+                bulwarkIncr = UnityEngine.Random.Range(60, 90);
+                swiftIncr = UnityEngine.Random.Range(40, 60);
+                rapidIncr = UnityEngine.Random.Range(40, 60);
+                spreadIncr = UnityEngine.Random.Range(40, 60);
+                break;
+            case 2:
+                healIncr = UnityEngine.Random.Range(40, 60);
+                bulwarkIncr = UnityEngine.Random.Range(90, 240);
+                swiftIncr = UnityEngine.Random.Range(60, 120);
+                rapidIncr = UnityEngine.Random.Range(60, 120);
+                spreadIncr = UnityEngine.Random.Range(60, 120);
+                break;
+            case 3:
+                healIncr = UnityEngine.Random.Range(60, 120);
+                bulwarkIncr = UnityEngine.Random.Range(120, 300);
+                swiftIncr = UnityEngine.Random.Range(120, 240);
+                rapidIncr = UnityEngine.Random.Range(120, 240);
+                spreadIncr = UnityEngine.Random.Range(120, 240);
+                break;
+        }
         healTimer = Time.time + healIncr;
         bulwarkTimer = Time.time + bulwarkIncr;
         swiftTimer = Time.time + swiftIncr;
