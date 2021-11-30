@@ -12,14 +12,31 @@ public class enemyScript_Ship : MonoBehaviour
     private float shootTimer;
     public float shootIncr;
     private float shipShootPosition;
-    public float despawnTime;
-    private float despawnTimer;
+    private float despawnTime, despawnTimer;
+    globalScore scorekeeper;
+    private int passes;
+    SpriteRenderer shipSprite;
 
     void Start()
     {
+        passes = 0;
+        despawnTime = 10;
+        scorekeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
         rigidEnemy.velocity = -transform.right * enemySpeed;
         Vector3 shipPosition = transform.position;
         despawnTimer = Time.time + despawnTime;
+        shipSprite = gameObject.GetComponent<SpriteRenderer>();
+    }
+    public string returnDirec() {
+        if (scorekeeper.returnBlasterLevel() >= 2) {
+            if (passes == 0 || passes == 2) {
+                return "Left"; // Moving from right TO left
+            } else {
+                return "Right";
+            }
+        } else {
+            return "Right";
+        }
     }
 
     void Update()
@@ -37,8 +54,23 @@ public class enemyScript_Ship : MonoBehaviour
 
              shootTimer = Time.time + shootIncr;
          }
+         //Ship moves from right to left, so hits certain x coordinate to count pass
+         if (shipPosition.x <= -11.0f) {
+             passes = 1;
+             if (scorekeeper.returnBlasterLevel() >= 2) {
+                rigidEnemy.velocity = transform.right * enemySpeed;
+                shipSprite.flipX = true;
+             }
+         } else if (shipPosition.x >= 11.0f) {
+             passes = 2;
+         }
          if (despawnTimer < Time.time) {
-            Destroy(gameObject);
+            if(scorekeeper.returnBlasterLevel() == 1) {
+                Destroy(gameObject);
+            }
+            if(scorekeeper.returnBlasterLevel() == 2 && passes == 2) {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -48,11 +80,20 @@ public class enemyScript_Ship : MonoBehaviour
         {
             Destroy(col.gameObject);
             Debug.Log("Hit enemy");
-            rigidEnemy.velocity = -transform.right * enemySpeed;
+            // Continue movement
+            if (passes == 0 || passes == 2) {
+                rigidEnemy.velocity = -transform.right * enemySpeed;
+            } else {
+                rigidEnemy.velocity = transform.right * enemySpeed;
+            }
         }
         if (col.gameObject.tag == "Whale")
         {
-            rigidEnemy.velocity = -transform.right * enemySpeed;
+            if (passes == 0 || passes == 2) {
+                rigidEnemy.velocity = -transform.right * enemySpeed;
+            } else {
+                rigidEnemy.velocity = transform.right * enemySpeed;
+            }
         }
         if (col.gameObject.tag == "PlatformHealth")
         {
@@ -70,27 +111,47 @@ public class enemyScript_Ship : MonoBehaviour
         if (col.gameObject.tag == ("Star"))
         {
             Destroy(col.gameObject);
-            rigidEnemy.velocity = -transform.right * enemySpeed;
+            if (passes == 0 || passes == 2) {
+                rigidEnemy.velocity = -transform.right * enemySpeed;
+            } else {
+                rigidEnemy.velocity = transform.right * enemySpeed;
+            }
         }
         if (col.gameObject.tag == ("Rapid"))
         {
             Destroy(col.gameObject);
-            rigidEnemy.velocity = -transform.right * enemySpeed;
+            if (passes == 0 || passes == 2) {
+                rigidEnemy.velocity = -transform.right * enemySpeed;
+            } else {
+                rigidEnemy.velocity = transform.right * enemySpeed;
+            }
         }
         if (col.gameObject.tag == ("Spread"))
         {
             Destroy(col.gameObject);
-            rigidEnemy.velocity = -transform.right * enemySpeed;
+            if (passes == 0 || passes == 2) {
+                rigidEnemy.velocity = -transform.right * enemySpeed;
+            } else {
+                rigidEnemy.velocity = transform.right * enemySpeed;
+            }
         }
         if (col.gameObject.tag == ("Bulwark"))
         {
             Destroy(col.gameObject);
-            rigidEnemy.velocity = -transform.right * enemySpeed;
+            if (passes == 0 || passes == 2) {
+                rigidEnemy.velocity = -transform.right * enemySpeed;
+            } else {
+                rigidEnemy.velocity = transform.right * enemySpeed;
+            }
         }
         if (col.gameObject.tag == ("Swift"))
         {
             Destroy(col.gameObject);
-            rigidEnemy.velocity = -transform.right * enemySpeed;
+            if (passes == 0 || passes == 2) {
+                rigidEnemy.velocity = -transform.right * enemySpeed;
+            } else {
+                rigidEnemy.velocity = transform.right * enemySpeed;
+            }
         }
     }
 

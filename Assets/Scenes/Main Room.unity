@@ -1272,6 +1272,7 @@ MonoBehaviour:
   balanceRecentScore: 0
   blasterRecentScore: 0
   blasterHighScore: 0
+  blasterLevel: 0
   activity: 0
 --- !u!4 &484225803
 Transform:

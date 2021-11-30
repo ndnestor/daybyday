@@ -6,23 +6,30 @@ using UnityEngine.Audio;
 
 public class enemBullet : MonoBehaviour
 {
-    public float bulletSpeed = 20f;
-    public float bulletHorz = 2.5f;
+    float bulletSpeed = 10.0f;
+    float bulletHorz = 6.0f; //2.5f;
     public Rigidbody2D rb;
     public float despawnTime;
     private float despawnTimer;
+    //globalScore scorekeeper;
+    enemyScript_Ship ship;
 
-    void Start()
-    {
-        rb.velocity = -transform.up * bulletSpeed - transform.right*bulletHorz;
-
+    void Start() {
+        ship = GameObject.Find("enemy_Ship").GetComponent<enemyScript_Ship>();
+        switch (ship.returnDirec()) {
+            case "Left":
+                rb.velocity = -transform.up * bulletSpeed - transform.right * bulletHorz;
+                break;
+            case "Right":
+                rb.velocity = -transform.up * bulletSpeed + transform.right * bulletHorz;
+                break;
+        }
         despawnTimer = Time.time + despawnTime;
     }
 
     void Update() {
         if (despawnTimer < Time.time) {
             Destroy(gameObject);
-            Debug.Log("DESPAWN BULLET");
         }
     }
 

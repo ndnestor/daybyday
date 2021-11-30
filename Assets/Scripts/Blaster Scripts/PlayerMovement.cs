@@ -123,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
             if (rocketHealth <= 0)
             {
                 Destroy(gameObject);
-                Debug.Log("Dead");
+                playerDie();
                 
             }
             Destroy(col.gameObject);

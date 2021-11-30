@@ -34,11 +34,8 @@ using UnityEngine;
      5. Shield
      **/
 
-    void Start() {
-        scorekeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
-    }
-
     void Awake() {
+        scorekeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
         gameLevel = scorekeeper.returnBlasterLevel();
         switch(gameLevel) {
             case 1:
