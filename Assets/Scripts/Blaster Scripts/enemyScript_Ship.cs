@@ -16,14 +16,15 @@ public class enemyScript_Ship : MonoBehaviour
     globalScore scorekeeper;
     private int passes;
     SpriteRenderer shipSprite;
+    Vector3 shipPosition;
 
     void Start()
     {
-        passes = 2;
-        despawnTime = 5; //For single pass, despawns at this val; for double, check conditions after
+        passes = 2; // 2 if 0 or even # of passes, 1 if odd # of passes
+        despawnTime = 5.0f; //For single pass, despawns at this val; for double, check conditions after
         scorekeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
         rigidEnemy.velocity = -transform.right * enemySpeed;
-        Vector3 shipPosition = transform.position;
+        shipPosition = transform.position;
         despawnTimer = Time.time + despawnTime;
         shipSprite = gameObject.GetComponent<SpriteRenderer>();
     }
@@ -41,7 +42,7 @@ public class enemyScript_Ship : MonoBehaviour
 
     void Update()
     {
-        Vector3 shipPosition = transform.position;
+        shipPosition = transform.position;
         if (shootTimer < Time.time) {
              GameObject tmpBullet = Instantiate(enemBullet, new Vector3(0.0f, 7.0f, 0.0f), Quaternion.identity);
              tmpBullet.transform.position = new Vector3(shipPosition.x-0.32f, shipPosition.y-0.93f, 0.0f);
@@ -55,13 +56,13 @@ public class enemyScript_Ship : MonoBehaviour
              shootTimer = Time.time + shootIncr;
          }
          //Ship moves from right to left, so hits certain x coordinate to count pass
-         if (shipPosition.x <= -11.0f) {
+         if (shipPosition.x <= -18.0f) {
              passes = 1;
              if (scorekeeper.returnBlasterLevel() >= 2) {
                 rigidEnemy.velocity = transform.right * enemySpeed;
                 shipSprite.flipX = true;
              }
-         } else if (shipPosition.x >= 11.0f) {
+         } else if (shipPosition.x >= 18.0f) {
              passes = 2;
              if (scorekeeper.returnBlasterLevel() >= 2) {
                  rigidEnemy.velocity = -transform.right * enemySpeed;

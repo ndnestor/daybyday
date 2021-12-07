@@ -7,26 +7,67 @@ public class enemyScriptWhale : MonoBehaviour
 
     public float enemySpeed = 20f;
     public Rigidbody2D rigidEnemy;
+    globalScore scorekeeper;
+    private float despawnTime, despawnTimer;
+    int passes;
+    SpriteRenderer whaleSprite;
+    Vector3 whalePosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        passes = 2; //1 for odd # of passes, 2 for 0 or even # of passes
+        despawnTime = 5.0f;
+        despawnTimer = Time.time + despawnTime;
+        scorekeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
         rigidEnemy.velocity = transform.right * enemySpeed;
-        //gameObject.tag = "Enemy";
+        whalePosition = transform.position;
+        whaleSprite = gameObject.GetComponent<SpriteRenderer>();
+    }
+    void Update() {
+        whalePosition = transform.position;
+        // Direction controller
+         if (whalePosition.x >= 11.0f) {
+             passes = 1;
+             if (scorekeeper.returnBlasterLevel() >= 2) {
+                 rigidEnemy.velocity = -transform.right * enemySpeed;
+                 whaleSprite.flipX = true;
+             }
+         } else if (whalePosition.x <= -11.0f) {
+             passes = 2;
+             if (scorekeeper.returnBlasterLevel() >= 2) {
+                 rigidEnemy.velocity = transform.right * enemySpeed;
+                 whaleSprite.flipX = false;
+             }
+         }
+
+        // Despawns whale based on level conditions
+        if (despawnTimer < Time.time) {
+            if (scorekeeper.returnBlasterLevel() == 1) {
+                Destroy(gameObject);
+            }
+            if (scorekeeper.returnBlasterLevel() == 2 && passes == 2) {
+                Destroy(gameObject);
+            }
+        }
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        //if (col.gameObject.tag == "Enemy") {
-        //    Physics2D.IgnoreCollision(GetComponent<Collider2D>(), col.gameObject.GetComponent<Collider2D>(), true);
-        //}
         if (col.gameObject.tag == "Ship")
         {
+            Destroy(gameObject);
+        }
+        if (col.gameObject.tag == "Whale") {
             Destroy(gameObject);
         }
         if (col.gameObject.tag == "Enemy")
         {
             Destroy(col.gameObject);
-            rigidEnemy.velocity = transform.right * enemySpeed;
+            if (passes == 2) {
+                rigidEnemy.velocity = transform.right * enemySpeed;
+            } else {
+                rigidEnemy.velocity = -transform.right * enemySpeed;
+            }
         }
         if (col.gameObject.tag == "PlatformHealth")
         {
@@ -45,27 +86,47 @@ public class enemyScriptWhale : MonoBehaviour
         if (col.gameObject.tag == ("Star"))
         {
             Destroy(col.gameObject);
-            rigidEnemy.velocity = transform.right * enemySpeed;
+            if (passes == 2) {
+                rigidEnemy.velocity = transform.right * enemySpeed;
+            } else {
+                rigidEnemy.velocity = -transform.right * enemySpeed;
+            }
         }
         if (col.gameObject.tag == ("Rapid"))
         {
             Destroy(col.gameObject);
-            rigidEnemy.velocity = transform.right * enemySpeed;
+            if (passes == 2) {
+                rigidEnemy.velocity = transform.right * enemySpeed;
+            } else {
+                rigidEnemy.velocity = -transform.right * enemySpeed;
+            }
         }
         if (col.gameObject.tag == ("Spread"))
         {
             Destroy(col.gameObject);
-            rigidEnemy.velocity = transform.right * enemySpeed;
+            if (passes == 2) {
+                rigidEnemy.velocity = transform.right * enemySpeed;
+            } else {
+                rigidEnemy.velocity = -transform.right * enemySpeed;
+            }
         }
         if (col.gameObject.tag == ("Bulwark"))
         {
             Destroy(col.gameObject);
-            rigidEnemy.velocity = transform.right * enemySpeed;
+            if (passes == 2) {
+                rigidEnemy.velocity = transform.right * enemySpeed;
+            } else {
+                rigidEnemy.velocity = -transform.right * enemySpeed;
+            }
         }
         if (col.gameObject.tag == ("Swift"))
         {
             Destroy(col.gameObject);
-            rigidEnemy.velocity = transform.right * enemySpeed;
+            if (passes == 2) {
+                rigidEnemy.velocity = transform.right * enemySpeed;
+            } else {
+                rigidEnemy.velocity = -transform.right * enemySpeed;
+            }
         }
     }
 
