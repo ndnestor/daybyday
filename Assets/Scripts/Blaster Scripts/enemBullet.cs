@@ -15,7 +15,7 @@ public class enemBullet : MonoBehaviour
     enemyScript_Ship ship;
 
     void Start() {
-        ship = GameObject.Find("enemy_Ship").GetComponent<enemyScript_Ship>();
+        ship = GameObject.Find("enemy_Ship(Clone)").GetComponent<enemyScript_Ship>();
         switch (ship.returnDirec()) {
             case "Left":
                 rb.velocity = -transform.up * bulletSpeed - transform.right * bulletHorz;

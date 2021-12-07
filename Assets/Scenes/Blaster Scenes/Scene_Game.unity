@@ -315,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7079459111009898020, guid: bbecd0699c1d8bf4d82517670e06506b, type: 3}
       propertyPath: m_Name
-      value: enemy_Ship
+      value: enemy_Ship(Clone)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbecd0699c1d8bf4d82517670e06506b, type: 3}

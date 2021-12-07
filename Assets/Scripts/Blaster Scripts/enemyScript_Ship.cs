@@ -19,8 +19,8 @@ public class enemyScript_Ship : MonoBehaviour
 
     void Start()
     {
-        passes = 0;
-        despawnTime = 10;
+        passes = 2;
+        despawnTime = 5; //For single pass, despawns at this val; for double, check conditions after
         scorekeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
         rigidEnemy.velocity = -transform.right * enemySpeed;
         Vector3 shipPosition = transform.position;
@@ -29,13 +29,13 @@ public class enemyScript_Ship : MonoBehaviour
     }
     public string returnDirec() {
         if (scorekeeper.returnBlasterLevel() >= 2) {
-            if (passes == 0 || passes == 2) {
+            if (passes == 2) {
                 return "Left"; // Moving from right TO left
             } else {
                 return "Right";
             }
         } else {
-            return "Right";
+            return "Left";
         }
     }
 
@@ -63,6 +63,10 @@ public class enemyScript_Ship : MonoBehaviour
              }
          } else if (shipPosition.x >= 11.0f) {
              passes = 2;
+             if (scorekeeper.returnBlasterLevel() >= 2) {
+                 rigidEnemy.velocity = -transform.right * enemySpeed;
+                 shipSprite.flipX = false;
+             }
          }
          if (despawnTimer < Time.time) {
             if(scorekeeper.returnBlasterLevel() == 1) {
@@ -104,6 +108,10 @@ public class enemyScript_Ship : MonoBehaviour
             Destroy(gameObject);
         }
         if (col.gameObject.tag == "Bullet")
+        {
+            Destroy(gameObject);
+        }
+        if (col.gameObject.tag == "Ship")
         {
             Destroy(gameObject);
         }

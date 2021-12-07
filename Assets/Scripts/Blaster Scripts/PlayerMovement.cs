@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     int blackHoleDirection;
     private Rigidbody2D rb2d;
     [SerializeField] private int rocketHealth;
-    private int maxHealth, enemyDamage;
+    private int maxHealth, enemyDamage, enemyBulletDamage;
     [SerializeField] private int starRestore;
     public GameObject bulwark;
 
@@ -60,8 +60,10 @@ public class PlayerMovement : MonoBehaviour
         scorekeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
         if (scorekeeper.returnBlasterLevel() == 1 || scorekeeper.returnBlasterLevel() == 2) {
             enemyDamage = 20;
+            enemyBulletDamage = 10;
         } else if (scorekeeper.returnBlasterLevel() == 3) {
             enemyDamage = 40;
+            enemyBulletDamage = 20;
         }
         speed = 50.0f;
         maxHealth = rocketHealth;
