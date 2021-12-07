@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Deprecated/Bookshelf.unity
     guid: 61e6c6ea252f3c844b47b60a5265cef5
+  - enabled: 1
+    path: Assets/Scenes/Main Room.unity
+    guid: a148c3cd8bbc4c542a42ab018ce65723
+  - enabled: 1
+    path: Assets/Scenes/Blaster Scenes/Scene_Tutorial.unity
+    guid: 5e84dff39e1d04fd9b2213d5d63bcbe3
   m_configObjects: {}
