@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        scorekeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
+        scorekeeper = globalScore.Instance;
         if (scorekeeper.returnBlasterLevel() == 1 || scorekeeper.returnBlasterLevel() == 2) {
             enemyDamage = 20;
             enemyBulletDamage = 10;
@@ -117,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
                 playerDie();
             }
             Destroy(col.gameObject);
-        }
+        }else
         if (col.gameObject.tag == "enemBullet")
         {
             rocketHealth = rocketHealth - enemyDamage;
@@ -129,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
                 
             }
             Destroy(col.gameObject);
-        }
+        }else
         if (col.gameObject.tag == "Star")
         {
             if (rocketHealth < (maxHealth-starRestore))
@@ -138,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
                 //Debug.Log(rocketHealth);
             }
             Destroy(col.gameObject);
-        }
+        }else
         if (col.gameObject.tag == "Swift")
         {
             inventory.addToInventory("Swift");
@@ -147,16 +147,16 @@ public class PlayerMovement : MonoBehaviour
             //speedEffectTimer = Time.time + speedEffectDuration;
             unSwift = Time.time + swiftTimer;
             isSwift = true;
-        }
+        }else
         if (col.gameObject.tag == "Bulwark")
         {
             inventory.addToInventory("Bulwark");
             Destroy(col.gameObject);
             Instantiate(bulwark);
-        }
+        }else
         if (col.gameObject.tag == "Rapid") {
             inventory.addToInventory("Rapid");
-        }
+        }else
         if (col.gameObject.tag == "Spread") {
             inventory.addToInventory("Spread");
         }

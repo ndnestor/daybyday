@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
  public class spawnDrops : MonoBehaviour {
      public GameObject heal;
@@ -34,9 +36,21 @@ using UnityEngine;
      5. Shield
      **/
 
-    void Awake() {
-        scorekeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
+    [Serializable]
+    public struct SpawnFrequencyValues{
+        public Vector2Int HealIncreaseFreq;
+        public Vector2Int BulwarkIncreaseFreq;
+        public Vector2Int SwiftIncreaseFreq;
+        public Vector2Int RapidFireIncreaseFreq;
+        public Vector2Int SpreadIncreaseFreq;
+    }
+
+    public List<SpawnFrequencyValues> SpawnFrequencyPerLevel = new List<SpawnFrequencyValues>();
+
+    void Start() {
+        scorekeeper = globalScore.Instance;
         gameLevel = scorekeeper.returnBlasterLevel();
+        /**
         switch(gameLevel) {
             case 1:
                 healIncr = UnityEngine.Random.Range(20, 30);
@@ -59,7 +73,16 @@ using UnityEngine;
                 rapidIncr = UnityEngine.Random.Range(120, 240);
                 spreadIncr = UnityEngine.Random.Range(120, 240);
                 break;
-        }
+        }**/
+        
+        var spawnFreq = SpawnFrequencyPerLevel[gameLevel - 1];
+
+        healIncr = GetRandomFromVector2Int(spawnFreq.HealIncreaseFreq);
+        bulwarkIncr = GetRandomFromVector2Int(spawnFreq.BulwarkIncreaseFreq);
+        swiftIncr = GetRandomFromVector2Int(spawnFreq.SwiftIncreaseFreq);
+        rapidIncr = GetRandomFromVector2Int(spawnFreq.RapidFireIncreaseFreq);
+        spreadIncr = GetRandomFromVector2Int(spawnFreq.SpreadIncreaseFreq);
+
         healTimer = Time.time + healIncr;
         bulwarkTimer = Time.time + bulwarkIncr;
         swiftTimer = Time.time + swiftIncr;
@@ -67,15 +90,18 @@ using UnityEngine;
         spreadTimer = Time.time + spreadIncr;
     }
 
+    private int GetRandomFromVector2Int(Vector2Int range){
+        return Random.Range(range.x, range.y);
+    }
+    
+
      void Update() {
+        
          if (healTimer < Time.time) {
              float randX = UnityEngine.Random.Range(-4.4f, 4.4f);
-             //Debug.Log(string.Format("{0:N2}", randX));
              GameObject tmpHeal = Instantiate(heal, new Vector3(0.0f, 7.0f, 0.0f), Quaternion.identity);
              tmpHeal.transform.position = new Vector3(randX, tmpHeal.transform.position.y, 0.0f);
-             // ALTER FREQUENCY HERE
              healIncr = UnityEngine.Random.Range(20, 30);
-             //healIncr = UnityEngine.Random.Range(18, 23);
              healTimer = Time.time + healIncr;
          }
          if (bulwarkTimer < Time.time) {
