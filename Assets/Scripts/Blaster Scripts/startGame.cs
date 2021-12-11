@@ -5,8 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class startGame : MonoBehaviour
 {
+    globalScore scorekeeper;
     public void PlayGame()
     {
-        SceneManager.LoadScene("Scene_Game");
+        scorekeeper = globalScore.Instance;
+        if (scorekeeper.returnBlasterTutorial() == 0) {
+            SceneManager.LoadScene("Scene_Tutorial");
+        } else {
+            SceneManager.LoadScene("Scene_Game");
+        }
     }
 }

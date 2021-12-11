@@ -10,7 +10,7 @@ public class globalScore : MonoBehaviour
     public static globalScore Instance;
     public float weightHighScore, balanceHighScore; // yoga exercises
     public float weightRecentScore, balanceRecentScore; //yoga exercises
-    public int blasterRecentScore, blasterHighScore, blasterLevel; // Blaster minigame
+    public int blasterRecentScore, blasterHighScore, blasterLevel, blasterTutorial; // Blaster minigame
     public int activity;
 
     void Awake ()
@@ -74,5 +74,17 @@ public class globalScore : MonoBehaviour
     }
     public int returnBlasterLevel() {
         return blasterLevel;
+    }
+    public void updateBlasterTutorial(int tutCompleted) {
+        //blasterTutorial starts at 0
+        // = 1 after completing initial tutorial, =2 after completing leveled tutorial
+        if (tutCompleted == 1) {
+            blasterTutorial = 1;
+        } else if (tutCompleted == 2) {
+            blasterTutorial = 2;
+        }
+    }
+    public int returnBlasterTutorial() {
+        return blasterTutorial;
     }
 }
