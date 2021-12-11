@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
 
 public class tutorialGuide : MonoBehaviour
 {
@@ -32,11 +33,12 @@ public class tutorialGuide : MonoBehaviour
     */
 
     //UI pop-ups
-    [SerializeField] GameObject keybinds, arrow, nextButton;
+    [SerializeField] GameObject keybinds, arrow;
+    [SerializeField] Button nextButton;
     [SerializeField] TextMeshProUGUI tutorialText;
     globalScore scorekeeper;
     int arrowNumber;
-    bool waiting;
+    bool waiting, notWaiting;
 
     /**[System.Serializable]
     public struct TutorialArrowLocations{
@@ -51,6 +53,8 @@ public class tutorialGuide : MonoBehaviour
     void Start() {
         scorekeeper = globalScore.Instance;
         waiting = false;
+        notWaiting = true;
+        StartCoroutine(waitForNextButton());
         if(scorekeeper.returnBlasterTutorial() == 0) {
             // First play-through tutorial covers, in order:
             // Movement, firing, UI, enemies and pickups (slide)
@@ -59,24 +63,34 @@ public class tutorialGuide : MonoBehaviour
         }
     }
     void Update() {
-        if (waiting) {
+        /**if (waiting) {
             StartCoroutine(waitForNextButton());
+        }*/
+        //Temp fix because firing keybinds currently conflict with clicking button
+        if (Input.GetKeyDown("space")) {
+            Debug.Log("Next step");
+            waiting = false;
         }
+        notWaiting = !waiting;
     }
 
     IEnumerator waitForNextButton() {
-        while(waiting) {
-            yield return null;
-        }
+        //while(waiting) {
+        //    yield return null;
+        //}
+        //yield return new WaitUntil(() => (!waiting));
+        yield return new WaitUntil(() => notWaiting);
+        Debug.Log("Waited for space, waiting is " + notWaiting);
     }
 
-    void nextButtonClicked() {
+    public void nextButtonClicked() {
         waiting = false;
     }
 
     void movementGuide() {
         tutorialText.text = "Welcome to the Blaster tutorial!\nUse the arrow in the bottom right to continue.";
         keybinds.SetActive(true); //Assume keybinds self-animated indep of this script for now
+        waiting = true;
         tutorialText.text = "These are your movement keybinds.\nUse A to move left and D to move right.";
     }
 
