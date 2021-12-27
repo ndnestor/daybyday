@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Game;
+using Game.Registry;
 using UnityEngine;
 
 public class InteractionHandler : MonoBehaviour
@@ -28,13 +30,16 @@ public class InteractionHandler : MonoBehaviour
 	[SerializeField] private SpriteRenderer windowRenderer;
 	[SerializeField] private SpriteRenderer windowLightRenderer;
 
+	// NOTE: A Dictionary is probably a better option here but not required
 	private Hashtable objectNeglection = new Hashtable(); // Key: string | Value: bool
+	private ValueRegistry valueRegistry;
 
 	[HideInInspector] public static InteractionHandler Instance;
 
 	private void Awake()
 	{
 		Instance = this;
+		valueRegistry = MainInstances.Get<ValueRegistry>();
 	}
 
 	// All interactable objects should call this method as the start
@@ -47,6 +52,7 @@ public class InteractionHandler : MonoBehaviour
 			return false;
 		}
 		Debug.Log("Registering object '" + objectName + "'");
+		valueRegistry.Set($"Used {objectName}", 0);
 		registeredObjects.Add(objectName, objectAction);
 		objectNeglection.Add(objectName, true);
 		return true;
@@ -60,25 +66,25 @@ public class InteractionHandler : MonoBehaviour
 		{
 			action();
 			objectNeglection[objectName] = false;
+			valueRegistry.Set($"Used {objectName}", 1);
 			return true;
 		}
-		Debug.LogWarning("Could not interact because the given object name is not registered");
+		Debug.LogWarning($"Could not interact because '{objectName}' is not registered");
 		return false;
 	}
 
 	// This should be called at the beginning of every day
-	public void UpdateNeglectedSprites()
-	{
+	public void UpdateNeglectedSprites() {
 		foreach(string objectName in objectNeglection.Keys)
 		{
+			// Ignore bonsai tree when checking if objects are neglected
+			// since the bonsai tree works uniquely
+			if(objectName == "Bonsai Tree")
+			{
+				continue;
+			}
 			if((bool)objectNeglection[objectName])
 			{
-				// Ignore bonsai tree when checking if objects are neglected
-				// since the bonsai tree works uniquely
-				if(objectName == "Bonsai Tree")
-				{
-					continue;
-				}
 				switch(objectName)
 				{
 					case "Piano":
