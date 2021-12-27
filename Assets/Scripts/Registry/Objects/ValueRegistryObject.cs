@@ -51,7 +51,7 @@ namespace Game.Registry {
 
         protected virtual void Init() {
 
-            Debug.Log("Initating Registry '" + name + "'");
+            Debug.Log("Initiating Registry '" + name + "'");
             for (int i = 0; i < initPairList.Count; i++) {
                 var pair = initPairList[i];
 
