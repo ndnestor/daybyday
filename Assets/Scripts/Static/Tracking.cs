@@ -84,6 +84,7 @@ public class Tracking : MonoBehaviour
         UpdateLighting();
         if(timeUsed >= MAX_TIME)
         {
+            timeUsed = 0;
             Sleep();
         }
 
@@ -141,6 +142,22 @@ public class Tracking : MonoBehaviour
             {
                 targetPosition = agendasBox.transform.position + Vector3.left;
             } else if(DayNum == 3)
+            {
+                // TODO: Change to appropriate location
+                targetPosition = agendasBox.transform.position + Vector3.left;
+            } else if(DayNum == 4)
+            {
+                // TODO: Change to appropriate location
+                targetPosition = agendasBox.transform.position + Vector3.left;
+            } else if(DayNum == 5)
+            {
+                // TODO: Change to appropriate location
+                targetPosition = agendasBox.transform.position + Vector3.left;
+            } else if(DayNum == 6)
+            {
+                // TODO: Change to appropriate location
+                targetPosition = agendasBox.transform.position + Vector3.left;
+            } else if(DayNum == 7)
             {
                 // TODO: Change to appropriate location
                 targetPosition = agendasBox.transform.position + Vector3.left;

@@ -15,3 +15,9 @@ MonoBehaviour:
   initPairList:
   - id: Day Number
     value: 0
+  - id: Completed Notebook Goals
+    value: 0
+  - id: ZERO
+    value: 0
+  - id: Took Summer Courses
+    value: 0
