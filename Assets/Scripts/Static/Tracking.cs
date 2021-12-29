@@ -137,6 +137,7 @@ public class Tracking : MonoBehaviour
             valueRegistry.Set("Day Number", DayNum);
             
             // Set destination to move to upon waking up
+            // TODO: Replace with switch case statement
             Vector3 targetPosition;
             if(DayNum == 2)
             {
