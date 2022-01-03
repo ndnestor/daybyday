@@ -191,7 +191,7 @@ public class Tracking : MonoBehaviour
     //Used for testing purposes. Should be deleted later
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.RightControl))
+        if(Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.LeftCommand))
         {
             Debug.Log("Artificially added 1 unit of time");
             AddUsedTime(1);

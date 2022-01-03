@@ -2588,6 +2588,7 @@ GameObject:
   - component: {fileID: 954206955}
   - component: {fileID: 954206954}
   - component: {fileID: 954206956}
+  - component: {fileID: 954206957}
   m_Layer: 0
   m_Name: Window Object
   m_TagString: Untagged
@@ -2654,6 +2655,20 @@ MonoBehaviour:
   connectedSprite: {fileID: 870970935}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
   triggerable: 0
+--- !u!114 &954206957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954206953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e3bd4f15a485d478fa4fae55a495f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueGraphs: []
+  timeConsumption: 0
 --- !u!1 &1066270141
 GameObject:
   m_ObjectHideFlags: 0
