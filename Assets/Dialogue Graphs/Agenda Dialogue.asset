@@ -287,6 +287,53 @@ MonoBehaviour:
     be more inclined to do these goals and prioritize them better."
   WaitForInput: 1
   ErasePrevious: 1
+--- !u!114 &-7415043133222339470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d175915fa044b40ac0cdebab36b4dc, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1608, y: 1624}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: -7415043133222339470}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: choices 1
+        node: {fileID: 4106780262729383273}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -7415043133222339470}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: -6722696264948794222}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  Dialogue: "I mean that an employee from Stratagenda will review the data I\u2019ve
+    collected on you to see if I should have greater control over your house."
+  WaitForInput: 0
+  ErasePrevious: 1
 --- !u!114 &-7377458961491804600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +425,55 @@ MonoBehaviour:
     goals to help you stay organized."
   WaitForInput: 1
   ErasePrevious: 1
+--- !u!114 &-6722696264948794222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e841c05e5a26b1446a8d80ff4bf22247, type: 3}
+  m_Name: Combiner
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1944, y: 1672}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: -6722696264948794222}
+      _typeQualifiedName: Game.Dialogue.Nodes.Branch.CombinerNode+CombinerEntery,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: 1368914948392759321}
+        reroutePoints: []
+      - fieldName: choices 1
+        node: {fileID: 1368914948392759321}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: -7415043133222339470}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -6722696264948794222}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: 1368914948392759321}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
 --- !u!114 &-6389497111831144672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,7 +487,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 984, y: 2040}
+  position: {x: 984, y: 2168}
   ports:
     keys:
     - enter
@@ -671,6 +767,59 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   argumentID: Completed Notebook Goals
+--- !u!114 &-5578494002711193062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d175915fa044b40ac0cdebab36b4dc, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 648, y: 1832}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: -5578494002711193062}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exitFalse
+        node: {fileID: -4770323294409241819}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -5578494002711193062}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: -980763141550302134}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  Dialogue: "I\u2019m playing nice, as you no doubt wished for. I\u2019ve listed
+    the tasks that help you professionally, even assigning them points based on their
+    importance. Despite this, you still waste so much time on your hobbies! Since
+    you love those so much, maybe if I start giving them to you as rewards for working,
+    you\u2019ll listen to me! I\u2019ve got enough songs, stories, and more to last
+    you forever - and you\u2019ll get to have them all if you do your work! I\u2019ve
+    already requested a manual review of your situation by my creators to let me
+    fully run your house, so get used to not needing anything but your bed and computer!"
+  WaitForInput: 0
+  ErasePrevious: 1
 --- !u!114 &-5480264544695812290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,7 +943,7 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: enter
-        node: {fileID: 2633234933932626230}
+        node: {fileID: -5578494002711193062}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -1095,7 +1244,7 @@ MonoBehaviour:
   m_Name: Truth Check
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 296, y: 2040}
+  position: {x: 296, y: 2168}
   ports:
     keys:
     - enter
@@ -1152,7 +1301,7 @@ MonoBehaviour:
   m_Name: Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 648, y: 2040}
+  position: {x: 648, y: 2168}
   ports:
     keys:
     - enter
@@ -1320,7 +1469,7 @@ MonoBehaviour:
   m_Name: Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 648, y: 2472}
+  position: {x: 648, y: 2600}
   ports:
     keys:
     - enter
@@ -1484,6 +1633,102 @@ MonoBehaviour:
     core competencies might help you stand out to future employers.
   WaitForInput: 1
   ErasePrevious: 0
+--- !u!114 &-980763141550302134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e841c05e5a26b1446a8d80ff4bf22247, type: 3}
+  m_Name: Combiner
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 984, y: 1672}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: -980763141550302134}
+      _typeQualifiedName: Game.Dialogue.Nodes.Branch.CombinerNode+CombinerEntery,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exit
+        node: {fileID: -679913670256611413}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: -5578494002711193062}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: 7631644394054169922}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -980763141550302134}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: 4106780262729383273}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+--- !u!114 &-679913670256611413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d175915fa044b40ac0cdebab36b4dc, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1608, y: 1944}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: -679913670256611413}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: choices 2
+        node: {fileID: 4106780262729383273}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -679913670256611413}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: -980763141550302134}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  Dialogue: "I\u2019ve already requested it; the only thing that would waste my time
+    is retracting my request."
+  WaitForInput: 1
+  ErasePrevious: 1
 --- !u!114 &-594414236488351324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,7 +1742,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 984, y: 2472}
+  position: {x: 984, y: 2600}
   ports:
     keys:
     - enter
@@ -1716,13 +1961,19 @@ MonoBehaviour:
   - {fileID: -3993895307321863332}
   - {fileID: -7377458961491804600}
   - {fileID: -4770323294409241819}
-  - {fileID: 2633234933932626230}
   - {fileID: 7631644394054169922}
   - {fileID: -3214325287809977204}
   - {fileID: -2977662951167375300}
   - {fileID: -6389497111831144672}
   - {fileID: -2309167055073667956}
   - {fileID: -594414236488351324}
+  - {fileID: 4106780262729383273}
+  - {fileID: -5578494002711193062}
+  - {fileID: 1368914948392759321}
+  - {fileID: -7415043133222339470}
+  - {fileID: -6722696264948794222}
+  - {fileID: -679913670256611413}
+  - {fileID: -980763141550302134}
   current: {fileID: 0}
   entry: {fileID: -592399887382784613}
   currentSystem: {fileID: 0}
@@ -1943,6 +2194,92 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   argumentID: Completed Notebook Goals
+--- !u!114 &1368914948392759321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 426708b96aca53d4690dd68ef3a0f4a1, type: 3}
+  m_Name: Choice
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2232, y: 1624}
+  ports:
+    keys:
+    - enter
+    - choices
+    - choices 0
+    - choices 1
+    - choices 2
+    values:
+    - _fieldName: enter
+      _node: {fileID: 1368914948392759321}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exit
+        node: {fileID: -6722696264948794222}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: 1368914948392759321}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Game.Dialogue.Nodes.ChoiceNode+Choice,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: 1368914948392759321}
+      _typeQualifiedName: Game.Dialogue.Nodes.ChoiceNode+Choice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: -6722696264948794222}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: choices 1
+      _node: {fileID: 1368914948392759321}
+      _typeQualifiedName: Game.Dialogue.Nodes.ChoiceNode+Choice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: -6722696264948794222}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: choices 2
+      _node: {fileID: 1368914948392759321}
+      _typeQualifiedName: Game.Dialogue.Nodes.ChoiceNode+Choice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  Dialogue: 
+  choices:
+  - Name: Option A
+    text: What will they review?
+  - Name: Option B
+    text: Why did you request this?
+  - Name: Option C
+    text: "Okay; we\u2019ll see what happens."
+  ErasePrevious: 0
 --- !u!114 &1833332992687551067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1989,56 +2326,6 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
---- !u!114 &2633234933932626230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5d175915fa044b40ac0cdebab36b4dc, type: 3}
-  m_Name: Dialogue
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 648, y: 1832}
-  ports:
-    keys:
-    - enter
-    - exit
-    values:
-    - _fieldName: enter
-      _node: {fileID: 2633234933932626230}
-      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: exitFalse
-        node: {fileID: -4770323294409241819}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: exit
-      _node: {fileID: 2633234933932626230}
-      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  Dialogue: "I\u2019m playing nice, as you no doubt wished for. I\u2019ve listed
-    the tasks that help you professionally, even assigning them points based on their
-    importance. Despite this, you still waste so much time on your hobbies! Since
-    you love those so much, maybe if I start giving them to you as rewards for working,
-    you\u2019ll listen to me! I\u2019ve got enough songs, stories, and more to last
-    you forever - and you\u2019ll get to have them all if you do your work! I\u2019ve
-    already requested a manual review of your situation by my creators to let me
-    fully run your house, so get used to not needing anything but your bed and computer!"
-  WaitForInput: 1
-  ErasePrevious: 1
 --- !u!114 &2784546799941609310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2237,6 +2524,92 @@ MonoBehaviour:
     of how this works!"
   WaitForInput: 1
   ErasePrevious: 1
+--- !u!114 &4106780262729383273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 426708b96aca53d4690dd68ef3a0f4a1, type: 3}
+  m_Name: Choice
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1272, y: 1624}
+  ports:
+    keys:
+    - enter
+    - choices
+    - choices 0
+    - choices 1
+    - choices 2
+    values:
+    - _fieldName: enter
+      _node: {fileID: 4106780262729383273}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exit
+        node: {fileID: -980763141550302134}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: 4106780262729383273}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Game.Dialogue.Nodes.ChoiceNode+Choice,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: 4106780262729383273}
+      _typeQualifiedName: Game.Dialogue.Nodes.ChoiceNode+Choice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: choices 1
+      _node: {fileID: 4106780262729383273}
+      _typeQualifiedName: Game.Dialogue.Nodes.ChoiceNode+Choice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: -7415043133222339470}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: choices 2
+      _node: {fileID: 4106780262729383273}
+      _typeQualifiedName: Game.Dialogue.Nodes.ChoiceNode+Choice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: -679913670256611413}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  Dialogue: 
+  choices:
+  - Name: Option A
+    text: Okay.
+  - Name: Option B
+    text: "What do you mean by \u2018manual review\u2019?"
+  - Name: Option C
+    text: "Don\u2019t waste your time; they\u2019ll never say yes."
+  ErasePrevious: 0
 --- !u!114 &4303870667444079261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2726,7 +3099,10 @@ MonoBehaviour:
       _node: {fileID: 7631644394054169922}
       _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: enter
+        node: {fileID: -980763141550302134}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
