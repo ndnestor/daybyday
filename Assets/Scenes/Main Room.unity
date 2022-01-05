@@ -2590,7 +2590,7 @@ GameObject:
   - component: {fileID: 954206956}
   - component: {fileID: 954206957}
   m_Layer: 0
-  m_Name: Window Object
+  m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2667,8 +2667,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e3bd4f15a485d478fa4fae55a495f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueGraphs: []
-  timeConsumption: 0
+  dialogueGraphs:
+  - {fileID: 11400000, guid: 9da1c353a0cbc22438615cb9bfd87ba1, type: 2}
+  - {fileID: 11400000, guid: 2f361a77b5eacb84790dbf70512e0a9e, type: 2}
+  - {fileID: 11400000, guid: 8c9d0800a49842143b2d9d2a4bce81fc, type: 2}
+  - {fileID: 11400000, guid: 4ed345733ee85384985b29a4c36b990f, type: 2}
+  - {fileID: 11400000, guid: e41ce83fade39db40a0999cc098f0c35, type: 2}
+  - {fileID: 11400000, guid: c930afe77fd796549b8b6e996a9862c0, type: 2}
+  - {fileID: 11400000, guid: 7bb4ed691bcdd634983db1ee34e52028, type: 2}
+  - {fileID: 11400000, guid: e8f040bd748fc714cb8a6362b43ac066, type: 2}
+  timeConsumption: 0.5
 --- !u!1 &1066270141
 GameObject:
   m_ObjectHideFlags: 0
