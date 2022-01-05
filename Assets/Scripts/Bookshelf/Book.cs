@@ -86,7 +86,7 @@ public class Book : MonoBehaviour
 		}
 	}
 
-	public void NextPage()
+	private void NextPage()
 	{
 
 		if(pageNumber + 1 > pageContents.Count)
@@ -111,7 +111,7 @@ public class Book : MonoBehaviour
 		rightPageText.text = pageContents[pageNumber];
 	}
 
-	public void PrevPage()
+	private void PrevPage()
 	{
 
 		if(pageNumber < 2)
@@ -134,6 +134,24 @@ public class Book : MonoBehaviour
 		Debug.Log("Going to previous page");
 		leftPageText.text = pageContents[pageNumber - 2];
 		rightPageText.text = pageContents[pageNumber - 1];
+	}
+
+	public void NextPageButtonPress()
+	{
+		NextPage();
+		if(pageNumber % 2 == 0)
+		{
+			NextPage();
+		}
+	}
+
+	public void PrevPageButtonPress()
+	{
+		PrevPage();
+		if(pageNumber % 2 == 1)
+		{
+			PrevPage();
+		}
 	}
 
 	private void SetPage(int newPageNumber)
