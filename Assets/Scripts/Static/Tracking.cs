@@ -14,7 +14,7 @@ public class Tracking : MonoBehaviour
     public int DayNum { get; private set; }
     public const int MAX_DAYS = 10;
     public const int MAX_TIME = 14;
-    public int timeUsed = 0;
+    public float timeUsed = 0;
     public ArrayList objectUsage = new ArrayList();
 
     //Used for window lighting
@@ -78,7 +78,7 @@ public class Tracking : MonoBehaviour
      * param additionalTime --> timeValue of the object
      * returns total time units used in the day
      */
-    public int AddUsedTime(int additionalTime)
+    public float AddUsedTime(float additionalTime)
     {
         timeUsed += additionalTime;
         UpdateLighting();
