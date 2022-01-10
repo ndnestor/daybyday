@@ -762,7 +762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &124798534
 Transform:
   m_ObjectHideFlags: 0
@@ -1792,6 +1792,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NotepadBWwide
       objectReference: {fileID: 0}
+    - target: {fileID: 564665448442907660, guid: a5ce64fee0b8e0244add749703037046, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6356166704012942685, guid: a5ce64fee0b8e0244add749703037046, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2673,7 +2677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.674515, y: 3.28}
+  m_AnchoredPosition: {x: 11.674515, y: 3.4}
   m_SizeDelta: {x: 54638.13, y: 53867.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &640608186
@@ -2862,7 +2866,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 2
+  m_lineSpacing: 2.3
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -4872,7 +4876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1114757549
 Transform:
   m_ObjectHideFlags: 0
@@ -7551,7 +7555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1773488262
 SpriteRenderer:
   m_ObjectHideFlags: 0

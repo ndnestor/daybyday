@@ -4,6 +4,9 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using Game;
+using Game.Dialogue;
+using Game.Registry;
 
 public class tutorialGuide : MonoBehaviour
 {
@@ -37,8 +40,12 @@ public class tutorialGuide : MonoBehaviour
     [SerializeField] Button nextButton;
     [SerializeField] TextMeshProUGUI tutorialText;
     globalScore scorekeeper;
-    int arrowNumber;
-    bool waiting, notWaiting;
+    [SerializeField] private DialogueGraph dialogueGraph;
+    [SerializeField] private DialogueSystem dialogueSystem;
+    private const string StringRegistryId = "Blaster Tutorial Dialogue";
+    
+    private StringRegistry stringRegistry;
+
 
     /**[System.Serializable]
     public struct TutorialArrowLocations{
@@ -50,79 +57,15 @@ public class tutorialGuide : MonoBehaviour
     Find a less ugly way to deal with this later
     **/
     [SerializeField] Vector3 point_Score, point_Inventory, point_PlayerHealth, point_PlatformHealth;
-    void Start() {
+    public void Start() {
         scorekeeper = globalScore.Instance;
-        waiting = false;
-        notWaiting = true;
-        StartCoroutine(waitForNextButton());
-        if(scorekeeper.returnBlasterTutorial() == 0) {
-            // First play-through tutorial covers, in order:
-            // Movement, firing, UI, enemies and pickups (slide)
-            scorekeeper.updateBlasterTutorial(1);
-            movementGuide();
-        }
-    }
-    void Update() {
-        /**if (waiting) {
-            StartCoroutine(waitForNextButton());
-        }*/
-        //Temp fix because firing keybinds currently conflict with clicking button
-        if (Input.GetKeyDown("space")) {
-            Debug.Log("Next step");
-            waiting = false;
-        }
-        notWaiting = !waiting;
+        dialogueSystem = MainInstances.Get<DialogueSystem>();
+        stringRegistry = MainInstances.Get<StringRegistry>();
+        beginTutorial();
     }
 
-    IEnumerator waitForNextButton() {
-        //while(waiting) {
-        //    yield return null;
-        //}
-        //yield return new WaitUntil(() => (!waiting));
-        yield return new WaitUntil(() => notWaiting);
-        Debug.Log("Waited for space, waiting is " + notWaiting);
-    }
-
-    public void nextButtonClicked() {
-        waiting = false;
-    }
-
-    void movementGuide() {
-        tutorialText.text = "Welcome to the Blaster tutorial!\nUse the arrow in the bottom right to continue.";
-        keybinds.SetActive(true); //Assume keybinds self-animated indep of this script for now
-        waiting = true;
-        tutorialText.text = "These are your movement keybinds.\nUse A to move left and D to move right.";
-    }
-
-    /**void Update() {
-        goToNext ? nextSlide();
-    }
-    void nextSlide() {
-        goToNext = false;
-    }
-    void waitNextSlide() {
-        if(goToNext)
-    }*/
-
-    //NOTE TO SELF: Until continue arrow implemented this is just going to be one big mess
-
-    void UIGuide() {
-        //arrow.transform.position = TutorialArrowLocations.point_Score;
-        tutorialText.text = "This number represents your score. It will update for each enemy you defeat.";
-        waiting = true;
-        /**arrow.transform.position = TutorialArrowLocations.point_Inventory;
-        tutorialText.text = "This is your inventory. It will show which power-ups are currently active.";
-        waiting = true;
-        arrow.transform.position = TutorialArrowLocations.point_PlayerHealth;
-        tutorialText.text = "This is your health bar. It will decrease each time you are hit.";
-        waiting = true;
-        tutorialText.text = "You can replenish your health bar with healing power-ups.";
-        waiting = true;
-        arrow.transform.position = TutorialArrowLocations.point_PlatformHealth;
-        tutorialText.text = "This is your platform's health bar. It will decrease when the platform is hit.";
-        waiting = true;
-        tutorialText.text = "Your platform's health bar can NOT be replenished.";
-        waiting = true;*/
+    public void beginTutorial() {
+        dialogueSystem.Present(dialogueGraph);
     }
 
 }
