@@ -13,27 +13,10 @@ public class Bookshelf : MonoBehaviour
 		InteractionHandler.Instance.RegisterObject("Bookshelf", Interact);
 	}
 
-	private void Update()
-	{
-		if(Input.GetKeyDown(KeyCode.Alpha8))
-		{
-			Interact();
-		} else if(Input.GetKeyDown(KeyCode.Alpha9))
-		{
-			Exit();
-		}
-	}
-
 	// Show the bookshelf selection screen
 	private void Interact()
 	{
 		SceneManager.LoadSceneAsync(sceneName);
 	}
 
-	// Hide the bookshelf selection screen
-	private void Exit()
-	{
-		SceneManager.UnloadSceneAsync(sceneName);
-	}
-	
 }
