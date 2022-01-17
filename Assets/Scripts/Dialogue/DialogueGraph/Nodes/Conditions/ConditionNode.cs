@@ -34,7 +34,7 @@ namespace Game.Dialogue.Nodes.Conditions {
 		public override void MoveNext() {
 			string exitPortName = "exitTrue";
 
-			bool boolValue;
+			bool boolValue = true;
 
 			DialogueGraph fmGraph = graph as DialogueGraph;
 
@@ -60,6 +60,8 @@ namespace Game.Dialogue.Nodes.Conditions {
 					boolValue = argumentValue == value;
 					break;
 			}
+			
+			if(!boolValue) exitPortName  = "exitFalse";
 
 			MoveNext(exitPortName);
 		}
