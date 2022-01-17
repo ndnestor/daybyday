@@ -137,37 +137,17 @@ public class Tracking : MonoBehaviour
             valueRegistry.Set("Day Number", DayNum);
             
             // Set destination to move to upon waking up
-            // TODO: Replace with switch case statement
             Vector3 targetPosition;
-            if(DayNum == 2)
-            {
-                targetPosition = agendasBox.transform.position + Vector3.left;
-            } else if(DayNum == 3)
-            {
-                // TODO: Change to appropriate location
-                targetPosition = agendasBox.transform.position + Vector3.left;
-            } else if(DayNum == 4)
-            {
-                // TODO: Change to appropriate location
-                targetPosition = agendasBox.transform.position + Vector3.left;
-            } else if(DayNum == 5)
-            {
-                // TODO: Change to appropriate location
-                targetPosition = agendasBox.transform.position + Vector3.left;
-            } else if(DayNum == 6)
-            {
-                // TODO: Change to appropriate location
-                targetPosition = agendasBox.transform.position + Vector3.left;
-            } else if(DayNum == 7)
-            {
-                // TODO: Change to appropriate location
-                targetPosition = agendasBox.transform.position + Vector3.left;
-            } else
-            {
-                Debug.LogWarning("Post-sleep target position not set");
-                targetPosition = Vector3.zero;
+            switch(DayNum) {
+                case 2:
+                    agendasBox.SetActive(true);
+                    targetPosition = agendasBox.transform.position + Vector3.left;
+                    break;
+                default:
+                    targetPosition = agendasBox.transform.position + Vector3.left;
+                    break;
             }
-            
+
             Movement2D.Instance.MoveTo(targetPosition, () => {
                 
                 // Have agenda speak once Quinn arrives

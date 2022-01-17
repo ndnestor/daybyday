@@ -1084,6 +1084,7 @@ GameObject:
   m_Component:
   - component: {fileID: 407798835}
   - component: {fileID: 407798834}
+  - component: {fileID: 407798836}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -1156,6 +1157,19 @@ Transform:
   m_Father: {fileID: 1161191275}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &407798836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407798833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd5ab526349613d43906e555cf03f84f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueGraph: {fileID: 11400000, guid: 7acbcff3a443cbb4a9b5e76097a12ae7, type: 2}
 --- !u!1 &442400226
 GameObject:
   m_ObjectHideFlags: 0
