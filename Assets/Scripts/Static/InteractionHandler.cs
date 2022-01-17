@@ -103,9 +103,6 @@ public class InteractionHandler : MonoBehaviour
 						windowRenderer.sprite = neglectedWindowSprite;
 						windowLightRenderer.sprite = neglectedWindowLightSprite;
 						break;
-					default:
-						Debug.LogError($"Invalid object name provided: {objectName}");
-						break;
 				}
 			}
 			else
@@ -127,9 +124,6 @@ public class InteractionHandler : MonoBehaviour
 					case "Window":
 						windowRenderer.sprite = normalWindowSprite;
 						windowLightRenderer.sprite = normalWindowLightSprite;
-						break;
-					default:
-						Debug.LogError($"Invalid object name provided: {objectName}");
 						break;
 				}
 			}
