@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: String Registry
   m_EditorClassIdentifier: 
   initPairList:
-  - id: Value1
-    value: Blah blah
+  - id: Interaction Prompt
+    value: 
+  - id: WINDOW
+    value: Window

@@ -26,7 +26,7 @@ public class HighlightObject : MonoBehaviour
             connectedSprite.GetComponent<SpriteRenderer>().material = defaultMat;
             if(InteractionHandler.Instance.Interact(gameObject.name))
             {
-                Debug.Log("Interacted with " + gameObject.name);
+                Debug.Log("Started interacting with " + gameObject.name);
             }
         }
     }

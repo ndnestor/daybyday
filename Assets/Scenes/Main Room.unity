@@ -896,6 +896,7 @@ MonoBehaviour:
   bookshelfRenderer: {fileID: 144138928}
   windowRenderer: {fileID: 870970937}
   windowLightRenderer: {fileID: 1210882081}
+  objectPromptDialogue: {fileID: 11400000, guid: c004a085e59307d4da992846925cf34c, type: 2}
 --- !u!114 &231473490
 MonoBehaviour:
   m_ObjectHideFlags: 0

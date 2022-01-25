@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Game;
+using Game.Dialogue;
 using Game.Registry;
 using UnityEngine;
 
@@ -30,9 +31,13 @@ public class InteractionHandler : MonoBehaviour
 	[SerializeField] private SpriteRenderer windowRenderer;
 	[SerializeField] private SpriteRenderer windowLightRenderer;
 
-	// NOTE: A Dictionary is probably a better option here but not required
+	[SerializeField] private DialogueGraph objectPromptDialogue;
+
+	// NOTE: A Dictionary is probably a better option in hindsight
 	private Hashtable objectNeglection = new Hashtable(); // Key: string | Value: bool
+	private DialogueSystem dialogueSystem;
 	private ValueRegistry valueRegistry;
+	private StringRegistry stringRegistry;
 
 	[HideInInspector] public static InteractionHandler Instance;
 
@@ -40,6 +45,11 @@ public class InteractionHandler : MonoBehaviour
 	{
 		Instance = this;
 		valueRegistry = MainInstances.Get<ValueRegistry>();
+	}
+
+	private void Start() {
+		stringRegistry = MainInstances.Get<StringRegistry>();
+		dialogueSystem = MainInstances.Get<DialogueSystem>();
 	}
 
 	// All interactable objects should call this method as the start
@@ -64,9 +74,15 @@ public class InteractionHandler : MonoBehaviour
 		System.Action action = (System.Action)registeredObjects[objectName];
 		if(action != null)
 		{
-			action();
-			objectNeglection[objectName] = false;
-			valueRegistry.Set($"Used {objectName}", 1);
+			stringRegistry.Set("Interaction Prompt", objectName);
+			dialogueSystem.Present(objectPromptDialogue, () => {
+				if(valueRegistry.Get("Confirmed Interaction") == 1) {
+					action();
+					objectNeglection[objectName] = false;
+					valueRegistry.Set($"Used {objectName}", 1);
+				}
+			});
+			
 			return true;
 		}
 		Debug.LogWarning($"Could not interact because '{objectName}' is not registered");
