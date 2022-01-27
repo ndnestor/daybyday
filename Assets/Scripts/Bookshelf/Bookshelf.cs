@@ -10,7 +10,7 @@ public class Bookshelf : MonoBehaviour
 
 	private void Start()
 	{
-		InteractionHandler.Instance.RegisterObject("Bookshelf", Interact);
+		InteractionHandler.Instance.RegisterObject("Bookshelf", Interact, 4);
 	}
 
 	// Show the bookshelf selection screen

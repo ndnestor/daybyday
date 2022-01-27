@@ -15,7 +15,7 @@ public class Door : MonoBehaviour {
 		dialogueSystem = MainInstances.Get<DialogueSystem>();
 		
 		InteractionHandler.Instance.RegisterObject("Room and Door", () =>
-			dialogueSystem.Present(dialogueGraph));
+			dialogueSystem.Present(dialogueGraph), 0);
 	}
 
 }

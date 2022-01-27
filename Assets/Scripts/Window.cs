@@ -24,7 +24,7 @@ public class Window : MonoBehaviour {
 
 	private void Start()
 	{
-		InteractionHandler.Instance.RegisterObject("Window", Interact);
+		InteractionHandler.Instance.RegisterObject("Window", Interact, 1);
 		dialogueSystem = MainInstances.Get<DialogueSystem>();
 	}
 

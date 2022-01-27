@@ -43,52 +43,6 @@ MonoBehaviour:
   Dialogue: You can't go outside yet, it's not safe.
   WaitForInput: 1
   ErasePrevious: 1
---- !u!114 &-6040601177860714604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d49942bd56d34d4295f83d21118ca5b, type: 3}
-  m_Name: Display Value
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -344, y: -120}
-  ports:
-    keys:
-    - enter
-    - exit
-    values:
-    - _fieldName: enter
-      _node: {fileID: -6040601177860714604}
-      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: exit
-        node: {fileID: -2980320158164780719}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: exit
-      _node: {fileID: -6040601177860714604}
-      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: enter
-        node: {fileID: 8472343760000007224}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  RegistryValueName: Day Number
-  WaitForInput: 1
-  ErasePrevious: 1
 --- !u!114 &-2980320158164780719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +56,7 @@ MonoBehaviour:
   m_Name: Entry
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -600, y: -88}
+  position: {x: -424, y: -88}
   ports:
     keys:
     - exit
@@ -113,7 +67,7 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: enter
-        node: {fileID: -6040601177860714604}
+        node: {fileID: 8472343760000007224}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -136,7 +90,6 @@ MonoBehaviour:
   - {fileID: 8472343760000007224}
   - {fileID: 4851299928482432700}
   - {fileID: -8330224659927793436}
-  - {fileID: -6040601177860714604}
   current: {fileID: 0}
   entry: {fileID: -2980320158164780719}
   currentSystem: {fileID: 0}
@@ -213,7 +166,7 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: exit
-        node: {fileID: -6040601177860714604}
+        node: {fileID: -2980320158164780719}
         reroutePoints: []
       _direction: 0
       _connectionType: 1

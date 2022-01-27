@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1304, y: 776}
+  position: {x: 1304, y: 840}
   ports:
     keys:
     - enter
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 344, y: -152}
+  position: {x: 2504, y: -104}
   ports:
     keys:
     - enter
@@ -353,6 +353,9 @@ MonoBehaviour:
       - fieldName: exit
         node: {fileID: -1671482419214471150}
         reroutePoints: []
+      - fieldName: choices 1
+        node: {fileID: -1192755875874244531}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -431,7 +434,7 @@ MonoBehaviour:
   m_Name: String Compare
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 520, y: 856}
+  position: {x: 520, y: 920}
   ports:
     keys:
     - enter
@@ -489,7 +492,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1336, y: 1160}
+  position: {x: 1336, y: 1224}
   ports:
     keys:
     - enter
@@ -536,7 +539,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2504, y: 696}
+  position: {x: 2488, y: 648}
   ports:
     keys:
     - enter
@@ -641,7 +644,7 @@ MonoBehaviour:
   m_Name: Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 696, y: -152}
+  position: {x: 2904, y: -104}
   ports:
     keys:
     - enter
@@ -695,7 +698,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 1
-  Dialogue: Do you want to spend [time] looking out the window?
+  Dialogue: Do you want to spend 1 time unit looking out the window?
   choices:
   - Name: Option A
     text: "I\u2019ll gaze out the window a bit."
@@ -715,7 +718,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2648, y: 3800}
+  position: {x: 2696, y: 3816}
   ports:
     keys:
     - enter
@@ -796,7 +799,10 @@ MonoBehaviour:
       _node: {fileID: -1192755875874244531}
       _typeQualifiedName: Game.Dialogue.Nodes.ChoiceNode+Choice, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: enter
+        node: {fileID: 5764079993920903463}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -805,12 +811,15 @@ MonoBehaviour:
       _node: {fileID: -1192755875874244531}
       _typeQualifiedName: Game.Dialogue.Nodes.ChoiceNode+Choice, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: enter
+        node: {fileID: -6407997535092151360}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 1
-  Dialogue: Do you want to spend [time] playing the piano?
+  Dialogue: Do you want to spend 4 time units playing the piano?
   choices:
   - Name: 
     text: "I\u2019ll play the piano for a while."
@@ -1045,7 +1054,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 1
-  Dialogue: Do you want to spend [time] playing Blaster?
+  Dialogue: Do you want to spend 2 time units playing Blaster?
   choices:
   - Name: 
     text: I'll game.
@@ -1065,7 +1074,7 @@ MonoBehaviour:
   m_Name: Condition
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 920, y: 872}
+  position: {x: 920, y: 936}
   ports:
     keys:
     - enter
@@ -1168,7 +1177,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   RegistryName: Interaction Prompt
-  OtherRegistry: COMPUTER
+  OtherRegistry: BLASTER
 --- !u!114 &1034910239643185773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,7 +1482,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2536, y: 904}
+  position: {x: 2488, y: 840}
   ports:
     keys:
     - enter
@@ -1574,7 +1583,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 1
-  Dialogue: Do you want to spend [time] sending a message?
+  Dialogue: Do you want to spend 2 time units  sending a message?
   choices:
   - Name: 
     text: Yes.
@@ -1594,7 +1603,7 @@ MonoBehaviour:
   m_Name: Switch Case
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2072, y: 824}
+  position: {x: 2088, y: 712}
   ports:
     keys:
     - enter
@@ -1689,7 +1698,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2488, y: 488}
+  position: {x: 2488, y: 456}
   ports:
     keys:
     - enter
@@ -1735,7 +1744,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1096, y: 312}
+  position: {x: 3256, y: 360}
   ports:
     keys:
     - enter
@@ -1977,7 +1986,7 @@ MonoBehaviour:
   m_Name: Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1672, y: 648}
+  position: {x: 1688, y: 776}
   ports:
     keys:
     - enter
@@ -2031,7 +2040,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 1
-  Dialogue: Do you want to spend [time] with your plant?
+  Dialogue: Do you want to spend 1 tme unit with your plant?
   choices:
   - Name: 
     text: Water it.
@@ -2051,7 +2060,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2520, y: 1144}
+  position: {x: 2488, y: 1032}
   ports:
     keys:
     - enter
@@ -2187,6 +2196,9 @@ MonoBehaviour:
         reroutePoints: []
       - fieldName: exit
         node: {fileID: -7506271261377934587}
+        reroutePoints: []
+      - fieldName: choices 0
+        node: {fileID: -1192755875874244531}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -2379,7 +2391,7 @@ MonoBehaviour:
   m_Name: Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 744, y: 280}
+  position: {x: 2904, y: 328}
   ports:
     keys:
     - enter
@@ -2496,7 +2508,7 @@ MonoBehaviour:
   m_Name: Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1688, y: 1128}
+  position: {x: 1688, y: 1192}
   ports:
     keys:
     - enter

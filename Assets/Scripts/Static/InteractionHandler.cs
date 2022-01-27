@@ -54,16 +54,21 @@ public class InteractionHandler : MonoBehaviour
 
 	// All interactable objects should call this method as the start
 	// Returns false if object has already been registered
-	public bool RegisterObject(string objectName, System.Action objectAction)
+	public bool RegisterObject(string objectName, System.Action objectAction, int timeConsumption)
 	{
 		if(registeredObjects.ContainsKey(objectName))
 		{
 			Debug.LogWarning("Object " + objectName + " was already registered");
 			return false;
 		}
+		
 		Debug.Log("Registering object '" + objectName + "'");
 		valueRegistry.Set($"Used {objectName}", 0);
-		registeredObjects.Add(objectName, objectAction);
+		registeredObjects.Add(objectName, new System.Action(() =>
+		{
+			objectAction();
+			Tracking.Instance.AddUsedTime(timeConsumption);
+		}));
 		objectNeglection.Add(objectName, true);
 		return true;
 	}
