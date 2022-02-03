@@ -458,9 +458,9 @@ RectTransform:
   m_Father: {fileID: 118290024}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 526, y: -67}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 526, y: 30}
   m_SizeDelta: {x: 1013.8806, y: 106.13983}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!114 &123052651
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This scene is for sample only
+  m_text: Pre-release Preview
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e4c4c6675eb1384092ffb6ef8a465ef, type: 2}
   m_sharedMaterial: {fileID: 8509130111601760991, guid: 1e4c4c6675eb1384092ffb6ef8a465ef, type: 2}
@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe69d97eed05254fba105596bc3e926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueGraph: {fileID: 11400000, guid: b60db0cb056929e4daeaf64d455dcf60, type: 2}
+  dialogueGraph: {fileID: 0}
   levelIncrementDays: 
 --- !u!1 &295891022
 GameObject:
@@ -1524,7 +1524,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &606547392
 GameObject:
@@ -4143,8 +4143,8 @@ Camera:
   m_GameObject: {fileID: 1901656631}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
