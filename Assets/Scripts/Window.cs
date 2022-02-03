@@ -8,7 +8,7 @@ using UnityEngine;
 public class Window : MonoBehaviour {
 
 	[SerializeField] private DialogueGraph[] dialogueGraphs;
-	[SerializeField] private int timeConsumption;
+	[SerializeField] private float timeConsumption;
 
 	private DialogueSystem dialogueSystem;
 
@@ -18,13 +18,13 @@ public class Window : MonoBehaviour {
 	private const int summerEnd = 6;
 	private const int fallStart = 7;
 	private const int fallEnd = 9;
-	private const int winsterStart = 10;
+	private const int winterStart = 10;
 	private const int winterEnd = 12; // TODO: Ask if this is the end date
 	private const int nightHour = 10; // Inclusive
 
 	private void Start()
 	{
-		InteractionHandler.Instance.RegisterObject("Window", Interact);
+		InteractionHandler.Instance.RegisterObject("Window", Interact, 1);
 		dialogueSystem = MainInstances.Get<DialogueSystem>();
 	}
 
@@ -50,7 +50,7 @@ public class Window : MonoBehaviour {
 		} else if(Between(currDay, fallStart, fallEnd))
 		{
 			messageIndex = 4;
-		} else if(Between(currDay, winsterStart, winterEnd))
+		} else if(Between(currDay, winterStart, winterEnd))
 		{
 			messageIndex = 6;
 		} else
@@ -65,11 +65,11 @@ public class Window : MonoBehaviour {
 
 		dialogueSystem.Present(dialogueGraphs[messageIndex]);
 		Tracking.Instance.AddUsedTime(timeConsumption);
+		// TODO: Add CAS as well
 	}
 
 	private static bool Between(int value, int lowerBound, int upperBound)
 	{
 		return lowerBound <= value && value <= upperBound;
 	}
-
 }

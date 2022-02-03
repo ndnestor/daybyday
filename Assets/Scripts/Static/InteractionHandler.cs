@@ -1,5 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Game;
+using Game.Dialogue;
+using Game.Registry;
 using UnityEngine;
 
 public class InteractionHandler : MonoBehaviour
@@ -28,26 +31,44 @@ public class InteractionHandler : MonoBehaviour
 	[SerializeField] private SpriteRenderer windowRenderer;
 	[SerializeField] private SpriteRenderer windowLightRenderer;
 
+	[SerializeField] private DialogueGraph objectPromptDialogue;
+
+	// NOTE: A Dictionary is probably a better option in hindsight
 	private Hashtable objectNeglection = new Hashtable(); // Key: string | Value: bool
+	private DialogueSystem dialogueSystem;
+	private ValueRegistry valueRegistry;
+	private StringRegistry stringRegistry;
 
 	[HideInInspector] public static InteractionHandler Instance;
 
 	private void Awake()
 	{
 		Instance = this;
+		valueRegistry = MainInstances.Get<ValueRegistry>();
+	}
+
+	private void Start() {
+		stringRegistry = MainInstances.Get<StringRegistry>();
+		dialogueSystem = MainInstances.Get<DialogueSystem>();
 	}
 
 	// All interactable objects should call this method as the start
 	// Returns false if object has already been registered
-	public bool RegisterObject(string objectName, System.Action objectAction)
+	public bool RegisterObject(string objectName, System.Action objectAction, int timeConsumption)
 	{
 		if(registeredObjects.ContainsKey(objectName))
 		{
 			Debug.LogWarning("Object " + objectName + " was already registered");
 			return false;
 		}
+		
 		Debug.Log("Registering object '" + objectName + "'");
-		registeredObjects.Add(objectName, objectAction);
+		valueRegistry.Set($"Used {objectName}", 0);
+		registeredObjects.Add(objectName, new System.Action(() =>
+		{
+			objectAction();
+			Tracking.Instance.AddUsedTime(timeConsumption);
+		}));
 		objectNeglection.Add(objectName, true);
 		return true;
 	}
@@ -58,27 +79,33 @@ public class InteractionHandler : MonoBehaviour
 		System.Action action = (System.Action)registeredObjects[objectName];
 		if(action != null)
 		{
-			action();
-			objectNeglection[objectName] = false;
+			stringRegistry.Set("Interaction Prompt", objectName);
+			dialogueSystem.Present(objectPromptDialogue, () => {
+				if(valueRegistry.Get("Confirmed Interaction") == 1) {
+					action();
+					objectNeglection[objectName] = false;
+					valueRegistry.Set($"Used {objectName}", 1);
+				}
+			});
+			
 			return true;
 		}
-		Debug.LogWarning("Could not interact because the given object name is not registered");
+		Debug.LogWarning($"Could not interact because '{objectName}' is not registered");
 		return false;
 	}
 
 	// This should be called at the beginning of every day
-	public void UpdateNeglectedSprites()
-	{
+	public void UpdateNeglectedSprites() {
 		foreach(string objectName in objectNeglection.Keys)
 		{
+			// Ignore bonsai tree when checking if objects are neglected
+			// since the bonsai tree works uniquely
+			if(objectName == "Bonsai Tree")
+			{
+				continue;
+			}
 			if((bool)objectNeglection[objectName])
 			{
-				// Ignore bonsai tree when checking if objects are neglected
-				// since the bonsai tree works uniquely
-				if(objectName == "Bonsai Tree")
-				{
-					continue;
-				}
 				switch(objectName)
 				{
 					case "Piano":
@@ -96,9 +123,6 @@ public class InteractionHandler : MonoBehaviour
 					case "Window":
 						windowRenderer.sprite = neglectedWindowSprite;
 						windowLightRenderer.sprite = neglectedWindowLightSprite;
-						break;
-					default:
-						Debug.LogError($"Invalid object name provided: {objectName}");
 						break;
 				}
 			}
@@ -121,9 +145,6 @@ public class InteractionHandler : MonoBehaviour
 					case "Window":
 						windowRenderer.sprite = normalWindowSprite;
 						windowLightRenderer.sprite = normalWindowLightSprite;
-						break;
-					default:
-						Debug.LogError($"Invalid object name provided: {objectName}");
 						break;
 				}
 			}

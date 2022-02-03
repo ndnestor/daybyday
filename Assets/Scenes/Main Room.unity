@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 37576569}
   - component: {fileID: 37576570}
   m_Layer: 0
-  m_Name: Computer Object
+  m_Name: Computer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -849,7 +849,7 @@ MonoBehaviour:
   bedDestination: {fileID: 1930726013}
   treeWater: {fileID: 893671295}
   agendasBox: {fileID: 890351132}
-  agendaDeliverDialogue: {fileID: 11400000, guid: f82f64d33eb64dc48a4a0ef17719778e, type: 2}
+  agendaDialogue: {fileID: 11400000, guid: 31379b594c414b947811ecf008114d72, type: 2}
   blackOverlay: {fileID: 882037753}
 --- !u!4 &231473488
 Transform:
@@ -861,9 +861,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 470248948}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &231473489
 MonoBehaviour:
@@ -892,9 +893,10 @@ MonoBehaviour:
   pianoRenderer: {fileID: 2130602364}
   yogaMatRenderer: {fileID: 732870695}
   computerRenderer: {fileID: 652737131}
-  bookshelfRenderer: {fileID: 0}
+  bookshelfRenderer: {fileID: 144138928}
   windowRenderer: {fileID: 870970937}
   windowLightRenderer: {fileID: 1210882081}
+  objectPromptDialogue: {fileID: 11400000, guid: c004a085e59307d4da992846925cf34c, type: 2}
 --- !u!114 &231473490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,6 +1085,7 @@ GameObject:
   m_Component:
   - component: {fileID: 407798835}
   - component: {fileID: 407798834}
+  - component: {fileID: 407798836}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -1155,6 +1158,19 @@ Transform:
   m_Father: {fileID: 1161191275}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &407798836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407798833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd5ab526349613d43906e555cf03f84f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueGraph: {fileID: 11400000, guid: 7acbcff3a443cbb4a9b5e76097a12ae7, type: 2}
 --- !u!1 &442400226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,6 +1253,11 @@ Transform:
   m_Father: {fileID: 2002995895}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &470248948 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5751234397892313326, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+  m_PrefabInstance: {fileID: 1726029316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &484225801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,7 +1308,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &507265061
 GameObject:
@@ -1651,7 +1672,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &652737130
 GameObject:
@@ -2307,7 +2328,7 @@ Transform:
   m_LocalScale: {x: 50, y: 50, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &890351132
 GameObject:
@@ -2691,8 +2712,9 @@ GameObject:
   - component: {fileID: 954206955}
   - component: {fileID: 954206954}
   - component: {fileID: 954206956}
+  - component: {fileID: 954206957}
   m_Layer: 0
-  m_Name: Window Object
+  m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2757,6 +2779,28 @@ MonoBehaviour:
   connectedSprite: {fileID: 870970935}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
   triggerable: 0
+--- !u!114 &954206957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954206953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e3bd4f15a485d478fa4fae55a495f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueGraphs:
+  - {fileID: 11400000, guid: 9da1c353a0cbc22438615cb9bfd87ba1, type: 2}
+  - {fileID: 11400000, guid: 2f361a77b5eacb84790dbf70512e0a9e, type: 2}
+  - {fileID: 11400000, guid: 8c9d0800a49842143b2d9d2a4bce81fc, type: 2}
+  - {fileID: 11400000, guid: 4ed345733ee85384985b29a4c36b990f, type: 2}
+  - {fileID: 11400000, guid: e41ce83fade39db40a0999cc098f0c35, type: 2}
+  - {fileID: 11400000, guid: c930afe77fd796549b8b6e996a9862c0, type: 2}
+  - {fileID: 11400000, guid: 7bb4ed691bcdd634983db1ee34e52028, type: 2}
+  - {fileID: 11400000, guid: e8f040bd748fc714cb8a6362b43ac066, type: 2}
+  timeConsumption: 0.5
 --- !u!1 &1066270141
 GameObject:
   m_ObjectHideFlags: 0
@@ -3719,7 +3763,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1581243648}
-  - component: {fileID: 1581243651}
   - component: {fileID: 1581243652}
   m_Layer: 0
   m_Name: Piano Interaction
@@ -3743,18 +3786,6 @@ Transform:
   m_Father: {fileID: 2002995895}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1581243651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1581243647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc6740eb30161c4daf1c6a2ae8d4211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &1581243652
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3856,7 +3887,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 231473488}
     m_Modifications:
     - target: {fileID: 1584301805376107585, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
       propertyPath: m_RootOrder
@@ -3864,7 +3895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5751234397892313326, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5751234397892313326, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3884,15 +3915,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5751234397892313326, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5751234397892313326, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5751234397892313326, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5751234397892313326, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

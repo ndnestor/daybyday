@@ -15,7 +15,7 @@ public class WaterPlant : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        interactionHandler.RegisterObject("Bonsai Tree", waterBonsai);
+        interactionHandler.RegisterObject("Bonsai Tree", waterBonsai, 1);
     }
 
     void waterBonsai() {

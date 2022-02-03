@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39a084772a4c5264dabbf80da46aff4b, type: 3}
   m_Name: Value Registry
   m_EditorClassIdentifier: 
-  initPairList: []
+  initPairList:
+  - id: Day Number
+    value: 1
+  - id: Completed Notebook Goals
+    value: 0
+  - id: ZERO
+    value: 0
+  - id: Took Summer Courses
+    value: 0

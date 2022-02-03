@@ -48,11 +48,12 @@ namespace Game.Dialogue {
         }
 
         [ContextMenu("Present current graph")]
-        public void PresentCurrent() {
-            Present(CurrentGraph);
+        public void PresentCurrent(Action callback=null) {
+            Present(CurrentGraph, callback);
         }
 
-        public void Present(DialogueGraph graph) {
+
+        public void Present(DialogueGraph graph, Action callback=null) {
             
             if(graph == null) {
                 Debug.LogError("Graph to present is null! Check if it is set!");
@@ -65,7 +66,7 @@ namespace Game.Dialogue {
             CanvasObject.enabled = true;
             graph.Play(this);
             CurrentGraph = graph;
-            currentPresentationCoroutine = StartCoroutine(PresentEnumerator());
+            currentPresentationCoroutine = StartCoroutine(PresentEnumerator(callback));
         }
 
 
@@ -79,7 +80,7 @@ namespace Game.Dialogue {
         
         [HideInInspector]
         public DialogueNodeBase CurrentNodeActive;
-        private IEnumerator PresentEnumerator() {
+        private IEnumerator PresentEnumerator(Action callback) {
             
             Debug.Log("Starting Dialogue!");
             
@@ -178,6 +179,8 @@ namespace Game.Dialogue {
             Typer.Play("Done");
             Typer.ResetTyper();
             CanvasObject.enabled = false;
+            
+            callback?.Invoke();
         }
 
 

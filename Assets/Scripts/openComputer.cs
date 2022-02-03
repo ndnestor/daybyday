@@ -11,7 +11,7 @@ public class openComputer : MonoBehaviour
 
     void Start()
     {
-        interactionHandler.RegisterObject("Computer", openComp);
+        interactionHandler.RegisterObject("Computer", openComp, 0);
     }
     void Update()
     {

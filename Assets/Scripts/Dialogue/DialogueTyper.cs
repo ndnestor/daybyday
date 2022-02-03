@@ -1,4 +1,5 @@
-﻿using Game.Dialogue.Nodes.Misc;
+﻿using System;
+using Game.Dialogue.Nodes.Misc;
 using Game;
 using Game.Registry;
 using System.Collections;
@@ -56,6 +57,7 @@ namespace Game.Dialogue {
 
 			switch (Effect) {
 				default:
+					print($"Typing text '{Text}'");
 					typingCoroutine = StartCoroutine(NormalType(TextSpeed, Text, clear));
 					break;
 
@@ -149,7 +151,11 @@ namespace Game.Dialogue {
 		private string startingText;
 		private string TextToWrite;
 
-		public IEnumerator NormalType(float TextSpeed, string Text, bool clear = true){
+		public IEnumerator NormalType(float TextSpeed, string Text, bool clear = true) {
+			if(Text == "Done") {
+				yield break; // NOTE: Janky setup. Hopefully does not break anything - Nathan
+			}
+			
 			var agentRegistry = MainInstances.Get<AgentRegistry>().registryObject;
 
 			nameUI.text = "";

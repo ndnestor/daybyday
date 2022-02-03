@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Computer;
 using Game;
 using Game.Dialogue;
+using Game.Registry;
 using UnityEngine;
 
 //This class is a Singleton instance
@@ -13,7 +14,7 @@ public class Tracking : MonoBehaviour
     public int DayNum { get; private set; }
     public const int MAX_DAYS = 10;
     public const int MAX_TIME = 14;
-    public int timeUsed = 0;
+    public float timeUsed = 0;
     public ArrayList objectUsage = new ArrayList();
 
     //Used for window lighting
@@ -32,14 +33,22 @@ public class Tracking : MonoBehaviour
     
     //Used for Agenda's day two introduction
     [SerializeField] private GameObject agendasBox;
-    [SerializeField] private DialogueGraph agendaDeliverDialogue;
+    [SerializeField] private DialogueGraph agendaDialogue;
     [SerializeField] private GameObject blackOverlay;
+    
+    // Objects used for dialogue
+    private DialogueSystem dialogueSystem;
+    private ValueRegistry valueRegistry;
+    
     
     private void Start()
     {
         DontDestroyOnLoad(this);
         Instance = this;
         DayNum = 1;
+
+        dialogueSystem = MainInstances.Get<DialogueSystem>();
+        valueRegistry = MainInstances.Get<ValueRegistry>();
     }
 
     //Adds an object to an ArrayList in chronological order of use
@@ -69,12 +78,13 @@ public class Tracking : MonoBehaviour
      * param additionalTime --> timeValue of the object
      * returns total time units used in the day
      */
-    public int AddUsedTime(int additionalTime)
+    public float AddUsedTime(float additionalTime)
     {
         timeUsed += additionalTime;
         UpdateLighting();
         if(timeUsed >= MAX_TIME)
         {
+            timeUsed = 0;
             Sleep();
         }
 
@@ -109,7 +119,7 @@ public class Tracking : MonoBehaviour
     {
         void CallbackAction()
         {
-            /* Code in these brackets will get called when the character is next to the bed and ready to sleep
+            /* Code in this method will get called when the character is next to the bed and ready to sleep
              * Sleep animation should start playing, sleep theme should start playing, etc
              * Probably should disable the Movement2D.cs script too */
             
@@ -122,16 +132,27 @@ public class Tracking : MonoBehaviour
             
             InteractionHandler.Instance.UpdateNeglectedSprites();
             ProductivityAid.Instance.UpdateLevel();
-
-            // Special day 2 events
-            if(DayNum == 2)
-            {
-                agendasBox.SetActive(true);
-                Movement2D.Instance.MoveTo(agendasBox.transform.position + Vector3.left, () =>
-                {
-                    MainInstances.Get<DialogueSystem>().Present(agendaDeliverDialogue);
-                });
+            
+            // Present Agenda dialogue
+            valueRegistry.Set("Day Number", DayNum);
+            
+            // Set destination to move to upon waking up
+            Vector3 targetPosition;
+            switch(DayNum) {
+                case 2:
+                    agendasBox.SetActive(true);
+                    targetPosition = agendasBox.transform.position + Vector3.left;
+                    break;
+                default:
+                    targetPosition = agendasBox.transform.position + Vector3.left;
+                    break;
             }
+
+            Movement2D.Instance.MoveTo(targetPosition, () => {
+                
+                // Have agenda speak once Quinn arrives
+                dialogueSystem.Present(agendaDialogue);
+            });
         }
 
         Movement2D.Instance.MoveTo(bedDestination.position, CallbackAction);
@@ -150,7 +171,7 @@ public class Tracking : MonoBehaviour
     //Used for testing purposes. Should be deleted later
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.RightControl))
+        if(Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.LeftCommand))
         {
             Debug.Log("Artificially added 1 unit of time");
             AddUsedTime(1);

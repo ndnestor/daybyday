@@ -13,5 +13,23 @@ MonoBehaviour:
   m_Name: String Registry
   m_EditorClassIdentifier: 
   initPairList:
-  - id: Value1
-    value: Blah blah
+  - id: Interaction Prompt
+    value: 
+  - id: WINDOW
+    value: Window
+  - id: BED
+    value: Bed
+  - id: BONSAI
+    value: Bonsai
+  - id: BLASTER
+    value: Blaster
+  - id: INBOX
+    value: Inbox
+  - id: YOGO MAT
+    value: Yogo Mat
+  - id: BOOKSHELF
+    value: Bookshelf
+  - id: DEPRESSION CHAIR
+    value: Depression Chair
+  - id: PIANO
+    value: Piano
