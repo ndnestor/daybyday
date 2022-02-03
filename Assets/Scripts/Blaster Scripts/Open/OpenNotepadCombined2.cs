@@ -13,6 +13,8 @@ namespace NotePad{
         //private GameObject tmpColor, tmpBW;
         public int openNote;
         public GameObject tmpColor, tmpBW;
+        [SerializeField] AssignmentControl assignmentController;
+        [SerializeField] Button submitButton;
         public int OpenNote {
              get{
                  //Debug.Log(openNote);
@@ -31,6 +33,7 @@ namespace NotePad{
             //tmpBW = Instantiate(notesBW, new Vector3(11.6f, 3.28f, 0.0f), Quaternion.identity);
             tmpColor.SetActive(false);
             tmpBW.SetActive(false);
+            submitButton.gameObject.SetActive(false);
         }
         public void openNew() {
             openNote += 1;
@@ -40,6 +43,7 @@ namespace NotePad{
                 tmpBW.SetActive(true);
             }
             if (openNote%2 == 0) {
+                if(assignmentController.isAssignmentActive()) submitButton.gameObject.SetActive(true);
                 inputWindow.Show();
             } else {
                 inputWindow.Hide();

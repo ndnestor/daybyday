@@ -1,6 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
+using UnityEngine.UI;
+using Game;
+using Game.Dialogue;
+using Game.Registry;
 
 public class tutorialGuide : MonoBehaviour
 {
@@ -28,4 +34,38 @@ public class tutorialGuide : MonoBehaviour
     every asset present. This means we can pause for explanations, temporal control, etc.
     
     */
+
+    //UI pop-ups
+    [SerializeField] GameObject keybinds, arrow;
+    [SerializeField] Button nextButton;
+    [SerializeField] TextMeshProUGUI tutorialText;
+    globalScore scorekeeper;
+    [SerializeField] private DialogueGraph dialogueGraph;
+    [SerializeField] private DialogueSystem dialogueSystem;
+    private const string StringRegistryId = "Blaster Tutorial Dialogue";
+    
+    private StringRegistry stringRegistry;
+
+
+    /**[System.Serializable]
+    public struct TutorialArrowLocations{
+        public Vector3 point_Score;
+        public Vector3 point_Inventory;
+        public Vector3 point_PlayerHealth;
+        public Vector3 point_PlatformHealth;
+    } On second thought I don't think structs are serializable?
+    Find a less ugly way to deal with this later
+    **/
+    [SerializeField] Vector3 point_Score, point_Inventory, point_PlayerHealth, point_PlatformHealth;
+    public void Start() {
+        scorekeeper = globalScore.Instance;
+        dialogueSystem = MainInstances.Get<DialogueSystem>();
+        stringRegistry = MainInstances.Get<StringRegistry>();
+        beginTutorial();
+    }
+
+    public void beginTutorial() {
+        dialogueSystem.Present(dialogueGraph);
+    }
+
 }

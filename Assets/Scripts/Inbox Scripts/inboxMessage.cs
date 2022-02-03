@@ -24,7 +24,7 @@ public class inboxMessage : MonoBehaviour
     - People are numbered in order of Inbox UI, as follows:
 
     1: Mom
-    2: Grandma Betty
+    2: Grandma Betsy
     3: Prof. Turner
     4: Buddy
     5: Brie
@@ -94,12 +94,12 @@ public class inboxMessage : MonoBehaviour
         // Script should be called every time inbox selected
         // newDay should be carried globally from Tracking script in main scene
         dayShown = newDay;
-        if (buddyTalk == true) {
+        /*if (buddyTalk == true) {
             buddyDay++;
         }
         if (brieTalk == true) {
             brieDay++;
-        }
+        } //ADJUSTMENT: Buddy and Brie days only advance if you've responded - in button effect*/
         showMessage(dayShown, personShown, status);
     }
     void changePerson(int newPerson) {
@@ -148,6 +148,52 @@ public class inboxMessage : MonoBehaviour
         // which button was pressed
         playerResponse = buttonNum;
         //updateTracking(buttonNum, person);
+
+        switch (personShown) {
+            case 2: // Gramma Betsy
+                switch (dayShown) {
+                    case 3:
+                        if(playerResponse == 2) intGrandma = 2;
+                        else if(playerResponse == 3) intGrandma = 3;
+                        break;
+                }
+                break;
+            case 4: // Buddy
+                switch (buddyDay) {
+                    case 1:
+                        if(playerResponse == 2) intBuddy = 2;
+                        break;
+                }
+                break; //Buddy dialogue unfinished, come back later
+            case 5: // Brie
+                switch (brieDay) {
+                    case 1:
+                        if(playerResponse == 2) intBrie = 2;
+                        else if(playerResponse == 3) intBrie = 3;
+                        break;
+                    case 2:
+                        //Only one response option for each, so if any response advance day
+                        if(playerResponse == 3) intBrie = 4;
+                        break;
+                    case 3:
+                        if(playerResponse == 1) intBrie = 5;
+                        else if(playerResponse == 2) intBrie = 6;
+                        else if(playerResponse == 3) intBrie = 7;
+                        break;
+                    case 4:
+                        switch(intBrie) {
+                            case 6:
+                                intBrie = 6; // cont romance path for any of 3 answers chosen
+                                break;
+                            case 7:
+                                intBrie = 10;
+                                break;
+                        }
+                        break;
+                    //Blaster indie dev path? discuss
+                }
+                break;
+        }
     }
 
     //public void updateTracking(int response, int person) {
@@ -162,19 +208,19 @@ public class inboxMessage : MonoBehaviour
         if (person == 1) {
             Debug.Log("Mom"); // This was for testing purposes, remove later
             Debug.Log("Day is " + day);
-            if (day == 1) {
+            if (day == 2) {
                 message.text = "Sweetheart, Is Agenda helping you stay on track with your goals? I’ve heard so much about how it helped other students, and I thought it would be a good present for you, now that you are doing school from home. I’ve felt myself slipping lately - work isn’t what it used to be for me. I am finding my way through. In fact, I’ve taken up knitting. Would you like me to make you a scarf? I promise I can make it super fluffy and warm - just the way you like it. Love, Mom.";
             }
-            if (day == 2) {
+            if (day == 4) {
                 message.text = "Sweetheart, remember the pair of bonsai plants we bought together? Mine finally bloomed! It’s so pretty and lush, I’m quite proud of how well I’ve taken care of it. I plan on decorating it for the winter holidays. How about yours? Have you watered it yet? I hope you are doing well and staying on top of your studies. I miss you. Love, Mom.";
             }
-            if (day == 3) {
+            if (day == 6) {
                 message.text = "Sweetheart, have you had any sweets lately? I’ve had such a craving for cake the past few weeks. Remember when I mentioned I wanted to get into baking? Well, I started baking banana bread. It’s healthy and super yummy, and I’m quite good at it! The trick is to use whole wheat flour and substitute white sugar for honey. Then you can make a delicious and mostly-healthy treat for just after supper. I would love to chat sometime soon. Maybe I can even bring you a loaf. Wouldn’t that be swell! Love, Mom.";
             }
-            if (day == 4) {
+            if (day == 8) {
                 message.text = "Sweetheart, are you staying healthy? I had such a sweet tooth last month that by the end of it I felt like I could never have a treat again! I got myself a yoga mat and started working out. I feel a lot better. I meditate a few minutes every day, I do lots of stretching, and I go for long walks. You should try it sometime! Maybe it will help you relax after a hard day’s work. If you’d like, we could even meditate together! Let me know if you would like that, okay? Love, Mom.";
             }
-            if (day == 5) {
+            if (day == 10) {
                 if (status == 0) {
                     message.text = "Honey, I am so glad you’ve kept in touch. I know these past few months have been hard on you, it was hard on us, too. I really miss you. Let me know if I can come visit you. I promise to bring you a treat! Love, Mom.";
                 }
@@ -255,11 +301,11 @@ public class inboxMessage : MonoBehaviour
                 if (intBrie == 6) {
                     msgBrie = "hehe ^///^ ty i appreciate that. thankyu for your kind words and advice - i think i’ll try them out. The to-do list seems like a good idea, i just, im scared ill get too anxious and wont do it. Whenever i get really stressed my brain kinda shuts off and i either sleep or game. its so weird, like i know that i have things to do, and i know i should do them, i just...don’t. and i really try, too! i just cant seem to stay motivated long enough to actually do it. do you experience this too? sometimes it feels im the only one going through stuff like this. everyone online seems fine, and none of my friends have mentioned having trouble like this.";
                 }
-            }
-            if (brieDay == 5) {
                 if (intBrie == 7) {
                     msgBrie = "oh wow thankyu for ur message!!! i think i get what ure saying. I appreciate yur advice, too, helped me think of ways i could change my mind about things. It gave me new perspective. i reached out to our prof to letthem know im not doin too well. i dunno if itll help my grade but at least theyll know why. i also tried to build myself a schedule. i got some paper and wrote everything i needed to do down. it felt weird just writing things down, normally i type everything. my pinkie was all smudged in lead haha. after i wrote everything down i just, my brain just went silent again looking at the list, but instead of laying down i played with my dog instead. i feel like i have to find different ways of dealing with feeling anxious. i feel like if i can do that, redirect my anxiety to something else, i might start being more productive again. let’s keep talking, okay? ure the first person in a long time to give me valuable advice and i want us to stay friends if we can";
                 }
+            }
+            if (brieDay == 5) {
                 if (intBrie == 8) {
                     msgBrie = "it worked!!!! ur suggestions worked!! i mean, sorta, but, i wrote everything down and then i looked at it and i said okay what can i do here right away and i did it! And yeah afterwards i felt exhausted but at least i did sumthin yknow???like yesterday iw asnt doing ANYTHING and now i did SOMEHTING :D tht made me really happy tysm!!!! actually do u maybe wanna video chat sometime? i feel like ovr text we talk a lot about me but i wanna learn more about u!! uve helped me breakthrough a really rough patch and i wanna pay it forward, yknow?  I could deff teach you some Blaster techniques to up ur score, that’s for sure! XD";
                 }
@@ -278,19 +324,27 @@ public class inboxMessage : MonoBehaviour
         }
         if (person == 6) {
             if (day == 3) {
-
+                msgMatt = "Yo, Wassup. Its ur cuz Matt. How ya doin? Ma said ur livin alone rn, how ya managing? Must be different to be alone all the time. Im still with family. Sometimes i wish i was totally alone but ik tht id prolly go bananas if i was by myself. Hang in there, cuz. Lets talk again soon.";
             }
             if (day == 5) { 
-
+                msgMatt = "Yo, Wassup? Heard you got the latest Agenda thing, dats pretty cool. Sposed to help yu stay on top of schoolwork, right? does it actually help tho? i figured its one of those habit-trackers but idk if a tool can help you be more productive if you aint committed to it. But idk tho. Im taking HS online rn an it sukz but i know that if i keep steady i can get to where i wanna go. does Agenda help remind you of why ya workin hard or does it just force you to get the work done?";
             }
             if (day == 7) {
-
+                //msgMatt = ""
             }
             if (day == 9) {
-                
+                //msgMatt = ""
+                //revisit once we figure out the metric for "organization" (?) which is mentioned in dialogue but not laid out
             }
         }
     }
+
+
+
+
+
+
+
     void newResponse (int day, int person) {
         if (person == 1) {
             if (day == 2) {
@@ -299,20 +353,100 @@ public class inboxMessage : MonoBehaviour
                 response3.text = "Hey mom. Thanks for the Agenda. Very busy- talk soon!";
             }
             if (day == 4) {
-                response1.text = "MOM DAY 4 RESPONSE 1 FILLER TEXT";
-                response2.text = "MOM DAY 4 RESPONSE 2 FILLER TEXT";
+                response1.text = "Oh no, I forgot about it!";
+                response2.text = "Im doing well, and the plant is, too!";
+                response3.text = "The plant is okay. I'm trying my best with other things, too.";
             }
-            if (day == 7) {
-                response1.text = "MOM DAY 7 RESPONSE 1 FILLER TEXT";
-                response2.text = "MOM DAY 7 RESPONSE 2 FILLER TEXT";
+            if (day == 6) {
+                response1.text = "Mm, banana bread. Bring me some!";
+                response2.text = "That sounds great! When I'm done with school, I can come over and help.";
+                response3.text = "Oh, that's nice. Yeah. Good for you.";
             }
-            if (day == 9) {
-                response1.text = "MOM DAY 9 RESPONSE 1 FILLER TEXT";
-                response2.text = "MOM DAY 9 RESPONSE 2 FILLER TEXT";
+            if (day == 8) {
+                response1.text = "I have a yoga mat too and I use it all the time!";
+                response2.text = "I'm too busy for yoga, but I'm happy it works for you.";
+                response3.text = "How are you always doing better, and I'm doing worse? I don't understand...";
             }
             if (day == 10) {
-                response1.text = "MOM DAY 10 RESPONSE 1 FILLER TEXT";
-                response2.text = "MOM DAY 10 RESPONSE 2 FILLER TEXT";
+                if (status == 0) {
+                    replyBox1.SetActive(false);
+                    response2.text = "I'm too busy for a visit, but let's chat soon.";
+                    response3.text = "I'd love to see you. I miss you.";
+                }
+                if (status == 1) {
+                    replyBox1.SetActive(false);
+                    response2.text = "I hate Agenda. I hate this. Nothing I do helps. Everything sucks.";
+                    response3.text = "I'm sorry I never messaged you. I was so busy.";
+                }
+                if (status == 2) {
+                    replyBox1.SetActive(false);
+                    response2.text = "Please help. I'm so alone.";
+                    response3.text = "Don't contact me again.";
+                }
+            }
+        }
+        if (person == 2) {
+            if (day == 3) {
+                replyBox1.SetActive(false);
+                response2.text = "hi gramma! how are you? i'm okay…";
+                response3.text = "hi gramma! how are you? i'm good!";
+            }
+            if (day == 5) {
+                response1.text = "I'm working hard now so I can do what I like later. you have to work to get to do what you love.";
+                response2.text = "Sometimes, I feel like I'm spending too much time doing things that won't help my future...";
+                response3.text = "I try to work and play—it’s hard, but I get to do what I need and what I want!";
+            }
+            if (day == 6) {
+                replyBox1.SetActive(false);
+                response2.text = "sorry, gramma. i'm better now. how are you?";
+                response3.text = "sorry, gramma. i'm okay, i just don't think i can talk right now.";
+            }
+            if (day == 8) {
+                replyBox1.SetActive(false);
+                response2.text = "I’ll visit you and Rufus as soon as I can!";
+                response3.text = "I can’t come now, but let’s stay in touch.";
+            }
+        }
+        if (person == 4) {
+            //Buddy dialogue unfinished?
+            if (buddyDay == 1) {
+                replyBox1.SetActive(false);
+                response2.text = "lets talk music bro :)";
+                response3.text = "[FILLER]";
+            }
+            if (buddyDay == 2) {
+                replyBox1.SetActive(false);
+                response2.text = "[FILLER]";
+                response3.text = "[FILLER]";
+            }
+            if (buddyDay == 3) {
+                replyBox1.SetActive(false);
+                response2.text = "how can i help?";
+                response3.text = "real tough, i feel that";
+            }
+            if (buddyDay == 4) {
+                if (intBuddy == 4) {
+                    replyBox1.SetActive(false);
+                    response2.text = "[FILLER]";
+                    response3.text = "[FILLER]";
+                }
+                if (intBuddy == 5) {
+                    replyBox1.SetActive(false);
+                    response2.text = "[FILLER]";
+                    response3.text = "[FILLER]";
+                }
+            }
+            if (buddyDay == 5) {
+                if (intBuddy == 6) {
+                    replyBox1.SetActive(false);
+                    response2.text = "[FILLER]";
+                    response3.text = "[FILLER]";
+                }
+                if (intBuddy == 7) {
+                    replyBox1.SetActive(false);
+                    response2.text = "[FILLER]";
+                    response3.text = "[FILLER]";
+                }
             }
         }
         if (person == 5) {
@@ -336,17 +470,19 @@ public class inboxMessage : MonoBehaviour
                 response2.text = "sounds like you're going through a rough time. and that's ok :) you're not weird, promise. [Emphasize that she isn’t just 'some weird girl', instead that she is struggling, and that’s okay. Offer advice later.]";
                 response3.text = "ok so when i had issues focusing i would exercise, and that could help with sleep too. i also suggest...[Focus on actions. Offer advice, agree things are tough]";
             }
-            if (brieDay == 4 && intBrie == 6) {
-                response1.text = "not really, but that's okay, your experiences are unique. keep trying the techniques and see if it helps. have you tried a reward system with gaming?";
-                response2.text = "not really, but that's okay. i'm grateful you trust me with this :) ill do my best to help";
-                response3.text = "yes i totally get what you mean! sometimes, when its rlly bad for me, it feels like...";
-            }
-            if (brieDay == 5) {
+            if (brieDay == 4) {
+                if (intBrie == 6) {
+                    response1.text = "not really, but that's okay, your experiences are unique. keep trying the techniques and see if it helps. have you tried a reward system with gaming?";
+                    response2.text = "not really, but that's okay. i'm grateful you trust me with this :) ill do my best to help";
+                    response3.text = "yes i totally get what you mean! sometimes, when its rlly bad for me, it feels like...";
+                }
                 if (intBrie == 7) {
                     replyBox1.SetActive(false);
                     response2.text = "lets deff keep talking, it helps me to connect with someone else about this stuff too.";
                     response3.text = "hope things work themselves out. hang in there.";
                 }
+            }
+            if (brieDay == 5) {
                 if (intBrie == 8) {
                     replyBox1.SetActive(false);
                     response2.text = "i'd love that :)";
@@ -364,7 +500,7 @@ public class inboxMessage : MonoBehaviour
                     replyBox2.SetActive(false);
                     response3.text = "also reached out to someone, like a professional, to help me out with my anxiety. i think i need more help on this than i can give myself.";
                 }
-                if (intBrie == 1) {
+                if (intBrie == 11) {
                     replyBox1.SetActive(false);
                     response2.text = "heck yeah, lets do it! show me wat you got";
                     response3.text = "i think rn ima focus on school but thanks for the offer tho!";
