@@ -2200,6 +2200,9 @@ MonoBehaviour:
       - fieldName: choices 0
         node: {fileID: -1192755875874244531}
         reroutePoints: []
+      - fieldName: exitFalse
+        node: {fileID: 6411012525113340566}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -2322,7 +2325,10 @@ MonoBehaviour:
       _node: {fileID: 6411012525113340566}
       _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: enter
+        node: {fileID: 5764079993920903463}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
