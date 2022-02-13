@@ -37,12 +37,13 @@ public class ComputerInterface : MonoBehaviour
         }
     }
 
-    private void QuitComputer()
+    public void QuitComputer()
     {
-        mainRoom.SetActive(true);
+        /*mainRoom.SetActive(true);
         computerScreen.SetActive(false);
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;*/
+        SceneManager.LoadSceneAsync("Main Room");
     }
 
     void CastRay()
