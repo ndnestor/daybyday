@@ -2382,16 +2382,8 @@ MonoBehaviour:
       - fieldName: choices 0
         node: {fileID: -1192755875874244531}
         reroutePoints: []
-<<<<<<< HEAD
-      - fieldName: choices 0
-        node: {fileID: -4863274828965453234}
-        reroutePoints: []
-      - fieldName: exit
-        node: {fileID: -3042670778568862163}
-=======
       - fieldName: exitFalse
         node: {fileID: 6411012525113340566}
->>>>>>> dff1ea2ac0965ef0828faf45b6ce5a9baaae69ae
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -2517,11 +2509,7 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: enter
-<<<<<<< HEAD
-        node: {fileID: -8138274772505784101}
-=======
         node: {fileID: 5764079993920903463}
->>>>>>> dff1ea2ac0965ef0828faf45b6ce5a9baaae69ae
         reroutePoints: []
       _direction: 1
       _connectionType: 1
