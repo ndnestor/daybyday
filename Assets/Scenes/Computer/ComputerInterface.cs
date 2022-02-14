@@ -85,7 +85,8 @@ public class ComputerInterface : MonoBehaviour
         }
         else if (newName.Equals("Blaster Button"))
         {
-              SceneManager.LoadScene("Scene_startMenu");
+            GameObject.Find("/Static").GetComponent<Tracking>().AddUsedTime(2);
+            SceneManager.LoadScene("Scene_startMenu");
         }
         else if (newName.Equals("Help Button"))
         {
