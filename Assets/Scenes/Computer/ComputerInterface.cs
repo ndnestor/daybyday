@@ -37,12 +37,13 @@ public class ComputerInterface : MonoBehaviour
         }
     }
 
-    private void QuitComputer()
+    public void QuitComputer()
     {
-        mainRoom.SetActive(true);
+        /*mainRoom.SetActive(true);
         computerScreen.SetActive(false);
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;*/
+        SceneManager.LoadSceneAsync("Main Room");
     }
 
     void CastRay()
@@ -85,7 +86,8 @@ public class ComputerInterface : MonoBehaviour
         }
         else if (newName.Equals("Blaster Button"))
         {
-              SceneManager.LoadScene("Scene_startMenu");
+            GameObject.Find("/Static").GetComponent<Tracking>().AddUsedTime(2);
+            SceneManager.LoadScene("Scene_startMenu");
         }
         else if (newName.Equals("Help Button"))
         {
