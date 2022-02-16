@@ -330,8 +330,8 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Dialogue: "I mean that an employee from Stratagenda will review the data I\u2019ve
-    collected on you to see if I should have greater control over your house."
+  Dialogue: "I mean that an employee from Atlux will review the data I\u2019ve collected
+    on you to see if I should have greater control over your house."
   WaitForInput: 0
   ErasePrevious: 1
 --- !u!114 &-7377458961491804600
@@ -418,11 +418,9 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   Dialogue: "With my installation now complete, you can access the notepad under
-    your computer\u2019s \u201CAssignments\u201D tab. You can write in the notepad
-    with colored lines, while the one with gray lines includes all the current goals
-    that I generate for you; the \u201CAgenda / Your Notes\u201D button switches
-    which notepad you\u2019re viewing. As I learn more about you, I will add new
-    goals to help you stay organized."
+    your computer\u2019s \u201CAssignments\u201D tab. This includes all the current
+    goals that I generate for you. As I learn more about you, I will add new goals
+    to help you stay organized."
   WaitForInput: 1
   ErasePrevious: 1
 --- !u!114 &-6722696264948794222
@@ -1895,11 +1893,12 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Dialogue: "I am Agenda, your personal productivity assistant! I can help you come
-    up with and organize your goals using both a digital notepad and speaking directly
-    with you. If you need to control distractions around your house, I can aid you
-    with my smart home technology. I can't wait to help you become the most productive
-    version of yourself! But first, let's finish installing me\u2026"
+  Dialogue: "I am Agenda, your personal productivity assistant from Atlux Inc.! I
+    can help you come up with and organize your goals using both a digital notepad
+    and speaking directly with you. If you need to control distractions around your
+    house, I can aid you with my smart home technology. I can't wait to help you
+    become the most productive version of yourself! But first, let's finish installing
+    me\u2026"
   WaitForInput: 1
   ErasePrevious: 1
 --- !u!114 &11400000
