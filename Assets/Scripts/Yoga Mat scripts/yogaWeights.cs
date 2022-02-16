@@ -136,6 +136,7 @@ public class yogaWeights : MonoBehaviour
     
     void gameOver() {
         globalScoreKeeper.updateYogaScore(scoreTimeInt, 2);
-        SceneManager.LoadScene("Yoga_gameOver");
+        SceneManager.LoadScene("Yoga_gameOver", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("Yoga_ex2");
     }
 }

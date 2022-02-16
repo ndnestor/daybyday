@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class openYoga2 : MonoBehaviour
 {
     public void openExerciseTwo() {
-        SceneManager.LoadScene("Yoga_ex2");
+        SceneManager.UnloadSceneAsync("Yoga_menu");
+        SceneManager.LoadScene("Yoga_ex2", LoadSceneMode.Additive);
     }
 
 }

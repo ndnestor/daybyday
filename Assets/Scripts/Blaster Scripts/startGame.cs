@@ -10,9 +10,9 @@ public class startGame : MonoBehaviour
     {
         scorekeeper = globalScore.Instance;
         if (scorekeeper.returnBlasterTutorial() == 0) {
-            SceneManager.LoadScene("Scene_Tutorial");
+            SceneManager.LoadScene("Scene_Tutorial", LoadSceneMode.Additive);
         } else {
-            SceneManager.LoadScene("Scene_Game");
+            SceneManager.LoadScene("Scene_Game", LoadSceneMode.Additive);
         }
     }
 }

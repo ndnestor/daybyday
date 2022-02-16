@@ -103,7 +103,8 @@ public class PlayerMovement : MonoBehaviour
         scoreScript = scoreText.GetComponent<scoreScript>();
         score = scoreScript.returnScore();
         scorekeeper.updateBlasterScore(score);
-        SceneManager.LoadScene("Scene_endGame");
+        SceneManager.LoadScene("Scene_endGame", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("Scene_Game");
     }
 
     void OnCollisionEnter2D(Collision2D col)

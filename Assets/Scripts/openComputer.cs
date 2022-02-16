@@ -21,6 +21,6 @@ public class openComputer : MonoBehaviour
     }
     void openComp() {
         highlightObject.setTriggerFalse();
-        SceneManager.LoadScene("CompAll");
+        SceneManager.LoadScene("CompAll", LoadSceneMode.Additive);
     }
 }
