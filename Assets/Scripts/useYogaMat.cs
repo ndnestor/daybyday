@@ -14,7 +14,7 @@ public class useYogaMat : MonoBehaviour
 
     void openYogaMat() {
         highlightObject.setTriggerFalse();
-        SceneManager.LoadScene("Yoga_menu");
+        SceneManager.LoadScene("Yoga_menu", LoadSceneMode.Additive);
     }
     
     void Update()

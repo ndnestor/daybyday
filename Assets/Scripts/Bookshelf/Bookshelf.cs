@@ -16,7 +16,7 @@ public class Bookshelf : MonoBehaviour
 	// Show the bookshelf selection screen
 	private void Interact()
 	{
-		SceneManager.LoadSceneAsync(sceneName);
+		SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
 	}
 
 }

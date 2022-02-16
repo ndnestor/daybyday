@@ -122,7 +122,8 @@ public class randMovement : MonoBehaviour
 
     void gameOver() {
         globalScoreKeeper.updateYogaScore(scoreTimeInt, 1);
-        SceneManager.LoadScene("Yoga_gameOver");
+        SceneManager.LoadScene("Yoga_gameOver", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("Yoga_ex1");
     }
 
 }

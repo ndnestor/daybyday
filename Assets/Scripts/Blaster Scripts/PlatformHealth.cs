@@ -65,7 +65,8 @@ public class PlatformHealth : MonoBehaviour
         scoreScript = scoreText.GetComponent<scoreScript>();
         score = scoreScript.returnScore();
         globalScoreKeeper.updateBlasterScore(score);
-        SceneManager.LoadScene("Scene_endGame");
+        SceneManager.LoadScene("Scene_endGame", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("Scene_Game");
     }
 
     void TakeDamage(int damage)

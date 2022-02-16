@@ -6,6 +6,6 @@ using UnityEngine.SceneManagement;
 public class openYogaMenu : MonoBehaviour
 {
     public void openYogaMatMenu() {
-        SceneManager.LoadScene("Yoga_menu");
+        SceneManager.LoadScene("Yoga_menu", LoadSceneMode.Additive);
     }
 }
