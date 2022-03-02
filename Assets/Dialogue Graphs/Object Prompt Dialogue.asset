@@ -1110,7 +1110,7 @@ MonoBehaviour:
   - {fileID: 7164743726944422462}
   - {fileID: -4863274828965453234}
   - {fileID: -3042670778568862163}
-  current: {fileID: 0}
+  current: {fileID: 6822775112515040337}
   entry: {fileID: 3097000379551282765}
   currentSystem: {fileID: 0}
   CurrentChoiceIndex: 0
@@ -2385,6 +2385,12 @@ MonoBehaviour:
       - fieldName: exitFalse
         node: {fileID: 6411012525113340566}
         reroutePoints: []
+      - fieldName: choices 0
+        node: {fileID: -4863274828965453234}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: -3042670778568862163}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -2636,9 +2642,9 @@ MonoBehaviour:
   Dialogue: Is it time to sleep?
   choices:
   - Name: 
-    text: Yes, now
+    text: Yes, now.
   - Name: 
-    text: 
+    text: Not yet.
   ErasePrevious: 1
 --- !u!114 &7164743726944422462
 MonoBehaviour:
