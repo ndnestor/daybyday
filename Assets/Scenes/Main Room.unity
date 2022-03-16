@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 37576566}
   - component: {fileID: 37576569}
   - component: {fileID: 37576570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Computer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 90694646}
   - component: {fileID: 90694645}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Agenda Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 118290023}
   - component: {fileID: 118290022}
   - component: {fileID: 118290021}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 123052650}
   - component: {fileID: 123052652}
   - component: {fileID: 123052651}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 128696869}
   - component: {fileID: 128696868}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 144138929}
   - component: {fileID: 144138928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bookcase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +736,8 @@ GameObject:
   - component: {fileID: 231473487}
   - component: {fileID: 231473489}
   - component: {fileID: 231473490}
-  m_Layer: 0
+  - component: {fileID: 231473491}
+  m_Layer: 6
   m_Name: Static
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -911,6 +912,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueGraph: {fileID: 0}
   levelIncrementDays: 
+--- !u!114 &231473491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231473486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c15a79d5e687e449d6bc3d13090acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomCamera: {fileID: 1901656633}
+  roomAudioListener: {fileID: 1901656632}
 --- !u!1 &295891022
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,7 +936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 295891024}
   - component: {fileID: 295891023}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1003,7 +1018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 349495290}
   - component: {fileID: 349495291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Piano Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1086,7 +1101,7 @@ GameObject:
   - component: {fileID: 407798835}
   - component: {fileID: 407798834}
   - component: {fileID: 407798836}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1181,7 +1196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 442400228}
   - component: {fileID: 442400227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Piano Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1268,7 +1283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 484225803}
   - component: {fileID: 484225802}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: globalScoreObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1319,7 +1334,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 507265062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TextBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1352,7 +1367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 511001136}
   - component: {fileID: 511001135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Window Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1435,7 +1450,7 @@ GameObject:
   - component: {fileID: 573276463}
   - component: {fileID: 573276462}
   - component: {fileID: 573276461}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WalkFinal1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1536,7 +1551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 606547394}
   - component: {fileID: 606547393}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bed Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1619,7 +1634,7 @@ GameObject:
   - component: {fileID: 648610192}
   - component: {fileID: 648610191}
   - component: {fileID: 648610190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1684,7 +1699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 652737132}
   - component: {fileID: 652737131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Computer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1766,7 +1781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 675135382}
   - component: {fileID: 675135381}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1848,7 +1863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 687365179}
   - component: {fileID: 687365178}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1930,7 +1945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 732870696}
   - component: {fileID: 732870695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yoga Mat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2012,7 +2027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 745217882}
   - component: {fileID: 745217883}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gray BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2094,7 +2109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 870970936}
   - component: {fileID: 870970937}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Window Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2176,7 +2191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875761715}
   - component: {fileID: 875761714}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stool Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2258,7 +2273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 882037755}
   - component: {fileID: 882037754}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2342,7 +2357,7 @@ GameObject:
   - component: {fileID: 890351134}
   - component: {fileID: 890351133}
   - component: {fileID: 890351136}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Agenda's Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2460,7 +2475,7 @@ GameObject:
   - component: {fileID: 893671296}
   - component: {fileID: 893671295}
   - component: {fileID: 893671297}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bonsai Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2629,7 +2644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 911217089}
   - component: {fileID: 911217088}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2713,7 +2728,7 @@ GameObject:
   - component: {fileID: 954206954}
   - component: {fileID: 954206956}
   - component: {fileID: 954206957}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2811,7 +2826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1066270143}
   - component: {fileID: 1066270142}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Shadow
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2896,7 +2911,7 @@ GameObject:
   - component: {fileID: 1108512515}
   - component: {fileID: 1108512514}
   - component: {fileID: 1108512518}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3012,7 +3027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1140890537}
   - component: {fileID: 1140890536}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Desk Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3096,7 +3111,7 @@ GameObject:
   - component: {fileID: 1161191274}
   - component: {fileID: 1161191276}
   - component: {fileID: 1161191277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Room and Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3208,7 +3223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1210882080}
   - component: {fileID: 1210882081}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Window Pane Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3290,7 +3305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1274183671}
   - component: {fileID: 1274183672}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Window Frame Highlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3372,7 +3387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1281111985}
   - component: {fileID: 1281111984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bookcase Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3454,7 +3469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1345093768}
   - component: {fileID: 1345093770}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bonsai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3539,7 +3554,7 @@ GameObject:
   - component: {fileID: 1449526121}
   - component: {fileID: 1449526120}
   - component: {fileID: 1449526119}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bookshelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3655,7 +3670,7 @@ GameObject:
   - component: {fileID: 1495997026}
   - component: {fileID: 1495997028}
   - component: {fileID: 1495997029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yoga Mat Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3777,7 +3792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1581243648}
   - component: {fileID: 1581243652}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Piano Interaction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3906,6 +3921,50 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1670802849638876742, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256583465176112217, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3428066678069301729, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666897019675882874, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953527578509188980, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057554478748470998, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233405929572971870, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4502170672033556548, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537389850292937537, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228435824899878269, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384724127971963667, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5751234397892313326, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3954,6 +4013,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 5751234397892313327, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908148239586441050, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6347061210111350374, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897443668193548670, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010107419013662879, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7989438566402434431, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8481459459530860202, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689670557220609670, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146478985096170648, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3920d6a92781e5c4f832bb786bfa755f, type: 3}
 --- !u!1 &1743024386
@@ -3966,7 +4061,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1743024388}
   - component: {fileID: 1743024387}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bonsai Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4048,7 +4143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1774659956}
   - component: {fileID: 1774659957}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Highlight Text Decal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4130,7 +4225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1838244535}
   - component: {fileID: 1838244534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Force Camera Ratios
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4155,8 +4250,11 @@ MonoBehaviour:
   createCameraForLetterBoxRendering: 1
   findCamerasAutomatically: 1
   letterBoxCameraColor: {r: 0, g: 0, b: 0, a: 1}
-  cameras: []
-  letterBoxCamera: {fileID: 0}
+  cameras:
+  - camera: {fileID: 1901656633}
+    anchor: 0
+    vectorAnchor: {x: 0, y: 0}
+  letterBoxCamera: {fileID: 1901656633}
 --- !u!4 &1838244535
 Transform:
   m_ObjectHideFlags: 0
@@ -4183,7 +4281,7 @@ GameObject:
   - component: {fileID: 1901656633}
   - component: {fileID: 1901656632}
   - component: {fileID: 1901656635}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -4299,7 +4397,7 @@ GameObject:
   - component: {fileID: 1904924970}
   - component: {fileID: 1904924969}
   - component: {fileID: 1904924967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Object
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4397,7 +4495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1930726013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bed Destination
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4430,7 +4528,7 @@ GameObject:
   - component: {fileID: 2002995894}
   - component: {fileID: 2002995893}
   - component: {fileID: 2002995896}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Piano Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4538,7 +4636,7 @@ GameObject:
   - component: {fileID: 2006849136}
   - component: {fileID: 2006849135}
   - component: {fileID: 2006849134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4639,7 +4737,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2130602365}
   - component: {fileID: 2130602364}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Piano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
