@@ -10,7 +10,6 @@ public class RoomRenderer : MonoBehaviour
 
     [HideInInspector] public static RoomRenderer Instance;
 
-    private const int MainRoomLayer = 5;
     private bool isHidden;
 
     private void Awake()
@@ -18,33 +17,8 @@ public class RoomRenderer : MonoBehaviour
         Instance = this;
     }
 
-    private void Update()
-    {
-        if(!isHidden && SceneManager.sceneCount > 1)
-        {
-            HideRoom();
-        } else if(isHidden && SceneManager.sceneCount == 1)
-        {
-            ShowRoom();
-        }
-        /*if(!isHidden && Camera.allCamerasCount > 2)
-        {
-            foreach(Camera camera in Camera.allCameras)
-            {
-                Debug.Log(camera.name);
-            }
-            return;
-            HideRoom();
-        }
-        if(isHidden && Camera.allCamerasCount == 2)
-        {
-            ShowRoom();
-        }*/
-    }
-
     public void ShowRoom()
     {
-        //Destroy(Camera.main);
         roomCamera.enabled = true;
         roomAudioListener.enabled = true;
         isHidden = false;
@@ -54,7 +28,6 @@ public class RoomRenderer : MonoBehaviour
     {
         roomCamera.enabled = false;
         roomAudioListener.enabled = false;
-        Camera.main.cullingMask = 1 << MainRoomLayer;
         isHidden = true;
     }
 

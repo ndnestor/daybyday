@@ -2476,7 +2476,7 @@ GameObject:
   - component: {fileID: 893671295}
   - component: {fileID: 893671297}
   m_Layer: 6
-  m_Name: Bonsai Object
+  m_Name: Bonsai Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3671,7 +3671,7 @@ GameObject:
   - component: {fileID: 1495997028}
   - component: {fileID: 1495997029}
   m_Layer: 6
-  m_Name: Yoga Mat Object
+  m_Name: Yoga Mat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4247,7 +4247,7 @@ MonoBehaviour:
   ratio: {x: 16, y: 9}
   forceRatioOnAwake: 1
   listenForWindowChanges: 1
-  createCameraForLetterBoxRendering: 1
+  createCameraForLetterBoxRendering: 0
   findCamerasAutomatically: 1
   letterBoxCameraColor: {r: 0, g: 0, b: 0, a: 1}
   cameras:

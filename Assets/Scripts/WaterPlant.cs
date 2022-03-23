@@ -47,13 +47,4 @@ public class WaterPlant : MonoBehaviour
         day += 1;
         wasWatered = false;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // Uses same conditions as highlight to call Interact(), runs waterBonsai()
-        if (Input.GetKey("e") && highlightObject.triggerable) {
-            interactionHandler.Interact("Bonsai Tree");
-        }
-    }
 }

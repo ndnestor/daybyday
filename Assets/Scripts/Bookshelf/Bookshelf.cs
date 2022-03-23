@@ -17,6 +17,7 @@ public class Bookshelf : MonoBehaviour
 	private void Interact()
 	{
 		SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+		RoomRenderer.Instance.HideRoom();
 	}
 
 }
