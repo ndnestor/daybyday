@@ -924,8 +924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c15a79d5e687e449d6bc3d13090acb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomCamera: {fileID: 1901656633}
-  roomAudioListener: {fileID: 1901656632}
+  roomSceneName: Main Room
 --- !u!1 &295891022
 GameObject:
   m_ObjectHideFlags: 0
