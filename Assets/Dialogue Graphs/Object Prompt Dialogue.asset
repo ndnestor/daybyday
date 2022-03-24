@@ -2382,9 +2382,6 @@ MonoBehaviour:
       - fieldName: choices 0
         node: {fileID: -1192755875874244531}
         reroutePoints: []
-      - fieldName: exitFalse
-        node: {fileID: 6411012525113340566}
-        reroutePoints: []
       - fieldName: choices 0
         node: {fileID: -4863274828965453234}
         reroutePoints: []
@@ -2515,7 +2512,7 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: enter
-        node: {fileID: 5764079993920903463}
+        node: {fileID: -8138274772505784101}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -2659,7 +2656,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2776, y: 4488}
+  position: {x: 2776, y: 4552}
   ports:
     keys:
     - enter
