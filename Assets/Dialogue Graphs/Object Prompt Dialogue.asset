@@ -1110,7 +1110,7 @@ MonoBehaviour:
   - {fileID: 7164743726944422462}
   - {fileID: -4863274828965453234}
   - {fileID: -3042670778568862163}
-  current: {fileID: 0}
+  current: {fileID: 6822775112515040337}
   entry: {fileID: 3097000379551282765}
   currentSystem: {fileID: 0}
   CurrentChoiceIndex: 0
@@ -2382,8 +2382,11 @@ MonoBehaviour:
       - fieldName: choices 0
         node: {fileID: -1192755875874244531}
         reroutePoints: []
-      - fieldName: exitFalse
-        node: {fileID: 6411012525113340566}
+      - fieldName: choices 0
+        node: {fileID: -4863274828965453234}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: -3042670778568862163}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -2509,7 +2512,7 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: enter
-        node: {fileID: 5764079993920903463}
+        node: {fileID: -8138274772505784101}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -2636,9 +2639,9 @@ MonoBehaviour:
   Dialogue: Is it time to sleep?
   choices:
   - Name: 
-    text: Yes, now
+    text: Yes, now.
   - Name: 
-    text: 
+    text: Not yet.
   ErasePrevious: 1
 --- !u!114 &7164743726944422462
 MonoBehaviour:
@@ -2653,7 +2656,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2776, y: 4488}
+  position: {x: 2776, y: 4552}
   ports:
     keys:
     - enter

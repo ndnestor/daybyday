@@ -19,8 +19,10 @@ public class openComputer : MonoBehaviour
             interactionHandler.Interact("Computer");
         }
     }
-    void openComp() {
+    void openComp()
+    {
         highlightObject.setTriggerFalse();
         SceneManager.LoadScene("CompAll", LoadSceneMode.Additive);
+        RoomRenderer.Instance.HideRoom();
     }
 }

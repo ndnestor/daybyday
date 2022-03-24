@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using Game;
 using Game.Dialogue;
@@ -7,8 +7,8 @@ using UnityEngine;
 
 public class InteractionHandler : MonoBehaviour
 {
+	private readonly Dictionary<string, Action> registeredObjects = new Dictionary<string, Action>();
 
-	private readonly Hashtable registeredObjects = new Hashtable();
 	// Used for objects' neglected appearance
 	[SerializeField] private Sprite neglectedPianoSprite;
 	[SerializeField] private Sprite neglectedYogaMatSprite;
@@ -33,13 +33,12 @@ public class InteractionHandler : MonoBehaviour
 
 	[SerializeField] private DialogueGraph objectPromptDialogue;
 
-	// NOTE: A Dictionary is probably a better option in hindsight
-	private Hashtable objectNeglection = new Hashtable(); // Key: string | Value: bool
+	private readonly Dictionary<string, bool> objectNeglection = new Dictionary<string, bool>();
 	private DialogueSystem dialogueSystem;
 	private ValueRegistry valueRegistry;
 	private StringRegistry stringRegistry;
 
-	[HideInInspector] public static InteractionHandler Instance;
+	public static InteractionHandler Instance;
 
 	private void Awake()
 	{
@@ -47,14 +46,15 @@ public class InteractionHandler : MonoBehaviour
 		valueRegistry = MainInstances.Get<ValueRegistry>();
 	}
 
-	private void Start() {
+	private void Start()
+	{
 		stringRegistry = MainInstances.Get<StringRegistry>();
 		dialogueSystem = MainInstances.Get<DialogueSystem>();
 	}
 
 	// All interactable objects should call this method as the start
 	// Returns false if object has already been registered
-	public bool RegisterObject(string objectName, System.Action objectAction, int timeConsumption)
+	public bool RegisterObject(string objectName, Action objectAction, int timeConsumption)
 	{
 		if(registeredObjects.ContainsKey(objectName))
 		{
@@ -64,11 +64,11 @@ public class InteractionHandler : MonoBehaviour
 		
 		Debug.Log("Registering object '" + objectName + "'");
 		valueRegistry.Set($"Used {objectName}", 0);
-		registeredObjects.Add(objectName, new System.Action(() =>
+		registeredObjects.Add(objectName, () =>
 		{
 			objectAction();
 			Tracking.Instance.AddUsedTime(timeConsumption);
-		}));
+		});
 		objectNeglection.Add(objectName, true);
 		return true;
 	}
@@ -76,12 +76,14 @@ public class InteractionHandler : MonoBehaviour
 	// Calls an interaction object's action given the name of it
 	public bool Interact(string objectName)
 	{
-		System.Action action = (System.Action)registeredObjects[objectName];
+		Action action = registeredObjects[objectName];
 		if(action != null)
 		{
 			stringRegistry.Set("Interaction Prompt", objectName);
-			dialogueSystem.Present(objectPromptDialogue, () => {
-				if(valueRegistry.Get("Confirmed Interaction") == 1) {
+			dialogueSystem.Present(objectPromptDialogue, () =>
+			{
+				if(valueRegistry.Get("Confirmed Interaction") == 1)
+				{
 					action();
 					objectNeglection[objectName] = false;
 					valueRegistry.Set($"Used {objectName}", 1);
@@ -95,16 +97,16 @@ public class InteractionHandler : MonoBehaviour
 	}
 
 	// This should be called at the beginning of every day
-	public void UpdateNeglectedSprites() {
+	public void UpdateNeglectedSprites()
+	{
 		foreach(string objectName in objectNeglection.Keys)
 		{
 			// Ignore bonsai tree when checking if objects are neglected
 			// since the bonsai tree works uniquely
 			if(objectName == "Bonsai Tree")
-			{
 				continue;
-			}
-			if((bool)objectNeglection[objectName])
+			
+			if(objectNeglection[objectName])
 			{
 				switch(objectName)
 				{

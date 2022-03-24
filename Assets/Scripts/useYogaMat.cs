@@ -15,13 +15,6 @@ public class useYogaMat : MonoBehaviour
     void openYogaMat() {
         highlightObject.setTriggerFalse();
         SceneManager.LoadScene("Yoga_menu", LoadSceneMode.Additive);
-    }
-    
-    void Update()
-    {
-        // Uses same conditions as highlight to call Interact(), runs waterBonsai()
-        if (Input.GetKey("e") && highlightObject.triggerable) {
-            interactionHandler.Interact("Yoga Mat");
-        }
+        RoomRenderer.Instance.HideRoom();
     }
 }
