@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dee8ebb36e06c44428745e702023ee5b, type: 3}
-  m_Name: Agent Registry
+  m_Script: {fileID: 11500000, guid: 4b7f2c4723a154714888c0d17ac3204e, type: 3}
+  m_Name: TestEvent1
   m_EditorClassIdentifier: 
-  initPairList:
-  - id: bot
-    value: {fileID: 11400000, guid: e864d130eae0b4ec1bc876d7362a2829, type: 2}
-  agentPairs: []
-  ErrorTexture: {fileID: 0}

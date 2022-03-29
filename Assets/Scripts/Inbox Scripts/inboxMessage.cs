@@ -17,6 +17,7 @@ public class inboxMessage : MonoBehaviour
     public int intMom, intGrandma, intProf, intBuddy, intBrie, intMatt;
     public int status;
     public int playerResponse;
+    bool buddyRomance;
 
     /*
     For simplicity:
@@ -163,8 +164,38 @@ public class inboxMessage : MonoBehaviour
                     case 1:
                         if(playerResponse == 2) intBuddy = 2;
                         break;
+                    case 2:
+                        if(playerResponse == 2) intBuddy = 3;
+                        if(playerResponse == 3) intBuddy = 3; buddyRomance = true;
+                        break;
+                    case 3:
+                        if(playerResponse == 1) break;
+                        if(playerResponse == 2 && buddyRomance) intBuddy = 4;
+                        if((playerResponse == 2 && !buddyRomance) || playerResponse == 3) intBuddy = 5; buddyRomance = false;
+                        break;
+                    case 4:
+                        if(buddyRomance) { // romance
+                            if(playerResponse == 2) buddyInt = 7; buddyRomance = false;
+                            if(playerResponse == 3) buddyInt = 6; // --> romance
+                            break;
+                        } else { //friendly
+                            if(playerResponse == 2) buddyInt = 7; // --> friendly
+                            if(playerResponse == 3) buddyInt = 7;
+                            break;
+                        }
+                    case 5:
+                        if(buddyRomance) {
+                            if(playerResponse == 2 || playerResponse == 3) buddyInt = 8; buddyRomance = true;
+                            break;
+                        } else {
+                            if(playerResponse == 2 || playerResponse == 3) buddyInt = 9; buddyRomance = false;
+                            break;
+                        }
+                    case 6:
+                        // depends on Brie indie dev path
+                        break;
                 }
-                break; //Buddy dialogue unfinished, come back later
+                break;
             case 5: // Brie
                 switch (brieDay) {
                     case 1:
@@ -190,7 +221,6 @@ public class inboxMessage : MonoBehaviour
                                 break;
                         }
                         break;
-                    //Blaster indie dev path? discuss
                 }
                 break;
         }
@@ -265,18 +295,18 @@ public class inboxMessage : MonoBehaviour
                 msgBuddy = "Sorry i’m so late with replying things are really piling up for me. I’m taking a lot of credits this semester. Figured I would just keep myself busy since I’m stuck at home,y’know? But I’m really feeling like I’m over my head. I can’t explain it, it’s like some days I’ll get so keyed up that I’m drowning in work. but uh, speaking of keys - you said you were learning a new song? That’s cool, how’s it going?";
             }
             if (buddyDay == 4) {
-                if (intBuddy == 4) {
+                if (intBuddy == 4) { //romance
                     msgBuddy = "Thanks for your message earlier :) I appreciate you offering to go out of your way to help me out. Your advice was really good too. I tried it and it helped. I really sat down and thought about my priorities and it got me thinking about my future, and how school won’t always be what i do. Like I wanna travel, and i want a job that gives back to the community in some way, and i wanna do music. I guess, i shouldnt really worry all the time whether or not i finish something. Its more important to do things with meaning than to just, well, do things. Thanks for reminding me that there’s more to live for than just being productive all the time.";
                 }
-                if (intBuddy == 5) {
+                if (intBuddy == 5) { //friendly
                     msgBuddy = "Friendly: Thanks for your message earlier. It made me feel better better feeling that i wasn’t alone in my struggles, y’know? Appreciated it. I wouldn’t say im doing better, but im actually finishing things instead of just starting and abandoning projects. Yesterday I spent a full uninterrupted hour just playing piano. I feel like its been months since I got to do just one thing at a time. Im always multitasking. I want to start focusing on just one thing at a time. Thats my goal for this week. What about you?";
                 }
             }
             if (buddyDay == 5) {
-                if (intBuddy == 6) {
+                if (intBuddy == 6) { // romance
                     msgBuddy = "Hey :) Hope you’re doing well. I’m okay. Been better, been worse. But i think im getting better. Im still stressed about school and stuff, but not like before. It doesnt feel like im drowning all the time. You really helped me. I feel like i owe you one for that haha. Hey, when this is all over, would you want to meet up on campus sometime? I think it would be really cool to chill together. I dunno. Lmk if you want to, kay?";
                 }
-                if (intBuddy == 7) {
+                if (intBuddy == 7) { //friendly
                     msgBuddy = "Thought id hit yu up and see how yu doin. Im fine. Been better, been worse. Got around to composing my own little song on ukelele. I kinda liked it. Its an easy 1 - 5 - 6 - 4 - 1 progression, but I made it, and I finished it, and thats what matters yknow. Let me know if yu wanna talk music again this week - Im finally at a place where I can make time to do what i like to do :)";
                 }
             }
@@ -338,10 +368,6 @@ public class inboxMessage : MonoBehaviour
             }
         }
     }
-
-
-
-
 
 
 
@@ -408,44 +434,43 @@ public class inboxMessage : MonoBehaviour
             }
         }
         if (person == 4) {
-            //Buddy dialogue unfinished?
             if (buddyDay == 1) {
                 replyBox1.SetActive(false);
                 response2.text = "lets talk music bro :)";
-                response3.text = "[FILLER]";
+                response3.text = "only just started playing piano. when did you start? ";
             }
             if (buddyDay == 2) {
                 replyBox1.SetActive(false);
-                response2.text = "[FILLER]";
-                response3.text = "[FILLER]";
+                response2.text = "idk a piano just exists in my room and i figured, eh, why not?";
+                response3.text = "i tried practicing and it's a bit awkward, but like i'm kinda feelin' it";
             }
             if (buddyDay == 3) {
-                replyBox1.SetActive(false);
-                response2.text = "how can i help?";
-                response3.text = "real tough, i feel that";
+                response1.text = "maybe like, get a life? school is for tools. git gud.";
+                response2.text = "sounds rough, man. i hope you feel better soon. i'm always here to chat if you need it. if you try taking more breaks, that could help with the stress.";
+                response3.text = "been there bro, it sucks. i focused on prioritizing me-time, and balanced my work w/ my health. that's the best thing to do, dude.";
             }
             if (buddyDay == 4) {
-                if (intBuddy == 4) {
+                if (buddyRomance) {
                     replyBox1.SetActive(false);
-                    response2.text = "[FILLER]";
-                    response3.text = "[FILLER]";
+                    response2.text = "maybe there's a way you can decide on your top priorities? then do the things that matter most.";
+                    response3.text = "no problem. i'm always happy to help :) maybe you could make a list of your priorities? that could help you decide on what to do in a given day.";
                 }
-                if (intBuddy == 5) {
+                if (!buddyromance) {
                     replyBox1.SetActive(false);
-                    response2.text = "[FILLER]";
-                    response3.text = "[FILLER]";
+                    response2.text = "maybe try and take a full break this time. total relaxation, no thinking about work at all.";
+                    response3.text = "i feel you. maybe focus on one thing at a time instead of everything at once? maybe do a priorities list or something to focus on just the one thing.";
                 }
             }
             if (buddyDay == 5) {
-                if (intBuddy == 6) {
+                if (buddyRomance) {
                     replyBox1.SetActive(false);
-                    response2.text = "[FILLER]";
-                    response3.text = "[FILLER]";
+                    response2.text = "i'd love that :)";
+                    response3.text = "yeah! we could jam together too!";
                 }
-                if (intBuddy == 7) {
+                if (!buddyRomance) {
                     replyBox1.SetActive(false);
-                    response2.text = "[FILLER]";
-                    response3.text = "[FILLER]";
+                    response2.text = "so happy to hear you're feeling like yourself more!";
+                    response3.text = "i'm doing alright. piano's going well. school is too. just, y'know, tryna make it.";
                 }
             }
         }

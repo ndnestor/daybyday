@@ -82,7 +82,7 @@ public class AssignmentControl : MonoBehaviour
 
     void Start() {
         setAssignments();
-        setGoals();
+        //setGoals();
     }
 
     public void setAssignments() {
