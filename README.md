@@ -1,8 +1,7 @@
 # Day by Day
 ## About the Project
 ![dbd_pic1](https://user-images.githubusercontent.com/69176399/132110604-3711a422-27ca-4cf1-9dfe-91e02527d570.png)
-Day by Day is a life simulation video game developed under the Creation of Games Society at Rutgers University - New Brunswick. The game was inspired by the concern of tedious repetition and isolation experienced by students learning from home during the 2020-2021 COVID-19 pandemic. Throughout the game, the player interacts with objects around the room to complete assignments and to determine their character’s direction. The game introduces themes of setting goals, managing free time, and creating a fulfilling lifestyle.
-The player is free to interact with objects around the room, including: the piano, the bed, the computer, the tree, the window, the bookshelf, and the yoga mat. These are sites for different tasks and pastimes. How the player chooses to spend their time and manage responsibilities is reflected in the dialogue, environment, and path of the game.
+Day By Day is a life simulation video game developed under the Creation of Games Society (https://cogs.club/) at Rutgers University-New Brunswick. Our experiences with isolation, monotony, and self-discovery while learning from home during the COVID-19 pandemic were major influences on the game. As the player, your room is full of objects to interact with, including your piano, bed, computer, tree, window, bookshelf, and yoga mat. How you spend your time with them - and the stories they let you get entangled in - is up to you.
 
 *Day by Day is a currently-ongoing project programmed in C# and developed on the Unity platform*
 
@@ -36,16 +35,16 @@ Hooray! You've built the project.
 
 ## Credits
 This project was made possible by the following people:
-- Luna Laliberte — Writer, Project Coordinator, Founder
-- Eric Mooney — Writer, Artist, Creative Director
-- Jake Michalowicz — Coder
+- Luna Laliberte — Founder,  Project Coordinator, Writer
+- Eric Mooney — Creative Director, Writer, Artist
 - Nathan Nestor — Coder, Composer
 - Bridge Zhang — Coder, Artist
-- Jade Gala — Artist
+- Jake Michalowicz — Coder
 - Luis Mendoza — Composer
+- Jade Gala — Artist, Animator
 - Alexander Xie — Coder
-- Sebastian Munoz — Artist
-- Victoria Chen — Writer
+- Victoria Chen — Writer, Playtester
+- Sebastian Munoz — Concept Artist
 - Kyle Shteynberg — Coder
-- Alejandro Gomez — Coder
+- Alejandro Gomez — Coder 
 - Jorge Gomez-Kobayashi — Coder
