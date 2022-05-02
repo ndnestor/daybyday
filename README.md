@@ -5,6 +5,9 @@ Day By Day is a life simulation video game developed under the Creation of Games
 
 *Day by Day is a currently-ongoing project programmed in C# and developed on the Unity platform*
 
+## Default Controls
+WASD keys to walk, E key to interact.
+
 ## Usage and Compatibility
 Day by Day is compatible with PC, Mac, and Linux platforms for the following operating systems:
 - Windows 7, Windows 10 
