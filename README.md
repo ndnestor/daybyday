@@ -48,3 +48,4 @@ This project was made possible by the following people:
 - Kyle Shteynberg — Coder
 - Alejandro Gomez — Coder 
 - Jorge Gomez-Kobayashi — Coder
+- Evelyn (Yiyi) Huang - Settings Menu Designer
