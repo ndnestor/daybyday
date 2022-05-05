@@ -40,6 +40,7 @@ public class BookshelfExitButton : MonoBehaviour
 
 	public void ExitBookshelf()
 	{
+		print("clicked");
 		SceneManager.UnloadSceneAsync("Bookshelf");
 	}
 	

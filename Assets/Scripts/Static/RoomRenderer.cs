@@ -27,14 +27,13 @@ public class RoomRenderer : MonoBehaviour
         isHidden = false;
     }
 
-    public void HideRoom()
+    public void HideRoom(string excludedScene = null)
     {
         isHidden = true;
-
+        
         foreach(GameObject go in FindObjectsOfType<GameObject>())
         {
-            // ReSharper disable once StringLiteralTypo
-            if(go.scene.name == "DontDestroyOnLoad" || go == gameObject)
+            if(go.scene.name == "DontDestroyOnLoad" || go.scene.name == excludedScene || go == gameObject)
                 continue;
             if(!go.activeInHierarchy)
                 continue;
