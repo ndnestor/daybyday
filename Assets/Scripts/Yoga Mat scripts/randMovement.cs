@@ -61,7 +61,7 @@ public class randMovement : MonoBehaviour
          if (gameTime > bounceTimer) {
              changeDirection();
          }
-          if (distance <= 1.22) {
+         if (distance <= 1.22) {
              playerInBounds = true;
              Debug.Log("Player in bounds is TRUE");
          } else {
