@@ -35,6 +35,8 @@ namespace Game.Dialogue {
 
         public DialogueTransitionIn currentTransition;
 
+        public bool silent;
+
         // GameInput gameInput;
 
 
@@ -82,7 +84,8 @@ namespace Game.Dialogue {
         public DialogueNodeBase CurrentNodeActive;
         private IEnumerator PresentEnumerator(Action callback) {
             
-            Debug.Log("Starting Dialogue!");
+            if(!silent)
+                Debug.Log("Starting Dialogue!");
             
             
             
@@ -106,7 +109,8 @@ namespace Game.Dialogue {
                 var currentNode = CurrentGraph.current;
                 isNodeWorking = false;
 
-                Debug.Log("Current node " + currentNode.name);
+                if(!silent)
+                    Debug.Log("Current node " + currentNode.name);
 
                 switch (currentNode) {
                     case DialogueNode d:
@@ -143,7 +147,8 @@ namespace Game.Dialogue {
 
                     case PauseNode p:
                         if (isSkipping) break;
-                        Debug.Log("Pausing for " + p.PauseTime);
+                        if(!silent)
+                            Debug.Log("Pausing for " + p.PauseTime);
                         float currentTime = 0;
                         while(currentTime < p.PauseTime) {
                             currentTime += Time.unscaledDeltaTime;
@@ -174,7 +179,8 @@ namespace Game.Dialogue {
 
             }
             
-            Debug.Log("Finished Dialogue!");
+            if(!silent)
+                Debug.Log("Finished Dialogue!");
             currentPresentationCoroutine = null;
             Typer.Play("Done");
             Typer.ResetTyper();
@@ -208,7 +214,8 @@ namespace Game.Dialogue {
         private IEnumerator DialogueBox(string text, bool erasePrevious, bool waitForInput)
         {
             
-            Debug.Log("Playing dialogue " + text);
+            if(!silent)
+                Debug.Log("Playing dialogue " + text);
             
             Typer.Play(text, erasePrevious);
 
@@ -233,7 +240,8 @@ namespace Game.Dialogue {
                 }
             }
 
-            Debug.Log("Finished");
+            if(!silent)
+                Debug.Log("Finished");
             isNodeWorking = false;
         }
 
@@ -266,12 +274,16 @@ namespace Game.Dialogue {
             while (!ChoiceButtons.GetChoosen(out index)) {
                 yield return null;
             }
-            Debug.Log(index);
+
+            if(!silent)
+            {
+                Debug.Log(index);
 
 
 
-            Debug.Log(node.Dialogue);
-            Debug.Log(node.choices[index].text);
+                Debug.Log(node.Dialogue);
+                Debug.Log(node.choices[index].text);
+            }
             node.SetChoice(index);
             isNodeWorking = false;
 
