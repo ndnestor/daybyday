@@ -16,8 +16,8 @@ public class Bookshelf : MonoBehaviour
 	// Show the bookshelf selection screen
 	private void Interact()
 	{
-		SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-		RoomRenderer.Instance.HideRoom();
+		//SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+		SceneLoader.Instance.LoadAsync(sceneName, LoadSceneMode.Additive, true);
 	}
 
 }
