@@ -19,16 +19,18 @@ public class SceneLoader : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    public void LoadAsync(string sceneName, LoadSceneMode loadSceneMode, bool hideRoom = false, Action callback = null)
+    public void LoadAsync(string sceneName, LoadSceneMode loadSceneMode, bool hideRoom = false, Action onFinishCallback = null, Action onLoadedCallback = null)
     {
+        // TODO: Perhaps use events / delegates instead of callbacks
         StartCoroutine(ChangeOverlayColor(Color.black, () =>
         {
             AsyncOperation sceneLoadOperation = SceneManager.LoadSceneAsync(sceneName, loadSceneMode);
             sceneLoadOperation.completed += operation =>
             {
+                onLoadedCallback?.Invoke();
                 if(hideRoom)
                     RoomRenderer.Instance.HideRoom(sceneName);
-                StartCoroutine(ChangeOverlayColor(Color.clear, callback));
+                StartCoroutine(ChangeOverlayColor(Color.clear, onFinishCallback));
             };
         }));
     }

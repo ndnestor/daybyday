@@ -17,6 +17,7 @@ public class yogaWeights : MonoBehaviour
     bool inBounds;
     float timeAtStart, gameTime;
     int lastIntTime, nextIntTime;
+    bool gameIsOver;
     SpriteRenderer playerSprite;
 
     globalScore globalScoreKeeper;
@@ -43,6 +44,9 @@ public class yogaWeights : MonoBehaviour
         globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
     }
     void FixedUpdate() {
+        if (gameIsOver)
+            return;
+
         gameTime = Time.time - timeAtStart;
         //Debug.Log("gameTime is " + gameTime);
         lastIntTime = Mathf.FloorToInt(gameTime);
@@ -135,8 +139,11 @@ public class yogaWeights : MonoBehaviour
     }
     
     void gameOver() {
+        gameIsOver = true;
         globalScoreKeeper.updateYogaScore(scoreTimeInt, 2);
-        SceneManager.LoadScene("Yoga_gameOver", LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync("Yoga_ex2");
+        SceneLoader.Instance.LoadAsync("Yoga_gameOver", LoadSceneMode.Additive, false, null, () =>
+        {
+            SceneManager.UnloadSceneAsync("Yoga_ex2");
+        });
     }
 }

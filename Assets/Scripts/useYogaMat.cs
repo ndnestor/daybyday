@@ -5,16 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class useYogaMat : MonoBehaviour
 {
-    public InteractionHandler interactionHandler;
     public HighlightObject highlightObject;
     void Start()
     {
-        interactionHandler.RegisterObject("Yoga Mat", openYogaMat, 1);
+        InteractionHandler.Instance.RegisterObject("Yoga Mat", OpenYogaMat, 1);
     }
 
-    void openYogaMat() {
-        highlightObject.setTriggerFalse();
-        SceneManager.LoadScene("Yoga_menu", LoadSceneMode.Additive);
-        RoomRenderer.Instance.HideRoom();
+    void OpenYogaMat() {
+        SceneLoader.Instance.LoadAsync("Yoga_menu", LoadSceneMode.Additive, true);
     }
 }
