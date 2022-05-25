@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.SceneManagement;
+using UnityEngine.Animations;
 
 public class Movement2D : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Movement2D : MonoBehaviour
     [SerializeField] private float ySpeedFactor;
     [SerializeField] private double moveToDistThreshold;
     [SerializeField] private Transform bedDestination;
+    [SerializeField] private Animator animator;
 
     private bool isPlayerControlled = true;
     private Vector2 movement;
@@ -35,22 +37,23 @@ public class Movement2D : MonoBehaviour
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical") * ySpeedFactor;
-            
+
+            if(movement.x == 0)
+            {
+                animator.SetBool("IsWalking", false);
+                return;
+            }
+
+            animator.SetBool("IsWalking", true);
+
             // NOTE from Bridge: Following if statements control direction character faces
             // Also added line to get SpriteRenderer component in Awake
             // Should affect only sprite renderer
-            if(movement.x <0 && !playerSpriteRenderer.flipX) {
+            if(movement.x < 0 && !playerSpriteRenderer.flipX)
                 playerSpriteRenderer.flipX = true;
-            }
-            if(movement.x >0 && playerSpriteRenderer.flipX) {
+            else if(movement.x > 0 && playerSpriteRenderer.flipX)
                 playerSpriteRenderer.flipX = false;
-            }
 
-        }
-
-        if(Input.GetKeyDown("space"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         //NOTE: This part is used for testing. Should be removed at some point before release
@@ -62,7 +65,7 @@ public class Movement2D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // NOTE from Nathan: Fixed update should stricly only handle physics tasks. You can get odd behavior otherwise.
+        // NOTE from Nathan: Fixed update should strictly only handle physics tasks. You can get odd behavior otherwise.
         // In this case, it probably doesn't really matter since nothing too crazy is going on in this method
         // but it is worth noting. See here: https://forum.unity.com/threads/the-truth-about-fixedupdate.231637/
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
@@ -100,7 +103,6 @@ public class Movement2D : MonoBehaviour
 
     // Send the character to the specified destination forcefully
     // WARN from Nathan: This doesn't really work with the current implementation of the movement variable
-    // WARN: There's a bug where sometimes the character will just run into the wall to the right forever
     // TODO: Fix
     private IEnumerator MoveToCoroutine(Vector2 destination, System.Action callback)
     {   
