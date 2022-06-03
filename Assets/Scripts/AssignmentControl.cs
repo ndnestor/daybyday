@@ -181,6 +181,8 @@ public class AssignmentControl : MonoBehaviour
                 agendaGoals.text = "";
                 break;
             case 7:
+                return;
+                // TODO: Fix whatever error was going on here
                 agendaGoals.text = "";
                 break;
             case 8:
