@@ -418,8 +418,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 123052650}
-  m_Father: {fileID: 893671294}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1523,7 +1523,7 @@ SpriteRenderer:
   m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &573276463
@@ -2547,7 +2547,6 @@ Transform:
   - {fileID: 1345093768}
   - {fileID: 1743024388}
   - {fileID: 675135382}
-  - {fileID: 118290024}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3826,7 +3825,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d104d64955f31489392ff2d7162eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionHandler: {fileID: 231473489}
   highlightObject: {fileID: 1495997028}
 --- !u!1 &1540200525
 GameObject:
