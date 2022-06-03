@@ -125,6 +125,7 @@ public class InteractionHandler : MonoBehaviour
 					case "Window":
 						windowRenderer.sprite = neglectedWindowSprite;
 						windowLightRenderer.sprite = neglectedWindowLightSprite;
+						Tracking.Instance.UpdateLighting();
 						break;
 				}
 			}
@@ -147,6 +148,7 @@ public class InteractionHandler : MonoBehaviour
 					case "Window":
 						windowRenderer.sprite = normalWindowSprite;
 						windowLightRenderer.sprite = normalWindowLightSprite;
+						Tracking.Instance.UpdateLighting();
 						break;
 				}
 			}

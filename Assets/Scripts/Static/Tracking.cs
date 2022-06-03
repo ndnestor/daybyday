@@ -106,9 +106,9 @@ public class Tracking : MonoBehaviour
     }
 
     //Tints the window pane, window light, etc. to reflect time of day changes
-    private void UpdateLighting()
+    public void UpdateLighting()
     {
-        float dayPercentage = (float)timeUsed / MAX_TIME;
+        float dayPercentage = timeUsed / MAX_TIME;
         float halfDayPercentage;
         Color lightColor;
         if(dayPercentage < 0.5)
@@ -138,7 +138,7 @@ public class Tracking : MonoBehaviour
              * Probably should disable the Movement2D.cs script too */
             
             print("Sleeping");
-            treeWater.dayUpdate();
+            treeWater.DayUpdate();
             
             //TODO: Uncomment when computer and room scenes get integrated
             //ProfileScreen.Instance.ResetTodaysActivityTimes();
@@ -170,32 +170,5 @@ public class Tracking : MonoBehaviour
         }
 
         Movement2D.Instance.MoveTo(bedDestination.position, CallbackAction);
-    }
-
-    private IEnumerator FadeToBlack(int fadeSpeed)
-    {
-        SpriteRenderer spriteRenderer = blackOverlay.GetComponent<SpriteRenderer>();
-        while(spriteRenderer.color.a < 1) {
-            Color currColor = spriteRenderer.color;
-            spriteRenderer.color = new Color(currColor.r, currColor.g, currColor.b, currColor.a + fadeSpeed);
-            yield return null;
-        }
-    }
-
-    //Used for testing purposes. Should be deleted later
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.LeftCommand))
-        {
-            Debug.Log("Artificially added 1 unit of time");
-            AddUsedTime(1);
-		}
-        if(Input.GetKeyDown(KeyCode.N))
-        {
-            Debug.Log("Artificially moved to the next day");
-            DayNum++;
-            //TODO: Uncomment when computer and room scenes get integrated
-            //ProfileScreen.Instance.ResetTodaysActivityTimes();
-        }
     }
 }
