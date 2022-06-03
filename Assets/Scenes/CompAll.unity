@@ -5419,7 +5419,7 @@ GameObject:
   - component: {fileID: 984632358}
   - component: {fileID: 984632359}
   m_Layer: 0
-  m_Name: ComputerScreen
+  m_Name: Computer Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9635,6 +9635,7 @@ MonoBehaviour:
   ySpeedFactor: 0
   moveToDistThreshold: 0
   bedDestination: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!4 &1904924968
 Transform:
   m_ObjectHideFlags: 0

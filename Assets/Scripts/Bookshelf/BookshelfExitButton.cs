@@ -8,39 +8,39 @@ using UnityEngine.UI;
 public class BookshelfExitButton : MonoBehaviour
 {
 
-	[SerializeField] private Sprite disabledSprite;
-	[SerializeField] private Sprite enabledSprite;
-	[SerializeField] private float cooldown;
-	
-	private float activeTime;
-	private Button button;
-	private Image image;
-	
-	private void Start()
-	{
-		activeTime = 0;
+    [SerializeField] private Sprite disabledSprite;
+    [SerializeField] private Sprite enabledSprite;
+    [SerializeField] private float cooldown;
 
-		image = GetComponent<Image>();
-		image.sprite = disabledSprite;
+    private float activeTime;
+    private Button button;
+    private Image image;
 
-		button = GetComponent<Button>();
-		button.interactable = false;
-	}
+    private void Start()
+    {
+        activeTime = 0;
 
-	private void Update()
-	{
-		activeTime += Time.deltaTime;
+        image = GetComponent<Image>();
+        image.sprite = disabledSprite;
 
-		if(activeTime >= cooldown)
-		{
-			image.sprite = enabledSprite;
-			button.interactable = true;
-		}
-	}
+        button = GetComponent<Button>();
+        button.interactable = false;
+    }
 
-	public void ExitBookshelf()
-	{
-		SceneManager.UnloadSceneAsync("Bookshelf");
-	}
-	
+    private void Update()
+    {
+        activeTime += Time.deltaTime;
+
+        if(activeTime >= cooldown)
+        {
+            image.sprite = enabledSprite;
+            button.interactable = true;
+        }
+    }
+
+    public void ExitBookshelf()
+    {
+        SceneManager.UnloadSceneAsync("Bookshelf");
+    }
+
 }

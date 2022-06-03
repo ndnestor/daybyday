@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class treeColor : MonoBehaviour
+public class TreeColor : MonoBehaviour
 {
     public SpriteRenderer treeSprite;
     public int week, level, month;
@@ -27,12 +27,6 @@ public class treeColor : MonoBehaviour
 
     public GameObject bonsaiObject;
     public WaterPlant waterPlant;
-    
-
-    // Start is called before the first frame update
-    void Start() {
-        //WaterPlant waterPlant = bonsaiObject.GetComponent<WaterPlant>();
-    }
 
     void Update()
     {

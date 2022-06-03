@@ -9,38 +9,37 @@ public class WaterPlant : MonoBehaviour
     public GameObject wateringObj;
     public int level;
     public int day;
-    public InteractionHandler interactionHandler;
     public HighlightObject highlightObject;
     private bool wasWatered;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        interactionHandler.RegisterObject("Bonsai Tree", waterBonsai, 1);
+        InteractionHandler.Instance.RegisterObject("Bonsai Tree", WaterBonsai, 1);
     }
 
-    void waterBonsai() {
-        Debug.Log("Bonsai interaction: watering");
-        GameObject showCan = Instantiate(waterCan, new Vector3(0.93f, -1.58f, 0.0f), Quaternion.identity);
-        GameObject showWater = Instantiate(wateringObj, new Vector3(-0.05f, -1.50f, 0.0f), Quaternion.identity);
+    private void WaterBonsai()
+    {
+        Instantiate(waterCan, new Vector3(0.93f, -1.58f, 0.0f), Quaternion.identity);
+        Instantiate(wateringObj, new Vector3(-0.05f, -1.50f, 0.0f), Quaternion.identity);
         wasWatered = true;
-        highlightObject.setTriggerFalse();
-    }
-
-    int returnLevel() {
-        return level;
     }
 
     // This should be called at beginning of every day
     // Either run through InteractionHandler or by same method
-    public void dayUpdate() {
-        if (wasWatered == true) {
+    public void DayUpdate()
+    {
+        if(wasWatered)
+        {
             level += 1;
             if (level > 3) {
                 level = 3;
             }
-        } else {
+        } else
+        {
             level -= 1;
-            if (level < 1) {
+            if(level < 1)
+            {
                 level = 1;
             }
         }
