@@ -37,30 +37,20 @@ public class Movement2D : MonoBehaviour
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical") * ySpeedFactor;
+        }
 
-            if(movement.x == 0)
-            {
-                animator.SetBool("IsWalking", false);
-                return;
-            }
+        // NOTE from Bridge: Following if statements control direction character faces
+        // Also added line to get SpriteRenderer component in Awake
+        // Should affect only sprite renderer
+        if(movement.x < 0 && !playerSpriteRenderer.flipX)
+            playerSpriteRenderer.flipX = true;
+        else if(movement.x > 0 && playerSpriteRenderer.flipX)
+            playerSpriteRenderer.flipX = false;
 
+        if (movement.x == 0)
+            animator.SetBool("IsWalking", false);
+        else
             animator.SetBool("IsWalking", true);
-
-            // NOTE from Bridge: Following if statements control direction character faces
-            // Also added line to get SpriteRenderer component in Awake
-            // Should affect only sprite renderer
-            if(movement.x < 0 && !playerSpriteRenderer.flipX)
-                playerSpriteRenderer.flipX = true;
-            else if(movement.x > 0 && playerSpriteRenderer.flipX)
-                playerSpriteRenderer.flipX = false;
-
-        }
-
-        //NOTE: This part is used for testing. Should be removed at some point before release
-        if(Input.GetKeyDown(KeyCode.M)) {
-            print("Moving");
-            MoveTo(bedDestination.position);
-        }
     }
 
     private void FixedUpdate()
@@ -147,7 +137,8 @@ public class Movement2D : MonoBehaviour
             yield return null;
 		}
         SetPlayerControl(true);
-        if(callback != null) {
+        if(callback != null)
+        {
             callback();
 		}
 	}
