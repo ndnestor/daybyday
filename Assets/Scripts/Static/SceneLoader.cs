@@ -7,7 +7,21 @@ using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
-    public static SceneLoader Instance { get; private set; }
+    public static SceneLoader Instance
+    {
+        get
+        {
+            if(instance == null)
+                instance = new SceneLoader();
+            return instance;
+        }
+        private set
+        {
+            instance = value;
+        }
+    }
+
+    private static SceneLoader instance;
 
     [SerializeField] private float overlayFadeTime;
     [SerializeField] private float overlayFadeTimeStep;

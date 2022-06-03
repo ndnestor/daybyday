@@ -9,7 +9,21 @@ using UnityEngine;
 //This class is a Singleton instance
 public class Tracking : MonoBehaviour
 {
-    public static Tracking Instance { get; private set; }
+    public static Tracking Instance
+    {
+        get
+        {
+            if(instance == null)
+                instance = new Tracking();
+            return instance;
+        }
+        private set
+        {
+            instance = value;
+        }
+    }
+
+    private static Tracking instance;
 
     public int DayNum { get; private set; }
     public const int MAX_DAYS = 10;
