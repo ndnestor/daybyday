@@ -15,10 +15,6 @@ public class HighlightObject : MonoBehaviour
         defaultMat = connectedSprite.GetComponent<SpriteRenderer>().material;
     }
 
-    public void setTriggerFalse() {
-        triggerable = false;
-    }
-
     private void Update()
     {
         if (Input.GetKeyDown("e") && triggerable)

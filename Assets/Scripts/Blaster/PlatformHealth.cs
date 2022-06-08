@@ -14,7 +14,7 @@ public class PlatformHealth : MonoBehaviour
     public fakeHealthBar healthBar;
     public AudioSource audioOuch;
     public fakeHealthBar_Plat bar;
-    globalScore globalScoreKeeper;
+    GlobalScore globalScoreKeeper;
     public Text scoreText;
     scoreScript scoreScript;
     int score;
@@ -25,7 +25,7 @@ public class PlatformHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         audioOuch = GetComponent<AudioSource>();
-        globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
+        globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<GlobalScore>();
     }
     
     /* void Update()
@@ -37,7 +37,7 @@ public class PlatformHealth : MonoBehaviour
     }
     */
 
-    void OnCollisionEnter2D(Collision2D col)
+    private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Enemy")
         {
@@ -45,7 +45,7 @@ public class PlatformHealth : MonoBehaviour
             audioOuch.Play();
             if (currentHealth <= 0)
             {
-                platformDie();
+                Die();
             }
         }
         if (col.gameObject.tag == "Whale")
@@ -54,22 +54,27 @@ public class PlatformHealth : MonoBehaviour
             audioOuch.Play();
             if (currentHealth <= 0)
             {
-                platformDie();
+                Die();
             }
         }
     }
 
-    void platformDie() {
-        Destroy(gameObject);
+    private void Die() {
+        //Destroy(gameObject);
         Debug.Log("Dead");
         scoreScript = scoreText.GetComponent<scoreScript>();
         score = scoreScript.returnScore();
         globalScoreKeeper.updateBlasterScore(score);
-        SceneManager.LoadScene("Scene_endGame", LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync("Scene_Game");
+        //SceneManager.LoadScene("Scene_endGame", LoadSceneMode.Additive);
+        //SceneManager.UnloadSceneAsync("Scene_Game");
+
+        SceneLoader.Instance.LoadAsync("Scene_endGame", LoadSceneMode.Additive, onLoadedCallback: () =>
+        {
+            SceneManager.UnloadSceneAsync("Scene_Game");
+        });
     }
 
-    void TakeDamage(int damage)
+    private void TakeDamage(int damage)
     {
         Debug.Log("Damage to platform is: " + damage);
         currentHealth -= damage;

@@ -7,7 +7,7 @@ public class enemyScriptWhale : MonoBehaviour
 
     public float enemySpeed = 20f;
     public Rigidbody2D rigidEnemy;
-    globalScore scorekeeper;
+    GlobalScore scorekeeper;
     private float despawnTime, despawnTimer;
     int passes;
     SpriteRenderer whaleSprite;
@@ -19,7 +19,7 @@ public class enemyScriptWhale : MonoBehaviour
         passes = 2; //1 for odd # of passes, 2 for 0 or even # of passes
         despawnTime = 5.0f;
         despawnTimer = Time.time + despawnTime;
-        scorekeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
+        scorekeeper = GameObject.Find("globalScoreObj").GetComponent<GlobalScore>();
         rigidEnemy.velocity = transform.right * enemySpeed;
         whalePosition = transform.position;
         whaleSprite = gameObject.GetComponent<SpriteRenderer>();
@@ -29,13 +29,13 @@ public class enemyScriptWhale : MonoBehaviour
         // Direction controller
          if (whalePosition.x >= 11.0f) {
              passes = 1;
-             if (scorekeeper.returnBlasterLevel() >= 2) {
+             if (scorekeeper.blasterLevel >= 2) {
                  rigidEnemy.velocity = -transform.right * enemySpeed;
                  whaleSprite.flipX = true;
              }
          } else if (whalePosition.x <= -11.0f) {
              passes = 2;
-             if (scorekeeper.returnBlasterLevel() >= 2) {
+             if (scorekeeper.blasterLevel >= 2) {
                  rigidEnemy.velocity = transform.right * enemySpeed;
                  whaleSprite.flipX = false;
              }
@@ -43,10 +43,10 @@ public class enemyScriptWhale : MonoBehaviour
 
         // Despawns whale based on level conditions
         if (despawnTimer < Time.time) {
-            if (scorekeeper.returnBlasterLevel() == 1) {
+            if (scorekeeper.blasterLevel == 1) {
                 Destroy(gameObject);
             }
-            if (scorekeeper.returnBlasterLevel() == 2 && passes == 2) {
+            if (scorekeeper.blasterLevel == 2 && passes == 2) {
                 Destroy(gameObject);
             }
         }

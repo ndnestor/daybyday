@@ -13,11 +13,12 @@ public class fakeHealthBar_Plat : MonoBehaviour
 
     public void healthBarSet()
     {
-        scaleChange = xSize_plat * (0.1f);
+        scaleChange = xSize_plat * 0.1f;
         //Debug.Log("scaleChange is " + scaleChange);
-        bar.transform.localScale = new Vector3(transform.localScale.x - scaleChange,
-        transform.localScale.y,
-        transform.localScale.z);
+        bar.transform.localScale = new Vector3(
+            transform.localScale.x - scaleChange,
+            transform.localScale.y,
+            transform.localScale.z);
         //bar.transform.localScale.x = scaleChange;
     }
 }

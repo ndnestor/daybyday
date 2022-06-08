@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class startGame : MonoBehaviour
 {
-    globalScore scorekeeper;
+    GlobalScore scorekeeper;
     public void PlayGame()
     {
-        scorekeeper = globalScore.Instance;
-        if (scorekeeper.returnBlasterTutorial() == 0) {
+        scorekeeper = GlobalScore.Instance;
+        if(scorekeeper.blasterTutorialState == GlobalScore.BlasterTutorialState.NotStarted)
+        {
             SceneManager.LoadScene("Scene_Tutorial", LoadSceneMode.Additive);
-        } else {
+        } else
+        {
             SceneManager.LoadScene("Scene_Game", LoadSceneMode.Additive);
         }
     }

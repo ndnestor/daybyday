@@ -12,14 +12,14 @@ public class PlayerHealth : MonoBehaviour
     public AudioSource audioOof;
     public fakeHealthBar bar;
 
-    void Start()
+    private void Start()
     {
         currentHealth = maxHealth;
         bar.SetMaxHealth(maxHealth);
         audioOof = GetComponent<AudioSource>();
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Enemy")
         {
@@ -41,17 +41,17 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(-10);
         }
     }
-    void TakeDamage(int damage)
+    private void TakeDamage(int damage)
     {
         //Debug.Log("Damage is: " + damage);
         currentHealth -= damage;
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
-            Debug.Log("Health is" + currentHealth);
+            //Debug.Log("Health is" + currentHealth);
         } else {
             if(damage < 0) {
-            bar.healthBarSetHeal();
+                bar.healthBarSetHeal();
             }
         }
         if(damage > 0) {

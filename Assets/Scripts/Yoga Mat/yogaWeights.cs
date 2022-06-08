@@ -20,7 +20,7 @@ public class yogaWeights : MonoBehaviour
     bool gameIsOver;
     SpriteRenderer playerSprite;
 
-    globalScore globalScoreKeeper;
+    GlobalScore globalScoreKeeper;
 
     //Note that range detection and scale will both change over days
     // Right now halfRange manually set to 5; change as nec via code
@@ -41,7 +41,7 @@ public class yogaWeights : MonoBehaviour
         Debug.Log("timeAtStart " + timeAtStart + " Time.time " + Time.time);
         startWait = gameTime + 3.0f;
         lastIntTime = 0;
-        globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
+        globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<GlobalScore>();
     }
     void FixedUpdate() {
         if (gameIsOver)
@@ -140,8 +140,8 @@ public class yogaWeights : MonoBehaviour
     
     void gameOver() {
         gameIsOver = true;
-        globalScoreKeeper.updateYogaScore(scoreTimeInt, 2);
-        SceneLoader.Instance.LoadAsync("Yoga_gameOver", LoadSceneMode.Additive, false, null, () =>
+        globalScoreKeeper.UpdateYogaScore(scoreTimeInt, 2);
+        SceneLoader.Instance.LoadAsync("Yoga_gameOver", LoadSceneMode.Additive, onLoadedCallback: () =>
         {
             SceneManager.UnloadSceneAsync("Yoga_ex2");
         });

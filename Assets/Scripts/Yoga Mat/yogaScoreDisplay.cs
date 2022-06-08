@@ -5,21 +5,21 @@ using TMPro;
 
 public class yogaScoreDisplay : MonoBehaviour
 {
-    globalScore globalScoreKeeper;
+    GlobalScore globalScoreKeeper;
     public float recent, high;
     int activityNum;
     public TextMeshProUGUI highScoreText, recentScoreText;
     void Start()
     {
-        globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
-        activityNum = globalScoreKeeper.returnActivityNum();
+        globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<GlobalScore>();
+        activityNum = globalScoreKeeper.activity;
         if (activityNum == 1) {
-            recent = globalScoreKeeper.returnBalanceRecent();
-            high = globalScoreKeeper.returnBalanceHigh();
+            recent = globalScoreKeeper.balanceRecentScore;
+            high = globalScoreKeeper.balanceHighScore;
         }
         if (activityNum == 2) {
-            recent = globalScoreKeeper.returnWeightRecent();
-            high = globalScoreKeeper.returnWeightHigh();
+            recent = globalScoreKeeper.weightRecentScore;
+            high = globalScoreKeeper.weightHighScore;
         }
         highScoreText.text = "High Score: " + high;
         recentScoreText.text = "Recent Score: " + recent;

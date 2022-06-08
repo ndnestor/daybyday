@@ -13,7 +13,7 @@ public class enemyScript_Ship : MonoBehaviour
     public float shootIncr;
     private float shipShootPosition;
     private float despawnTime, despawnTimer;
-    globalScore scorekeeper;
+    GlobalScore scorekeeper;
     private int passes;
     SpriteRenderer shipSprite;
     Vector3 shipPosition;
@@ -22,14 +22,14 @@ public class enemyScript_Ship : MonoBehaviour
     {
         passes = 2; // 2 if 0 or even # of passes, 1 if odd # of passes
         despawnTime = 5.0f; //For single pass, despawns at this val; for double, check conditions after
-        scorekeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
+        scorekeeper = GameObject.Find("globalScoreObj").GetComponent<GlobalScore>();
         rigidEnemy.velocity = -transform.right * enemySpeed;
         shipPosition = transform.position;
         despawnTimer = Time.time + despawnTime;
         shipSprite = gameObject.GetComponent<SpriteRenderer>();
     }
     public string returnDirec() {
-        if (scorekeeper.returnBlasterLevel() >= 2) {
+        if (scorekeeper.blasterLevel >= 2) {
             if (passes == 2) {
                 return "Left"; // Moving from right TO left
             } else {
@@ -58,22 +58,22 @@ public class enemyScript_Ship : MonoBehaviour
          //Ship moves from right to left, so hits certain x coordinate to count pass
          if (shipPosition.x <= -18.0f) {
              passes = 1;
-             if (scorekeeper.returnBlasterLevel() >= 2) {
+             if (scorekeeper.blasterLevel >= 2) {
                 rigidEnemy.velocity = transform.right * enemySpeed;
                 shipSprite.flipX = true;
              }
          } else if (shipPosition.x >= 18.0f) {
              passes = 2;
-             if (scorekeeper.returnBlasterLevel() >= 2) {
+             if (scorekeeper.blasterLevel >= 2) {
                  rigidEnemy.velocity = -transform.right * enemySpeed;
                  shipSprite.flipX = false;
              }
          }
          if (despawnTimer < Time.time) {
-            if(scorekeeper.returnBlasterLevel() == 1) {
+            if(scorekeeper.blasterLevel == 1) {
                 Destroy(gameObject);
             }
-            if(scorekeeper.returnBlasterLevel() == 2 && passes == 2) {
+            if(scorekeeper.blasterLevel == 2 && passes == 2) {
                 Destroy(gameObject);
             }
         }

@@ -62,7 +62,6 @@ public class ComputerInterface : MonoBehaviour
         {
             hideAllTabs();
             profilePage.SetActive(true);
-            Debug.Log("Setting profile page");
         }
         else if (newName.Equals("Inbox Button"))
         {

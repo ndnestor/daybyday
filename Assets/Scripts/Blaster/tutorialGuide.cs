@@ -39,7 +39,7 @@ public class tutorialGuide : MonoBehaviour
     [SerializeField] GameObject keybinds, arrow;
     [SerializeField] Button nextButton;
     [SerializeField] TextMeshProUGUI tutorialText;
-    globalScore scorekeeper;
+    GlobalScore scorekeeper;
     [SerializeField] private DialogueGraph dialogueGraph;
     [SerializeField] private DialogueSystem dialogueSystem;
     private const string StringRegistryId = "Blaster Tutorial Dialogue";
@@ -58,7 +58,7 @@ public class tutorialGuide : MonoBehaviour
     **/
     [SerializeField] Vector3 point_Score, point_Inventory, point_PlayerHealth, point_PlatformHealth;
     public void Start() {
-        scorekeeper = globalScore.Instance;
+        scorekeeper = GlobalScore.Instance;
         dialogueSystem = MainInstances.Get<DialogueSystem>();
         stringRegistry = MainInstances.Get<StringRegistry>();
         beginTutorial();
