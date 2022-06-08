@@ -1308,8 +1308,8 @@ MonoBehaviour:
   blasterRecentScore: 0
   blasterHighScore: 0
   blasterLevel: 0
-  blasterTutorial: 0
   activity: 0
+  blasterTutorialState: 0
 --- !u!4 &484225803
 Transform:
   m_ObjectHideFlags: 0
@@ -2567,7 +2567,6 @@ MonoBehaviour:
   wateringObj: {fileID: 3786216633509068024, guid: 5169a8a51d7775648b676a8fc5bd16b3, type: 3}
   level: 3
   day: 3
-  interactionHandler: {fileID: 231473489}
   highlightObject: {fileID: 893671296}
 --- !u!114 &893671296
 MonoBehaviour:
@@ -2824,6 +2823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1044268468}
   - component: {fileID: 1044268467}
+  - component: {fileID: 1044268469}
   m_Layer: 0
   m_Name: Scene Loader
   m_TagString: Untagged
@@ -2846,6 +2846,7 @@ MonoBehaviour:
   overlayFadeTime: 1
   overlayFadeTimeStep: 0.01
   overlayImage: {fileID: 1629613372}
+  audioListener: {fileID: 1044268469}
 --- !u!4 &1044268468
 Transform:
   m_ObjectHideFlags: 0
@@ -2861,6 +2862,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1044268469
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044268466}
+  m_Enabled: 1
 --- !u!1 &1066270141
 GameObject:
   m_ObjectHideFlags: 0
@@ -4502,7 +4511,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1901656634}
   - component: {fileID: 1901656633}
-  - component: {fileID: 1901656632}
   - component: {fileID: 1901656635}
   m_Layer: 6
   m_Name: Main Camera
@@ -4511,14 +4519,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1901656632
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901656631}
-  m_Enabled: 1
 --- !u!20 &1901656633
 Camera:
   m_ObjectHideFlags: 0

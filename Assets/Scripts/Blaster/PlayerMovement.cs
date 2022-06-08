@@ -53,26 +53,26 @@ public class PlayerMovement : MonoBehaviour
     scoreScript scoreScript;
     int score;
     public inventoryView inventory;
-    globalScore scorekeeper;
+    GlobalScore scorekeeper;
 
-    void Start()
+    private void Start()
     {
-        scorekeeper = globalScore.Instance;
-        if (scorekeeper.returnBlasterLevel() == 1 || scorekeeper.returnBlasterLevel() == 2) {
+        scorekeeper = GlobalScore.Instance;
+        if (scorekeeper.blasterLevel <= 2) {
             enemyDamage = 20;
             enemyBulletDamage = 10;
-        } else if (scorekeeper.returnBlasterLevel() == 3) {
+        } else if (scorekeeper.blasterLevel == 3) {
             enemyDamage = 40;
             enemyBulletDamage = 20;
         }
         speed = 50.0f;
         maxHealth = rocketHealth;
         blackHoleDrag = 0.0f;
-        rb2d = GetComponent<Rigidbody2D> ();
+        rb2d = GetComponent<Rigidbody2D>();
         isSwift = false;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(moveHorizontal, 0);
@@ -80,9 +80,9 @@ public class PlayerMovement : MonoBehaviour
         rb2d.AddForce(new Vector2(blackHoleDrag, 0.0f));
     }
 
-    void Update()
+    private void Update()
     {
-        if (isSwift == true) {
+        if (isSwift) {
             if (Time.time >= unSwift) {
                 speed = speed/2;
                 isSwift = false;
@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void playerDie() {
+    private void PlayerDie() {
         Destroy(gameObject);
         Debug.Log("Dead");
         scoreScript = scoreText.GetComponent<scoreScript>();
@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
         SceneManager.UnloadSceneAsync("Scene_Game");
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Enemy")
         {
@@ -115,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log(rocketHealth);
             if (rocketHealth <= 0)
             {
-                playerDie();
+                PlayerDie();
             }
             Destroy(col.gameObject);
         }else
@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
             if (rocketHealth <= 0)
             {
                 Destroy(gameObject);
-                playerDie();
+                PlayerDie();
                 
             }
             Destroy(col.gameObject);

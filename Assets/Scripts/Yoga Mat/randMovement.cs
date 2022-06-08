@@ -17,7 +17,7 @@ public class randMovement : MonoBehaviour
     public TextMeshProUGUI inOutText, scoreTimerText;
     private float scoreTime;
     private int outTime;
-    globalScore globalScoreKeeper;
+    GlobalScore globalScoreKeeper;
     public float scoreTimeInt;
     float timeAtStart, gameTime;
     int lastIntTime, nextIntTime;
@@ -25,7 +25,7 @@ public class randMovement : MonoBehaviour
     {
         timeAtStart = Time.time;
         lastIntTime = 0;
-        globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<globalScore>();
+        globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<GlobalScore>();
         bounceIncr = 1.5f;
         playerInBounds = true;
         rb = GetComponent<Rigidbody2D> ();
@@ -121,7 +121,7 @@ public class randMovement : MonoBehaviour
     }
 
     void gameOver() {
-        globalScoreKeeper.updateYogaScore(scoreTimeInt, 1);
+        globalScoreKeeper.UpdateYogaScore(scoreTimeInt, 1);
         SceneManager.LoadScene("Yoga_gameOver", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync("Yoga_ex1");
     }

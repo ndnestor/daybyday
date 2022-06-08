@@ -2,20 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class globalScore : MonoBehaviour
+public class GlobalScore : MonoBehaviour
 {
 
     // help from https://www.sitepoint.com/saving-data-between-scenes-in-unity/
 
-    public static globalScore Instance;
+    public static GlobalScore Instance;
     public float weightHighScore, balanceHighScore; // yoga exercises
     public float weightRecentScore, balanceRecentScore; //yoga exercises
-    public int blasterRecentScore, blasterHighScore, blasterLevel, blasterTutorial; // Blaster minigame
+    public int blasterRecentScore, blasterHighScore, blasterLevel; // Blaster minigame
     public int activity;
+
+    public BlasterTutorialState blasterTutorialState;
+
+    public enum BlasterTutorialState
+    {
+        NotStarted,
+        Incomplete,
+        Complete
+    }
+
 
     void Awake ()
        {
-        if (Instance == null)
+        if(Instance == null)
         {
             DontDestroyOnLoad(gameObject);
             Instance = this;
@@ -27,7 +37,7 @@ public class globalScore : MonoBehaviour
         blasterLevel = 1;
       }
     
-    public void updateYogaScore(float recent, int activityNum) {
+    public void UpdateYogaScore(float recent, int activityNum) {
         // Activity 1 = balance, Activity 2 = weightlifting
         activity = activityNum;
         if (activityNum == 1) {
@@ -43,24 +53,6 @@ public class globalScore : MonoBehaviour
         }
     }
 
-    public int returnActivityNum() {
-        return activity;
-    }
-    
-    public float returnBalanceHigh() {
-        return balanceHighScore;
-    }
-    public float returnBalanceRecent() {
-        return balanceRecentScore;
-    }
-
-    public float returnWeightHigh() {
-        return weightHighScore;
-    }
-    public float returnWeightRecent() {
-        return weightRecentScore;
-    }
-
     public void updateBlasterScore(int recent) {
         blasterRecentScore = recent;
         if (recent >= blasterHighScore) {
@@ -72,19 +64,15 @@ public class globalScore : MonoBehaviour
             blasterLevel = 2;
         }
     }
-    public int returnBlasterLevel() {
-        return blasterLevel;
-    }
-    public void updateBlasterTutorial(int tutCompleted) {
+
+    public void UpdateBlasterTutorial(bool completed) {
         //blasterTutorial starts at 0
         // = 1 after completing initial tutorial, =2 after completing leveled tutorial
-        if (tutCompleted == 1) {
-            blasterTutorial = 1;
-        } else if (tutCompleted == 2) {
-            blasterTutorial = 2;
+        if(!completed) {
+            blasterTutorialState = BlasterTutorialState.Incomplete;
+        } else
+        {
+            blasterTutorialState = BlasterTutorialState.Complete;
         }
-    }
-    public int returnBlasterTutorial() {
-        return blasterTutorial;
     }
 }

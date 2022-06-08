@@ -24,7 +24,7 @@ using Random = UnityEngine.Random;
      public GameObject spread;
      private float spreadTimer;
      private float spreadIncr;
-     globalScore scorekeeper;
+     GlobalScore scorekeeper;
      public int gameLevel;
 
      // SPAWN HIERARCHY (Common --> Rare)
@@ -48,8 +48,8 @@ using Random = UnityEngine.Random;
     public List<SpawnFrequencyValues> SpawnFrequencyPerLevel = new List<SpawnFrequencyValues>();
 
     void Start() {
-        scorekeeper = globalScore.Instance;
-        gameLevel = scorekeeper.returnBlasterLevel();
+        scorekeeper = GlobalScore.Instance;
+        gameLevel = scorekeeper.blasterLevel;
         /**
         switch(gameLevel) {
             case 1:

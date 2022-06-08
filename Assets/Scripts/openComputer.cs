@@ -3,26 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class openComputer : MonoBehaviour
+public class OpenComputer : MonoBehaviour
 {
 
-    public InteractionHandler interactionHandler;
-    public HighlightObject highlightObject;
+    private void Start()
+    {
+        InteractionHandler.Instance.RegisterObject("Computer", OpenComp);
+    }
 
-    void Start()
+    private void OpenComp()
     {
-        interactionHandler.RegisterObject("Computer", openComp, 0);
-    }
-    void Update()
-    {
-        if (Input.GetKey("e") && highlightObject.triggerable) {
-            interactionHandler.Interact("Computer");
-        }
-    }
-    void openComp()
-    {
-        highlightObject.setTriggerFalse();
-        SceneManager.LoadScene("CompAll", LoadSceneMode.Additive);
-        RoomRenderer.Instance.HideRoom();
+        //SceneManager.LoadScene("CompAll", LoadSceneMode.Additive);
+        //RoomRenderer.Instance.HideRoom();
+
+        SceneLoader.Instance.LoadAsync("CompAll", LoadSceneMode.Additive, true);
     }
 }

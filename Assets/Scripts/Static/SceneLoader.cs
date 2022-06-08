@@ -26,6 +26,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private float overlayFadeTime;
     [SerializeField] private float overlayFadeTimeStep;
     [SerializeField] private Image overlayImage;
+    [SerializeField] private AudioListener audioListener;
     
     private void Start()
     {
@@ -41,6 +42,11 @@ public class SceneLoader : MonoBehaviour
             AsyncOperation sceneLoadOperation = SceneManager.LoadSceneAsync(sceneName, loadSceneMode);
             sceneLoadOperation.completed += operation =>
             {
+                AudioListener[] audioListeners = FindObjectsOfType<AudioListener>();
+                foreach(AudioListener listener in audioListeners)
+                    if(listener != audioListener)
+                        Destroy(listener);
+
                 onLoadedCallback?.Invoke();
                 if(hideRoom)
                     RoomRenderer.Instance.HideRoom(sceneName);
