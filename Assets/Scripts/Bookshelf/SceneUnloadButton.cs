@@ -5,9 +5,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class BookshelfExitButton : MonoBehaviour
+public class SceneUnloadButton : MonoBehaviour
 {
 
+    [SerializeField] private string sceneName;
     [SerializeField] private Sprite disabledSprite;
     [SerializeField] private Sprite enabledSprite;
     [SerializeField] private float cooldown;
@@ -38,9 +39,9 @@ public class BookshelfExitButton : MonoBehaviour
         }
     }
 
-    public void ExitBookshelf()
+    public void Unload()
     {
-        SceneManager.UnloadSceneAsync("Bookshelf");
+        SceneManager.UnloadSceneAsync(sceneName);
     }
 
 }

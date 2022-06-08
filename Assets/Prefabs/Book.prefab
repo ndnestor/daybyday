@@ -2175,8 +2175,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5034190018010739139}
-        m_TargetAssemblyTypeName: BookshelfExitButton, Assembly-CSharp
-        m_MethodName: ExitBookshelf
+        m_TargetAssemblyTypeName: SceneUnloadButton, Assembly-CSharp
+        m_MethodName: Unload
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2198,6 +2198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1aa8b82ab5d3e346a2b0ce14d443c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: Bookshelf
   disabledSprite: {fileID: 21300000, guid: abc60b758e52bcc48b868404c37f31f4, type: 3}
   enabledSprite: {fileID: 21300000, guid: 60af54f6c5814e546a3c59bc26120d1b, type: 3}
   cooldown: 1
