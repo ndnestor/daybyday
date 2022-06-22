@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2344, y: 4232}
+  position: {x: 2920, y: 4200}
   ports:
     keys:
     - enter
@@ -456,10 +456,7 @@ MonoBehaviour:
       _node: {fileID: -5633976793193786684}
       _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: exitTrue
-        node: {fileID: 6411012525113340566}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 0
@@ -735,6 +732,9 @@ MonoBehaviour:
       - fieldName: exitFalse
         node: {fileID: -8138274772505784101}
         reroutePoints: []
+      - fieldName: exit
+        node: {fileID: 3736189821769204313}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -943,7 +943,7 @@ MonoBehaviour:
   m_Name: Choice
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2696, y: 4136}
+  position: {x: 3320, y: 4120}
   ports:
     keys:
     - enter
@@ -1110,7 +1110,8 @@ MonoBehaviour:
   - {fileID: 7164743726944422462}
   - {fileID: -4863274828965453234}
   - {fileID: -3042670778568862163}
-  current: {fileID: 6822775112515040337}
+  - {fileID: 3736189821769204313}
+  current: {fileID: 0}
   entry: {fileID: 3097000379551282765}
   currentSystem: {fileID: 0}
   CurrentChoiceIndex: 0
@@ -1960,6 +1961,53 @@ MonoBehaviour:
     earned your rest.
   WaitForInput: 1
   ErasePrevious: 1
+--- !u!114 &3736189821769204313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d175915fa044b40ac0cdebab36b4dc, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2456, y: 4200}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: 3736189821769204313}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exitTrue
+        node: {fileID: 6411012525113340566}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 3736189821769204313}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: -3042670778568862163}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  Dialogue: Oh no, some keys are broken and the cord is frayed. This piano is too
+    broken to play. I'll leave it alone for now.
+  WaitForInput: 1
+  ErasePrevious: 1
 --- !u!114 &3906921451402883797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2500,7 +2548,7 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: enter
-        node: {fileID: -5633976793193786684}
+        node: {fileID: 3736189821769204313}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
