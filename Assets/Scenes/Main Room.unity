@@ -242,8 +242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8622def6c7098c44f8d2029e92a1d815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionHandler: {fileID: 231473489}
-  highlightObject: {fileID: 37576569}
 --- !u!1 &90694644
 GameObject:
   m_ObjectHideFlags: 0
@@ -4598,6 +4596,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
@@ -4752,6 +4751,7 @@ GameObject:
   - component: {fileID: 2002995894}
   - component: {fileID: 2002995893}
   - component: {fileID: 2002995896}
+  - component: {fileID: 2002995897}
   m_Layer: 6
   m_Name: Piano
   m_TagString: Untagged
@@ -4849,6 +4849,18 @@ MonoBehaviour:
   connectedSprite: {fileID: 2130602363}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
   triggerable: 0
+--- !u!114 &2002995897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002995892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15fe2b9ef940476a87991e9bbdf937ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2006849133
 GameObject:
   m_ObjectHideFlags: 0
