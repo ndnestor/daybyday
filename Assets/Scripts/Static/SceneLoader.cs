@@ -55,6 +55,18 @@ public class SceneLoader : MonoBehaviour
         }));
     }
 
+    public void UnloadAsync(string sceneName)
+    {
+        StartCoroutine(ChangeOverlayColor(Color.black, () =>
+        {
+            AsyncOperation sceneUnloadOperation = SceneManager.UnloadSceneAsync(sceneName);
+            sceneUnloadOperation.completed += operation =>
+            {
+                StartCoroutine(ChangeOverlayColor(Color.clear));
+            };
+        }));
+    }
+
     IEnumerator ChangeOverlayColor(Color targetColor, Action callback = null)
     {
         float timeSinceStart = 0;
