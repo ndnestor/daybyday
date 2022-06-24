@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class WaterPlant : MonoBehaviour
 {
+    [HideInInspector] public int level = 1;
+    [HideInInspector] public int day = 1;
+
     public GameObject waterCan;
     public GameObject treeObject;
     public GameObject wateringObj;
-    public int level;
-    public int day;
     public HighlightObject highlightObject;
     private bool wasWatered;
 
