@@ -2560,11 +2560,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49899abae61db874d878bdb195d4fc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
+  day: 1
   waterCan: {fileID: 2453544803732008215, guid: 96865aa80663ae04ba25379d80a643c1, type: 3}
   treeObject: {fileID: 893671291}
   wateringObj: {fileID: 3786216633509068024, guid: 5169a8a51d7775648b676a8fc5bd16b3, type: 3}
-  level: 3
-  day: 3
   highlightObject: {fileID: 893671296}
 --- !u!114 &893671296
 MonoBehaviour:
@@ -2594,9 +2594,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treeSprite: {fileID: 1345093770}
-  week: 0
-  level: 0
-  month: 1
   w1l1: {fileID: 21300000, guid: 0b18667ef4fa2c24e842d72c0f8ba92e, type: 3}
   w2l1: {fileID: 21300000, guid: 90b03f64f03fb7640890186671b04e0d, type: 3}
   w2l2_JanFebNovDec: {fileID: 21300000, guid: 33b35f930fee87f4c80e5adeb68fbb56, type: 3}

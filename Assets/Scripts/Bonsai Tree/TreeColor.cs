@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class TreeColor : MonoBehaviour
 {
+    private int week, level, month;
     public SpriteRenderer treeSprite;
-    public int week, level, month;
-    //public Tracking dayTracker;
 
     // Sprites relevant to Week 1 Level 1
     public Sprite w1l1;

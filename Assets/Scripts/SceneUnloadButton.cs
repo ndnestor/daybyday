@@ -41,7 +41,8 @@ public class SceneUnloadButton : MonoBehaviour
 
     public void Unload()
     {
-        SceneManager.UnloadSceneAsync(sceneName);
+        //SceneManager.UnloadSceneAsync(sceneName);
+        SceneLoader.Instance.UnloadAsync(sceneName);
     }
 
 }
