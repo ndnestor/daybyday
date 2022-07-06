@@ -48,6 +48,7 @@ public class InteractionHandler : MonoBehaviour
 
 	private void Start()
 	{
+		DontDestroyOnLoad(this);
 		stringRegistry = MainInstances.Get<StringRegistry>();
 		dialogueSystem = MainInstances.Get<DialogueSystem>();
 	}
