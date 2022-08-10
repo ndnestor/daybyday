@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5150aeb73c5f92a4092a4e2167a3d8a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neglectedPianoSprite: {fileID: 21300000, guid: 4816f4585a1b47244834de9aa2bf21de, type: 3}
+  neglectedPianoSprite: {fileID: 21300000, guid: 61ae4143a4fafeb48a9cbbee093e4031, type: 3}
   neglectedYogaMatSprite: {fileID: 21300000, guid: 5525a46b051941f48b490c17e52c0e35, type: 3}
   neglectedComputerSprite: {fileID: 21300000, guid: fac8abf1d743e2a4496ae2040bf19637, type: 3}
   neglectedBookshelfSprite: {fileID: 21300000, guid: 695941c27236b584eaa64573ffee780c, type: 3}
