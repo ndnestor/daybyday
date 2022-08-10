@@ -27,6 +27,8 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private float overlayFadeTimeStep;
     [SerializeField] private Image overlayImage;
     [SerializeField] private AudioListener audioListener;
+
+    private bool isBusy;
     
     private void Start()
     {
@@ -36,6 +38,8 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadAsync(string sceneName, LoadSceneMode loadSceneMode, bool hideRoom = false, Action onFinishCallback = null, Action onLoadedCallback = null)
     {
+        if(isBusy) return;
+        isBusy = true;
         // TODO: Perhaps use events / delegates instead of callbacks
         StartCoroutine(ChangeOverlayColor(Color.black, () =>
         {
@@ -50,19 +54,25 @@ public class SceneLoader : MonoBehaviour
                 onLoadedCallback?.Invoke();
                 if(hideRoom)
                     RoomRenderer.Instance.HideRoom(sceneName);
-                StartCoroutine(ChangeOverlayColor(Color.clear, onFinishCallback));
+                StartCoroutine(ChangeOverlayColor(Color.clear, () =>
+                {
+                    isBusy = false;
+                    onFinishCallback?.Invoke();
+                }));
             };
         }));
     }
 
     public void UnloadAsync(string sceneName)
     {
+        if(isBusy) return;
+        isBusy = true;
         StartCoroutine(ChangeOverlayColor(Color.black, () =>
         {
             AsyncOperation sceneUnloadOperation = SceneManager.UnloadSceneAsync(sceneName);
             sceneUnloadOperation.completed += operation =>
             {
-                StartCoroutine(ChangeOverlayColor(Color.clear));
+                StartCoroutine(ChangeOverlayColor(Color.clear, () => { isBusy = false; }));
             };
         }));
     }

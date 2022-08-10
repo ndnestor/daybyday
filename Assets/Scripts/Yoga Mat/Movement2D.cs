@@ -16,7 +16,6 @@ public class Movement2D : MonoBehaviour
     [Range(0, 1)]
     [SerializeField] private float ySpeedFactor;
     [SerializeField] private double moveToDistThreshold;
-    [SerializeField] private Transform bedDestination;
     [SerializeField] private Animator animator;
 
     private bool isPlayerControlled = true;
@@ -39,6 +38,17 @@ public class Movement2D : MonoBehaviour
             movement.y = Input.GetAxisRaw("Vertical") * ySpeedFactor;
         }
 
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
+
+        if(rb.position.y >= orderLineY)
+        {
+            playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 40;
+        }
+        else
+        {
+            playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 60;
+        }
+        
         // NOTE from Bridge: Following if statements control direction character faces
         // Also added line to get SpriteRenderer component in Awake
         // Should affect only sprite renderer
@@ -51,23 +61,6 @@ public class Movement2D : MonoBehaviour
             animator.SetBool("IsWalking", false);
         else
             animator.SetBool("IsWalking", true);
-    }
-
-    private void FixedUpdate()
-    {
-        // NOTE from Nathan: Fixed update should strictly only handle physics tasks. You can get odd behavior otherwise.
-        // In this case, it probably doesn't really matter since nothing too crazy is going on in this method
-        // but it is worth noting. See here: https://forum.unity.com/threads/the-truth-about-fixedupdate.231637/
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-        if(rb.position.y >= orderLineY)
-        {
-            playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 40;
-        }
-        else
-        {
-            playerSprite.GetComponent<SpriteRenderer>().sortingOrder = 60;
-        }
     }
 
     // Prevent or allow player to control the character
@@ -85,7 +78,7 @@ public class Movement2D : MonoBehaviour
         }
     }
 
-    // Used to initialze and run MoveToCoroutine
+    // Used to initialize and run MoveToCoroutine
     public void MoveTo(Vector2 destination, System.Action callback = null) {
         IEnumerator moveToCoroutine = MoveToCoroutine(destination, callback);
         StartCoroutine(moveToCoroutine);
@@ -137,9 +130,6 @@ public class Movement2D : MonoBehaviour
             yield return null;
 		}
         SetPlayerControl(true);
-        if(callback != null)
-        {
-            callback();
-		}
-	}
+        callback?.Invoke();
+    }
 }
