@@ -28,22 +28,50 @@ public class AssignmentControl : MonoBehaviour
 
     public void openActiveAssignment1() {
         int dayNum = Tracking.Instance.DayNum;
-        viewedAssignment = 1;
+        viewedAssignment = 0;
         switch(assignment1) {
+            case 0:
+                // Assignment unavailable
+                announcementText.text = "This assignment is unavailable since you did not do the prior part :(";
+                viewedAssignment = -1;
+                break;
             case 1:
+                // Assignment 1
                 announcementText.text = "Happy March, students! It's your friendly neighborhood professor here to remind you that you have an assignment due soon. To complete this assignment, you need to: a) Use some hobby items around your room (i.e. read a book, play the piano, etc)and b) on our discussion board about your experience. You can write the full post within an hour, but you decide how much time you spend on exploring your hobbies. I expect to see thoughtful discussion within the week!";
+                viewedAssignment = 1;
                 break;
             case 2:
-                if(dayNum == 3) announcementText.text = "Happy May, students! It's your friendly neighborhood professor here to remind you that you have an assignment due soon. To complete this assignment, you need to make and present your  goals for the summer. I recommend starting to work on it now so that you can submit it on time next month. Use our class discussion about work-life balances and SMART goals (Specific, Measured, Attainable, Relevant, Time-based) to design your goals for the summer. They can be anything from getting a summer job to recording a song on a keyboard. For this month, you can optionally take an hour to post your work to the discussion board; that way we can all help you make SMART goals that work right for you. I expect to see some well-developed and exciting goals submitted soon!";
-                else if(dayNum == 4) announcementText.text = "Happy June, students! It's your friendly neighborhood professor here to remind you that you have an assignment due soon. To complete this assignment, you need to make and present your  goals for the summer. Use our class discussion about work-life balances and SMART goals (Specific, Measured, Attainable, Relevant, Time-based) to design your goals for the summer. Plan to use about an hour to present your goals, submit as a discussion post, and reply to your peers' posts with helpful comments for their own goals. I expect to see constructive criticism throughout our discussions this week!";
+                if(dayNum == 3) {
+                    // Assignment 2
+                    announcementText.text = "Happy May, students! It's your friendly neighborhood professor here to remind you that you have an assignment due soon. To complete this assignment, you need to make and present your goals for the summer. I recommend starting to work on it now so that you can submit it on time next month. Use our class discussion about work-life balances and SMART goals (Specific, Measured, Attainable, Relevant, Time-based) to design your goals for the summer. They can be anything from getting a summer job to recording a song on a keyboard. For this month, you can optionally take an hour to post your work to the discussion board; that way we can all help you make SMART goals that work right for you. I expect to see some well-developed and exciting goals submitted soon!";
+                    viewedAssignment = 2;
+                } else if(dayNum == 4) {
+                    // Assignment 3
+                    announcementText.text = "Happy June, students! It's your friendly neighborhood professor here to remind you that you have an assignment due soon. To complete this assignment, you need to make and present your goals for the summer. Use our class discussion about work-life balances and SMART goals (Specific, Measured, Attainable, Relevant, Time-based) to design your goals for the summer. Plan to use about an hour to present your goals, submit as a discussion post, and reply to your peers' posts with helpful comments for their own goals. I expect to see constructive criticism throughout our discussions this week!";
+                    viewedAssignment = 3;
+                }
                 break;
             case 3:
-                if(dayNum == 5) announcementText.text = "Happy July, students! It's your friendly neighborhood professor here to remind you that you have an assignment due soon. To complete this assignment, you need to find someone in a career field you are interested in and interview them. By now you should have done the interview, and are beginning to write your essay reflecting on the state of your chosen career field, the future implications of working in that field, the necessary skills for work, and some potential avenues for you to acquire it. Also include an analysis of your approach for finding a candidate and the process of the interview itself. Since this is a two month long project, this week, post the introductory paragraph for your paper, and reply to your peers' posts. This way we can all keep each other accountable to completing the paper, as well as provide each other with excellent feedback! I expect to see constructive criticism for your essays soon!";
-                else if(dayNum == 6) announcementText.text = "Happy August, students! It's your friendly neighborhood professor here to remind you that you have an assignment due soon. To complete this assignment, you need to find someone in a career field you are interested in and interview them. Then, you should write an essay reflecting on the state of your chosen career field, the future implications of working in that field, the necessary skills for work, and some potential avenues for you to acquire it. Also include an analysis of your approach for finding a candidate and the process of the interview itself. Since this is a two month long project, this week, post a body paragraph you have found particularly tricky to write. Then reply to your peers' posts about their paragraphs so that we can all provide each other with helpful, last-minute feedback. I expect to see your well-written papers soon!";
+                if(dayNum == 5) {
+                    // Assignment 3
+                    announcementText.text = "Happy July, students! It's your friendly neighborhood professor here to remind you that you have an assignment due soon. To complete this assignment, you need to find someone in a career field you are interested in and interview them. By now you should have done the interview, and are beginning to write your essay reflecting on the state of your chosen career field, the future implications of working in that field, the necessary skills for work, and some potential avenues for you to acquire it. Also include an analysis of your approach for finding a candidate and the process of the interview itself. Since this is a two month long project, this week, post the introductory paragraph for your paper, and reply to your peers' posts. This way we can all keep each other accountable to completing the paper, as well as provide each other with excellent feedback! I expect to see constructive criticism for your essays soon!";
+                    viewedAssignment = 3;
+                } else if(dayNum == 6) {
+                    // Assignment 3
+                    announcementText.text = "Happy August, students! It's your friendly neighborhood professor here to remind you that you have an assignment due soon. To complete this assignment, you need to find someone in a career field you are interested in and interview them. Then, you should write an essay reflecting on the state of your chosen career field, the future implications of working in that field, the necessary skills for work, and some potential avenues for you to acquire it. Also include an analysis of your approach for finding a candidate and the process of the interview itself. Since this is a two month long project, this week, post a body paragraph you have found particularly tricky to write. Then reply to your peers' posts about their paragraphs so that we can all provide each other with helpful, last-minute feedback. I expect to see your well-written papers soon!";
+                    viewedAssignment = 3;
+                }
                 break;
             case 4:
-                if(dayNum == 7) announcementText.text = "Happy September, students! It's your friendly neighborhood professor here to remind you that you have an assignment due soon. To complete this assignment, you need to find three job ads and analyze them in the context of what we learned for this class. For example, you can explain how you found the job ads, whether or not they fit into your career plans, and if so, how you plan on applying to them. You could also explain your process for finding and communicating with the hiring managers, or deciding on ways to make the best impression you can on your first interview for this position. So long as you apply a class concept of time-management and professional development, there's no way you can go wrong in this assignment! To help you all brainstorm, post one job description from an ad you find online. Then, reply to another's post about the ad, using some class concepts to analyze and bring clarity to the description. I expect to see some excellent analysis soon!";
-                else if(dayNum == 8) announcementText.text = "Happy October, students! It's your friendly neighborhood professor here to remind you that you have an assignment due soon. To complete this assignment, you need to find three job ads and analyze them in the context of what we learned for this class. For example, you can explain how you found the job ads, whether or not they fit into your career plans, and if so, how you plan on applying to them. You could also explain your process for finding and communicating with the hiring managers, or deciding on ways to make the best impression you can on your first interview for this position. So long as you apply a class concept of time-management and professional development, there's no way you can go wrong in this assignment! I expect to see some excellent analysis soon!";
+                if(dayNum == 7) {
+                    // Assignment 4
+                    announcementText.text = "Happy September, students! It's your friendly neighborhood professor here to remind you that you have an assignment due soon. To complete this assignment, you need to find three job ads and analyze them in the context of what we learned for this class. For example, you can explain how you found the job ads, whether or not they fit into your career plans, and if so, how you plan on applying to them. You could also explain your process for finding and communicating with the hiring managers, or deciding on ways to make the best impression you can on your first interview for this position. So long as you apply a class concept of time-management and professional development, there's no way you can go wrong in this assignment! To help you all brainstorm, post one job description from an ad you find online. Then, reply to another's post about the ad, using some class concepts to analyze and bring clarity to the description. I expect to see some excellent analysis soon!";
+                    viewedAssignment = 4;
+                } else if(dayNum == 8) {
+                    // Assignment 4
+                    announcementText.text = "Happy October, students! It's your friendly neighborhood professor here to remind you that you have an assignment due soon. To complete this assignment, you need to find three job ads and analyze them in the context of what we learned for this class. For example, you can explain how you found the job ads, whether or not they fit into your career plans, and if so, how you plan on applying to them. You could also explain your process for finding and communicating with the hiring managers, or deciding on ways to make the best impression you can on your first interview for this position. So long as you apply a class concept of time-management and professional development, there's no way you can go wrong in this assignment! I expect to see some excellent analysis soon!";
+                    viewedAssignment = 4;
+                }
                 break;
             case 5:
                 if(dayNum == 9) announcementText.text = "Happy November, students! It's your friendly neighborhood professor here to remind you that you have an assignment due soon. To complete this assignment, you need to apply to a job. Tell us about the process of finding the application, restructuring your resume, and interviewing for the position. Also, write about how this job falls into your career plans. Think about the SMART goals we made earlier this year. Are these goals still relevant? Why or why not? To help stave away the worst of the job-hunting jitters, post about the job you have decided to apply to, and reply . I'm looking forward to encouraging you through your job application process soon!";
@@ -66,9 +94,17 @@ public class AssignmentControl : MonoBehaviour
         announcementPage.SetActive(false);
     }
 
-    public void startAssignment() {
-        activateSubmit = true;
+    public void startAssignment()
+    {
         announcementPage.SetActive(false);
+        
+        if (viewedAssignment == -1)
+            return;
+        
+        activeAssignment = viewedAssignment;
+        activateSubmit = true;
+        PersistentDataSaver.Instance.Set("activeAssignment", activeAssignment.ToString());
+        Debug.Log($"Started assignment {activeAssignment}");
     }
     public void assignmentComplete() {
         activateSubmit = false;
@@ -81,14 +117,16 @@ public class AssignmentControl : MonoBehaviour
         return activateSubmit;
     }
 
-    private void Start() {
+    private void Start()
+    {
+        if(PersistentDataSaver.Instance.Contains("activeAssignment"))
+            activeAssignment = PersistentDataSaver.Instance.Get<int>("activeAssignment");
+
         setAssignments();
         setGoals();
     }
 
     private void setAssignments() {
-        Debug.Log("SET ASSIGNMENTS");
-        Debug.Log(Tracking.Instance.DayNum);
         switch (Tracking.Instance.DayNum) {
             case 2:
                 button1.gameObject.SetActive(true);
@@ -106,24 +144,33 @@ public class AssignmentControl : MonoBehaviour
                 break;
             case 4:
                 button1.gameObject.SetActive(true);
-                button2.gameObject.SetActive(true);
                 buttonText1.GetComponent<TextMeshProUGUI>().text = "  Assignment 2 Part B";
+                button2.gameObject.SetActive(true);
                 buttonText2.GetComponent<TextMeshProUGUI>().text = "  Assignment 3 Part A";
-                assignment1 = 2;
+                if (activeAssignment == 2)
+                    assignment1 = 2;
+                else
+                    assignment1 = 0;
                 assignment2 = 3;
                 break;
             case 5:
                 button1.gameObject.SetActive(true);
                 buttonText1.GetComponent<TextMeshProUGUI>().text = "  Assignment 3 Part B";
                 button2.gameObject.SetActive(false);
-                assignment1 = 3;
+                if (activeAssignment == 3)
+                    assignment1 = 3;
+                else
+                    assignment1 = 0;
                 assignment2 = 0;
                 break;
             case 6:
                 button1.gameObject.SetActive(true);
                 buttonText1.GetComponent<TextMeshProUGUI>().text = "  Assignment 3 Part C";
                 button2.gameObject.SetActive(false);
-                assignment1 = 3;
+                if (activeAssignment == 3)
+                    assignment1 = 3;
+                else
+                    assignment1 = 0;
                 assignment2 = 0;
                 break;
             case 7:
@@ -137,7 +184,10 @@ public class AssignmentControl : MonoBehaviour
                 button1.gameObject.SetActive(true);
                 buttonText1.GetComponent<TextMeshProUGUI>().text = "  Assignment 4 Part B";
                 button2.gameObject.SetActive(false);
-                assignment1 = 4;
+                if (activeAssignment == 4)
+                    assignment1 = 4;
+                else
+                    assignment1 = 0;
                 assignment2 = 0;
                 break;
             case 9:
@@ -151,12 +201,15 @@ public class AssignmentControl : MonoBehaviour
                 button1.gameObject.SetActive(true);
                 buttonText1.GetComponent<TextMeshProUGUI>().text = "  Assignment 5 Part B";
                 button2.gameObject.SetActive(false);
-                assignment1 = 5;
+                if (activeAssignment == 5)
+                    assignment1 = 5;
+                else
+                    assignment1 = 0;
                 assignment2 = 0;
                 break;
             default:
                 button1.gameObject.SetActive(true);
-                buttonText1.GetComponent<TextMeshProUGUI>().text = "  No Assignment Available";
+                buttonText1.GetComponent<TextMeshProUGUI>().text = "  No Assignment Today";
                 button2.gameObject.SetActive(false);
                 break;
         }
