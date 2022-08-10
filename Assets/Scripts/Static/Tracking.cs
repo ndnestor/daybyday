@@ -38,6 +38,7 @@ public class Tracking : MonoBehaviour
     [SerializeField] private Gradient middayGradient;
     [SerializeField] private Gradient afternoonGradient;
     [SerializeField] private Gradient opacityGradient;
+    [SerializeField] private Vector2 wakeUpPosition;
 
     //Used for sleeping
     [SerializeField] private Transform bedDestination;
@@ -152,20 +153,22 @@ public class Tracking : MonoBehaviour
             
             // Set destination to move to upon waking up
             Vector3 targetPosition;
-            switch(DayNum) {
-                case 2:
-                    agendasBox.SetActive(true);
-                    targetPosition = agendasBox.transform.position + Vector3.left;
-                    break;
-                default:
-                    targetPosition = agendasBox.transform.position + Vector3.left;
-                    break;
-            }
+            if (DayNum == 2)
+            {
+
+                agendasBox.SetActive(true);
+                targetPosition = agendasBox.transform.position + Vector3.left;
+            } else
+                targetPosition = wakeUpPosition;
 
             Movement2D.Instance.MoveTo(targetPosition, () => {
                 
                 // Have agenda speak once Quinn arrives
-                dialogueSystem.Present(agendaDialogue);
+                dialogueSystem.Present(agendaDialogue, () =>
+                {
+                    if(DayNum == 2)
+                        Destroy(agendasBox);
+                });
             });
         }
 
