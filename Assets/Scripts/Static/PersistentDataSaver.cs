@@ -52,8 +52,13 @@ public class PersistentDataSaver : MonoBehaviour
 
     private void Load()
     {
-	    string json = File.ReadAllText("/tmp/data.json");
-	    data = Data.FromJson(json);
+	    if (File.Exists("/tmp/data.json"))
+	    {
+		    string json = File.ReadAllText("/tmp/data.json");
+		    data = Data.FromJson(json);
+	    }
+	    else
+		    File.WriteAllText("/tmp/data.json", "");
     }
 }
 
