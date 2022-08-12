@@ -6,14 +6,15 @@ using UnityEngine;
 
 public class PersistentDataSaver : MonoBehaviour
 {
-	private Data data = new Data();
+	private Data data;
 
     public static PersistentDataSaver Instance;
     
-    private void Start()
+    private void Awake()
     {
+	    DontDestroyOnLoad(this);
 	    Instance = this;
-
+	    
 	    Load();
     }
 
@@ -56,9 +57,11 @@ public class PersistentDataSaver : MonoBehaviour
 	    {
 		    string json = File.ReadAllText("/tmp/data.json");
 		    data = Data.FromJson(json);
+		    return;
 	    }
-	    else
-		    File.WriteAllText("/tmp/data.json", "");
+	    
+		File.WriteAllText("/tmp/data.json", "{}");
+		data = new Data();
     }
 }
 
