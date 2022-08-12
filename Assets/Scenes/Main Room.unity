@@ -2367,6 +2367,7 @@ GameObject:
   - component: {fileID: 890351135}
   - component: {fileID: 890351134}
   - component: {fileID: 890351133}
+  - component: {fileID: 890351136}
   m_Layer: 6
   m_Name: Agenda's Box
   m_TagString: Untagged
@@ -2458,6 +2459,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &890351136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890351132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa04ba80326988479712102aa7958fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 407798833}
 --- !u!1 &893671291
 GameObject:
   m_ObjectHideFlags: 0
@@ -4638,10 +4652,9 @@ MonoBehaviour:
   playerSprite: {fileID: 2006849133}
   rb: {fileID: 1904924970}
   orderLineY: -2.2
-  moveSpeed: 2
+  moveSpeed: 4
   ySpeedFactor: 0.5
   moveToDistThreshold: 0.05
-  bedDestination: {fileID: 1930726013}
   animator: {fileID: 2006849134}
 --- !u!4 &1904924968
 Transform:
