@@ -40,6 +40,7 @@ public class SceneLoader : MonoBehaviour
     {
         if(isBusy) return;
         isBusy = true;
+        Movement2D.Instance.enabled = false;
         // TODO: Perhaps use events / delegates instead of callbacks
         StartCoroutine(ChangeOverlayColor(Color.black, () =>
         {
@@ -57,6 +58,7 @@ public class SceneLoader : MonoBehaviour
                 StartCoroutine(ChangeOverlayColor(Color.clear, () =>
                 {
                     isBusy = false;
+                    Movement2D.Instance.enabled = true;
                     onFinishCallback?.Invoke();
                 }));
             };
