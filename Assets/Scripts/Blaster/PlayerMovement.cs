@@ -102,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Dead");
         scoreScript = scoreText.GetComponent<scoreScript>();
         score = scoreScript.returnScore();
-        scorekeeper.updateBlasterScore(score);
+        scorekeeper.UpdateBlasterScore(score);
         SceneManager.LoadScene("Scene_endGame", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync("Scene_Game");
     }
