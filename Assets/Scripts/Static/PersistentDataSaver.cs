@@ -6,20 +6,27 @@ using UnityEngine;
 
 public class PersistentDataSaver : MonoBehaviour
 {
-	private Data data = new Data();
+	[SerializeField] private string savePath;
+	[SerializeField] private bool resetOnStart;
+
+	private Data data;
 
     public static PersistentDataSaver Instance;
     
-    private void Start()
+    private void Awake()
     {
+	    DontDestroyOnLoad(this);
 	    Instance = this;
-
+	    
+	    if(resetOnStart && File.Exists(savePath))
+		    File.Delete(savePath);
+	    
 	    Load();
     }
 
-    public void Set(string key, string value)
+    public void Set(string key, object value)
     {
-	    data.Set(key, value);
+	    data.Set(key, value.ToString());
 		Save();
     }
 
@@ -38,6 +45,15 @@ public class PersistentDataSaver : MonoBehaviour
 	    return value;
     }
 
+    public T TryGet<T>(string key, T fallback)
+    {
+	    if (Contains(key))
+		    return Get<T>(key);
+
+	    Set(key, fallback);
+	    return fallback;
+    }
+
     public bool Contains(string key)
     {
 	    return data.Contains(key);
@@ -47,13 +63,20 @@ public class PersistentDataSaver : MonoBehaviour
     {
 	    string json = JsonUtility.ToJson(data);
 	    
-	    File.WriteAllText("/tmp/data.json", json);
+	    File.WriteAllText(savePath, json);
     }
 
     private void Load()
     {
-	    string json = File.ReadAllText("/tmp/data.json");
-	    data = Data.FromJson(json);
+	    if (File.Exists(savePath))
+	    {
+		    string json = File.ReadAllText(savePath);
+		    data = Data.FromJson(json);
+		    return;
+	    }
+	    
+		File.WriteAllText("/tmp/data.json", "{}");
+		data = new Data();
     }
 }
 

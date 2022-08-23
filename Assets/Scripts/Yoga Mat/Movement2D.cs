@@ -1,9 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-using UnityEngine.SceneManagement;
-using UnityEngine.Animations;
 
 public class Movement2D : MonoBehaviour
 {
@@ -20,6 +18,7 @@ public class Movement2D : MonoBehaviour
 
     private bool isPlayerControlled = true;
     private Vector2 movement;
+    private IEnumerator moveToCoroutine;
 
     public static Movement2D Instance;
 
@@ -28,8 +27,15 @@ public class Movement2D : MonoBehaviour
         Instance = this;
         playerSpriteRenderer = playerSprite.GetComponent<SpriteRenderer>();
 	}
+    
+    private void OnEnable()
+    {
+        movement = Vector2.zero;
+        if (moveToCoroutine != null)
+            StartCoroutine(moveToCoroutine);
+    }
 
-	// Update is called once per frame
+    // Update is called once per frame
 	private void Update()
     {
         if(isPlayerControlled)
@@ -79,8 +85,8 @@ public class Movement2D : MonoBehaviour
     }
 
     // Used to initialize and run MoveToCoroutine
-    public void MoveTo(Vector2 destination, System.Action callback = null) {
-        IEnumerator moveToCoroutine = MoveToCoroutine(destination, callback);
+    public void MoveTo(Vector2 destination, System.Action callback = null) { 
+        moveToCoroutine = MoveToCoroutine(destination, callback);
         StartCoroutine(moveToCoroutine);
     }
 

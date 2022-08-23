@@ -58,7 +58,7 @@ public class Window : MonoBehaviour {
 			throw new NotImplementedException("The current day is outside the bounds of the window's supported days");
 		}
 
-		if(Tracking.Instance.timeUsed >= nightHour)
+		if(Tracking.Instance.TimeUsed >= nightHour)
 		{
 			messageIndex++;
 		}

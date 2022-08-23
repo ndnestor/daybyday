@@ -26,14 +26,14 @@ public class ComputerInRoom : MonoBehaviour
         if (Input.GetKey(KeyCode.E) && triggerable)
         {
             tracker.AddObject(gameObject);
-            if (tracker.timeUsed + timeValue <= Tracking.MAX_TIME)
+            if (tracker.TimeUsed + timeValue <= Tracking.MAX_TIME)
             {
                 Debug.Log("Time units used: " + tracker.AddUsedTime(timeValue));
                 UseComputer();
             }
             else
             {
-                Debug.Log("Not enough time to use object! Time remaining: " + (24 - tracker.timeUsed));
+                Debug.Log("Not enough time to use object! Time remaining: " + (24 - tracker.TimeUsed));
             }
         }
     }
