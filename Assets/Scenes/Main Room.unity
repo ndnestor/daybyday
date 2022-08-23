@@ -755,7 +755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3cc327554863641af598c16051b93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeUsed: 0
   windowPaneRenderer: {fileID: 1210882081}
   windowLightRenderer: {fileID: 511001135}
   windowFrameHighlightRenderer: {fileID: 1274183672}
@@ -937,6 +936,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bd5eb735d84b894a317da59391fb73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  savePath: /tmp/day_by_day.save
+  resetOnStart: 1
 --- !u!1 &295891022
 GameObject:
   m_ObjectHideFlags: 0

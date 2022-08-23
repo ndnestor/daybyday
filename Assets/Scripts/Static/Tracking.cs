@@ -5,6 +5,7 @@ using Game;
 using Game.Dialogue;
 using Game.Registry;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 //This class is a Singleton instance
 public class Tracking : MonoBehaviour
@@ -25,10 +26,27 @@ public class Tracking : MonoBehaviour
 
     private static Tracking instance;
 
-    public int DayNum { get; private set; }
+    private int dayNum;
+    public int DayNum {
+        get => dayNum;
+        private set
+        {
+            dayNum = value;
+            PersistentDataSaver.Instance.Set("dayNum", value);
+        }
+    }
     public const int MAX_DAYS = 10;
     public const int MAX_TIME = 14;
-    public float timeUsed = 0;
+    private float timeUsed;
+    public float TimeUsed
+    {
+        get => timeUsed;
+        private set
+        {
+            timeUsed = value;
+            PersistentDataSaver.Instance.Set("timeUsed", value);
+        }
+    }
     public ArrayList objectUsage = new ArrayList();
 
     //Used for window lighting
@@ -60,10 +78,16 @@ public class Tracking : MonoBehaviour
     {
         DontDestroyOnLoad(this);
         Instance = this;
-        DayNum = 1;
 
         dialogueSystem = MainInstances.Get<DialogueSystem>();
         valueRegistry = MainInstances.Get<ValueRegistry>();
+
+        DayNum = PersistentDataSaver.Instance.TryGet("dayNum", 1);
+        TimeUsed = PersistentDataSaver.Instance.TryGet("timeUsed", 0);
+
+        print("======================");
+        print(dayNum);
+        print("======================");
     }
 
     //Adds an object to an ArrayList in chronological order of use
@@ -95,33 +119,43 @@ public class Tracking : MonoBehaviour
      */
     public float AddUsedTime(float additionalTime)
     {
-        timeUsed += additionalTime;
+        TimeUsed += additionalTime;
         UpdateLighting();
-        if(timeUsed >= MAX_TIME)
+        if(TimeUsed >= MAX_TIME)
         {
-            timeUsed = 0;
+            TimeUsed = 0;
             Sleep();
         }
 
-        return timeUsed;
+        return TimeUsed;
+    }
+    
+    // NOTE: Used for testing purposes only
+    // TODO: Remove
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            AddUsedTime(1);
+        }
     }
 
     //Tints the window pane, window light, etc. to reflect time of day changes
     public void UpdateLighting()
     {
-        float dayPercentage = timeUsed / MAX_TIME;
+        float dayPercentage = TimeUsed / MAX_TIME;
         float halfDayPercentage;
         Color lightColor;
         if(dayPercentage < 0.5)
         {
             //Use midday gradient
-            halfDayPercentage = timeUsed / ((float)MAX_TIME / 2);
+            halfDayPercentage = TimeUsed / ((float)MAX_TIME / 2);
             lightColor = middayGradient.Evaluate(halfDayPercentage);
 		}
         else
         {
             //Use afternoon gradient
-            halfDayPercentage = (timeUsed - MAX_TIME / 2) / ((float)MAX_TIME / 2);
+            halfDayPercentage = (TimeUsed - MAX_TIME / 2) / ((float)MAX_TIME / 2);
             lightColor = afternoonGradient.Evaluate(halfDayPercentage);
         }
         windowFrameHighlightRenderer.color = new Color(lightColor.r, lightColor.g, lightColor.b, opacityGradient.Evaluate(dayPercentage).a);
@@ -155,7 +189,6 @@ public class Tracking : MonoBehaviour
             Vector3 targetPosition;
             if (DayNum == 2)
             {
-
                 agendasBox.SetActive(true);
                 targetPosition = agendasBox.transform.position + Vector3.left;
             } else
