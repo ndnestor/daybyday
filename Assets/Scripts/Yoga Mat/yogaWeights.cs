@@ -43,7 +43,8 @@ public class yogaWeights : MonoBehaviour
         lastIntTime = 0;
         globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<GlobalScore>();
     }
-    void FixedUpdate() {
+    
+    void Update() {
         if (gameIsOver)
             return;
 
@@ -68,7 +69,6 @@ public class yogaWeights : MonoBehaviour
         }
 
         if (startWait < gameTime) {
-            Debug.Log("Set speed 1");
             speed = 1;
         } else {
             rb.transform.position = new Vector3(-7.492371f, 0.0f, 0.0f);
@@ -84,10 +84,8 @@ public class yogaWeights : MonoBehaviour
         //Debug.Log("Distance is " + distance + ", halfRange is " + halfRange);
         if (distance <= halfRange) {
             inBounds = true;
-            Debug.Log("Player in bounds");
         } else {
             inBounds = false;
-            Debug.Log("Player out of bounds");
         }
         //Debug.Log(distance);
         notifChange();
@@ -99,7 +97,7 @@ public class yogaWeights : MonoBehaviour
         if (Mathf.FloorToInt(scoreTime) >= lastIntTime) {
             scoreTimeInt = Mathf.FloorToInt(scoreTime);
             scoreTimerText.text = scoreTimeInt.ToString();
-         }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)

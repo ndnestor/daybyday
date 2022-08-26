@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 231473491}
   - component: {fileID: 231473492}
   m_Layer: 6
-  m_Name: Static
+  m_Name: Persistent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -937,7 +937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   savePath: /tmp/day_by_day.save
-  resetOnStart: 1
+  resetOnStart: 0
 --- !u!1 &295891022
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,11 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Computer;
 using Game;
 using Game.Dialogue;
 using Game.Registry;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 //This class is a Singleton instance
 public class Tracking : MonoBehaviour
@@ -82,12 +80,8 @@ public class Tracking : MonoBehaviour
         dialogueSystem = MainInstances.Get<DialogueSystem>();
         valueRegistry = MainInstances.Get<ValueRegistry>();
 
-        DayNum = PersistentDataSaver.Instance.TryGet("dayNum", 1);
-        TimeUsed = PersistentDataSaver.Instance.TryGet("timeUsed", 0);
-
-        print("======================");
-        print(dayNum);
-        print("======================");
+        DayNum = PersistentDataSaver.Instance.TryGet(nameof(dayNum), 1);
+        AddUsedTime(PersistentDataSaver.Instance.TryGet(nameof(timeUsed), 0));
     }
 
     //Adds an object to an ArrayList in chronological order of use

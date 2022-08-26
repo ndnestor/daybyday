@@ -64,7 +64,7 @@ public class PlatformHealth : MonoBehaviour
         Debug.Log("Dead");
         scoreScript = scoreText.GetComponent<scoreScript>();
         score = scoreScript.returnScore();
-        globalScoreKeeper.updateBlasterScore(score);
+        globalScoreKeeper.UpdateBlasterScore(score);
         //SceneManager.LoadScene("Scene_endGame", LoadSceneMode.Additive);
         //SceneManager.UnloadSceneAsync("Scene_Game");
 
