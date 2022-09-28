@@ -44,7 +44,8 @@ public class Movement2D : MonoBehaviour
             movement.y = Input.GetAxisRaw("Vertical") * ySpeedFactor;
         }
 
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
+        // NOTE: Not sure why multiplying by Time.deltaTime does not produce expected results
+        rb.MovePosition(rb.position + movement * moveSpeed);
 
         if(rb.position.y >= orderLineY)
         {

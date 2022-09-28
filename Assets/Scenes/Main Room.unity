@@ -4653,7 +4653,7 @@ MonoBehaviour:
   playerSprite: {fileID: 2006849133}
   rb: {fileID: 1904924970}
   orderLineY: -2.2
-  moveSpeed: 6
+  moveSpeed: 0.05
   ySpeedFactor: 0.5
   moveToDistThreshold: 0.05
   animator: {fileID: 2006849134}
