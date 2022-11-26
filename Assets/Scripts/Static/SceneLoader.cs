@@ -15,15 +15,11 @@ public class SceneLoader : MonoBehaviour
                 instance = new SceneLoader();
             return instance;
         }
-        private set
-        {
-            instance = value;
-        }
+        private set => instance = value;
     }
 
     private static SceneLoader instance;
 
-    [SerializeField] private float overlayFadeTime;
     [SerializeField] private float overlayFadeTimeStep;
     [SerializeField] private Image overlayImage;
     [SerializeField] private AudioListener audioListener;
@@ -42,7 +38,7 @@ public class SceneLoader : MonoBehaviour
         isBusy = true;
         Movement2D.Instance.enabled = false;
         // TODO: Perhaps use events / delegates instead of callbacks
-        StartCoroutine(ChangeOverlayColor(Color.black, () =>
+        StartCoroutine(ChangeOverlayColor(Color.black, 1, () =>
         {
             AsyncOperation sceneLoadOperation = SceneManager.LoadSceneAsync(sceneName, loadSceneMode);
             sceneLoadOperation.completed += operation =>
@@ -55,7 +51,7 @@ public class SceneLoader : MonoBehaviour
                 onLoadedCallback?.Invoke();
                 if(hideRoom)
                     RoomRenderer.Instance.HideRoom(sceneName);
-                StartCoroutine(ChangeOverlayColor(Color.clear, () =>
+                StartCoroutine(ChangeOverlayColor(Color.clear, 1, () =>
                 {
                     isBusy = false;
                     Movement2D.Instance.enabled = true;
@@ -69,17 +65,17 @@ public class SceneLoader : MonoBehaviour
     {
         if(isBusy) return;
         isBusy = true;
-        StartCoroutine(ChangeOverlayColor(Color.black, () =>
+        StartCoroutine(ChangeOverlayColor(Color.black, 1, () =>
         {
             AsyncOperation sceneUnloadOperation = SceneManager.UnloadSceneAsync(sceneName);
             sceneUnloadOperation.completed += operation =>
             {
-                StartCoroutine(ChangeOverlayColor(Color.clear, () => { isBusy = false; }));
+                StartCoroutine(ChangeOverlayColor(Color.clear, 1, () => { isBusy = false; }));
             };
         }));
     }
 
-    IEnumerator ChangeOverlayColor(Color targetColor, Action callback = null)
+    public IEnumerator ChangeOverlayColor(Color targetColor, float overlayFadeTime, Action callback = null)
     {
         float timeSinceStart = 0;
 

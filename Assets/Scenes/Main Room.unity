@@ -847,6 +847,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 4
   wakeUpPosition: {x: -3.5, y: -1.5}
   bedDestination: {fileID: 1930726013}
+  sleepAnimation: {fileID: 7400000, guid: e2aa344b78c736955bcf0b69852a7361, type: 2}
   treeWater: {fileID: 893671295}
   agendasBox: {fileID: 890351132}
   agendaDialogue: {fileID: 11400000, guid: 31379b594c414b947811ecf008114d72, type: 2}
@@ -937,7 +938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   savePath: /tmp/day_by_day.save
-  resetOnStart: 0
+  resetOnStart: 1
 --- !u!1 &295891022
 GameObject:
   m_ObjectHideFlags: 0
@@ -4654,9 +4655,9 @@ MonoBehaviour:
   rb: {fileID: 1904924970}
   orderLineY: -2.2
   moveSpeed: 6
+  animator: {fileID: 2006849134}
   ySpeedFactor: 0.5
   moveToDistThreshold: 0.05
-  animator: {fileID: 2006849134}
 --- !u!4 &1904924968
 Transform:
   m_ObjectHideFlags: 0

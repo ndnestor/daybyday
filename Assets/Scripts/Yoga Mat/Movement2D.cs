@@ -6,23 +6,25 @@ using UnityEngine;
 public class Movement2D : MonoBehaviour
 {
     public GameObject playerSprite;
-    SpriteRenderer playerSpriteRenderer;
+    public SpriteRenderer playerSpriteRenderer;
     public Rigidbody2D rb;
     public float orderLineY;
     public float moveSpeed = 5f;
+    public Animator animator;
 
     [Range(0, 1)]
     [SerializeField] private float ySpeedFactor;
     [SerializeField] private double moveToDistThreshold;
-    [SerializeField] private Animator animator;
-
+    
     private bool isPlayerControlled = true;
     private Vector2 movement;
     private IEnumerator moveToCoroutine;
 
+    public static readonly int IsWalkingId = Animator.StringToHash("IsWalking");
+    public static readonly int IsSleepingId = Animator.StringToHash("IsSleeping");
     public static Movement2D Instance;
 
-	private void Awake()
+    private void Awake()
     {
         Instance = this;
         playerSpriteRenderer = playerSprite.GetComponent<SpriteRenderer>();
@@ -64,9 +66,9 @@ public class Movement2D : MonoBehaviour
             playerSpriteRenderer.flipX = false;
 
         if (movement.x == 0)
-            animator.SetBool("IsWalking", false);
+            animator.SetBool(IsWalkingId, false);
         else
-            animator.SetBool("IsWalking", true);
+            animator.SetBool(IsWalkingId, true);
     }
 
     // Prevent or allow player to control the character
@@ -85,15 +87,19 @@ public class Movement2D : MonoBehaviour
     }
 
     // Used to initialize and run MoveToCoroutine
-    public void MoveTo(Vector2 destination, System.Action callback = null) { 
+    public void MoveTo(Vector2 destination, Action callback = null) { 
         moveToCoroutine = MoveToCoroutine(destination, callback);
         StartCoroutine(moveToCoroutine);
+    }
+
+    public void MoveTo(Vector2 destination, Func<IEnumerator> callback) {
+        MoveTo(destination, () => StartCoroutine(callback()));
     }
 
     // Send the character to the specified destination forcefully
     // WARN from Nathan: This doesn't really work with the current implementation of the movement variable
     // TODO: Fix
-    private IEnumerator MoveToCoroutine(Vector2 destination, System.Action callback)
+    private IEnumerator MoveToCoroutine(Vector2 destination, Action callback)
     {   
         SetPlayerControl(false);
         bool completedX = false;

@@ -58,6 +58,7 @@ public class Tracking : MonoBehaviour
 
     //Used for sleeping
     [SerializeField] private Transform bedDestination;
+    [SerializeField] private AnimationClip sleepAnimation;
 
     // WaterPlant component for tree to call for update level/day every day
     public WaterPlant treeWater;
@@ -160,13 +161,30 @@ public class Tracking : MonoBehaviour
     //Moves the character to the bed to move on to the next day
     private void Sleep()
     {
-        void CallbackAction()
+        IEnumerator CallbackAction()
         {
             /* Code in this method will get called when the character is next to the bed and ready to sleep
              * Sleep animation should start playing, sleep theme should start playing, etc
              * Probably should disable the Movement2D.cs script too */
             
             print("Sleeping");
+            
+            // Play sleep animation
+            Movement2D.Instance.playerSpriteRenderer.flipX = false;
+            Movement2D.Instance.animator.SetBool(Movement2D.IsSleepingId, true);
+            Movement2D.Instance.enabled = false;
+            
+            // TODO: Make all these constant numbers variables
+            yield return new WaitUntil(() => Movement2D.Instance.animator.GetCurrentAnimatorStateInfo(0)
+                .IsName("Character Entering Bed"));
+            yield return new WaitForSeconds(1);
+            yield return  StartCoroutine(SceneLoader.Instance.ChangeOverlayColor(Color.black, 2));
+            yield return new WaitUntil(() => !Movement2D.Instance.animator.GetCurrentAnimatorStateInfo(0)
+                .IsName("Character Entering Bed"));
+            
+            Movement2D.Instance.enabled = true;
+            
+            // TODO: Write comment
             treeWater.DayUpdate();
             
             //TODO: Uncomment when computer and room scenes get integrated
@@ -187,6 +205,13 @@ public class Tracking : MonoBehaviour
                 targetPosition = agendasBox.transform.position + Vector3.left;
             } else
                 targetPosition = wakeUpPosition;
+            
+            // TODO: Write comment
+            Movement2D.Instance.animator.SetBool(Movement2D.IsSleepingId, false);
+
+            yield return new WaitForSeconds(1);
+            yield return StartCoroutine(SceneLoader.Instance.ChangeOverlayColor(Color.clear, 1));
+            yield return new WaitForSeconds(1.5f);
 
             Movement2D.Instance.MoveTo(targetPosition, () => {
                 
