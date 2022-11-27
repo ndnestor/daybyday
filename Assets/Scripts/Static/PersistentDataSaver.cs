@@ -75,7 +75,7 @@ public class PersistentDataSaver : MonoBehaviour
 		    return;
 	    }
 	    
-		File.WriteAllText("/tmp/data.json", "{}");
+		File.WriteAllText(Path.Combine(Application.persistentDataPath, "data.json"), "{}");
 		data = new Data();
     }
 }
