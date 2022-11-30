@@ -837,9 +837,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20056546b8b455448f7976b54424557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playlist:
-  - {fileID: 8300000, guid: 7a81ecb93b13948a5a9f58d074f7a943, type: 3}
-  - {fileID: 8300000, guid: 26361b5bfeaeca941988778487f608bc, type: 3}
+  playlists:
+  - {fileID: 11400000, guid: 4695b8c58e8350541a0c28e6b4a89c7a, type: 2}
   autoPlay: 1
   loop: 1
 --- !u!1 &624198030
