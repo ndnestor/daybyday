@@ -156,9 +156,7 @@ MonoBehaviour:
       _dynamic: 1
   Dialogue: "I doubt you need it; most adults can handle not having months off from
     work - a reality you\u2019ll have to get used to. If you do feel like you need
-    this break, then you\u2019re clearly not taking classes that interest you. Try
-    one out over the summer and see if you like it; that way, you\u2019ll have a
-    better idea of what you like and can pick better classes in the future!"
+    this break, then you\u2019re clearly not taking classes that interest you."
   choices:
   - Name: Yeet
     text: Okay
@@ -2076,7 +2074,7 @@ MonoBehaviour:
       _dynamic: 0
   Dialogue: "You mean the relationships where you just send emails every now and
     then and nothing else, even when you have extra time? You\u2019ve already managed
-    those while taking classes; you can do it again over the summer.\r"
+    those while taking classes; you can do it again.\r"
   WaitForInput: 1
   ErasePrevious: 1
 --- !u!114 &400032520595593825
@@ -3201,8 +3199,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Dialogue: "I see you didn\u2019t sign up for a summer class. We can work around
-    this mistake. Here are some activities you can do in the meantime that will help
+  Dialogue: "Here are some activities you can do that will help
     you stay productive until your next chance to take a class."
   WaitForInput: 1
   ErasePrevious: 1
