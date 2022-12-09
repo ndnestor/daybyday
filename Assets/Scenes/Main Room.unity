@@ -937,7 +937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveFileName: data.json
-  resetOnStart: 0
+  resetOnStart: 1
 --- !u!1 &295891022
 GameObject:
   m_ObjectHideFlags: 0

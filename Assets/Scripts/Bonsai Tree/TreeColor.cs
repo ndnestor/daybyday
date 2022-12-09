@@ -24,10 +24,9 @@ public class TreeColor : MonoBehaviour
     // Sprites reused across Week 3 Level 1-3
     public Sprite w3l1_Apr, w3l1_May, w3l2_May;
 
-    public GameObject bonsaiObject;
     public WaterPlant waterPlant;
 
-    void Update()
+    private void Update()
     {
         level = waterPlant.level;
         week = waterPlant.day;

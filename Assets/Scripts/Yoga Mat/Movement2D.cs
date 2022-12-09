@@ -16,13 +16,14 @@ public class Movement2D : MonoBehaviour
     [SerializeField] private double moveToDistThreshold;
     [SerializeField] private Animator animator;
 
+    private static readonly int IsWalking = Animator.StringToHash("IsWalking");
     private bool isPlayerControlled = true;
     private Vector2 movement;
     private IEnumerator moveToCoroutine;
 
     public static Movement2D Instance;
 
-	private void Awake()
+    private void Awake()
     {
         Instance = this;
         playerSpriteRenderer = playerSprite.GetComponent<SpriteRenderer>();
@@ -64,15 +65,12 @@ public class Movement2D : MonoBehaviour
         else if(movement.x > 0 && playerSpriteRenderer.flipX)
             playerSpriteRenderer.flipX = false;
 
-        if (movement.x == 0)
-            animator.SetBool("IsWalking", false);
-        else
-            animator.SetBool("IsWalking", true);
+        animator.SetBool(IsWalking, movement.x != 0);
     }
 
     // Prevent or allow player to control the character
     // TODO: Consider turning isPlayerControlled into a property to replace this method for elegance
-    private void SetPlayerControl(bool canControl) {
+    public void SetPlayerControl(bool canControl) {
         if(canControl)
         {
             movement = Vector2.zero;
@@ -86,7 +84,7 @@ public class Movement2D : MonoBehaviour
     }
 
     // Used to initialize and run MoveToCoroutine
-    public void MoveTo(Vector2 destination, System.Action callback = null) { 
+    public void MoveTo(Vector2 destination, Action callback = null) { 
         moveToCoroutine = MoveToCoroutine(destination, callback);
         StartCoroutine(moveToCoroutine);
     }

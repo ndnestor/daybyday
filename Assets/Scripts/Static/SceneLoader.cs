@@ -57,6 +57,9 @@ public class SceneLoader : MonoBehaviour
                     RoomRenderer.Instance.HideRoom(sceneName);
                 StartCoroutine(ChangeOverlayColor(Color.clear, () =>
                 {
+                    Destroy(GameObject.Find("Letter Box Camera"));
+                    Camera.main.enabled = true;
+                    
                     isBusy = false;
                     Movement2D.Instance.enabled = true;
                     onFinishCallback?.Invoke();

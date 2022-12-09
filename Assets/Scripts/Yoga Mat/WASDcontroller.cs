@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WASDcontroller : MonoBehaviour
+public class WASDController : MonoBehaviour
 {
-    public float speed = 1.0f;
+    [SerializeField] private float moveForce;
      
      void Update() {
-         var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-         transform.position += move * speed * Time.deltaTime;
+         var direction = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+         GetComponent<Rigidbody2D>().velocity = direction * moveForce * Time.deltaTime;
      }
 }

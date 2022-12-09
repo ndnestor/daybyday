@@ -3,23 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class MusicPlayer : MonoBehaviour
 {
-    [SerializeField] private List<Playlist> playlists = new List<Playlist>();
     [SerializeField] private bool autoPlay;
     [SerializeField] private bool loop;
-
+    [Range(0, 1)] [SerializeField] private float maximumVolume;
+    [Range(0, 1)] [SerializeField] private float defaultVolumePercentage;
+    
     private Playlist currPlaylist;
     private AudioSource audioSource;
     private int nextSongIndex;
     private bool playing;
+    
+    public List<Playlist> playlists = new List<Playlist>();
 
     private void Start()
     {
         DontDestroyOnLoad(this);
     
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = defaultVolumePercentage * maximumVolume;
 
         OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -35,6 +40,7 @@ public class MusicPlayer : MonoBehaviour
             if (playlist.sceneName == scene.name) {
                 currPlaylist = playlist;
                 nextSongIndex = 0;
+                NextSong();
                 return;
             }
     }
@@ -69,5 +75,10 @@ public class MusicPlayer : MonoBehaviour
     {
         playing = false;
         audioSource.Stop();
+    }
+
+    private void ChangeVolume(float volumePercentage)
+    {
+        audioSource.volume = volumePercentage * maximumVolume;
     }
 }

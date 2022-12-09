@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ComputerInterface : MonoBehaviour
 {
-    public GameObject mainRoom;
-    public GameObject computerScreen;
-
     public GameObject profilePage;
     public GameObject inboxPage;
     public GameObject assignmentPage;
@@ -18,9 +15,9 @@ public class ComputerInterface : MonoBehaviour
 
     public GameObject currentPage;
 
-    // Canvas objects for Assignents page
+    // Canvas objects for Assignments page
     //public GameObject assmtButton1, assmtButton2, userTypeBox, notesButton;
-    // Canvas objects for Inbox apge
+    // Canvas objects for Inbox page
     public GameObject inboxAssets;
     public GameObject assignmentAssets;
 
@@ -39,7 +36,7 @@ public class ComputerInterface : MonoBehaviour
 
     public void QuitComputer()
     {
-        SceneManager.UnloadSceneAsync("CompAll");
+        SceneLoader.Instance.UnloadAsync("CompAll");
     }
 
     void CastRay()

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,9 +9,7 @@ public class WaterPlant : MonoBehaviour
     [HideInInspector] public int day = 1;
 
     public GameObject waterCan;
-    public GameObject treeObject;
     public GameObject wateringObj;
-    public HighlightObject highlightObject;
     private bool wasWatered;
 
     // Start is called before the first frame update
@@ -19,11 +18,15 @@ public class WaterPlant : MonoBehaviour
         InteractionHandler.Instance.RegisterObject("Bonsai Tree", WaterBonsai, 1);
     }
 
-    private void WaterBonsai()
+    private IEnumerator WaterBonsai()
     {
-        Instantiate(waterCan, new Vector3(0.93f, -1.58f, 0.0f), Quaternion.identity);
-        Instantiate(wateringObj, new Vector3(-0.05f, -1.50f, 0.0f), Quaternion.identity);
+        var waterCanInstance = Instantiate(waterCan, new Vector3(0.93f, -1.58f, 0.0f), Quaternion.identity);
+        var wateringObjInstance = Instantiate(wateringObj, new Vector3(-0.05f, -1.50f, 0.0f), Quaternion.identity);
         wasWatered = true;
+        
+        Movement2D.Instance.SetPlayerControl(false);
+        yield return new WaitUntil(() => !waterCanInstance && !wateringObjInstance);
+        Movement2D.Instance.SetPlayerControl(true);
     }
 
     // This should be called at beginning of every day

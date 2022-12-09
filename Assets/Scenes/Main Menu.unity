@@ -507,10 +507,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.8
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 542077034}
+        m_TargetAssemblyTypeName: MusicPlayer, Assembly-CSharp
+        m_MethodName: ChangeVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &459302816
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,10 +849,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20056546b8b455448f7976b54424557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playlists:
-  - {fileID: 11400000, guid: 4695b8c58e8350541a0c28e6b4a89c7a, type: 2}
   autoPlay: 1
   loop: 1
+  maximumVolume: 0.075
+  defaultVolumePercentage: 0.8
+  playlists:
+  - {fileID: 11400000, guid: 4695b8c58e8350541a0c28e6b4a89c7a, type: 2}
+  - {fileID: 11400000, guid: 9e8c955d4b3785f4d9256a249c172b4d, type: 2}
+  - {fileID: 11400000, guid: 111cd1af3ba6fce4388d64fc7973df78, type: 2}
+  - {fileID: 11400000, guid: 8c1b401ceccb51e4a9815d6dae20100d, type: 2}
+  - {fileID: 11400000, guid: 0fe035817adb23d4aa5210e98a9573a3, type: 2}
 --- !u!1 &624198030
 GameObject:
   m_ObjectHideFlags: 0

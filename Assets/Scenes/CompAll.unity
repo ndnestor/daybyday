@@ -4382,6 +4382,7 @@ MonoBehaviour:
   button1: {fileID: 507526196}
   button2: {fileID: 788347810}
   submitButton: {fileID: 434076661}
+  startButton: {fileID: 39183797}
   buttonText1: {fileID: 1505950454}
   buttonText2: {fileID: 987990786}
   announcementPage: {fileID: 1965445998}

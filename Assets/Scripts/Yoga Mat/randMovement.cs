@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class randMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Rigidbody2D rb;
     public float speed;
     private float transX, transY;
@@ -21,28 +20,32 @@ public class randMovement : MonoBehaviour
     public float scoreTimeInt;
     float timeAtStart, gameTime;
     int lastIntTime, nextIntTime;
+    
+    // Start is called before the first frame update
     void Start()
     {
+        Physics2D.IgnoreCollision(playerDot.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        
         timeAtStart = Time.time;
         lastIntTime = 0;
         globalScoreKeeper = GameObject.Find("globalScoreObj").GetComponent<GlobalScore>();
         bounceIncr = 1.5f;
         playerInBounds = true;
-        rb = GetComponent<Rigidbody2D> ();
+        rb = GetComponent<Rigidbody2D>();
         rb.transform.position = new Vector3(-2.4f, 0.08f, 0.0f);
-        transX = UnityEngine.Random.Range(0, 10);
-        transY = UnityEngine.Random.Range(0, 10);
+        transX = Random.Range(0, 10);
+        transY = Random.Range(0, 10);
          if (transX < 5) {
              if (transY < 5) {
                  rb.velocity = -transform.up * speed - transform.right * speed;
              } else {
-                 rb.velocity = transform.up * speed - transform.right*speed;
+                 rb.velocity = transform.up * speed - transform.right * speed;
              }
          } else {
              if (transY < 5) {
                  rb.velocity = -transform.up * speed + transform.right * speed;
              } else {
-                 rb.velocity = transform.up * speed + transform.right*speed;
+                 rb.velocity = transform.up * speed + transform.right * speed;
              }
          }
          bounceTimer = timeAtStart + bounceIncr;
@@ -52,21 +55,17 @@ public class randMovement : MonoBehaviour
         scoreTimeInt = 0;
     }
 
-    void FixedUpdate(){
+    private void Update(){
          gameTime = Time.time - timeAtStart;
          lastIntTime = Mathf.FloorToInt(gameTime);
-         //rb.velocity = transform.up * speed - transform.right*speed;
-         Vector3 pos = transform.position;
          distance = Vector3.Distance (circleCenter.transform.position, playerDot.transform.position);
          if (gameTime > bounceTimer) {
-             changeDirection();
+             ChangeDirection();
          }
          if (distance <= 1.22) {
              playerInBounds = true;
-             Debug.Log("Player in bounds is TRUE");
          } else {
              playerInBounds = false;
-             Debug.Log("Player in bounds is FALSE");
          }
          notifChange();
          scoreTime = gameTime;
@@ -91,33 +90,29 @@ public class randMovement : MonoBehaviour
         }
         inOutText.text = outTime.ToString();
     }
-
     
-    void changeDirection() {
-        Debug.Log("Changing direc");
-        transX = UnityEngine.Random.Range(0, 10);
-        transY = UnityEngine.Random.Range(0, 10);
+    private void ChangeDirection() {
+        transX = Random.Range(0, 10);
+        transY = Random.Range(0, 10);
          if (transX < 5) {
              if (transY < 5) {
                  rb.velocity = -transform.up * speed - transform.right * speed;
              } else {
-                 rb.velocity = transform.up * speed - transform.right*speed;
+                 rb.velocity = transform.up * speed - transform.right * speed;
              }
          } else {
              if (transY < 5) {
                  rb.velocity = -transform.up * speed + transform.right * speed;
              } else {
-                 rb.velocity = transform.up * speed + transform.right*speed;
+                 rb.velocity = transform.up * speed + transform.right * speed;
              }
          }
          bounceTimer = gameTime + bounceIncr;
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionEnter2D()
     {
-        if (col.gameObject.tag == "Player") {
-            Physics2D.IgnoreCollision(playerDot.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        }
+        ChangeDirection();
     }
 
     void gameOver() {
