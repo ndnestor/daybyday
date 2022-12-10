@@ -10,18 +10,17 @@ public class Movement2D : MonoBehaviour
     public Rigidbody2D rb;
     public float orderLineY;
     public float moveSpeed = 5f;
-    public Animator animator;
 
     [Range(0, 1)]
     [SerializeField] private float ySpeedFactor;
     [SerializeField] private double moveToDistThreshold;
-    
+    [SerializeField] private Animator animator;
+
+    private static readonly int IsWalking = Animator.StringToHash("IsWalking");
     private bool isPlayerControlled = true;
     private Vector2 movement;
     private IEnumerator moveToCoroutine;
 
-    public static readonly int IsWalkingId = Animator.StringToHash("IsWalking");
-    public static readonly int IsSleepingId = Animator.StringToHash("IsSleeping");
     public static Movement2D Instance;
 
     private void Awake()
@@ -46,7 +45,8 @@ public class Movement2D : MonoBehaviour
             movement.y = Input.GetAxisRaw("Vertical") * ySpeedFactor;
         }
 
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
+        // NOTE: Not sure why multiplying by Time.deltaTime does not produce expected results
+        rb.MovePosition(rb.position + movement * moveSpeed);
 
         if(rb.position.y >= orderLineY)
         {
@@ -65,15 +65,12 @@ public class Movement2D : MonoBehaviour
         else if(movement.x > 0 && playerSpriteRenderer.flipX)
             playerSpriteRenderer.flipX = false;
 
-        if (movement.x == 0)
-            animator.SetBool(IsWalkingId, false);
-        else
-            animator.SetBool(IsWalkingId, true);
+        animator.SetBool(IsWalking, movement.x != 0);
     }
 
     // Prevent or allow player to control the character
     // TODO: Consider turning isPlayerControlled into a property to replace this method for elegance
-    private void SetPlayerControl(bool canControl) {
+    public void SetPlayerControl(bool canControl) {
         if(canControl)
         {
             movement = Vector2.zero;

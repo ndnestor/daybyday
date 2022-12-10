@@ -6,9 +6,10 @@ using UnityEngine;
 
 public class PersistentDataSaver : MonoBehaviour
 {
-	[SerializeField] private string savePath;
+	[SerializeField] private string saveFileName;
 	[SerializeField] private bool resetOnStart;
 
+	private string absoluteSavePath;
 	private Data data;
 
     public static PersistentDataSaver Instance;
@@ -17,9 +18,11 @@ public class PersistentDataSaver : MonoBehaviour
     {
 	    DontDestroyOnLoad(this);
 	    Instance = this;
-	    
-	    if(resetOnStart && File.Exists(savePath))
-		    File.Delete(savePath);
+
+	    absoluteSavePath = Application.persistentDataPath + "/" + saveFileName;
+
+	    if(resetOnStart && File.Exists(absoluteSavePath))
+		    File.Delete(absoluteSavePath);
 	    
 	    Load();
     }
@@ -63,19 +66,19 @@ public class PersistentDataSaver : MonoBehaviour
     {
 	    string json = JsonUtility.ToJson(data);
 	    
-	    File.WriteAllText(savePath, json);
+	    File.WriteAllText(absoluteSavePath, json);
     }
 
     private void Load()
     {
-	    if (File.Exists(savePath))
+	    if (File.Exists(absoluteSavePath))
 	    {
-		    string json = File.ReadAllText(savePath);
+		    string json = File.ReadAllText(absoluteSavePath);
 		    data = Data.FromJson(json);
 		    return;
 	    }
 	    
-		File.WriteAllText(Path.Combine(Application.persistentDataPath, "data.json"), "{}");
+		File.WriteAllText(absoluteSavePath, "{}");
 		data = new Data();
     }
 }

@@ -115,7 +115,15 @@ public class Tracking : MonoBehaviour
     public float AddUsedTime(float additionalTime)
     {
         TimeUsed += additionalTime;
-        UpdateLighting();
+
+        IEnumerator Enumerator() {
+            // TODO: Remove magic number
+            yield return new WaitForSeconds(3);
+            UpdateLighting();
+        }
+
+        StartCoroutine(Enumerator());
+
         if(TimeUsed >= MAX_TIME)
         {
             TimeUsed = 0;
@@ -150,7 +158,7 @@ public class Tracking : MonoBehaviour
         else
         {
             //Use afternoon gradient
-            halfDayPercentage = (TimeUsed - MAX_TIME / 2) / ((float)MAX_TIME / 2);
+            halfDayPercentage = (TimeUsed - (float)MAX_TIME / 2) / ((float)MAX_TIME / 2);
             lightColor = afternoonGradient.Evaluate(halfDayPercentage);
         }
         windowFrameHighlightRenderer.color = new Color(lightColor.r, lightColor.g, lightColor.b, opacityGradient.Evaluate(dayPercentage).a);
@@ -187,14 +195,13 @@ public class Tracking : MonoBehaviour
             // TODO: Write comment
             treeWater.DayUpdate();
             
-            //TODO: Uncomment when computer and room scenes get integrated
+            //TODO: Add persistent profile screen data
             //ProfileScreen.Instance.ResetTodaysActivityTimes();
             DayNum++;
             
             InteractionHandler.Instance.UpdateNeglectedSprites();
             ProductivityAid.Instance.UpdateLevel();
             
-            // Present Agenda dialogue
             valueRegistry.Set("Day Number", DayNum);
             
             // Set destination to move to upon waking up

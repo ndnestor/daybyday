@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Game;
 using Game.Dialogue;
@@ -72,6 +73,10 @@ public class InteractionHandler : MonoBehaviour
 		});
 		objectNeglection.Add(objectName, true);
 		return true;
+	}
+
+	public bool RegisterObject(string objectName, Func<IEnumerator> objectAction, int timeConsumption = 0) {
+		return RegisterObject(objectName, () => StartCoroutine(objectAction()), timeConsumption);
 	}
 
 	// Calls an interaction object's action given the name of it

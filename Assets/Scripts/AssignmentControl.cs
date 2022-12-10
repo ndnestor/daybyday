@@ -17,7 +17,7 @@ public class AssignmentControl : MonoBehaviour
 
     //Have to figure out how to get the days from Tracking
 
-    [SerializeField] Button button1, button2, submitButton;
+    [SerializeField] Button button1, button2, submitButton, startButton;
     [SerializeField] TextMeshProUGUI buttonText1, buttonText2;
     [SerializeField] GameObject announcementPage;
     [SerializeField] TextMeshProUGUI announcementText;
@@ -29,10 +29,17 @@ public class AssignmentControl : MonoBehaviour
     public void openActiveAssignment1() {
         int dayNum = Tracking.Instance.DayNum;
         viewedAssignment = 0;
+
         switch(assignment1) {
             case 0:
                 // Assignment unavailable
-                announcementText.text = "This assignment is unavailable since you did not do the prior part :(";
+                if (dayNum == 1)
+                    announcementText.text = "There are no assignments to do today. Check back tomorrow!";
+                else
+                    announcementText.text = "This assignment is unavailable since you did not do the prior part :(";
+                
+                startButton.GetComponentInChildren<TMP_Text>().text = "";
+                startButton.interactable = false;
                 viewedAssignment = -1;
                 break;
             case 1:
@@ -82,6 +89,10 @@ public class AssignmentControl : MonoBehaviour
     }
     public void openActiveAssignment2() {
         viewedAssignment = 2;
+        
+        startButton.GetComponentInChildren<TMP_Text>().text = "Submit Assignment";
+        startButton.interactable = true;
+        
         switch(assignment2) {
             case 3:
                 //Assignment 3A
