@@ -847,6 +847,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 4
   wakeUpPosition: {x: -3.5, y: -1.5}
   bedDestination: {fileID: 1930726013}
+  sleepAnimation: {fileID: 0}
   treeWater: {fileID: 893671295}
   agendasBox: {fileID: 890351132}
   agendaDialogue: {fileID: 11400000, guid: 31379b594c414b947811ecf008114d72, type: 2}
@@ -2578,9 +2579,7 @@ MonoBehaviour:
   level: 0
   day: 1
   waterCan: {fileID: 2453544803732008215, guid: 96865aa80663ae04ba25379d80a643c1, type: 3}
-  treeObject: {fileID: 893671291}
   wateringObj: {fileID: 3786216633509068024, guid: 5169a8a51d7775648b676a8fc5bd16b3, type: 3}
-  highlightObject: {fileID: 893671296}
 --- !u!114 &893671296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2639,7 +2638,6 @@ MonoBehaviour:
   w3l1_Apr: {fileID: 21300000, guid: 2611822ea18373641b2af5f5e6205683, type: 3}
   w3l1_May: {fileID: 21300000, guid: 198aded4907119a40aab8b3fbdf4f925, type: 3}
   w3l2_May: {fileID: 21300000, guid: 7e7638517ccae2b449c17f22a1b84e7e, type: 3}
-  bonsaiObject: {fileID: 893671291}
   waterPlant: {fileID: 893671295}
 --- !u!1 &911217087
 GameObject:
@@ -2853,7 +2851,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd651c416776e246afa6102878814d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overlayFadeTime: 1
   overlayFadeTimeStep: 0.01
   overlayImage: {fileID: 1629613372}
   audioListener: {fileID: 1044268469}
@@ -4651,12 +4648,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSprite: {fileID: 2006849133}
+  playerSpriteRenderer: {fileID: 0}
   rb: {fileID: 1904924970}
   orderLineY: -2.2
-  moveSpeed: 0.05
+  moveSpeed: 0.03
+  animator: {fileID: 2006849134}
   ySpeedFactor: 0.5
   moveToDistThreshold: 0.05
-  animator: {fileID: 2006849134}
 --- !u!4 &1904924968
 Transform:
   m_ObjectHideFlags: 0
