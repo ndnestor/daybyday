@@ -172,7 +172,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &465114767
 GameObject:
@@ -366,6 +366,134 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1001 &995398212
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1694555892943901142, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_Text
+      value: Leveling Up
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739185799738404216, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_Name
+      value: Leveling Up
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: title
+      value: Leveling Up
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: author
+      value: Eric Mooney
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: contents
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: maxLinesPerPage
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: generatePageContents
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[0]
+      value: " you grab a hanger and fling off your winter coat, you\u2019re swallowed
+        by a cloud of filth. Your eyes moisten and sizzle until you feel like they\u2019re
+        melting, before they forcefully reopen. Between desperate blinks, you catch
+        a glimpse of your daughter\u2019s softball uniform, caked and clouded in
+        dust. Her jersey is missing, however. After scanning the room, you gaze at
+        the pulsating light that seeps from your living room\u2019s door. You knock
+        on it; a few seconds later, your daughter opens the door, sporting her stretched-out
+        jersey. \n\u201CHi Dad!\u201D \n\u201CHi! \u2026Was wondering where your
+        jersey went. Are you thinking of trying out for softball this month?\u201D
+        You inquire.\n\u201CI... don\u2019t know. Haven\u2019t thought about it much
+        since last spring.\u201D She replies.\n\u201CAre your friends trying out?\u201D
+        You respond. \n\u201CYeah, though I still play games with some of them online.\u201D
+        She answers.\n\u201CYou\u2019ve mostly been playing that cooperative building
+        game with them, right?\u201D You ask."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[1]
+      value: "\u201CYep! We\u2019ve been obsessed with it ever since it came out!\u201D
+        She affirms. \u201C...I know it sounds silly, but I started thinking that
+        I\u2019d like to be a civil engineer someday. I\u2019ve been reading up on
+        what they really do, and I think it\u2019d be a good fit for me.\u201D \n\u201CI
+        agree!\u201D You add. \u201CYour math and engineering grades have been amazing,
+        especially recently. We should start looking for colleges with good civil
+        engineering programs. How about we start after dinner?\u201D\n\u201CSure!
+        I\u2019ll ask some of my friends where they\u2019re applying to. I\u2019d
+        love to stick with them if I can, and hopefully hang out more too.\u201D 
+        She replies bittersweetly as you grab your apron.\nYou stroll to your spice
+        cabinet only to find it empty, so you enter your office to order refills
+        for it. Pictures of your daughter\u2019s old friends from softball glisten
+        under your orange ceiling light. As you sit down, she peers into your doorway:
+        \n\u201CThere\u2019s a new game coming out that I can\u2019t wait for. Can
+        we buy it?\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175736764180412185, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175736764180412185, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
 --- !u!1 &1139346029
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,14 +586,189 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 465114768}
+  - {fileID: 2145723495}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 379.5, y: 213.4}
   m_SizeDelta: {x: 759, y: 426.8}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1146104005
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1694555892943901142, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_Text
+      value: Keys to Mental Wellness
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739185799738404216, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_Name
+      value: Keys to Mental Wellness
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: title
+      value: Keys to Mental Wellness
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: author
+      value: Cray Torres
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: contents
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: maxLinesPerPage
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: generatePageContents
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[0]
+      value: "As a kid, I was mystified by my interests, from the songs I liked to
+        the games I played. While never very unconventional, my tastes were broad
+        enough that I couldn\u2019t rely on genre or artist names to find what I
+        wanted. This led me to read reviews, watch video essays, and otherwise try
+        to understand what other people saw in my pastimes.\n\nPerhaps the biggest
+        revelation from this multi-year (and ongoing) pet project was the idea that
+        art - especially video games - could appeal to people by giving them a sense
+        of competence, autonomy, and/or relatedness. Competence refers to feeling
+        skilled at something and having opportunities to build upon those skills.
+        Satisfying your need for autonomy means being able to express yourself authentically
+        and make decisions without any coercion. Finally, relatedness requires supportive
+        relationships with others.\n\nI later looked up this trinity of desires online
+        and found that it stemmed from psychology -"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[1]
+      value: "specifically, basic psychological need theory (BPNT). As the theory\u2019s
+        name suggests, competence, autonomy, and relatedness are important for your
+        well-being - not just enjoying games. Among other things, they help you become
+        successful, socially well-adjusted, and satisfied with your life. Unlike
+        nutritional needs, however, your psychological needs seem (at least, from
+        my reading of current psychology research) to be limitless. In other words,
+        the more you feel a sense of competence, autonomy, and relatedness, the better
+        your mental health will be. This does assume that you\u2019re fulfilling
+        those needs in ways that aren\u2019t outweighed by their negative effects
+        on your mental health, however. So if you get a sense of competence from
+        not eating or drinking water, for instance, those benefits won\u2019t last
+        long (and neither will you). \nWhy do these insatiable needs exist? Some
+        researchers suspect that they helped our ancestors survive and reproduce.
+        Constantly pursuing a sense of competence might have made them want to get
+        better at hunting or foraging for"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[2]
+      value: "food, for instance, so they kept improving their skills and were less
+        likely to starve. Seeking autonomy gives you the freedom to pursue your other
+        needs, like forming relationships that satisfy your desire for relatedness.
+        Those relationships might afford protection, mating opportunities, or other
+        benefits. These conditions are generally true today, except that pursuing
+        competence is more likely to help you in a job that lets you afford food,
+        not hunt or forage for it.\n\nIf these basic needs are universal and fundamental
+        to our well-being, why bother discussing them when they should be obvious?
+        It\u2019s because we\u2019ve also evolved to want and need other things,
+        and there\u2019s a good chance that you didn\u2019t know how important these
+        3 basic needs were (or how they worked) before reading this. Now, you can
+        prioritize them over other desires which aren\u2019t as important.\n\nIdeally,
+        every aspect of your life would help satisfy your basic needs, but it\u2019s
+        unrealistic to expect to"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[3]
+      value: "control and be skilled at everything while having deep relationships
+        with everyone you meet. Thus, it\u2019s best to find some reliable and safe
+        ways to fulfill these needs and others you may have. Having a job that feels
+        good to succeed and improve at, for instance, is a good way to pursue your
+        needs for both money and competence. However, being paid to act a certain
+        way makes it harder to satisfy your need for autonomy. Hobbies that let you
+        freely and authentically express yourself might help you. Socializing obviously
+        helps you feel a sense of relatedness, especially when it leads to relationships
+        involving some form of mutual support. Some researchers have also proposed
+        that relatedness stems from experiencing inclusion and care between yourself
+        and your broader community or even nature. Thus, even someone with a lot
+        of deep relationships might benefit from going outside more often, caring
+        for plants, and generally feeling like they belong even outside their social"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[4]
+      value: "circles.\n\nNow that you understand your basic psychological needs,
+        it\u2019s time to start pursuing them! Ask yourself which needs you feel
+        you\u2019re lacking the most. Don\u2019t be afraid to try new ways of fulfilling
+        them - especially if they support as many of your needs (psychological and
+        otherwise) as possible. Ask yourself if you\u2019re reaping the benefits
+        that you hoped for from these activities - and if you\u2019re not, how you
+        could fix that. Your time is precious, but so is your mental health."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: pageContents.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175736764180412185, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175736764180412185, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421406801908864718, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
 --- !u!1001 &1335230834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -956,6 +1259,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 737879503}
+    - target: {fileID: 5175736764180412185, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175736764180412185, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.55
+      objectReference: {fileID: 0}
     - target: {fileID: 6541746923948452620, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1098,8 +1409,157 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2145723494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2145723495}
+  - component: {fileID: 2145723499}
+  - component: {fileID: 2145723498}
+  - component: {fileID: 2145723497}
+  - component: {fileID: 2145723496}
+  m_Layer: 5
+  m_Name: Exit Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2145723495
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145723494}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1139346033}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -750.4679, y: -422.11145}
+  m_SizeDelta: {x: 0.43701172, y: 0.43701172}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2145723496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145723494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1aa8b82ab5d3e346a2b0ce14d443c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Bookshelf
+  disabledSprite: {fileID: 21300000, guid: abc60b758e52bcc48b868404c37f31f4, type: 3}
+  enabledSprite: {fileID: 21300000, guid: 60af54f6c5814e546a3c59bc26120d1b, type: 3}
+  cooldown: 1
+--- !u!114 &2145723497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145723494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 0
+  m_TargetGraphic: {fileID: 2145723498}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2145723496}
+        m_TargetAssemblyTypeName: SceneUnloadButton, Assembly-CSharp
+        m_MethodName: Unload
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2145723498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145723494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: abc60b758e52bcc48b868404c37f31f4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2145723499
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145723494}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1694555893498504746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1165,7 +1625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2739185799738404216, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: m_Name
-      value: Book
+      value: Hiba's Book
       objectReference: {fileID: 0}
     - target: {fileID: 3369891494995556271, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: m_IsActive
@@ -1635,11 +2095,11 @@ PrefabInstance:
       objectReference: {fileID: 737879503}
     - target: {fileID: 5175736764180412185, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.81
       objectReference: {fileID: 0}
     - target: {fileID: 5175736764180412185, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.12
       objectReference: {fileID: 0}
     - target: {fileID: 6541746923948452620, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: m_IsActive
