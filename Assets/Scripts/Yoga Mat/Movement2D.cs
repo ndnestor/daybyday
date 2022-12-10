@@ -10,17 +10,18 @@ public class Movement2D : MonoBehaviour
     public Rigidbody2D rb;
     public float orderLineY;
     public float moveSpeed = 5f;
-
+    public Animator animator;
+    
     [Range(0, 1)]
     [SerializeField] private float ySpeedFactor;
     [SerializeField] private double moveToDistThreshold;
-    [SerializeField] private Animator animator;
 
-    private static readonly int IsWalking = Animator.StringToHash("IsWalking");
+    private static readonly int IsWalkingId = Animator.StringToHash("IsWalking");
     private bool isPlayerControlled = true;
     private Vector2 movement;
     private IEnumerator moveToCoroutine;
 
+    public static readonly int IsSleepingId = Animator.StringToHash("IsSleeping");
     public static Movement2D Instance;
 
     private void Awake()
@@ -65,7 +66,7 @@ public class Movement2D : MonoBehaviour
         else if(movement.x > 0 && playerSpriteRenderer.flipX)
             playerSpriteRenderer.flipX = false;
 
-        animator.SetBool(IsWalking, movement.x != 0);
+        animator.SetBool(IsWalkingId, movement.x != 0);
     }
 
     // Prevent or allow player to control the character

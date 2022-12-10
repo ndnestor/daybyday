@@ -208,6 +208,8 @@ public class Book : MonoBehaviour
 		for(int i = 0; i < pageContents.Count; i++) {
 			pageContents[i] = pageContents[i].Replace(newLineToken, "\n");
 		}
+
+		contents = contents.Replace(newLineToken, "\n");
 	}
 	
 	private string FillTextBox(TMP_Text textBox, int charsPerIteration, string text)
