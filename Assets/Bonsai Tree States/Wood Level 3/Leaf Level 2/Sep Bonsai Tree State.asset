@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22d40adc149b8f1394e79622bc5a5aa, type: 3}
   m_Name: Sep Bonsai Tree State
   m_EditorClassIdentifier: 
-  woodLevel: 2
+  woodLevel: 3
   leafLevel: 2
   earliestDay: 9
   latestDay: 9
