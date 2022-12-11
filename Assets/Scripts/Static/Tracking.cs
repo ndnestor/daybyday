@@ -58,7 +58,7 @@ public class Tracking : MonoBehaviour
     [SerializeField] private AnimationClip sleepAnimation;
 
     // WaterPlant component for tree to call for update level/day every day
-    public WaterPlant treeWater;
+    public BonsaiTree bonsaiTree;
     
     //Used for Agenda's day two introduction
     [SerializeField] private GameObject agendasBox;
@@ -175,6 +175,7 @@ public class Tracking : MonoBehaviour
             print("Sleeping");
             
             // Play sleep animation
+            Movement2D.Instance.SetPlayerControl(false);
             Movement2D.Instance.playerSpriteRenderer.flipX = false;
             Movement2D.Instance.animator.SetBool(Movement2D.IsSleepingId, true);
             Movement2D.Instance.enabled = false;
@@ -190,7 +191,7 @@ public class Tracking : MonoBehaviour
             Movement2D.Instance.enabled = true;
             
             // TODO: Write comment
-            treeWater.DayUpdate();
+            bonsaiTree.DayUpdate();
             
             //TODO: Add persistent profile screen data
             //ProfileScreen.Instance.ResetTodaysActivityTimes();
@@ -216,6 +217,8 @@ public class Tracking : MonoBehaviour
             yield return new WaitForSeconds(1);
             yield return StartCoroutine(SceneLoader.Instance.ChangeOverlayColor(Color.clear, 1));
             yield return new WaitForSeconds(1.5f);
+            
+            Movement2D.Instance.SetPlayerControl(true);
 
             Movement2D.Instance.MoveTo(targetPosition, () => {
                 
