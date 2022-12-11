@@ -16,10 +16,7 @@ public class Tracking : MonoBehaviour
                 instance = new Tracking();
             return instance;
         }
-        private set
-        {
-            instance = value;
-        }
+        private set => instance = value;
     }
 
     private static Tracking instance;
