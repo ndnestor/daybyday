@@ -13,9 +13,6 @@ public class OpenComputer : MonoBehaviour
 
     private void OpenComp()
     {
-        //SceneManager.LoadScene("CompAll", LoadSceneMode.Additive);
-        //RoomRenderer.Instance.HideRoom();
-
-        SceneLoader.Instance.LoadAsync("CompAll", LoadSceneMode.Additive, true);
+        SceneLoader.Instance.LoadAsync("Computer", LoadSceneMode.Additive, true);
     }
 }

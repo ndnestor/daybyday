@@ -36,7 +36,7 @@ public class ComputerInterface : MonoBehaviour
 
     public void QuitComputer()
     {
-        SceneLoader.Instance.UnloadAsync("CompAll");
+        SceneLoader.Instance.UnloadAsync("Computer");
     }
 
     void CastRay()
@@ -79,7 +79,9 @@ public class ComputerInterface : MonoBehaviour
         else if (newName.Equals("Blaster Button"))
         {
             Tracking.Instance.AddUsedTime(2);
-            SceneLoader.Instance.LoadAsync("Scene_Game", LoadSceneMode.Additive);
+            SceneLoader.Instance.LoadAsync("Scene_Game", LoadSceneMode.Additive, onLoadedCallback: () => {
+                SceneLoader.Instance.UnloadAsync("Computer");
+            });
         }
         else if (newName.Equals("Help Button"))
         {
