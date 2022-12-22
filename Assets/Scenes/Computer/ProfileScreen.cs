@@ -65,12 +65,15 @@ namespace Computer {
         }
     
         private void UpdateBarChart(Interaction interaction, int timeUsed) {
+            
+            foreach(var key in PersistentDataSaver.Instance.GetKeys())
+                if (key.IndexOf("TimeConsumption", StringComparison.Ordinal) != -1) {
+                    // Update the chronological bar chart
+                    UpdateBarChartChronological(interaction, timeUsed);
         
-            // Update the chronological bar chart
-            UpdateBarChartChronological(interaction, timeUsed);
-        
-            // Update the same order bar chart
-            UpdateBarChartSameOrder(interaction, timeUsed);
+                    // Update the same order bar chart
+                    UpdateBarChartSameOrder(interaction, timeUsed);
+                }
         }
         
         private void UpdateBarChartChronological(Interaction interaction, int timeUsed) {

@@ -2579,47 +2579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterCan: {fileID: 2453544803732008215, guid: 96865aa80663ae04ba25379d80a643c1, type: 3}
   wateringObj: {fileID: 3786216633509068024, guid: 5169a8a51d7775648b676a8fc5bd16b3, type: 3}
-  spriteRenderer: {fileID: 1345093770}
-  bonsaiTreeStates:
-  - {fileID: 11400000, guid: 9246eb483bbacf6e19c8768a74cdc47c, type: 2}
-  - {fileID: 11400000, guid: c25c6219ebb9f00db8eb83821b27e365, type: 2}
-  - {fileID: 11400000, guid: 9a0fff7a5d9433f50bf337f86354dd71, type: 2}
-  - {fileID: 11400000, guid: 27ca93b4f34e06963aee4ec9d425a49f, type: 2}
-  - {fileID: 11400000, guid: 18a15a499ce1d4c64a89da5ab10e008b, type: 2}
-  - {fileID: 11400000, guid: 1e195f568349df7eaa9a246712f2705e, type: 2}
-  - {fileID: 11400000, guid: 19e841cf3f4647643adb714ea19ed2a5, type: 2}
-  - {fileID: 11400000, guid: 876ef19bad78f72ac86cd48d5292e019, type: 2}
-  - {fileID: 11400000, guid: 158ddbe905ff4ea9daeb1fbb2831230c, type: 2}
-  - {fileID: 11400000, guid: 3c95d362c05d41ee5b460a9c8d3f22bb, type: 2}
-  - {fileID: 11400000, guid: 0b3c368a7d30b3bab8bb7ea6d7639d31, type: 2}
-  - {fileID: 11400000, guid: a9ecd0c867d0d87faa369173ff120e98, type: 2}
-  - {fileID: 11400000, guid: 5ec4d41c3c23a038897e5b687424f2f1, type: 2}
-  - {fileID: 11400000, guid: e968b0ee75652fd88b38492c8879b7a2, type: 2}
-  - {fileID: 11400000, guid: f2bd6f8988669a78688b241e174b3771, type: 2}
-  - {fileID: 11400000, guid: f1aeaef9b7f671e8fbbfb5e5bbac8753, type: 2}
-  - {fileID: 11400000, guid: 9146a0df470a358c28e36594108088ab, type: 2}
-  - {fileID: 11400000, guid: e8ae2d33fa6fc8c3489708f126ebb205, type: 2}
-  - {fileID: 11400000, guid: 912572e7cf551e2588ebdd723db9c0ac, type: 2}
-  - {fileID: 11400000, guid: 54ee081cf8e49dd52b4fad50481ff751, type: 2}
-  - {fileID: 11400000, guid: 11faffe878549e6dcaa880c1d385472b, type: 2}
-  - {fileID: 11400000, guid: 5442fe919fadef4bb933fa462a54f4c1, type: 2}
-  - {fileID: 11400000, guid: 26782ec7513b98e34ba61a327f955a54, type: 2}
-  - {fileID: 11400000, guid: 6bf141d2a10167e5aa32ca679a6a9a91, type: 2}
-  - {fileID: 11400000, guid: 583edc496c7c5da758c057d6c637db93, type: 2}
-  - {fileID: 11400000, guid: 51e6792c67a68a6128d5c73d21278810, type: 2}
-  - {fileID: 11400000, guid: 1db497b3a059368f2a2da8e03945c4a6, type: 2}
-  - {fileID: 11400000, guid: 80989befc8b154e45b2e4cb6489a011a, type: 2}
-  - {fileID: 11400000, guid: b75c92c89e04a0c1b88d250f95a9196a, type: 2}
-  - {fileID: 11400000, guid: 8cdba9b9470a5bf72a676f723c6561f2, type: 2}
-  - {fileID: 11400000, guid: c811b41274b0eec03b23753d5c86d2be, type: 2}
-  - {fileID: 11400000, guid: ba1c9e82a656e23dd95e87f669833be2, type: 2}
-  - {fileID: 11400000, guid: 41adc2165406843b8a55997265fb4aab, type: 2}
-  - {fileID: 11400000, guid: c6e2f5dbacb35ed4b871830a51259ff3, type: 2}
-  - {fileID: 11400000, guid: 8c7319b7b186ecf16a6ac2f7cea30ba8, type: 2}
-  - {fileID: 11400000, guid: 5037d6873a24f84128dce8e0521f2e50, type: 2}
-  - {fileID: 11400000, guid: 7cf54061efd90f87fbbac600e8915121, type: 2}
-  level: 0
-  day: 1
+  highlightObject: {fileID: 893671296}
 --- !u!114 &893671296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2678,58 +2638,8 @@ MonoBehaviour:
   w3l1_Apr: {fileID: 21300000, guid: 2611822ea18373641b2af5f5e6205683, type: 3}
   w3l1_May: {fileID: 21300000, guid: 198aded4907119a40aab8b3fbdf4f925, type: 3}
   w3l2_May: {fileID: 21300000, guid: 7e7638517ccae2b449c17f22a1b84e7e, type: 3}
-  bonsaiTree: {fileID: 0}
---- !u!212 &893671298
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893671291}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  bonsaiObject: {fileID: 893671291}
+  waterPlant: {fileID: 893671295}
 --- !u!1 &911217087
 GameObject:
   m_ObjectHideFlags: 0

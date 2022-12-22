@@ -69,6 +69,8 @@ public class InteractionHandler : MonoBehaviour
 		registeredObjects.Add(objectName, () =>
 		{
 			objectAction();
+			var objectUsedTime = PersistentDataSaver.Instance.Get<int>($"{objectName}TimeConsumption");
+			PersistentDataSaver.Instance.Set($"{objectName}TimeConsumption", objectUsedTime + timeConsumption);
 			Tracking.Instance.AddUsedTime(timeConsumption);
 		});
 		objectNeglection.Add(objectName, true);

@@ -27,10 +27,14 @@ public class PersistentDataSaver : MonoBehaviour
 	    Load();
     }
 
+    public string[] GetKeys() {
+	    return data.keys.ToArray();
+    }
+
     public void Set(string key, object value)
     {
 	    data.Set(key, value.ToString());
-		Save();
+	    Save();
     }
 
     public T Get<T>(string key)

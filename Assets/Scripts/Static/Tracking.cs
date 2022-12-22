@@ -190,7 +190,7 @@ public class Tracking : MonoBehaviour
             
             Movement2D.Instance.enabled = true;
             
-            // TODO: Write comment
+            // TODO: Write comment lol
             bonsaiTree.DayUpdate();
             
             //TODO: Add persistent profile screen data
