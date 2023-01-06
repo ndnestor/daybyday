@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -27,19 +28,12 @@ namespace Computer {
         private const int BAR_SPRITE_SORTING_ORDER = 11;
         private bool isChronological;
 
+        private readonly string[] interactions = { "Bookshelf", "Bonsai Tree", "Piano", "Yoga Mat", "Computer", "Window", "Other" };
+        // TODO: Use dictionary instead?
         private readonly Hashtable todaysActivityTimes = new Hashtable();
 
         public static ProfileScreen Instance { get; private set; }
-    
-        private enum Interaction {
-            Plant,
-            Piano,
-            YogaMat,
-            Computer,
-            Bookshelf,
-            Window,
-            Other
-        }
+
     
         private void Start() {
             Instance = this;
@@ -54,29 +48,14 @@ namespace Computer {
         
             chronologicalBars.SetActive(isChronological);
             sameOrderBars.SetActive(!isChronological);
-        
-            // TODO: Determine if above code works. If not, use the below code but modify as it does not work currently
-            /*foreach(SpriteRenderer spriteRenderer in chronologicalBarRenderers) {
-            spriteRenderer.enabled = isChronological;
-            }
-            foreach(SpriteRenderer spriteRenderer in sameOrderBarRenderers) {
-                spriteRenderer.enabled = !isChronological;
-            }*/
         }
     
-        private void UpdateBarChart(Interaction interaction, int timeUsed) {
-            
-            foreach(var key in PersistentDataSaver.Instance.GetKeys())
-                if (key.IndexOf("TimeConsumption", StringComparison.Ordinal) != -1) {
-                    // Update the chronological bar chart
-                    UpdateBarChartChronological(interaction, timeUsed);
-        
-                    // Update the same order bar chart
-                    UpdateBarChartSameOrder(interaction, timeUsed);
-                }
+        private void UpdateBarChart(string interaction, int timeUsed) {
+            UpdateBarChartChronological(interaction, timeUsed);
+            UpdateBarChartSameOrder(interaction, timeUsed);
         }
         
-        private void UpdateBarChartChronological(Interaction interaction, int timeUsed) {
+        private void UpdateBarChartChronological(string interaction, int timeUsed) {
             // Create the new bar chart section
             GameObject newBarChartSection = Instantiate(barChartSectionPrefab, barChartOrigin.position, Quaternion.identity,
                 chronologicalBars.transform);
@@ -106,7 +85,7 @@ namespace Computer {
             newBarChartSection.GetComponent<SpriteRenderer>().color = GetInteractionColor(interaction);
         }
 
-        private void UpdateBarChartSameOrder(Interaction interaction, int timeUsed) {
+        private void UpdateBarChartSameOrder(string interaction, int timeUsed) {
             todaysActivityTimes[interaction] = (int)todaysActivityTimes[interaction] + timeUsed;
 
             // Clear bar chart
@@ -130,7 +109,7 @@ namespace Computer {
             
             // Loop through every interaction type
             float totalBarHeight = 0;
-            foreach(Interaction currInteraction in Enum.GetValues(typeof(Interaction))) {
+            foreach(string currInteraction in interactions) {
 
                 // Create the new bar chart section
                 GameObject newBarChartSection = Instantiate(barChartSectionPrefab, barChartOrigin.position, Quaternion.identity,
@@ -161,26 +140,26 @@ namespace Computer {
         }
 
         public void ResetTodaysActivityTimes() {
-            foreach(Interaction currInteraction in Enum.GetValues(typeof(Interaction))) {
+            foreach(string currInteraction in interactions) {
                 todaysActivityTimes[currInteraction] = 0;
             }
         }
 
-        private Color GetInteractionColor(Interaction interaction) {
+        private Color GetInteractionColor(string interaction) {
             switch(interaction) {
-                case Interaction.Bookshelf:
+                case "Bookshelf":
                     return bookshelfColor;
-                case Interaction.Plant:
+                case "Bonsai Tree":
                     return plantColor;
-                case Interaction.Piano:
+                case "Piano":
                     return pianoColor;
-                case Interaction.YogaMat:
+                case "Yoga Mat":
                     return yogaMatColor;
-                case Interaction.Computer:
+                case "Computer":
                     return computerColor;
-                case Interaction.Window:
+                case "Window":
                     return windowColor;
-                case Interaction.Other:
+                case "Other":
                     return otherColor;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -189,9 +168,18 @@ namespace Computer {
 
         private void Update() {
             if(Input.GetKeyDown(KeyCode.B)) {
-                string[] activityNames = {"plant", "piano", "yoga mat", "computer", "bookshelf", "window", "other"};
-                int randomIndex = Random.Range(0, activityNames.Length);
-                UpdateBarChart((Interaction)Enum.GetValues(typeof(Interaction)).GetValue(randomIndex), Random.Range(1, 4));
+                var interactionNames = PersistentDataSaver.Instance
+                    .Get<string>($"Day{Tracking.Instance.DayNum}InteractionNames")
+                    .Split(',');
+                var interactionTimes = PersistentDataSaver.Instance
+                    .Get<string>($"Day{Tracking.Instance.DayNum}InteractionTimes")
+                    .Split(',')
+                    .Select(int.Parse).ToArray();
+
+                for(int i = 0; i < interactionNames.Length; i++) {
+                    print(interactionNames[i]);
+                    UpdateBarChart(interactionNames[i], interactionTimes[i]);
+                }
             }
         }
     }

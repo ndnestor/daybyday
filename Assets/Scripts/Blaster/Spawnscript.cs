@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
- public class Spawnscript : MonoBehaviour {
+public class Spawnscript : MonoBehaviour {
      public GameObject enemy, enem_Whale, enem_Hole, enem_Ship;
      private float spawnTimer, spawnIncr;
      private float spawnTimer_Whale, spawnIncr_Whale;
@@ -17,15 +17,15 @@ using UnityEngine;
     void Awake() {
         scorekeeper = GameObject.Find("globalScoreObj").GetComponent<GlobalScore>();
         if (scorekeeper.blasterLevel == 1) {
-            spawnIncr = UnityEngine.Random.Range(0.5f, 5.0f);
-            spawnIncr_Whale = UnityEngine.Random.Range(30.0f, 60.0f);
-            spawnIncr_Ship = UnityEngine.Random.Range(55.0f, 120.0f);
-            spawnIncr_Hole = UnityEngine.Random.Range(45.0f, 240.0f);
+            spawnIncr = Random.Range(0.5f, 5.0f);
+            spawnIncr_Whale = Random.Range(30.0f, 60.0f);
+            spawnIncr_Ship = Random.Range(55.0f, 120.0f);
+            spawnIncr_Hole = Random.Range(45.0f, 240.0f);
         } else {
-            spawnIncr = UnityEngine.Random.Range(0.5f, 3.0f);
-            spawnIncr_Whale = UnityEngine.Random.Range(20.0f, 45.0f);
-            spawnIncr_Ship = UnityEngine.Random.Range(30.0f, 90.0f);
-            spawnIncr_Hole = UnityEngine.Random.Range(30.0f, 180.0f);
+            spawnIncr = Random.Range(0.5f, 3.0f);
+            spawnIncr_Whale = Random.Range(20.0f, 45.0f);
+            spawnIncr_Ship = Random.Range(30.0f, 90.0f);
+            spawnIncr_Hole = Random.Range(30.0f, 180.0f);
         }
 
         //Debug.Log("Start time " + Time.time);
@@ -34,7 +34,7 @@ using UnityEngine;
         spawnTimer_Whale = Time.time + spawnIncr_Whale;
         spawnTimer_Ship = Time.time + spawnIncr_Ship;
 
-        /** Rather than spawning a new black hole every time, Spawnscript refers
+        /* Rather than spawning a new black hole every time, Spawnscript refers
         to a single hole that already exists in the scene— turns on/off and alters X coordinate.
         The main reason for this is that the enemy hole behaviour influences player movement,
         so it needs to reference the playerMovement script on the rocket.
@@ -48,47 +48,55 @@ using UnityEngine;
         */
         holeDespawnLength = 5.0f;
         spawnTimer_Hole = Time.time + spawnIncr_Hole;
-        randomizerX = UnityEngine.Random.Range(0.0f, 1.0f);
+        randomizerX = Random.Range(0.0f, 1.0f);
         Debug.Log("Initial hole spawn time " + spawnTimer_Hole);
         holeScript = enem_Hole.GetComponent<enemyScriptHole>();
     }
 
      public void Update() {
          if (spawnTimer < Time.time) {
-             float randX = UnityEngine.Random.Range(-4.4f, 4.4f);
+             float randX = Random.Range(-4.4f, 4.4f);
              //Debug.Log(string.Format("{0:N2}", randX));
-             GameObject tmp = Instantiate(enemy, new Vector3(0.0f, 7.0f, 0.0f), Quaternion.identity);
+             GameObject tmp = Instantiate(enemy, new Vector3(0.0f, 7.0f, 0.0f), Quaternion.identity, transform);
              tmp.transform.position = new Vector3(randX, tmp.transform.position.y, 0.0f);
              if (scorekeeper.blasterLevel == 1) {
-                spawnIncr = UnityEngine.Random.Range(0.5f, 5.0f);
+                spawnIncr = Random.Range(0.5f, 5.0f);
              } else {
-                spawnIncr = UnityEngine.Random.Range(0.5f, 3.0f);
+                spawnIncr = Random.Range(0.5f, 3.0f);
              }
              spawnTimer = Time.time + spawnIncr;
          }
          if (spawnTimer_Whale < Time.time) {
-             float randY = UnityEngine.Random.Range(-0.2f, 3.2f);
+             float randY = Random.Range(-0.2f, 3.2f);
              //Debug.Log(string.Format("{0:N2}", randY));
-             GameObject tmp_Whale = Instantiate(enem_Whale, new Vector3(-9.0f, -2.0f, 0.0f), 
-             Quaternion.identity);
+             GameObject tmp_Whale = Instantiate(enem_Whale,
+                 new Vector3(-9.0f,
+                     -2.0f,
+                     0.0f),
+                 Quaternion.identity,
+                 transform);
              tmp_Whale.transform.position = new Vector3(tmp_Whale.transform.position.x, randY, 0.0f);
              if (scorekeeper.blasterLevel == 1) {
-                spawnIncr_Whale = UnityEngine.Random.Range(30.0f, 60.0f);
+                spawnIncr_Whale = Random.Range(30.0f, 60.0f);
              } else {
-                spawnIncr_Whale = UnityEngine.Random.Range(20.0f, 45.0f);
+                spawnIncr_Whale = Random.Range(20.0f, 45.0f);
              }
              spawnTimer_Whale = Time.time + spawnIncr_Whale;
          } 
          if (spawnTimer_Ship < Time.time) {
-             float randY_ship = UnityEngine.Random.Range(-0.2f, 3.2f);
+             float randY_ship = Random.Range(-0.2f, 3.2f);
              //Debug.Log(string.Format("{0:N2}", randY_ship));
-             GameObject tmp_Ship = Instantiate(enem_Ship, new Vector3(9.0f, -2.0f, 0.0f), 
-             Quaternion.identity);
+             GameObject tmp_Ship = Instantiate(enem_Ship,
+                 new Vector3(9.0f,
+                     -2.0f,
+                     0.0f),
+                 Quaternion.identity,
+                 transform);
              tmp_Ship.transform.position = new Vector3(tmp_Ship.transform.position.x, randY_ship, 0.0f);
              if (scorekeeper.blasterLevel == 1) {
-                spawnIncr_Ship = UnityEngine.Random.Range(55.0f, 120.0f);
+                spawnIncr_Ship = Random.Range(55.0f, 120.0f);
              } else {
-                spawnIncr_Ship = UnityEngine.Random.Range(30.0f, 90.0f);
+                spawnIncr_Ship = Random.Range(30.0f, 90.0f);
              }
              spawnTimer_Ship = Time.time + spawnIncr_Ship;
          } 
@@ -119,25 +127,25 @@ using UnityEngine;
              rocketMovement.noBlackHole();
              if (!nextHoleSpawnSet && Time.time > 16.0f) {
                  if (scorekeeper.blasterLevel == 1) {
-                    spawnIncr_Hole = UnityEngine.Random.Range(45.0f, 240.0f);
+                    spawnIncr_Hole = Random.Range(45.0f, 240.0f);
                  } else {
-                    spawnIncr_Hole = UnityEngine.Random.Range(30.0f, 180.0f);
+                    spawnIncr_Hole = Random.Range(30.0f, 180.0f);
                  }
-                 randomizerX = UnityEngine.Random.Range(0.0f, 1.0f);
+                 randomizerX = Random.Range(0.0f, 1.0f);
                  spawnTimer_Hole = Time.time + spawnIncr_Hole;
                  nextHoleSpawnSet = true;
              }
              enem_Hole.SetActive(false);
          }
-         /** float randX = UnityEngine.Random.Range(-4.4f, 4.4f);
+         /* float randX = UnityEngine.Random.Range(-4.4f, 4.4f);
         Debug.Log(string.Format("{0:N2}", randX));
         GameObject tmp = Instantiate(enemy, new Vector3(0.0f, 7.0f, 0.0f), Quaternion.identity);
-        tmp.transform.position = new Vector3(randX, tmp.transform.position.y, 0.0f); **/
+        tmp.transform.position = new Vector3(randX, tmp.transform.position.y, 0.0f); */
      }
      
 
      
-     /** public Vector3 GetRandomPoint()
+     /* public Vector3 GetRandomPoint()
      {
          int xRandom = 0;
          xRandom = (int)Random.Range(-4.5, 4.5);
@@ -145,6 +153,6 @@ using UnityEngine;
          Vector3 randPosition = new Vector3(Random.Range(-4.5f, 4.5f), 7.0f, 0);
          // Instantiate(prefab, randPosition, Quaternion.identity);
          return randPosition;
-     } **/
+     } */
  
  }

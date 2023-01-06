@@ -98,13 +98,15 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void PlayerDie() {
-        Destroy(gameObject);
         Debug.Log("Dead");
         scoreScript = scoreText.GetComponent<scoreScript>();
         score = scoreScript.returnScore();
         scorekeeper.UpdateBlasterScore(score);
-        SceneManager.LoadScene("Scene_endGame", LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync("Scene_Game");
+        
+        SceneLoader.Instance.LoadAsync("Scene_endGame", LoadSceneMode.Additive, onLoadedCallback: () =>
+        {
+            SceneManager.UnloadSceneAsync("Scene_Game");
+        });
     }
 
     private void OnCollisionEnter2D(Collision2D col)

@@ -60,13 +60,10 @@ public class PlatformHealth : MonoBehaviour
     }
 
     private void Die() {
-        //Destroy(gameObject);
         Debug.Log("Dead");
         scoreScript = scoreText.GetComponent<scoreScript>();
         score = scoreScript.returnScore();
         globalScoreKeeper.UpdateBlasterScore(score);
-        //SceneManager.LoadScene("Scene_endGame", LoadSceneMode.Additive);
-        //SceneManager.UnloadSceneAsync("Scene_Game");
 
         SceneLoader.Instance.LoadAsync("Scene_endGame", LoadSceneMode.Additive, onLoadedCallback: () =>
         {

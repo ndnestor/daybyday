@@ -80,7 +80,8 @@ public class ComputerInterface : MonoBehaviour
         {
             Tracking.Instance.AddUsedTime(2);
             SceneLoader.Instance.LoadAsync("Scene_Game", LoadSceneMode.Additive, onLoadedCallback: () => {
-                SceneLoader.Instance.UnloadAsync("Computer");
+                SceneManager.UnloadSceneAsync("Computer");
+                print("UNLOADING COMPUTER");
             });
         }
         else if (newName.Equals("Help Button"))

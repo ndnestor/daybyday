@@ -7,8 +7,6 @@ public class menuExitGame : MonoBehaviour
 {
     public void ExitGame()
     {
-        //SceneManager.LoadScene("Scenes/Main Room");
-        
         try
         {
             SceneManager.UnloadSceneAsync("Scene_startMenu");
