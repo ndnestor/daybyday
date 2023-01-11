@@ -41,6 +41,17 @@ namespace Computer {
             barHeights = new float[Tracking.MAX_DAYS];
 
             ResetTodaysActivityTimes();
+            
+            var interactionNames = PersistentDataSaver.Instance
+                .Get<string>($"Day{Tracking.Instance.DayNum}InteractionNames")
+                .Split(',');
+            var interactionTimes = PersistentDataSaver.Instance
+                .Get<string>($"Day{Tracking.Instance.DayNum}InteractionTimes")
+                .Split(',')
+                .Select(int.Parse).ToArray();
+
+            for(var i = 0; i < interactionNames.Length; i++)
+                UpdateBarChart(interactionNames[i], interactionTimes[i]);
         }
 
         private void ToggleBarChartMode() {
@@ -163,23 +174,6 @@ namespace Computer {
                     return otherColor;
                 default:
                     throw new ArgumentOutOfRangeException();
-            }
-        }
-
-        private void Update() {
-            if(Input.GetKeyDown(KeyCode.B)) {
-                var interactionNames = PersistentDataSaver.Instance
-                    .Get<string>($"Day{Tracking.Instance.DayNum}InteractionNames")
-                    .Split(',');
-                var interactionTimes = PersistentDataSaver.Instance
-                    .Get<string>($"Day{Tracking.Instance.DayNum}InteractionTimes")
-                    .Split(',')
-                    .Select(int.Parse).ToArray();
-
-                for(int i = 0; i < interactionNames.Length; i++) {
-                    print(interactionNames[i]);
-                    UpdateBarChart(interactionNames[i], interactionTimes[i]);
-                }
             }
         }
     }
