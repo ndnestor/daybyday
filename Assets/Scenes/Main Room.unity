@@ -4525,7 +4525,7 @@ MonoBehaviour:
   ratio: {x: 16, y: 9}
   forceRatioOnAwake: 1
   listenForWindowChanges: 1
-  createCameraForLetterBoxRendering: 0
+  createCameraForLetterBoxRendering: 1
   findCamerasAutomatically: 1
   letterBoxCameraColor: {r: 0, g: 0, b: 0, a: 1}
   cameras:
