@@ -37,21 +37,24 @@ namespace Computer {
     
         private void Start() {
             Instance = this;
-        
-            barHeights = new float[Tracking.MAX_DAYS];
 
-            ResetTodaysActivityTimes();
-            
-            var interactionNames = PersistentDataSaver.Instance
-                .Get<string>($"Day{Tracking.Instance.DayNum}InteractionNames")
-                .Split(',');
-            var interactionTimes = PersistentDataSaver.Instance
-                .Get<string>($"Day{Tracking.Instance.DayNum}InteractionTimes")
-                .Split(',')
-                .Select(int.Parse).ToArray();
+            for(var day = 1; day < Tracking.Instance.DayNum + 1; day++) {
+                barHeights = new float[Tracking.MAX_DAYS];
 
-            for(var i = 0; i < interactionNames.Length; i++)
-                UpdateBarChart(interactionNames[i], interactionTimes[i]);
+                ResetTodaysActivityTimes();
+                
+                var interactionNames = PersistentDataSaver.Instance
+                    .Get<string>($"Day{day}InteractionNames")
+                    .Split(',');
+                var interactionTimes = PersistentDataSaver.Instance
+                    .Get<string>($"Day{day}InteractionTimes")
+                    .Split(',')
+                    .Select(int.Parse).ToArray();
+
+                for(var i = 0; i < interactionNames.Length; i++)
+                    if(interactionNames[i] != "Bed")
+                        UpdateBarChart(interactionNames[i], interactionTimes[i], day);
+            }
         }
 
         private void ToggleBarChartMode() {
@@ -61,12 +64,12 @@ namespace Computer {
             sameOrderBars.SetActive(!isChronological);
         }
     
-        private void UpdateBarChart(string interaction, int timeUsed) {
-            UpdateBarChartChronological(interaction, timeUsed);
-            UpdateBarChartSameOrder(interaction, timeUsed);
+        private void UpdateBarChart(string interaction, int timeUsed, int dayNum) {
+            UpdateBarChartChronological(interaction, timeUsed, dayNum);
+            UpdateBarChartSameOrder(interaction, timeUsed, dayNum);
         }
         
-        private void UpdateBarChartChronological(string interaction, int timeUsed) {
+        private void UpdateBarChartChronological(string interaction, int timeUsed, int dayNum) {
             // Create the new bar chart section
             GameObject newBarChartSection = Instantiate(barChartSectionPrefab, barChartOrigin.position, Quaternion.identity,
                 chronologicalBars.transform);
@@ -84,7 +87,6 @@ namespace Computer {
             newBarChartSection.transform.localScale = new Vector3(barWidth, barHeight, 1);
         
             // Set its location
-            int dayNum = Tracking.Instance.DayNum;
             float xPos = (barPadding + barWidth) * (dayNum - 1);
             float yPos = barHeights[dayNum - 1] + 0.5f * barHeight;
             newBarChartSection.transform.localPosition = new Vector3(xPos, yPos, 0);
@@ -96,7 +98,7 @@ namespace Computer {
             newBarChartSection.GetComponent<SpriteRenderer>().color = GetInteractionColor(interaction);
         }
 
-        private void UpdateBarChartSameOrder(string interaction, int timeUsed) {
+        private void UpdateBarChartSameOrder(string interaction, int timeUsed, int dayNum) {
             todaysActivityTimes[interaction] = (int)todaysActivityTimes[interaction] + timeUsed;
 
             // Clear bar chart
@@ -139,7 +141,6 @@ namespace Computer {
                 newBarChartSection.transform.localScale = new Vector3(barWidth, barHeight, 1);
         
                 // Set its location
-                int dayNum = Tracking.Instance.DayNum;
                 float xPos = (barPadding + barWidth) * (dayNum - 1);
                 float yPos = totalBarHeight + 0.5f * barHeight;
                 newBarChartSection.transform.localPosition = new Vector3(xPos, yPos, 0);
