@@ -38,9 +38,9 @@ Hooray! You've built the project.
 
 ## Credits
 This project was made possible by the following people:
+- Nathan Nestor — Coder, Composer
 - Luna Laliberte — Founder,  Project Coordinator, Writer
 - Eric Mooney — Creative Director, Writer, Artist
-- Nathan Nestor — Coder, Composer
 - Bridge Zhang — Coder, Artist
 - Jake Michalowicz — Coder
 - Luis Mendoza — Composer
