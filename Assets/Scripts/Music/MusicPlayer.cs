@@ -19,6 +19,17 @@ public class MusicPlayer : MonoBehaviour
     
     public List<Playlist> playlists = new List<Playlist>();
 
+    public Playlist CurrPlaylist
+    {
+        get => currPlaylist;
+        set
+        {
+            currPlaylist = value;
+            nextSongIndex = 0;
+            NextSong();
+        }
+    }
+
     private void Start()
     {
         DontDestroyOnLoad(this);
@@ -38,9 +49,7 @@ public class MusicPlayer : MonoBehaviour
         
         foreach(var playlist in playlists)
             if (playlist.sceneName == scene.name) {
-                currPlaylist = playlist;
-                nextSongIndex = 0;
-                NextSong();
+                CurrPlaylist = playlist;
                 return;
             }
     }
