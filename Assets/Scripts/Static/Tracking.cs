@@ -192,9 +192,7 @@ public class Tracking : MonoBehaviour
             
             // TODO: Write comment lol
             bonsaiTree.DayUpdate();
-            
-            //TODO: Add persistent profile screen data
-            //ProfileScreen.Instance.ResetTodaysActivityTimes();
+
             DayNum++;
             
             InteractionHandler.Instance.UpdateNeglectedSprites();
