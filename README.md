@@ -40,7 +40,7 @@ Hooray! You've built the project.
 This project was made possible by the following people:
 - Nathan Nestor — Coder, Composer
 - Luna Laliberte — Founder,  Project Coordinator, Writer
-- Eric Mooney — Creative Director, Writer, Artist
+- Eric Mooney — Creative Director, Writer, Artist. https://www.linkedin.com/in/eric-mooney-mbb/
 - Bridge Zhang — Coder, Artist
 - Jake Michalowicz — Coder
 - Luis Mendoza — Composer
