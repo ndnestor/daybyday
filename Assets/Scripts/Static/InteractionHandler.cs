@@ -104,6 +104,7 @@ public class InteractionHandler : MonoBehaviour
 				{
 					action();
 					objectNeglection[objectName] = false;
+					UpdateNeglectedSprite(objectName);
 					valueRegistry.Set($"Used {objectName}", 1);
 				}
 			});
@@ -114,62 +115,64 @@ public class InteractionHandler : MonoBehaviour
 		return false;
 	}
 
-	// This should be called at the beginning of every day
-	public void UpdateNeglectedSprites()
-	{
-		foreach(string objectName in objectNeglection.Keys)
+	private void UpdateNeglectedSprite(string objectName) {
+		// Ignore bonsai tree when checking if objects are neglected
+		// since the bonsai tree works uniquely
+		if(objectName == "Bonsai Tree")
+			return;
+		
+		if(objectNeglection[objectName])
 		{
-			// Ignore bonsai tree when checking if objects are neglected
-			// since the bonsai tree works uniquely
-			if(objectName == "Bonsai Tree")
-				continue;
-			
-			if(objectNeglection[objectName])
+			switch(objectName)
 			{
-				switch(objectName)
-				{
-					case "Piano":
-						pianoRenderer.sprite = neglectedPianoSprite;
-						break;
-					case "Yoga Mat":
-						yogaMatRenderer.sprite = neglectedYogaMatSprite;
-						break;
-					case "Computer":
-						computerRenderer.sprite = neglectedComputerSprite;
-						break;
-					case "Bookshelf":
-						bookshelfRenderer.sprite = neglectedBookshelfSprite;
-						break;
-					case "Window":
-						windowRenderer.sprite = neglectedWindowSprite;
-						windowLightRenderer.sprite = neglectedWindowLightSprite;
-						Tracking.Instance.UpdateLighting();
-						break;
-				}
+				case "Piano":
+					pianoRenderer.sprite = neglectedPianoSprite;
+					break;
+				case "Yoga Mat":
+					yogaMatRenderer.sprite = neglectedYogaMatSprite;
+					break;
+				case "Computer":
+					computerRenderer.sprite = neglectedComputerSprite;
+					break;
+				case "Bookshelf":
+					bookshelfRenderer.sprite = neglectedBookshelfSprite;
+					break;
+				case "Window":
+					windowRenderer.sprite = neglectedWindowSprite;
+					windowLightRenderer.sprite = neglectedWindowLightSprite;
+					Tracking.Instance.UpdateLighting();
+					break;
 			}
-			else
+		}
+		else
+		{
+			switch(objectName)
 			{
-				switch(objectName)
-				{
-					case "Piano":
-						pianoRenderer.sprite = normalPianoSprite;
-						break;
-					case "Yoga Mate":
-						yogaMatRenderer.sprite = normalYogaMatSprite;
-						break;
-					case "Computer":
-						computerRenderer.sprite = normalComputerSprite;
-						break;
-					case "Bookshelf":
-						bookshelfRenderer.sprite = normalBookshelfSprite;
-						break;
-					case "Window":
-						windowRenderer.sprite = normalWindowSprite;
-						windowLightRenderer.sprite = normalWindowLightSprite;
-						Tracking.Instance.UpdateLighting();
-						break;
-				}
+				case "Piano":
+					pianoRenderer.sprite = normalPianoSprite;
+					break;
+				case "Yoga Mate":
+					yogaMatRenderer.sprite = normalYogaMatSprite;
+					break;
+				case "Computer":
+					computerRenderer.sprite = normalComputerSprite;
+					break;
+				case "Bookshelf":
+					bookshelfRenderer.sprite = normalBookshelfSprite;
+					break;
+				case "Window":
+					windowRenderer.sprite = normalWindowSprite;
+					windowLightRenderer.sprite = normalWindowLightSprite;
+					Tracking.Instance.UpdateLighting();
+					break;
 			}
+		}
+	}
+
+	// This should be called at the beginning of every day
+	public void UpdateNeglectedSprites() {
+		foreach (string objectName in objectNeglection.Keys) {
+			UpdateNeglectedSprite(objectName);
 		}
 	}
 }
