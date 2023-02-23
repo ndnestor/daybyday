@@ -11,7 +11,6 @@ public class Book : MonoBehaviour
 	[SerializeField] private string author;
 	[SerializeField] private string contents;
 
-	[SerializeField] private GameObject closeBookSprite;
 	[SerializeField] private GameObject openBookSprite;
 	[SerializeField] private TMP_Text leftPageText;
 	[SerializeField] private TMP_Text rightPageText;
@@ -26,13 +25,16 @@ public class Book : MonoBehaviour
 	[SerializeField] private bool generatePageContents;
 
 	private const string newLineToken = "\\n";
-	
+
+	private GameObject[] closedBooks;
 	private int pageNumber = 0;
 
 	private void Start() {
 		authorText.text = author;
 		bookTitleText.text = title;
 		FormatPageContents();
+
+		closedBooks = GameObject.FindGameObjectsWithTag("ClosedBook");
 	}
 
 	public void OpenBook()
@@ -40,7 +42,9 @@ public class Book : MonoBehaviour
 		Debug.Log($"Opening book {title} by {author}");
 		
 		openBookSprite.SetActive(true);
-		closeBookSprite.SetActive(false);
+		foreach (var closedBook in closedBooks) {
+			closedBook.SetActive(false);
+		}
 		
 		if(generatePageContents)
 		{
@@ -59,7 +63,9 @@ public class Book : MonoBehaviour
 	{
 		Debug.Log("Closing book");
 		openBookSprite.SetActive(false);
-		closeBookSprite.SetActive(true);
+		foreach (var closedBook in closedBooks) {
+			closedBook.SetActive(true);
+		}
 	}
 
 	private void SavePageContents()
