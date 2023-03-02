@@ -196,6 +196,7 @@ public class Tracking : MonoBehaviour
             DayNum++;
             
             InteractionHandler.Instance.UpdateNeglectedSprites();
+            InteractionHandler.Instance.ResetNeglection();
             ProductivityAid.Instance.UpdateLevel();
             
             valueRegistry.Set("Day Number", DayNum);

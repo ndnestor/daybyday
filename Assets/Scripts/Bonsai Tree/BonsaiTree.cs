@@ -53,8 +53,5 @@ public class BonsaiTree : MonoBehaviour
             if (state.earliestDay <= Tracking.Instance.DayNum && state.latestDay >= Tracking.Instance.DayNum)
                 if (state.woodLevel == woodLevel && state.leafLevel == leafLevel)
                     spriteRenderer.sprite = state.sprite;
-        
-        print($"{woodLevel} {leafLevel}");
-        print(spriteRenderer.sprite.name);
     }
 }

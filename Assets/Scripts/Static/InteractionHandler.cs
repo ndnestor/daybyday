@@ -34,7 +34,7 @@ public class InteractionHandler : MonoBehaviour
 
 	[SerializeField] private DialogueGraph objectPromptDialogue;
 
-	private readonly Dictionary<string, bool> objectNeglection = new Dictionary<string, bool>();
+	private Dictionary<string, bool> objectNeglection = new Dictionary<string, bool>();
 	private DialogueSystem dialogueSystem;
 	private ValueRegistry valueRegistry;
 	private StringRegistry stringRegistry;
@@ -174,5 +174,14 @@ public class InteractionHandler : MonoBehaviour
 		foreach (string objectName in objectNeglection.Keys) {
 			UpdateNeglectedSprite(objectName);
 		}
+	}
+
+	public void ResetNeglection() {
+		Dictionary<string, bool> newObjectNeglection = new Dictionary<string, bool>();
+		foreach (string objectName in objectNeglection.Keys) {
+			newObjectNeglection[objectName] = true;
+		}
+
+		objectNeglection = newObjectNeglection;
 	}
 }
