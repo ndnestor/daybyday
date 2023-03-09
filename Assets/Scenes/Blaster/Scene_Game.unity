@@ -839,6 +839,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
@@ -1288,6 +1289,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac53be37ba0003e4eb342295d67dbfc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minTimeUntilSquid: 0.5
+  maxTimeUntilSquid: 5
+  minTimeUntilWhale: 30
+  maxTimeUntilWhale: 60
+  minTimeUntilShip: 55
+  maxTimeUntilShip: 120
+  minTimeUntilHole: 45
+  maxTimeUntilHole: 240
+  difficultyFactor: 0.97
   enemy: {fileID: 7205315345493252890, guid: 2964c7afd2fc9eb4f9e28fe7bf9abf2e, type: 3}
   enem_Whale: {fileID: 7052051961086811553, guid: e6ad0f2d8c6ae4c4d854f69fcd8b06f4, type: 3}
   enem_Hole: {fileID: 108785744}

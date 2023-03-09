@@ -1,9 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Spawnscript : MonoBehaviour {
-     public GameObject enemy, enem_Whale, enem_Hole, enem_Ship;
+    [SerializeField] private float minTimeUntilSquid, maxTimeUntilSquid;
+    [SerializeField] private float minTimeUntilWhale, maxTimeUntilWhale;
+    [SerializeField] private float minTimeUntilShip, maxTimeUntilShip;
+    [SerializeField] private float minTimeUntilHole, maxTimeUntilHole;
+    [SerializeField] private double difficultyFactor;
+
+    public GameObject enemy, enem_Whale, enem_Hole, enem_Ship;
      private float spawnTimer, spawnIncr;
      private float spawnTimer_Whale, spawnIncr_Whale;
      private float spawnTimer_Hole, holeDespawnTimer, holeDespawnLength, spawnIncr_Hole, randomizerX;
@@ -16,18 +24,11 @@ public class Spawnscript : MonoBehaviour {
 
     void Awake() {
         scorekeeper = GameObject.Find("globalScoreObj").GetComponent<GlobalScore>();
-        if (scorekeeper.blasterLevel == 1) {
-            spawnIncr = Random.Range(0.5f, 5.0f);
-            spawnIncr_Whale = Random.Range(30.0f, 60.0f);
-            spawnIncr_Ship = Random.Range(55.0f, 120.0f);
-            spawnIncr_Hole = Random.Range(45.0f, 240.0f);
-        } else {
-            spawnIncr = Random.Range(0.5f, 3.0f);
-            spawnIncr_Whale = Random.Range(20.0f, 45.0f);
-            spawnIncr_Ship = Random.Range(30.0f, 90.0f);
-            spawnIncr_Hole = Random.Range(30.0f, 180.0f);
-        }
-
+        spawnIncr = Random.Range(minTimeUntilSquid, maxTimeUntilSquid);
+        spawnIncr_Whale = Random.Range(minTimeUntilWhale, maxTimeUntilWhale);
+        spawnIncr_Ship = Random.Range(minTimeUntilShip, maxTimeUntilShip);
+        spawnIncr_Hole = Random.Range(minTimeUntilHole, maxTimeUntilHole);
+        
         //Debug.Log("Start time " + Time.time);
         
         spawnTimer = Time.time + spawnIncr;
@@ -54,16 +55,23 @@ public class Spawnscript : MonoBehaviour {
     }
 
      public void Update() {
+         float spawnIntervalChangeFactor = (float)Math.Pow(difficultyFactor, Time.deltaTime);
+         minTimeUntilSquid *= spawnIntervalChangeFactor;
+         maxTimeUntilSquid *= spawnIntervalChangeFactor;
+         minTimeUntilWhale *= spawnIntervalChangeFactor;
+         maxTimeUntilWhale *= spawnIntervalChangeFactor;
+         minTimeUntilShip *= spawnIntervalChangeFactor;
+         maxTimeUntilShip *= spawnIntervalChangeFactor;
+         minTimeUntilHole *= spawnIntervalChangeFactor;
+         maxTimeUntilHole *= spawnIntervalChangeFactor;
+
          if (spawnTimer < Time.time) {
              float randX = Random.Range(-4.4f, 4.4f);
              //Debug.Log(string.Format("{0:N2}", randX));
              GameObject tmp = Instantiate(enemy, new Vector3(0.0f, 7.0f, 0.0f), Quaternion.identity, transform);
              tmp.transform.position = new Vector3(randX, tmp.transform.position.y, 0.0f);
-             if (scorekeeper.blasterLevel == 1) {
-                spawnIncr = Random.Range(0.5f, 5.0f);
-             } else {
-                spawnIncr = Random.Range(0.5f, 3.0f);
-             }
+             spawnIncr = Random.Range(minTimeUntilSquid, maxTimeUntilSquid);
+
              spawnTimer = Time.time + spawnIncr;
          }
          if (spawnTimer_Whale < Time.time) {
@@ -76,11 +84,8 @@ public class Spawnscript : MonoBehaviour {
                  Quaternion.identity,
                  transform);
              tmp_Whale.transform.position = new Vector3(tmp_Whale.transform.position.x, randY, 0.0f);
-             if (scorekeeper.blasterLevel == 1) {
-                spawnIncr_Whale = Random.Range(30.0f, 60.0f);
-             } else {
-                spawnIncr_Whale = Random.Range(20.0f, 45.0f);
-             }
+             spawnIncr_Whale = Random.Range(minTimeUntilWhale, maxTimeUntilWhale);
+
              spawnTimer_Whale = Time.time + spawnIncr_Whale;
          } 
          if (spawnTimer_Ship < Time.time) {
@@ -93,11 +98,8 @@ public class Spawnscript : MonoBehaviour {
                  Quaternion.identity,
                  transform);
              tmp_Ship.transform.position = new Vector3(tmp_Ship.transform.position.x, randY_ship, 0.0f);
-             if (scorekeeper.blasterLevel == 1) {
-                spawnIncr_Ship = Random.Range(55.0f, 120.0f);
-             } else {
-                spawnIncr_Ship = Random.Range(30.0f, 90.0f);
-             }
+             spawnIncr_Ship = Random.Range(minTimeUntilShip, maxTimeUntilShip);
+
              spawnTimer_Ship = Time.time + spawnIncr_Ship;
          } 
          if (spawnTimer_Hole < Time.time) {
@@ -126,11 +128,8 @@ public class Spawnscript : MonoBehaviour {
              holeScript.blackHoleActive(false, false);
              rocketMovement.noBlackHole();
              if (!nextHoleSpawnSet && Time.time > 16.0f) {
-                 if (scorekeeper.blasterLevel == 1) {
-                    spawnIncr_Hole = Random.Range(45.0f, 240.0f);
-                 } else {
-                    spawnIncr_Hole = Random.Range(30.0f, 180.0f);
-                 }
+                 spawnIncr_Hole = Random.Range(minTimeUntilHole, maxTimeUntilHole);
+
                  randomizerX = Random.Range(0.0f, 1.0f);
                  spawnTimer_Hole = Time.time + spawnIncr_Hole;
                  nextHoleSpawnSet = true;
