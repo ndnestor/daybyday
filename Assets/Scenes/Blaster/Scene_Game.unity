@@ -1336,21 +1336,21 @@ MonoBehaviour:
   spread: {fileID: 5416145121732184308, guid: e8199a47dae001449bdb50aaed4bf08f, type: 3}
   gameLevel: 0
   SpawnFrequencyPerLevel:
-  - HealIncreaseFreq: {x: 20, y: 30}
-    BulwarkIncreaseFreq: {x: 60, y: 90}
-    SwiftIncreaseFreq: {x: 40, y: 60}
-    RapidFireIncreaseFreq: {x: 40, y: 60}
+  - HealIncreaseFreq: {x: 10, y: 15}
+    BulwarkIncreaseFreq: {x: 10, y: 15}
+    SwiftIncreaseFreq: {x: 10, y: 15}
+    RapidFireIncreaseFreq: {x: 10, y: 15}
     SpreadIncreaseFreq: {x: 40, y: 60}
-  - HealIncreaseFreq: {x: 40, y: 60}
-    BulwarkIncreaseFreq: {x: 90, y: 240}
+  - HealIncreaseFreq: {x: 10, y: 30}
+    BulwarkIncreaseFreq: {x: 45, y: 120}
+    SwiftIncreaseFreq: {x: 30, y: 60}
+    RapidFireIncreaseFreq: {x: 30, y: 60}
+    SpreadIncreaseFreq: {x: 30, y: 60}
+  - HealIncreaseFreq: {x: 30, y: 60}
+    BulwarkIncreaseFreq: {x: 60, y: 150}
     SwiftIncreaseFreq: {x: 60, y: 120}
     RapidFireIncreaseFreq: {x: 60, y: 120}
     SpreadIncreaseFreq: {x: 60, y: 120}
-  - HealIncreaseFreq: {x: 60, y: 120}
-    BulwarkIncreaseFreq: {x: 120, y: 300}
-    SwiftIncreaseFreq: {x: 120, y: 240}
-    RapidFireIncreaseFreq: {x: 120, y: 240}
-    SpreadIncreaseFreq: {x: 120, y: 240}
 --- !u!1 &1003763332
 GameObject:
   m_ObjectHideFlags: 0
