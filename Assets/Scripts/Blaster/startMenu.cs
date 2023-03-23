@@ -7,6 +7,9 @@ public class startMenu : MonoBehaviour
 {
     public void openMenu()
     {
-        SceneLoader.Instance.UnloadAsync(gameObject.scene.name);
+        SceneLoader.Instance.LoadAsync("Computer", LoadSceneMode.Additive, onLoadedCallback: () =>
+        {
+            SceneManager.UnloadSceneAsync("Scene_endGame");
+        });
     }
 }
