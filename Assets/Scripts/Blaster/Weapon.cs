@@ -27,7 +27,7 @@ public class Weapon : MonoBehaviour
     {
         // AYO TRY USING THE SPACE BAR IF YOU CAN LATER IT'S Input.GetKey(KeyCode.Space)
         if (isSpread == true) {
-            if(Input.GetButtonDown("Fire1") && shootTime <= Time.time)
+            if((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space)) && shootTime <= Time.time)
             {
                 SpreadShoot();
             }
@@ -35,7 +35,7 @@ public class Weapon : MonoBehaviour
                 isSpread = false;
             }
         } else {
-            if(Input.GetButtonDown("Fire1") && shootTime <= Time.time)
+            if((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space)) && shootTime <= Time.time)
             {
                 Shoot();
             }

@@ -126,11 +126,16 @@ namespace AutoLetterbox
             // Use the best fitting of the two
             if (screenViewPortHorizontal.height >= screenViewPortVertical.height && screenViewPortHorizontal.width >= screenViewPortVertical.width) {
                 if (screenViewPortHorizontal.height <= originViewPort.height && screenViewPortHorizontal.width <= originViewPort.width) {
+                    // NOTE: THE FOLLOWING IF STATEMENT HAS BEEN ADDED BY NATHAN
+                    if (camera == null)
+                        camera = Camera.main;
+
                     camera.rect = screenViewPortHorizontal;
                 } else {
                     // NOTE: THE FOLLOWING IF STATEMENT HAS BEEN ADDED BY NATHAN
-                    if(camera != null)
-                        camera.rect = screenViewPortVertical;
+                    if (camera == null)
+                        camera = Camera.main;
+                    camera.rect = screenViewPortVertical;
                 }
             } else {
                 if (screenViewPortVertical.height <= originViewPort.height && screenViewPortVertical.width <= originViewPort.width) {
