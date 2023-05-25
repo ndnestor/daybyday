@@ -848,6 +848,11 @@ MonoBehaviour:
   wakeUpPosition: {x: -3.5, y: -1.5}
   bedDestination: {fileID: 1930726013}
   sleepAnimation: {fileID: 0}
+  sleepThemeSong: {fileID: 8300000, guid: ff5740f86f5dc484a833be46b6badb4e, type: 3}
+  fallRoomTheme: {fileID: 8300000, guid: 47546763a12363f459f4f4954784cfe8, type: 3}
+  springRoomTheme: {fileID: 0}
+  summerRoomTheme: {fileID: 0}
+  winterRoomTheme: {fileID: 0}
   bonsaiTree: {fileID: 893671295}
   agendasBox: {fileID: 890351132}
   agendaDialogue: {fileID: 11400000, guid: 31379b594c414b947811ecf008114d72, type: 2}

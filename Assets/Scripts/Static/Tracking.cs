@@ -56,6 +56,13 @@ public class Tracking : MonoBehaviour
     //Used for sleeping
     [SerializeField] private Transform bedDestination;
     [SerializeField] private AnimationClip sleepAnimation;
+    [SerializeField] private AudioClip sleepThemeSong;
+    
+    // Room themes
+    [SerializeField] private AudioClip fallRoomTheme;
+    [SerializeField] private AudioClip springRoomTheme;
+    [SerializeField] private AudioClip summerRoomTheme;
+    [SerializeField] private AudioClip winterRoomTheme;
 
     // WaterPlant component for tree to call for update level/day every day
     public BonsaiTree bonsaiTree;
@@ -68,8 +75,8 @@ public class Tracking : MonoBehaviour
     // Objects used for dialogue
     private DialogueSystem dialogueSystem;
     private ValueRegistry valueRegistry;
-    
-    
+
+
     private void Start()
     {
         DontDestroyOnLoad(this);
@@ -80,6 +87,12 @@ public class Tracking : MonoBehaviour
 
         DayNum = PersistentDataSaver.Instance.TryGet(nameof(dayNum), 1);
         AddUsedTime(PersistentDataSaver.Instance.TryGet(nameof(timeUsed), 0));
+        
+        if (DayNum < 6)
+        {
+            MusicPlayer.Instance.audioSource.clip = fallRoomTheme;
+        }
+        MusicPlayer.Instance.PlayMusic(true);
     }
 
     //Adds an object to an ArrayList in chronological order of use
@@ -183,8 +196,11 @@ public class Tracking : MonoBehaviour
             // TODO: Make all these constant numbers variables
             yield return new WaitUntil(() => Movement2D.Instance.animator.GetCurrentAnimatorStateInfo(0)
                 .IsName("Character Entering Bed"));
+            MusicPlayer.Instance.StopMusic();
             yield return new WaitForSeconds(1);
-            yield return  StartCoroutine(SceneLoader.Instance.ChangeOverlayColor(Color.black, 2));
+            MusicPlayer.Instance.audioSource.clip = sleepThemeSong;
+            MusicPlayer.Instance.PlayMusic(false);
+            yield return StartCoroutine(SceneLoader.Instance.ChangeOverlayColor(Color.black, 2));
             yield return new WaitUntil(() => !Movement2D.Instance.animator.GetCurrentAnimatorStateInfo(0)
                 .IsName("Character Entering Bed"));
             
@@ -194,7 +210,7 @@ public class Tracking : MonoBehaviour
             bonsaiTree.DayUpdate();
 
             DayNum++;
-            
+
             InteractionHandler.Instance.UpdateNeglectedSprites();
             InteractionHandler.Instance.ResetNeglection();
             ProductivityAid.Instance.UpdateLevel();
@@ -228,6 +244,13 @@ public class Tracking : MonoBehaviour
                         Destroy(agendasBox);
                 });
             });
+            
+            yield return new WaitUntil(() => !MusicPlayer.Instance.audioSource.isPlaying);
+            if (DayNum < 6)
+            {
+                MusicPlayer.Instance.audioSource.clip = fallRoomTheme;
+            }
+            MusicPlayer.Instance.PlayMusic(true);
         }
 
         Movement2D.Instance.MoveTo(bedDestination.position, CallbackAction);

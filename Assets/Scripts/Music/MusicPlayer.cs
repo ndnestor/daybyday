@@ -5,89 +5,115 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
+[Serializable]
+public class SceneMusicPair
+{
+    public string sceneName;
+    public AudioClip musicClip;
+}
+
 public class MusicPlayer : MonoBehaviour
 {
-    [SerializeField] private bool autoPlay;
-    [SerializeField] private bool loop;
-    [Range(0, 1)] [SerializeField] private float maximumVolume;
-    [Range(0, 1)] [SerializeField] private float defaultVolumePercentage;
-    
-    private Playlist currPlaylist;
-    private AudioSource audioSource;
-    private int nextSongIndex;
-    private bool playing;
-    
-    public List<Playlist> playlists = new List<Playlist>();
+    [SerializeField] private List<SceneMusicPair> sceneMusicMap = new List<SceneMusicPair>();
+    [SerializeField] private float maxVolume = 1.0f;
+    [SerializeField] private float loopDelay = 3.0f;
 
-    public Playlist CurrPlaylist
+    public float fadeDuration = 1.0f;
+    public AudioSource audioSource;
+
+    private float currentVolume = 0.0f;
+    private bool isLooping = false;
+    private bool isFading = false;
+
+    public static MusicPlayer Instance;
+
+    private void Awake()
     {
-        get => currPlaylist;
-        set
-        {
-            currPlaylist = value;
-            nextSongIndex = 0;
-            NextSong();
-        }
+        DontDestroyOnLoad(this);
+        Instance = this;
     }
 
     private void Start()
     {
-        DontDestroyOnLoad(this);
-    
-        audioSource = GetComponent<AudioSource>();
-        audioSource.volume = defaultVolumePercentage * maximumVolume;
-
-        OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        
-        if(autoPlay)
-            Play();
+        StopMusic();
+        var currentSceneName = SceneManager.GetActiveScene().name;
+        foreach (var pair in sceneMusicMap)
+        {
+            if (pair.sceneName != currentSceneName) continue;
+            if (pair.musicClip == audioSource.clip) continue;
+            audioSource.clip = pair.musicClip;
+            print($"Playing music for scene '{currentSceneName}'");
+            PlayMusic(true);
+            break;
+        }
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        playlists.Sort((playlistA, playlistB) => playlistB.priority - playlistA.priority);
-        
-        foreach(var playlist in playlists)
-            if (playlist.sceneName == scene.name) {
-                CurrPlaylist = playlist;
-                return;
-            }
-    }
-
-    public void Play()
+    public void PlayMusic(bool loop)
     {
-        NextSong();
-        playing = true;
+        if (audioSource.isPlaying)
+            return;
+
+        isLooping = loop;
+        isFading = true;
+        StartCoroutine(FadeIn());
     }
-    
-    private void NextSong()
+
+    public void StopMusic()
     {
-        audioSource.clip = currPlaylist.songs[nextSongIndex];
+        if (!audioSource.isPlaying)
+            return;
+        
+        isFading = true;
+        StartCoroutine(FadeOut());
+    }
+
+    private IEnumerator FadeIn()
+    {
+        float timer = 0.0f;
         audioSource.Play();
-
-        nextSongIndex++;
-        if(nextSongIndex == currPlaylist.songs.Count)
-            nextSongIndex = 0;
+        
+        while (timer < fadeDuration)
+        {
+            currentVolume = Mathf.Lerp(0.0f, maxVolume, timer / fadeDuration);
+            audioSource.volume = currentVolume;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        
+        currentVolume = maxVolume;
+        audioSource.volume = currentVolume;
+        isFading = false;
+        
+        if (isLooping)
+        {
+            StartCoroutine(PlayMusicWithDelay());
+        }
     }
 
-    private void Update()
+    private IEnumerator FadeOut()
     {
-        if(!playing || audioSource.isPlaying) return;
-
-        if(loop)
-            NextSong();
-        else
-            Stop();
-    }
-
-    public void Stop()
-    {
-        playing = false;
+        float timer = 0.0f;
+        float startVolume = audioSource.volume;
+        
+        while (timer < fadeDuration)
+        {
+            currentVolume = Mathf.Lerp(startVolume, 0.0f, timer / fadeDuration);
+            audioSource.volume = currentVolume;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        
         audioSource.Stop();
+        audioSource.volume = maxVolume;
+        isFading = false;
     }
 
-    private void ChangeVolume(float volumePercentage)
+    private IEnumerator PlayMusicWithDelay()
     {
-        audioSource.volume = volumePercentage * maximumVolume;
+        yield return new WaitForSeconds(audioSource.clip.length + loopDelay);
+        if (isLooping)
+        {
+            audioSource.Play();
+        }
     }
 }

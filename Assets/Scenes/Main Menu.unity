@@ -511,7 +511,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 542077034}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MusicPlayer, Assembly-CSharp
         m_MethodName: ChangeVolume
         m_Mode: 0
@@ -647,7 +647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 542077033}
   - component: {fileID: 542077032}
-  - component: {fileID: 542077034}
+  - component: {fileID: 542077031}
   m_Layer: 0
   m_Name: Music Player
   m_TagString: Untagged
@@ -655,6 +655,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &542077031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542077030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d83eac4a848fd843b8aa71f367d4ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneMusicMap:
+  - sceneName: Main Menu
+    musicClip: {fileID: 8300000, guid: f589a426744489648b0f5a27b8660874, type: 3}
+  maxVolume: 0.5
+  loopDelay: 3
+  fadeDuration: 1
+  audioSource: {fileID: 542077032}
 --- !u!82 &542077032
 AudioSource:
   m_ObjectHideFlags: 0
@@ -837,28 +856,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &542077034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542077030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a20056546b8b455448f7976b54424557, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoPlay: 1
-  loop: 1
-  maximumVolume: 0.075
-  defaultVolumePercentage: 0.8
-  playlists:
-  - {fileID: 11400000, guid: 4695b8c58e8350541a0c28e6b4a89c7a, type: 2}
-  - {fileID: 11400000, guid: 9e8c955d4b3785f4d9256a249c172b4d, type: 2}
-  - {fileID: 11400000, guid: 111cd1af3ba6fce4388d64fc7973df78, type: 2}
-  - {fileID: 11400000, guid: 8c1b401ceccb51e4a9815d6dae20100d, type: 2}
-  - {fileID: 11400000, guid: 0fe035817adb23d4aa5210e98a9573a3, type: 2}
 --- !u!1 &624198030
 GameObject:
   m_ObjectHideFlags: 0
