@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 
 public class ComputerInterface : MonoBehaviour
 {
-    [SerializeField] private AudioClip themeSong;
+    [SerializeField] private AudioClip blasterThemeSong;
     
     public GameObject profilePage;
     public GameObject inboxPage;
@@ -25,13 +25,6 @@ public class ComputerInterface : MonoBehaviour
     public GameObject inboxAssets;
     public GameObject assignmentAssets;
 
-    private void Start()
-    {
-        // TODO: Move code
-        MusicPlayer.Instance.QueueMusic(themeSong, true);
-        MusicPlayer.Instance.StopMusic();
-    }
-
     void Update()
     {
         if (Input.GetKey(KeyCode.Escape))
@@ -48,6 +41,9 @@ public class ComputerInterface : MonoBehaviour
     public void QuitComputer()
     {
         SceneLoader.Instance.UnloadAsync("Computer");
+        
+        Tracking.Instance.QueueRoomTheme();
+        MusicPlayer.Instance.StopMusic();
     }
 
     void CastRay()
@@ -89,6 +85,9 @@ public class ComputerInterface : MonoBehaviour
         }
         else if (newName.Equals("Blaster Button"))
         {
+            MusicPlayer.Instance.QueueMusic(blasterThemeSong, true);
+            MusicPlayer.Instance.StopMusic();
+            
             Tracking.Instance.AddUsedTime(2);
             SceneLoader.Instance.LoadAsync("Scene_Game", LoadSceneMode.Additive, onLoadedCallback: () => {
                 SceneManager.UnloadSceneAsync("Computer");

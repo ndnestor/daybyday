@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class OpenComputer : MonoBehaviour
 {
+    [SerializeField] private AudioClip themeSong;
 
     private void Start()
     {
@@ -14,5 +15,8 @@ public class OpenComputer : MonoBehaviour
     private void OpenComp()
     {
         SceneLoader.Instance.LoadAsync("Computer", LoadSceneMode.Additive, true);
+        
+        MusicPlayer.Instance.StopMusic();
+        MusicPlayer.Instance.QueueMusic(themeSong, true);
     }
 }
