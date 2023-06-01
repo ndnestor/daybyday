@@ -9,6 +9,7 @@ public class BonsaiTree : MonoBehaviour
     [SerializeField] private GameObject wateringObj;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private BonsaiTreeState[] bonsaiTreeStates;
+    [SerializeField] private AudioClip[] songs;
     
     private bool wasWatered;
     private int woodLevel;
@@ -27,8 +28,17 @@ public class BonsaiTree : MonoBehaviour
         var waterCanInstance = Instantiate(waterCan, new Vector3(0.93f, -1.58f, 0.0f), Quaternion.identity);
         var wateringObjInstance = Instantiate(wateringObj, new Vector3(-0.05f, -1.50f, 0.0f), Quaternion.identity);
         wasWatered = true;
-        
+
         Movement2D.Instance.SetPlayerControl(false);
+            
+        MusicPlayer.Instance.StopMusic();
+        yield return new WaitUntil(() => !MusicPlayer.Instance.audioSource.isPlaying);
+        var songIndex = Math.Min(woodLevel + leafLevel, songs.Length - 1);
+        MusicPlayer.Instance.audioSource.clip = songs[songIndex];
+        MusicPlayer.Instance.PlayMusic(false);
+        
+        Tracking.Instance.QueueRoomTheme();
+        
         yield return new WaitUntil(() => !waterCanInstance && !wateringObjInstance);
         Movement2D.Instance.SetPlayerControl(true);
     }

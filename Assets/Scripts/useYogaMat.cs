@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class useYogaMat : MonoBehaviour
 {
+    [SerializeField] private AudioClip themeSong;
+    
     public HighlightObject highlightObject;
     void Start()
     {
@@ -13,5 +15,8 @@ public class useYogaMat : MonoBehaviour
 
     void OpenYogaMat() {
         SceneLoader.Instance.LoadAsync("Yoga_menu", LoadSceneMode.Additive, true);
+
+        MusicPlayer.Instance.StopMusic();
+        MusicPlayer.Instance.QueueMusic(themeSong, true);
     }
 }

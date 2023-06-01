@@ -671,9 +671,10 @@ MonoBehaviour:
   - sceneName: Main Menu
     musicClip: {fileID: 8300000, guid: f589a426744489648b0f5a27b8660874, type: 3}
   maxVolume: 0.5
-  loopDelay: 3
-  fadeDuration: 1
+  progress: 0
   audioSource: {fileID: 542077032}
+  fadeDuration: 1
+  loopDelay: 3
 --- !u!82 &542077032
 AudioSource:
   m_ObjectHideFlags: 0

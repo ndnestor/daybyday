@@ -1,10 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class ComputerInterface : MonoBehaviour
 {
+    [SerializeField] private AudioClip themeSong;
+    
     public GameObject profilePage;
     public GameObject inboxPage;
     public GameObject assignmentPage;
@@ -20,6 +24,13 @@ public class ComputerInterface : MonoBehaviour
     // Canvas objects for Inbox page
     public GameObject inboxAssets;
     public GameObject assignmentAssets;
+
+    private void Start()
+    {
+        // TODO: Move code
+        MusicPlayer.Instance.QueueMusic(themeSong, true);
+        MusicPlayer.Instance.StopMusic();
+    }
 
     void Update()
     {

@@ -847,16 +847,21 @@ MonoBehaviour:
     m_NumAlphaKeys: 4
   wakeUpPosition: {x: -3.5, y: -1.5}
   bedDestination: {fileID: 1930726013}
-  sleepAnimation: {fileID: 0}
   sleepThemeSong: {fileID: 8300000, guid: ff5740f86f5dc484a833be46b6badb4e, type: 3}
   fallRoomTheme: {fileID: 8300000, guid: 47546763a12363f459f4f4954784cfe8, type: 3}
-  springRoomTheme: {fileID: 0}
-  summerRoomTheme: {fileID: 0}
-  winterRoomTheme: {fileID: 0}
+  springRoomTheme: {fileID: 8300000, guid: f7e77fd957416d241bc3061df3ee102e, type: 3}
+  summerRoomTheme: {fileID: 8300000, guid: c12fe46023ea31347b2bc2bbb83ffef7, type: 3}
+  winterRoomTheme: {fileID: 8300000, guid: a33e369a2e4e0a94889cfd1e37e89e9e, type: 3}
+  agendaThemes:
+  - {fileID: 8300000, guid: 7e4f9e43498bdd4469ef47edb189ae63, type: 3}
+  - {fileID: 8300000, guid: 7e4f9e43498bdd4469ef47edb189ae63, type: 3}
+  - {fileID: 8300000, guid: 2eb893cb1ebdca94097bdf63c3b4c072, type: 3}
+  - {fileID: 8300000, guid: 2eb893cb1ebdca94097bdf63c3b4c072, type: 3}
+  - {fileID: 8300000, guid: 41dea1d68aa43a14a8a3bcf39b81f502, type: 3}
+  - {fileID: 8300000, guid: c9aaaa7e34ef17647b23390d61abc917, type: 3}
   bonsaiTree: {fileID: 893671295}
   agendasBox: {fileID: 890351132}
   agendaDialogue: {fileID: 11400000, guid: 31379b594c414b947811ecf008114d72, type: 2}
-  blackOverlay: {fileID: 882037753}
 --- !u!4 &231473488
 Transform:
   m_ObjectHideFlags: 0
@@ -2492,7 +2497,6 @@ GameObject:
   - component: {fileID: 893671292}
   - component: {fileID: 893671296}
   - component: {fileID: 893671295}
-  - component: {fileID: 893671297}
   m_Layer: 6
   m_Name: Bonsai Tree
   m_TagString: Untagged
@@ -2622,6 +2626,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8c7319b7b186ecf16a6ac2f7cea30ba8, type: 2}
   - {fileID: 11400000, guid: 5037d6873a24f84128dce8e0521f2e50, type: 2}
   - {fileID: 11400000, guid: 7cf54061efd90f87fbbac600e8915121, type: 2}
+  songs:
+  - {fileID: 8300000, guid: 3750eddacad0d6046905bd59f456f4ae, type: 3}
+  - {fileID: 8300000, guid: 434bbc3b4489f6d469481c88be8207cc, type: 3}
+  - {fileID: 8300000, guid: 6fb56bc324851e849834709534001f82, type: 3}
+  - {fileID: 8300000, guid: 037c9527c48d6d34db242d2dabbbceef, type: 3}
+  - {fileID: 8300000, guid: 3d43ba5546f45c34f9e22c0b03c3fbb8, type: 3}
+  - {fileID: 8300000, guid: 2f5a6727f03dec34b8a65327a1ebd5a0, type: 3}
   level: 0
   day: 1
 --- !u!114 &893671296
@@ -2639,50 +2650,6 @@ MonoBehaviour:
   connectedSprite: {fileID: 1345093767}
   highlight: {fileID: 2100000, guid: 22452ed738f5bc94189c9280ae171aa9, type: 2}
   triggerable: 0
---- !u!114 &893671297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893671291}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1fdcc7d2b81e9e41a9b7e125719088b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  treeSprite: {fileID: 1345093770}
-  w1l1: {fileID: 21300000, guid: 0b18667ef4fa2c24e842d72c0f8ba92e, type: 3}
-  w2l1: {fileID: 21300000, guid: 90b03f64f03fb7640890186671b04e0d, type: 3}
-  w2l2_JanFebNovDec: {fileID: 21300000, guid: 33b35f930fee87f4c80e5adeb68fbb56, type: 3}
-  w2l2_Mar: {fileID: 21300000, guid: 6f880f0ab04079947ac31020d8cd58cc, type: 3}
-  w2l2_Apr: {fileID: 21300000, guid: c19265bd86bde71448b49bb4cf107787, type: 3}
-  w2l2_May: {fileID: 21300000, guid: 99fa1b9714ca915448a212af8cc9495a, type: 3}
-  w2l2_Jun: {fileID: 21300000, guid: 848e73fa691f599449403c3861cef73e, type: 3}
-  w2l2_Jul: {fileID: 21300000, guid: 13e2877657607bf43847ca18351e0c52, type: 3}
-  w2l2_Aug: {fileID: 21300000, guid: f86f36588e76a654c846c8081372a7c8, type: 3}
-  w2l2_Sep: {fileID: 21300000, guid: 4ebd74b488f0bd24fb4751a9c71e9da3, type: 3}
-  w2l2_Oct: {fileID: 21300000, guid: 214a10e518887d2479bdf5fa5d594bf6, type: 3}
-  w3l1_JanFebMarOctNovDec: {fileID: 21300000, guid: 0e2e277299df55640a8eefc58c0f7e7d, type: 3}
-  w3l1_JunJulAug: {fileID: 21300000, guid: bd7c7496595633d45a69f8275c67aa4a, type: 3}
-  w3l1_Sep: {fileID: 21300000, guid: c522e2325b160934d8324c4f5ce0a811, type: 3}
-  w3l2_JanFebNovDec: {fileID: 21300000, guid: a01935c746441c04490cb50d3baf1d03, type: 3}
-  w3l2_JunJulyAug: {fileID: 21300000, guid: 348f274208bb888478be3be978e63adf, type: 3}
-  w3l2_Sep: {fileID: 21300000, guid: 770e80a61904f5b45b472ff6c611d43e, type: 3}
-  w3l2_Oct: {fileID: 21300000, guid: e56fec7b3459abb468da8c52632530a7, type: 3}
-  w3l3_JanFebNov: {fileID: 21300000, guid: deea828f36d602943b35fe58f87c0f76, type: 3}
-  w3l3_Mar: {fileID: 21300000, guid: 88751f96aa148f848a4e059b08dcfde5, type: 3}
-  w3l3_May: {fileID: 21300000, guid: 8b1863a0f2ba3fc4dae2743102504473, type: 3}
-  w3l3_Jun: {fileID: 21300000, guid: 95a3569eccfce9c42b5ac8ec2daa09ad, type: 3}
-  w3l3_Jul: {fileID: 21300000, guid: 197f2a32e424b1a4aac2728bc7f557e3, type: 3}
-  w3l3_Aug: {fileID: 21300000, guid: fd12d57c837fde14798d0bb0727ac12c, type: 3}
-  w3l3_Sep: {fileID: 21300000, guid: 8fe7029addab14b4ea569aa04c03b264, type: 3}
-  w3l3_Oct: {fileID: 21300000, guid: d5d562079210ea4429ff47419ac89391, type: 3}
-  w3l3_Dec: {fileID: 21300000, guid: 946eaba942a0dd843b237789eed53224, type: 3}
-  w3l1_Apr: {fileID: 21300000, guid: 2611822ea18373641b2af5f5e6205683, type: 3}
-  w3l1_May: {fileID: 21300000, guid: 198aded4907119a40aab8b3fbdf4f925, type: 3}
-  w3l2_May: {fileID: 21300000, guid: 7e7638517ccae2b449c17f22a1b84e7e, type: 3}
-  bonsaiTree: {fileID: 0}
 --- !u!1 &911217087
 GameObject:
   m_ObjectHideFlags: 0
@@ -3720,6 +3687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8082def63271edf45a8088f84468b58c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bookshelfThemeSong: {fileID: 8300000, guid: efbe1ff80031c2b45960d176fe04e3c7, type: 3}
   sceneName: Bookshelf
 --- !u!114 &1449526120
 MonoBehaviour:
@@ -3885,6 +3853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d104d64955f31489392ff2d7162eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  themeSong: {fileID: 0}
   highlightObject: {fileID: 1495997028}
 --- !u!1 &1540200525
 GameObject:

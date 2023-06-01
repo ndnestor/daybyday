@@ -42,6 +42,11 @@ public class SceneUnloadButton : MonoBehaviour
     public void Unload()
     {
         SceneLoader.Instance.UnloadAsync(sceneName);
+
+        MusicPlayer.Instance.loopDelay = 3f;
+        MusicPlayer.Instance.fadeDuration = 1f;
+        MusicPlayer.Instance.StopMusic();
+        Tracking.Instance.QueueRoomTheme();
     }
 
 }

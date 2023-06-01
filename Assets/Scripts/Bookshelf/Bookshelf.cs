@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Bookshelf : MonoBehaviour
 {
 
+	[SerializeField] private AudioClip bookshelfThemeSong;
 	[SerializeField] private string sceneName;
 
 	private void Start()
@@ -16,8 +17,12 @@ public class Bookshelf : MonoBehaviour
 	// Show the bookshelf selection screen
 	private void Interact()
 	{
-		//SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
 		SceneLoader.Instance.LoadAsync(sceneName, LoadSceneMode.Additive, true);
+
+		MusicPlayer.Instance.loopDelay = 0f;
+		MusicPlayer.Instance.fadeDuration = 0f;
+		MusicPlayer.Instance.StopMusic();
+		MusicPlayer.Instance.QueueMusic(bookshelfThemeSong, true);
 	}
 
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Game;
 using Game.Dialogue;
 using Game.Registry;
@@ -44,7 +45,7 @@ public class Tracking : MonoBehaviour
     }
     public ArrayList objectUsage = new ArrayList();
 
-    //Used for window lighting
+    // Used for window lighting
     [SerializeField] private SpriteRenderer windowPaneRenderer;
     [SerializeField] private SpriteRenderer windowLightRenderer;
     [SerializeField] private SpriteRenderer windowFrameHighlightRenderer;
@@ -53,9 +54,8 @@ public class Tracking : MonoBehaviour
     [SerializeField] private Gradient opacityGradient;
     [SerializeField] private Vector2 wakeUpPosition;
 
-    //Used for sleeping
+    // Used for sleeping
     [SerializeField] private Transform bedDestination;
-    [SerializeField] private AnimationClip sleepAnimation;
     [SerializeField] private AudioClip sleepThemeSong;
     
     // Room themes
@@ -63,14 +63,16 @@ public class Tracking : MonoBehaviour
     [SerializeField] private AudioClip springRoomTheme;
     [SerializeField] private AudioClip summerRoomTheme;
     [SerializeField] private AudioClip winterRoomTheme;
+    
+    // Agenda's themes
+    [SerializeField] private AudioClip[] agendaThemes;
 
     // WaterPlant component for tree to call for update level/day every day
     public BonsaiTree bonsaiTree;
     
-    //Used for Agenda's day two introduction
+    // Used for Agenda's day two introduction
     [SerializeField] private GameObject agendasBox;
     [SerializeField] private DialogueGraph agendaDialogue;
-    [SerializeField] private GameObject blackOverlay;
     
     // Objects used for dialogue
     private DialogueSystem dialogueSystem;
@@ -82,17 +84,16 @@ public class Tracking : MonoBehaviour
         DontDestroyOnLoad(this);
         Instance = this;
 
+        Cursor.visible = true;
+
         dialogueSystem = MainInstances.Get<DialogueSystem>();
         valueRegistry = MainInstances.Get<ValueRegistry>();
 
         DayNum = PersistentDataSaver.Instance.TryGet(nameof(dayNum), 1);
         AddUsedTime(PersistentDataSaver.Instance.TryGet(nameof(timeUsed), 0));
-        
-        if (DayNum < 6)
-        {
-            MusicPlayer.Instance.audioSource.clip = fallRoomTheme;
-        }
-        MusicPlayer.Instance.PlayMusic(true);
+
+        MusicPlayer.Instance.StopMusic();
+        QueueRoomTheme();
     }
 
     //Adds an object to an ArrayList in chronological order of use
@@ -182,8 +183,7 @@ public class Tracking : MonoBehaviour
         IEnumerator CallbackAction()
         {
             /* Code in this method will get called when the character is next to the bed and ready to sleep
-             * Sleep animation should start playing, sleep theme should start playing, etc
-             * Probably should disable the Movement2D.cs script too */
+             * Sleep animation should start playing, sleep theme should start playing, etc */
             
             print("Sleeping");
             
@@ -196,17 +196,16 @@ public class Tracking : MonoBehaviour
             // TODO: Make all these constant numbers variables
             yield return new WaitUntil(() => Movement2D.Instance.animator.GetCurrentAnimatorStateInfo(0)
                 .IsName("Character Entering Bed"));
+            
             MusicPlayer.Instance.StopMusic();
-            yield return new WaitForSeconds(1);
-            MusicPlayer.Instance.audioSource.clip = sleepThemeSong;
-            MusicPlayer.Instance.PlayMusic(false);
+            MusicPlayer.Instance.QueueMusic(sleepThemeSong, false);
+
             yield return StartCoroutine(SceneLoader.Instance.ChangeOverlayColor(Color.black, 2));
             yield return new WaitUntil(() => !Movement2D.Instance.animator.GetCurrentAnimatorStateInfo(0)
                 .IsName("Character Entering Bed"));
             
             Movement2D.Instance.enabled = true;
             
-            // TODO: Write comment lol
             bonsaiTree.DayUpdate();
 
             DayNum++;
@@ -226,7 +225,6 @@ public class Tracking : MonoBehaviour
             } else
                 targetPosition = wakeUpPosition;
             
-            // TODO: Write comment
             Movement2D.Instance.animator.SetBool(Movement2D.IsSleepingId, false);
 
             yield return new WaitForSeconds(1);
@@ -237,22 +235,34 @@ public class Tracking : MonoBehaviour
 
             Movement2D.Instance.MoveTo(targetPosition, () => {
                 
+                MusicPlayer.Instance.QueueMusic(agendaThemes[DayNum - 1], false);
+                
                 // Have agenda speak once Quinn arrives
                 dialogueSystem.Present(agendaDialogue, () =>
                 {
-                    if(DayNum == 2)
+                    if (DayNum == 2)
                         Destroy(agendasBox);
                 });
             });
             
-            yield return new WaitUntil(() => !MusicPlayer.Instance.audioSource.isPlaying);
-            if (DayNum < 6)
-            {
-                MusicPlayer.Instance.audioSource.clip = fallRoomTheme;
-            }
-            MusicPlayer.Instance.PlayMusic(true);
+            // Play room theme after Agenda's theme is finished
+            yield return new WaitUntil(() => agendaThemes.Contains(MusicPlayer.Instance.audioSource.clip));
+            QueueRoomTheme();
         }
 
         Movement2D.Instance.MoveTo(bedDestination.position, CallbackAction);
+    }
+
+    public void QueueRoomTheme()
+    {
+        var roomTheme = DayNum switch
+        {
+            var n when n < 4 => springRoomTheme,
+            var n when n < 7 => summerRoomTheme,
+            var n when n < 10 => fallRoomTheme,
+            _ => winterRoomTheme
+        };
+        
+        MusicPlayer.Instance.QueueMusic(roomTheme, true);
     }
 }
