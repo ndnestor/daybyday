@@ -407,20 +407,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: pageContents.Array.data[0]
-      value: " you grab a hanger and fling off your winter coat, you\u2019re swallowed
+      value: "You grab a hanger and fling off your winter coat, you\u2019re swallowed
         by a cloud of filth. Your eyes moisten and sizzle until you feel like they\u2019re
         melting, before they forcefully reopen. Between desperate blinks, you catch
         a glimpse of your daughter\u2019s softball uniform, caked and clouded in
         dust. Her jersey is missing, however. After scanning the room, you gaze at
         the pulsating light that seeps from your living room\u2019s door. You knock
         on it; a few seconds later, your daughter opens the door, sporting her stretched-out
-        jersey. \n\u201CHi Dad!\u201D \n\u201CHi! \u2026Was wondering where your
+        jersey. \r\n\u201CHi Dad!\u201D \r\n\u201CHi! \u2026Was wondering where your
         jersey went. Are you thinking of trying out for softball this month?\u201D
-        You inquire.\n\u201CI... don\u2019t know. Haven\u2019t thought about it much
-        since last spring.\u201D She replies.\n\u201CAre your friends trying out?\u201D
-        You respond. \n\u201CYeah, though I still play games with some of them online.\u201D
-        She answers.\n\u201CYou\u2019ve mostly been playing that cooperative building
-        game with them, right?\u201D You ask."
+        You inquire.\r\n\u201CI... don\u2019t know. Haven\u2019t thought about it
+        much since last spring.\u201D She replies.\r\n\u201CAre your friends trying
+        out?\u201D You respond. \r\n\u201CYeah, though I still play games with some
+        of them online.\u201D She answers.\r\n\u201CYou\u2019ve mostly been playing
+        that cooperative building game with them, right?\u201D You ask."
       objectReference: {fileID: 0}
     - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: pageContents.Array.data[1]
