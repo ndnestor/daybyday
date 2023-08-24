@@ -4,6 +4,7 @@ using System.Linq;
 using Game;
 using Game.Dialogue;
 using Game.Registry;
+using TMPro;
 using UnityEngine;
 
 //This class is a Singleton instance
@@ -73,6 +74,9 @@ public class Tracking : MonoBehaviour
     // Used for Agenda's day two introduction
     [SerializeField] private GameObject agendasBox;
     [SerializeField] private DialogueGraph agendaDialogue;
+    
+    // Day number shown at the start of day
+    [SerializeField] private TextMeshProUGUI dayNumberText;
     
     // Objects used for dialogue
     private DialogueSystem dialogueSystem;
@@ -196,11 +200,15 @@ public class Tracking : MonoBehaviour
             // TODO: Make all these constant numbers variables
             yield return new WaitUntil(() => Movement2D.Instance.animator.GetCurrentAnimatorStateInfo(0)
                 .IsName("Character Entering Bed"));
-            
+
             MusicPlayer.Instance.StopMusic();
             MusicPlayer.Instance.QueueMusic(sleepThemeSong, false);
 
-            yield return StartCoroutine(SceneLoader.Instance.ChangeOverlayColor(Color.black, 2));
+            yield return StartCoroutine(
+                SceneLoader.Instance.ChangeOverlayColor(Color. black, 2, () => {
+                        dayNumberText.text = $"Day {DayNum + 1}\n\u200B";
+                        dayNumberText.enabled = true; 
+                }));
             yield return new WaitUntil(() => !Movement2D.Instance.animator.GetCurrentAnimatorStateInfo(0)
                 .IsName("Character Entering Bed"));
             
@@ -227,14 +235,27 @@ public class Tracking : MonoBehaviour
             
             Movement2D.Instance.animator.SetBool(Movement2D.IsSleepingId, false);
 
+            int waitTime = 0;
+            while (waitTime < 5)
+            {
+                yield return new WaitForSeconds(1);
+                dayNumberText.text += ". ";
+                waitTime += 1;
+            }
             yield return new WaitForSeconds(1);
-            yield return StartCoroutine(SceneLoader.Instance.ChangeOverlayColor(Color.clear, 1));
-            yield return new WaitForSeconds(1.5f);
+            
+            dayNumberText.enabled = false;
+
+            yield return new WaitForSeconds(1);
+            
+            yield return StartCoroutine(SceneLoader.Instance.ChangeOverlayColor(Color.clear, 2));
+            yield return new WaitForSeconds(1);
             
             Movement2D.Instance.SetPlayerControl(true);
 
             Movement2D.Instance.MoveTo(targetPosition, () => {
                 
+                MusicPlayer.Instance.StopMusic();
                 MusicPlayer.Instance.QueueMusic(agendaThemes[DayNum - 1], false);
                 
                 // Have agenda speak once Quinn arrives
@@ -242,12 +263,11 @@ public class Tracking : MonoBehaviour
                 {
                     if (DayNum == 2)
                         Destroy(agendasBox);
+                    
+                    MusicPlayer.Instance.StopMusic();
+                    QueueRoomTheme();
                 });
             });
-            
-            // Play room theme after Agenda's theme is finished
-            yield return new WaitUntil(() => agendaThemes.Contains(MusicPlayer.Instance.audioSource.clip));
-            QueueRoomTheme();
         }
 
         Movement2D.Instance.MoveTo(bedDestination.position, CallbackAction);

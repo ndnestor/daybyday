@@ -63,6 +63,15 @@ public class MusicPlayer : MonoBehaviour
         progress = audioSource.time / audioSource.clip.length * 100f;
     }
 
+    public void SetVolume(float newVolume)
+    {
+        maxVolume = newVolume;
+        if (!isFading)
+        {
+            audioSource.volume = maxVolume;
+        }
+    }
+
     public void PlayMusic(bool loop)
     {
         if (audioSource.isPlaying)
@@ -111,7 +120,10 @@ public class MusicPlayer : MonoBehaviour
             StopCoroutine(delayCoroutine);
         }
 
-        yield return new WaitForSeconds(loopDelay);
+        if (loop)
+        {
+            yield return new WaitForSeconds(loopDelay);
+        }
 
         queueCoroutine = null;
 
@@ -163,10 +175,8 @@ public class MusicPlayer : MonoBehaviour
     private IEnumerator PlayMusicWithDelay()
     {
         yield return new WaitForSeconds(audioSource.clip.length + loopDelay);
-        if (isLooping)
-        {
-            print("Playing again");
-            QueueMusic(audioSource.clip, true);
-        }
+        if (!isLooping) yield break;
+        print("Playing again");
+        QueueMusic(audioSource.clip, true);
     }
 }
