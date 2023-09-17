@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game;
+using Game.Dialogue;
 using UnityEngine;
 
 public class BonsaiTree : MonoBehaviour
@@ -10,7 +12,9 @@ public class BonsaiTree : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private BonsaiTreeState[] bonsaiTreeStates;
     [SerializeField] private AudioClip[] songs;
-    
+    [SerializeField] private DialogueGraph dialogue;
+
+    private DialogueSystem dialogueSystem;
     private bool wasWatered;
     private int woodLevel;
     private int leafLevel;
@@ -21,26 +25,34 @@ public class BonsaiTree : MonoBehaviour
     // Start is called before the first frame update
     private void Start() {
         InteractionHandler.Instance.RegisterObject("Bonsai Tree", WaterBonsai, 1);
+        dialogueSystem = MainInstances.Get<DialogueSystem>();
     }
 
     private IEnumerator WaterBonsai()
     {
+        Movement2D.Instance.SetPlayerControl(false);
+        InteractionHandler.Instance.canInteract = false;
+        
         var waterCanInstance = Instantiate(waterCan, new Vector3(0.93f, -1.58f, 0.0f), Quaternion.identity);
         var wateringObjInstance = Instantiate(wateringObj, new Vector3(-0.05f, -1.50f, 0.0f), Quaternion.identity);
         wasWatered = true;
 
-        Movement2D.Instance.SetPlayerControl(false);
-            
         MusicPlayer.Instance.StopMusic();
+        
         yield return new WaitUntil(() => !MusicPlayer.Instance.audioSource.isPlaying);
+        
         var songIndex = Math.Min(woodLevel + leafLevel, songs.Length - 1);
         MusicPlayer.Instance.audioSource.clip = songs[songIndex];
         MusicPlayer.Instance.PlayMusic(false);
-        
         Tracking.Instance.QueueRoomTheme();
-        
+
         yield return new WaitUntil(() => !waterCanInstance && !wateringObjInstance);
-        Movement2D.Instance.SetPlayerControl(true);
+        
+        dialogueSystem.Present(dialogue, () =>
+        {
+            Movement2D.Instance.SetPlayerControl(true);
+            InteractionHandler.Instance.canInteract = true; 
+        });
     }
     
     public void DayUpdate() {

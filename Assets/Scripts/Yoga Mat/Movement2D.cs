@@ -71,17 +71,10 @@ public class Movement2D : MonoBehaviour
 
     // Prevent or allow player to control the character
     // TODO: Consider turning isPlayerControlled into a property to replace this method for elegance
-    public void SetPlayerControl(bool canControl) {
-        if(canControl)
-        {
-            movement = Vector2.zero;
-            isPlayerControlled = true;
-        }
-        else
-        {
-            movement = Vector2.zero;
-            isPlayerControlled = false;
-        }
+    public void SetPlayerControl(bool canControl)
+    {
+        movement = Vector2.zero;
+        isPlayerControlled = canControl;
     }
 
     // Used to initialize and run MoveToCoroutine

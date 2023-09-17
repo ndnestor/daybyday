@@ -479,6 +479,52 @@ MonoBehaviour:
     most of the time."
   WaitForInput: 1
   ErasePrevious: 1
+--- !u!114 &-5600940914297387439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e841c05e5a26b1446a8d80ff4bf22247, type: 3}
+  m_Name: Combiner
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2168, y: 1080}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: -5600940914297387439}
+      _typeQualifiedName: Game.Dialogue.Nodes.Branch.CombinerNode+CombinerEntery,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: 8669071525283988379}
+        reroutePoints: []
+      - fieldName: choices 0
+        node: {fileID: 5336440995541695174}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -5600940914297387439}
+      _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: 5764079993920903463}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
 --- !u!114 &-4921203058975547963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,7 +582,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   RegistryName: Interaction Prompt
-  OtherRegistry: BONSAI
+  OtherRegistry: BONSAI TREE
 --- !u!114 &-4863274828965453234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,7 +717,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2488, y: 648}
+  position: {x: 3096, y: 808}
   ports:
     keys:
     - enter
@@ -1111,6 +1157,7 @@ MonoBehaviour:
   - {fileID: -4863274828965453234}
   - {fileID: -3042670778568862163}
   - {fileID: 3736189821769204313}
+  - {fileID: -5600940914297387439}
   current: {fileID: 0}
   entry: {fileID: 3097000379551282765}
   currentSystem: {fileID: 0}
@@ -1131,7 +1178,7 @@ MonoBehaviour:
   m_Name: Combiner
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2984, y: 888}
+  position: {x: 3624, y: 984}
   ports:
     keys:
     - enter
@@ -1665,7 +1712,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2488, y: 840}
+  position: {x: 3096, y: 1000}
   ports:
     keys:
     - enter
@@ -1786,7 +1833,7 @@ MonoBehaviour:
   m_Name: Switch Case
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2088, y: 712}
+  position: {x: 2584, y: 776}
   ports:
     keys:
     - enter
@@ -1800,10 +1847,7 @@ MonoBehaviour:
       _node: {fileID: 3436260129696624405}
       _typeQualifiedName: Game.Dialogue.Nodes.DialogueNodeBase+Empty, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: choices 0
-        node: {fileID: 5336440995541695174}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 0
@@ -1881,7 +1925,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2488, y: 456}
+  position: {x: 3096, y: 616}
   ports:
     keys:
     - enter
@@ -2252,7 +2296,7 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: enter
-        node: {fileID: 3436260129696624405}
+        node: {fileID: -5600940914297387439}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -2290,7 +2334,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 2488, y: 1032}
+  position: {x: 3096, y: 1192}
   ports:
     keys:
     - enter
@@ -2412,9 +2456,6 @@ MonoBehaviour:
       - fieldName: exit
         node: {fileID: 3659106574897161051}
         reroutePoints: []
-      - fieldName: choices 0
-        node: {fileID: 8669071525283988379}
-        reroutePoints: []
       - fieldName: exit
         node: {fileID: 53938532750313403}
         reroutePoints: []
@@ -2435,6 +2476,9 @@ MonoBehaviour:
         reroutePoints: []
       - fieldName: exit
         node: {fileID: -3042670778568862163}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: -5600940914297387439}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -2830,7 +2874,7 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: enter
-        node: {fileID: 5764079993920903463}
+        node: {fileID: -5600940914297387439}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -2848,7 +2892,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 1
-  Dialogue: Do you want to spend [time] with your plant?
+  Dialogue: Do you want to spend 1 time unit with your plant?
   choices:
   - Name: 
     text: Water it.

@@ -39,6 +39,8 @@ public class InteractionHandler : MonoBehaviour
 	private ValueRegistry valueRegistry;
 	private StringRegistry stringRegistry;
 
+	public bool canInteract = true;
+
 	public static InteractionHandler Instance;
 
 	private void Awake()
@@ -94,12 +96,18 @@ public class InteractionHandler : MonoBehaviour
 	// Calls an interaction object's action given the name of it
 	public bool Interact(string objectName)
 	{
+		if (!canInteract) return false;
+		
 		Action action = registeredObjects[objectName];
 		if(action != null)
 		{
+			Movement2D.Instance.SetPlayerControl(false);
+			canInteract = false;
 			stringRegistry.Set("Interaction Prompt", objectName);
 			dialogueSystem.Present(objectPromptDialogue, () =>
 			{
+				Movement2D.Instance.SetPlayerControl(true);
+				canInteract = true;
 				if(valueRegistry.Get("Confirmed Interaction") == 1)
 				{
 					action();

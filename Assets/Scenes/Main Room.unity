@@ -2554,6 +2554,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 037c9527c48d6d34db242d2dabbbceef, type: 3}
   - {fileID: 8300000, guid: 3d43ba5546f45c34f9e22c0b03c3fbb8, type: 3}
   - {fileID: 8300000, guid: 2f5a6727f03dec34b8a65327a1ebd5a0, type: 3}
+  dialogue: {fileID: 11400000, guid: fa44ee5d6916c62488e1973282422313, type: 2}
   level: 0
   day: 1
 --- !u!114 &893671296

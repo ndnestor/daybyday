@@ -19,8 +19,8 @@ MonoBehaviour:
     value: Window
   - id: BED
     value: Bed
-  - id: BONSAI
-    value: Bonsai
+  - id: BONSAI TREE
+    value: Bonsai Tree
   - id: BLASTER
     value: Blaster
   - id: INBOX
