@@ -16,8 +16,9 @@ public class Book : MonoBehaviour
 	[SerializeField] private TMP_Text rightPageText;
 	[SerializeField] private TMP_InputField pageNumberInput;
 	[SerializeField] private TMP_Text rightPageNumber;
-	[SerializeField] private TMP_Text authorText;
-	[SerializeField] private TMP_Text bookTitleText;
+	[SerializeField] private TMP_Text closedBookAuthorText;
+	[SerializeField] private TMP_Text openBookAuthorText;
+	[SerializeField] private TMP_Text[] titleTexts;
 	
 	[SerializeField] private int maxLinesPerPage;
 	[TextArea(25,30)]
@@ -29,9 +30,15 @@ public class Book : MonoBehaviour
 	private GameObject[] closedBooks;
 	private int pageNumber = 0;
 
-	private void Start() {
-		authorText.text = author;
-		bookTitleText.text = title;
+	private void Start()
+	{
+		openBookAuthorText.text = author;
+		closedBookAuthorText.text = $"By {author}";
+		foreach (var bookTitleText in titleTexts)
+		{
+			bookTitleText.text = title;
+		}
+		
 		FormatPageContents();
 
 		closedBooks = GameObject.FindGameObjectsWithTag("ClosedBook");
