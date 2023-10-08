@@ -6,6 +6,7 @@ using Game.Dialogue;
 using Game.Registry;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //This class is a Singleton instance
 public class Tracking : MonoBehaviour
@@ -217,6 +218,15 @@ public class Tracking : MonoBehaviour
             bonsaiTree.DayUpdate();
 
             DayNum++;
+
+            if (DayNum > 5)
+            {
+                // Demo over
+                SceneLoader.Instance.LoadAsync("Credits", LoadSceneMode.Single);
+                
+
+                yield break;
+            }
 
             InteractionHandler.Instance.UpdateNeglectedSprites();
             InteractionHandler.Instance.ResetNeglection();
