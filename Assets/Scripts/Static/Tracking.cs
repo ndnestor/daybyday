@@ -224,7 +224,6 @@ public class Tracking : MonoBehaviour
                 // Demo over
                 SceneLoader.Instance.LoadAsync("Credits", LoadSceneMode.Single);
                 
-
                 yield break;
             }
 
