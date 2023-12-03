@@ -270,6 +270,7 @@ public class Tracking : MonoBehaviour
             yield return new WaitForSeconds(1);
             
             Movement2D.Instance.SetPlayerControl(true);
+            InteractionHandler.Instance.canInteract = true;
 
             Movement2D.Instance.MoveTo(targetPosition, () => {
                 
@@ -288,6 +289,7 @@ public class Tracking : MonoBehaviour
             });
         }
 
+        InteractionHandler.Instance.canInteract = false;
         Movement2D.Instance.MoveTo(bedDestination.position, CallbackAction);
     }
 
