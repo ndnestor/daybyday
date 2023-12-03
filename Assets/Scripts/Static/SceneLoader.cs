@@ -58,7 +58,8 @@ public class SceneLoader : MonoBehaviour
                     Camera.main.enabled = true;
                     
                     isBusy = false;
-                    Movement2D.Instance.enabled = true;
+                    if (Movement2D.Instance != null)
+                        Movement2D.Instance.enabled = true;
                     onFinishCallback?.Invoke();
                 }));
             };

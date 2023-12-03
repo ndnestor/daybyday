@@ -12,18 +12,21 @@ public class CreditsMenu : MonoBehaviour {
         autoScroll.isScrolling = false;
         autoScroll.SetValue(1);
         
-        StartCoroutine(Wait(scrollDelay));
+        StartCoroutine(Wait(scrollDelay, () => { autoScroll.isScrolling = true; }));
     }
 
     private void Update() {
         if (autoScroll.GetValue() == 0) {
-            SceneLoader.Instance.LoadAsync("MainMenu", LoadSceneMode.Single);
+            StartCoroutine(Wait(scrollDelay, () =>
+            {
+                SceneLoader.Instance.LoadAsync("Main Menu", LoadSceneMode.Single);
+            }));
         }
     }
 
-    private IEnumerator Wait(float time) {
+    private static IEnumerator Wait(float time, Action callback = null) {
         yield return new WaitForSeconds(time);
-
-        autoScroll.isScrolling = true;
+        
+        callback?.Invoke();
     }
 }

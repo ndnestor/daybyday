@@ -205,11 +205,22 @@ public class Tracking : MonoBehaviour
             MusicPlayer.Instance.StopMusic();
             MusicPlayer.Instance.QueueMusic(sleepThemeSong, false);
 
-            yield return StartCoroutine(
-                SceneLoader.Instance.ChangeOverlayColor(Color. black, 2, () => {
+            if (DayNum == 5) {
+                // End of demo
+                yield return StartCoroutine(
+                    SceneLoader.Instance.ChangeOverlayColor(Color. black, 2, () => {
+                        dayNumberText.text = "End of Demo\n\u200B";
+                        dayNumberText.enabled = true; 
+                    }));
+            }
+            else {
+                yield return StartCoroutine(
+                    SceneLoader.Instance.ChangeOverlayColor(Color. black, 2, () => {
                         dayNumberText.text = $"Day {DayNum + 1}\n\u200B";
                         dayNumberText.enabled = true; 
-                }));
+                    }));    
+            }
+            
             yield return new WaitUntil(() => !Movement2D.Instance.animator.GetCurrentAnimatorStateInfo(0)
                 .IsName("Character Entering Bed"));
             
@@ -218,15 +229,7 @@ public class Tracking : MonoBehaviour
             bonsaiTree.DayUpdate();
 
             DayNum++;
-
-            if (DayNum > 5)
-            {
-                // Demo over
-                SceneLoader.Instance.LoadAsync("Credits", LoadSceneMode.Single);
-                
-                yield break;
-            }
-
+            
             InteractionHandler.Instance.UpdateNeglectedSprites();
             InteractionHandler.Instance.ResetNeglection();
             ProductivityAid.Instance.UpdateLevel();
@@ -256,6 +259,12 @@ public class Tracking : MonoBehaviour
             dayNumberText.enabled = false;
 
             yield return new WaitForSeconds(1);
+
+            if (DayNum > 5) {
+                // Demo over
+                SceneLoader.Instance.LoadAsync("Credits", LoadSceneMode.Single);
+                yield break;
+            }
             
             yield return StartCoroutine(SceneLoader.Instance.ChangeOverlayColor(Color.clear, 2));
             yield return new WaitForSeconds(1);
