@@ -19,7 +19,8 @@ public class CreditsMenu : MonoBehaviour {
         if (autoScroll.GetValue() == 0) {
             StartCoroutine(Wait(scrollDelay, () =>
             {
-                SceneLoader.Instance.LoadAsync("Main Menu", LoadSceneMode.Single);
+                //SceneLoader.Instance.LoadAsync("Main Menu", LoadSceneMode.Single);
+                SceneManager.LoadSceneAsync("Main Menu");
             }));
         }
     }
