@@ -13,9 +13,12 @@ public class Door : MonoBehaviour {
 	
 	private void Start() {
 		dialogueSystem = MainInstances.Get<DialogueSystem>();
-		
+
 		InteractionHandler.Instance.RegisterObject("Room and Door", () =>
-			dialogueSystem.Present(dialogueGraph), 0);
+		{
+			Movement2D.Instance.SetPlayerControl(false);
+			dialogueSystem.Present(dialogueGraph, () => Movement2D.Instance.SetPlayerControl(true));
+		}, 0);
 	}
 
 }
