@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class openYoga1 : MonoBehaviour
 {
-    public void openExerciseOne() {
+    public void openExerciseOne()
+    {
+        Tracking.Instance.AddUsedTime(1);
+        
         SceneLoader.Instance.LoadAsync("Yoga_ex1", LoadSceneMode.Additive, onLoadedCallback: () =>
         {
             SceneManager.UnloadSceneAsync("Yoga_menu");

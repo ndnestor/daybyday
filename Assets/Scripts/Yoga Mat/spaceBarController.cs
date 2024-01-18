@@ -11,8 +11,8 @@ public class spaceBarController : MonoBehaviour
     //float jumpIncr;
 
     void Start() {
-        fallSpeed = 1.0f;
-        jumpSpeed = 1.5f;
+        fallSpeed = 2.5f;
+        jumpSpeed = 3.5f;
         //jumpIncr = 0.5f;
         playerBar.velocity = -transform.up * fallSpeed;
     }
@@ -20,7 +20,6 @@ public class spaceBarController : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Space)) {
             barJump(jumpSpeed);
-            //Debug.Log("Space bar pressed");
         } else {
             playerBar.velocity = -transform.up * fallSpeed;
         }

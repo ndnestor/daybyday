@@ -149,16 +149,6 @@ public class Tracking : MonoBehaviour
         return TimeUsed;
     }
     
-    // NOTE: Used for testing purposes only
-    // TODO: Remove
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            AddUsedTime(1);
-        }
-    }
-
     //Tints the window pane, window light, etc. to reflect time of day changes
     public void UpdateLighting()
     {

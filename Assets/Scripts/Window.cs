@@ -27,15 +27,7 @@ public class Window : MonoBehaviour {
 		InteractionHandler.Instance.RegisterObject("Window", Interact, 1);
 		dialogueSystem = MainInstances.Get<DialogueSystem>();
 	}
-
-	private void Update()
-	{
-		if(Input.GetKeyDown(KeyCode.Alpha3))
-		{
-			Interact();
-		}
-	}
-
+	
 	private void Interact()
 	{
 		int messageIndex = 0;

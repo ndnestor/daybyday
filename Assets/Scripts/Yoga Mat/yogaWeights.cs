@@ -27,7 +27,7 @@ public class yogaWeights : MonoBehaviour
     public float halfRange;
 
     void Start() {
-        moveIncr = 1.5f;
+        moveIncr = 0.5f;
         speed = 0;
         inBounds = true;
         playerSprite = player.GetComponent<SpriteRenderer>();
@@ -69,7 +69,7 @@ public class yogaWeights : MonoBehaviour
         }
 
         if (startWait < gameTime) {
-            speed = 1;
+            speed = 2;
         } else {
             rb.transform.position = new Vector3(-7.492371f, 0.0f, 0.0f);
         }
@@ -102,7 +102,7 @@ public class yogaWeights : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Wall") {
+        if (col.gameObject.CompareTag("Wall")) {
             switchDirec();
         }
     }

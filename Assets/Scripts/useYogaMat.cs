@@ -10,7 +10,7 @@ public class useYogaMat : MonoBehaviour
     public HighlightObject highlightObject;
     void Start()
     {
-        InteractionHandler.Instance.RegisterObject("Yoga Mat", OpenYogaMat, 1);
+        InteractionHandler.Instance.RegisterObject("Yoga Mat", OpenYogaMat, 0);
     }
 
     void OpenYogaMat() {
