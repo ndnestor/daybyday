@@ -841,6 +841,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
+      propertyPath: title
+      value: Tree Poem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115111188062664703, guid: 4919e3a0e11cbd14ebaffcc9349c0967, type: 3}
       propertyPath: author
       value: Eric Mooney
       objectReference: {fileID: 0}
