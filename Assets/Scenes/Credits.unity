@@ -489,6 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoScroll: {fileID: 117015940}
   scrollDelay: 5
+  endDelay: 2
 --- !u!1 &452990907
 GameObject:
   m_ObjectHideFlags: 0

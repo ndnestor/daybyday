@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class CreditsMenu : MonoBehaviour {
     [SerializeField] private AutoScroll autoScroll;
     [SerializeField] private float scrollDelay;
+    [SerializeField] private float endDelay;
     
     private void Start() {
         autoScroll.isScrolling = false;
@@ -17,9 +18,8 @@ public class CreditsMenu : MonoBehaviour {
 
     private void Update() {
         if (autoScroll.GetValue() == 0) {
-            StartCoroutine(Wait(scrollDelay, () =>
+            StartCoroutine(Wait(endDelay, () =>
             {
-                //SceneLoader.Instance.LoadAsync("Main Menu", LoadSceneMode.Single);
                 SceneManager.LoadSceneAsync("Main Menu");
             }));
         }
