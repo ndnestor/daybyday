@@ -159,7 +159,7 @@ public class InteractionHandler : MonoBehaviour
 				case "Piano":
 					pianoRenderer.sprite = normalPianoSprite;
 					break;
-				case "Yoga Mate":
+				case "Yoga Mat":
 					yogaMatRenderer.sprite = normalYogaMatSprite;
 					break;
 				case "Computer":
