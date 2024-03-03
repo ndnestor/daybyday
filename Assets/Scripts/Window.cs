@@ -30,6 +30,9 @@ public class Window : MonoBehaviour {
 	
 	private void Interact()
 	{
+		Movement2D.Instance.SetPlayerControl(false);
+		InteractionHandler.Instance.canInteract = false;
+		
 		int messageIndex = 0;
 		int currDay = Tracking.Instance.DayNum;
 
@@ -55,8 +58,11 @@ public class Window : MonoBehaviour {
 			messageIndex++;
 		}
 
-		dialogueSystem.Present(dialogueGraphs[messageIndex]);
-		Tracking.Instance.AddUsedTime(timeConsumption);
+		dialogueSystem.Present(dialogueGraphs[messageIndex], () =>
+		{
+			Movement2D.Instance.SetPlayerControl(true);
+			InteractionHandler.Instance.canInteract = true;
+		});
 		// TODO: Add CAS as well
 	}
 
